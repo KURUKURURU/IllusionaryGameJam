@@ -1,10 +1,13 @@
-[gd_scene load_steps=11 format=3 uid="uid://bawgdwbg84swm"]
+[gd_scene load_steps=14 format=3 uid="uid://bawgdwbg84swm"]
 
 [ext_resource type="Script" uid="uid://b0iosfjdnqwem" path="res://Start_Menu/scenes/start_menu.gd" id="1_sgpob"]
 [ext_resource type="Texture2D" uid="uid://dy2h452mdd6vq" path="res://Start_Menu/images/suitcase/closed-black-leather-briefcase-isolated-600nw-1807081060.webp" id="2_4hd3i"]
 [ext_resource type="Texture2D" uid="uid://dukp6iivuy1mn" path="res://Start_Menu/images/suitcase/armored-business-case-money-open-top-down-white-background-isolated-160765169.webp" id="2_imdjc"]
 [ext_resource type="PackedScene" uid="uid://bjp1b6hm65me1" path="res://Label/label.tscn" id="3_imdjc"]
+[ext_resource type="AudioStream" uid="uid://cgq6x4s0jtdei" path="res://StartRoom/sounds/briefcase.wav" id="4_1ifhu"]
 [ext_resource type="Texture2D" uid="uid://bab2ogwf4o5no" path="res://Start_Menu/images/ph/vector-cogs-symbol-on-white-background-settings-icon-illustration.jpg" id="5_imdjc"]
+[ext_resource type="Texture2D" uid="uid://sodr0iocebp" path="res://Start_Menu/images/ph/1000_F_532328806_oDZgCwtW3cyMNVesisdbleZmzyFEipF3-removebg-preview.png" id="6_csleb"]
+[ext_resource type="PackedScene" uid="uid://bmeglpnch1rg5" path="res://Start_Menu/scenes/SettingsPanel.tscn" id="6_hlb2u"]
 
 [sub_resource type="Animation" id="Animation_hlb2u"]
 length = 0.001
@@ -200,6 +203,9 @@ libraries = {
 &"Briefcase": SubResource("AnimationLibrary_w3i02")
 }
 
+[node name="click" type="AudioStreamPlayer2D" parent="Briefcase"]
+stream = ExtResource("4_1ifhu")
+
 [node name="Label" parent="." instance=ExtResource("3_imdjc")]
 offset_left = -2.0
 offset_top = 611.0
@@ -216,9 +222,26 @@ offset_bottom = 901.0
 scale = Vector2(0.15909356, 0.15909356)
 texture_normal = ExtResource("5_imdjc")
 
+[node name="Start" type="TextureButton" parent="Node2D"]
+offset_left = 470.0
+offset_top = 346.0
+offset_right = 740.0
+offset_bottom = 731.0
+scale = Vector2(0.37345895, 0.37345895)
+texture_normal = ExtResource("6_csleb")
+ignore_texture_size = true
+stretch_mode = 3
+
+[node name="SettingsPanel" parent="." instance=ExtResource("6_hlb2u")]
+visible = false
+position = Vector2(246, 155)
+
 [connection signal="mouse_entered" from="Briefcase/Handle" to="." method="mousetouch_handle"]
 [connection signal="mouse_exited" from="Briefcase/Handle" to="." method="mouseleave_handle"]
 [connection signal="pressed" from="Briefcase/Handle" to="." method="click_handle"]
 [connection signal="mouse_entered" from="Node2D/Settings" to="." method="settings_mousetouch"]
 [connection signal="mouse_exited" from="Node2D/Settings" to="." method="settings_mouseleave"]
 [connection signal="pressed" from="Node2D/Settings" to="." method="_settings_show"]
+[connection signal="mouse_entered" from="Node2D/Start" to="." method="Start_mousetouch"]
+[connection signal="mouse_exited" from="Node2D/Start" to="." method="Start_mouseleave"]
+[connection signal="pressed" from="Node2D/Start" to="." method="StartGame"]

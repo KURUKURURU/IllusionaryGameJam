@@ -1,0 +1,98 @@
+[gd_scene load_steps=6 format=3 uid="uid://bmeglpnch1rg5"]
+
+[ext_resource type="Texture2D" uid="uid://dlaq3f3hiu07f" path="res://images/godotwaka.png" id="1_etaka"]
+[ext_resource type="Script" uid="uid://miccxoqn6mvh" path="res://Start_Menu/scenes/settings_panel.gd" id="1_f3gv0"]
+[ext_resource type="Script" uid="uid://clt0c3y0am13e" path="res://Start_Menu/music.gd" id="2_0txog"]
+[ext_resource type="AudioStream" uid="uid://cugvuvlllbbnr" path="res://Sound/mysterytheme.wav" id="4_eoahk"]
+[ext_resource type="AudioStream" uid="uid://bx6crsrq8xc6g" path="res://Sound/sfx_intrigue.wav" id="5_uxpx6"]
+
+[node name="SettingsPanel" type="Node2D"]
+script = ExtResource("1_f3gv0")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+self_modulate = Color(0, 0, 0, 1)
+offset_right = 1890.0
+offset_bottom = 1417.0
+scale = Vector2(0.3605842, 0.20058405)
+texture = ExtResource("1_etaka")
+
+[node name="Music" type="HSlider" parent="."]
+offset_left = 148.24323
+offset_top = 49.248882
+offset_right = 593.7025
+offset_bottom = 65.248886
+max_value = 1.0
+step = 0.001
+value = 1.0
+script = ExtResource("2_0txog")
+bus_name = "Music"
+
+[node name="SFX" type="HSlider" parent="."]
+offset_left = 148.24323
+offset_top = 115.30852
+offset_right = 452.0
+offset_bottom = 131.30852
+max_value = 1.0
+step = 0.001
+value = 1.0
+script = ExtResource("2_0txog")
+bus_name = "SFX"
+
+[node name="General" type="HSlider" parent="."]
+offset_left = 148.24323
+offset_top = 176.01198
+offset_right = 593.7025
+offset_bottom = 192.01198
+max_value = 1.0
+step = 0.001
+value = 1.0
+script = ExtResource("2_0txog")
+bus_name = "Master"
+
+[node name="Music2" type="RichTextLabel" parent="."]
+offset_left = 74.0
+offset_top = 43.0
+offset_right = 145.99344
+offset_bottom = 83.0
+text = "Music"
+
+[node name="SFX2" type="RichTextLabel" parent="."]
+offset_left = 94.24815
+offset_top = 111.73773
+offset_right = 134.24815
+offset_bottom = 151.73773
+text = "SFX"
+
+[node name="General2" type="RichTextLabel" parent="."]
+offset_left = 103.24733
+offset_top = 172.4412
+offset_right = 143.24733
+offset_bottom = 212.4412
+text = "All"
+
+[node name="MusicTest" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_eoahk")
+bus = &"Music"
+
+[node name="SFXTest" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_uxpx6")
+bus = &"SFX"
+
+[node name="SFXButton" type="TextureButton" parent="."]
+offset_left = 479.0
+offset_top = 101.511154
+offset_right = 2369.0
+offset_bottom = 1518.5111
+scale = Vector2(0.069634624, 0.030575555)
+texture_normal = ExtResource("1_etaka")
+
+[node name="Exit" type="TextureButton" parent="."]
+offset_left = 250.0
+offset_top = 223.00002
+offset_right = 2140.0
+offset_bottom = 1640.0
+scale = Vector2(0.09424584, 0.024125362)
+texture_normal = ExtResource("1_etaka")
+
+[connection signal="pressed" from="SFXButton" to="." method="SFXTest"]
+[connection signal="pressed" from="Exit" to="." method="exitPanel"]
