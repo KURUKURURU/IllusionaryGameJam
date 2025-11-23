@@ -1,0 +1,224 @@
+[gd_scene load_steps=11 format=3 uid="uid://bawgdwbg84swm"]
+
+[ext_resource type="Script" uid="uid://b0iosfjdnqwem" path="res://Start_Menu/scenes/start_menu.gd" id="1_sgpob"]
+[ext_resource type="Texture2D" uid="uid://dy2h452mdd6vq" path="res://Start_Menu/images/suitcase/closed-black-leather-briefcase-isolated-600nw-1807081060.webp" id="2_4hd3i"]
+[ext_resource type="Texture2D" uid="uid://dukp6iivuy1mn" path="res://Start_Menu/images/suitcase/armored-business-case-money-open-top-down-white-background-isolated-160765169.webp" id="2_imdjc"]
+[ext_resource type="PackedScene" uid="uid://bjp1b6hm65me1" path="res://Label/label.tscn" id="3_imdjc"]
+[ext_resource type="Texture2D" uid="uid://bab2ogwf4o5no" path="res://Start_Menu/images/ph/vector-cogs-symbol-on-white-background-settings-icon-illustration.jpg" id="5_imdjc"]
+
+[sub_resource type="Animation" id="Animation_hlb2u"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_imdjc")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(800, 839)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(280, 0.9999995)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.77760553, 0.77760553)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_csleb"]
+_data = {
+&"RESET": SubResource("Animation_hlb2u")
+}
+
+[sub_resource type="Animation" id="Animation_d7er4"]
+resource_name = "close"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_4hd3i")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(800, 839)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(358, 218)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.5756491, 0.51889575)]
+}
+
+[sub_resource type="Animation" id="Animation_1ifhu"]
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_imdjc")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(800, 839)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(280, 0.9999995)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.77760553, 0.77760553)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_w3i02"]
+_data = {
+&"close": SubResource("Animation_d7er4"),
+&"open": SubResource("Animation_1ifhu")
+}
+
+[node name="StartMenu" type="Node2D"]
+script = ExtResource("1_sgpob")
+
+[node name="Background" type="ColorRect" parent="."]
+offset_left = -8.0
+offset_top = -6.0
+offset_right = 1159.0
+offset_bottom = 658.0
+
+[node name="Briefcase" type="TextureRect" parent="."]
+offset_left = 280.0
+offset_top = 0.9999995
+offset_right = 1080.0
+offset_bottom = 840.0
+scale = Vector2(0.77760553, 0.77760553)
+texture = ExtResource("2_imdjc")
+
+[node name="Handle" type="TextureButton" parent="Briefcase"]
+layout_mode = 0
+offset_left = 291.84445
+offset_top = 539.6074
+offset_right = 468.84445
+offset_bottom = 629.6074
+scale = Vector2(1.2921102, 1.6849833)
+
+[node name="Texture" type="AnimationPlayer" parent="Briefcase"]
+libraries = {
+&"": SubResource("AnimationLibrary_csleb"),
+&"Briefcase": SubResource("AnimationLibrary_w3i02")
+}
+
+[node name="Label" parent="." instance=ExtResource("3_imdjc")]
+offset_left = -2.0
+offset_top = 611.0
+offset_right = 38.0
+offset_bottom = 651.0
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Settings" type="TextureButton" parent="Node2D"]
+offset_left = 659.0
+offset_top = 411.0
+offset_right = 1149.0
+offset_bottom = 901.0
+scale = Vector2(0.15909356, 0.15909356)
+texture_normal = ExtResource("5_imdjc")
+
+[connection signal="mouse_entered" from="Briefcase/Handle" to="." method="mousetouch_handle"]
+[connection signal="mouse_exited" from="Briefcase/Handle" to="." method="mouseleave_handle"]
+[connection signal="pressed" from="Briefcase/Handle" to="." method="click_handle"]
+[connection signal="mouse_entered" from="Node2D/Settings" to="." method="settings_mousetouch"]
+[connection signal="mouse_exited" from="Node2D/Settings" to="." method="settings_mouseleave"]
+[connection signal="pressed" from="Node2D/Settings" to="." method="_settings_show"]
