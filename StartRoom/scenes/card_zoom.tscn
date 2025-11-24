@@ -1,0 +1,26 @@
+[gd_scene load_steps=2 format=3 uid="uid://cvx665n1ru5jd"]
+
+[ext_resource type="Texture2D" uid="uid://dib6f582g3lom" path="res://StartRoom/images/id.jpg" id="1_8aguk"]
+
+[node name="CardZoom" type="Node2D"]
+
+[node name="bg" type="ColorRect" parent="."]
+offset_left = -401.99997
+offset_top = -176.0
+offset_right = -361.99997
+offset_bottom = -136.0
+scale = Vector2(49.261974, 28.448542)
+color = Color(0.0041632135, 0.002088285, 0.2854377, 0.5137255)
+
+[node name="Button" type="Button" parent="bg"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_right = 40.010574
+offset_bottom = 39.017815
+
+[node name="Card" type="TextureRect" parent="."]
+offset_left = 215.0
+offset_top = 93.0
+offset_right = 915.0
+offset_bottom = 538.0
+texture = ExtResource("1_8aguk")

@@ -1,0 +1,41 @@
+[gd_scene load_steps=2 format=3 uid="uid://67pbacp18qgo"]
+
+[ext_resource type="Texture2D" uid="uid://dw7ubnogfdaev" path="res://StartRoom/images/paperrrr.jpg" id="1_akcku"]
+
+[node name="FileBook" type="Node2D"]
+
+[node name="bg" type="ColorRect" parent="."]
+offset_left = -401.99997
+offset_top = -176.0
+offset_right = -361.99997
+offset_bottom = -136.0
+scale = Vector2(49.261974, 28.448542)
+color = Color(0.0041632135, 0.002088285, 0.2854377, 0.5137255)
+
+[node name="Button" type="Button" parent="bg"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_right = 40.010574
+offset_bottom = 39.017815
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(28.729158, 16.590944)
+color = Color(0.85328186, 0.7112711, 0.4555931, 1)
+
+[node name="left" type="TextureButton" parent="."]
+offset_left = 27.0
+offset_top = 4.0
+offset_right = 627.0
+offset_bottom = 739.0
+scale = Vector2(0.8895049, 0.8895049)
+texture_normal = ExtResource("1_akcku")
+
+[node name="right" type="TextureButton" parent="."]
+offset_left = 602.0
+offset_top = 0.9999999
+offset_right = 1202.0
+offset_bottom = 736.0
+scale = Vector2(0.8895049, 0.8895049)
+texture_normal = ExtResource("1_akcku")
