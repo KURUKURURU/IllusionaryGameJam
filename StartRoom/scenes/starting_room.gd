@@ -1,5 +1,8 @@
 extends Node2D
 
+func wait(seconds: float) -> void:
+	await get_tree().create_timer(seconds).timeout
+
 func _ready() -> void:
 	$FileBook.hide()
 	$CardZoom.hide()
@@ -54,6 +57,8 @@ func _viewCard():
 
 
 func _on_complete_pressed() -> void:
+	$HMMM.play()
 	$AnimationPlayer.play("Fade")
 	await $AnimationPlayer.animation_finished
-	get_tree().change_scene_to_file("uid://cdu664noo2px5")
+	await wait(2.0)
+	get_tree().change_scene_to_file("uid://bdjuf601y1m00")

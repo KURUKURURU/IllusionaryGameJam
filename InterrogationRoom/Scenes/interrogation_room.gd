@@ -11,6 +11,7 @@ func _process(delta: float) -> void:
 		$Label/Text.text = "[PRESS Q TO QUIT]"
 		if Input.is_action_just_pressed("quit"):
 			$FileBook.hide()
+			$Label/Text.text = ""
 
 func _ready() -> void:
 	$Label/Text.text = ""
