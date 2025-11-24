@@ -1,0 +1,53 @@
+[gd_scene load_steps=5 format=3 uid="uid://c5ywwd24lm2ih"]
+
+[ext_resource type="Texture2D" uid="uid://cpjhbfxg52543" path="res://StartRoom/images/idhover.png" id="1_l3go5"]
+[ext_resource type="Script" uid="uid://8y8moatunt74" path="res://InterrogationRoom/Scenes/window.gd" id="1_tcpfg"]
+[ext_resource type="Texture2D" uid="uid://bkqv5mmp0ataj" path="res://images/icon.jpg" id="2_hdrwg"]
+[ext_resource type="AudioStream" uid="uid://bx6crsrq8xc6g" path="res://Sound/sfx_intrigue.wav" id="4_2fiki"]
+
+[node name="Window" type="TextureButton"]
+script = ExtResource("1_tcpfg")
+
+[node name="PH" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 54.0
+offset_bottom = 48.41129
+scale = Vector2(9.333333, 8.551724)
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 0
+offset_right = 500.98334
+offset_bottom = 413.0
+
+[node name="Page1" type="VBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 2
+
+[node name="Webpage" type="TextureRect" parent="ScrollContainer/Page1"]
+layout_mode = 2
+texture = ExtResource("1_l3go5")
+
+[node name="Webpage2" type="TextureRect" parent="ScrollContainer/Page1"]
+layout_mode = 2
+texture = ExtResource("1_l3go5")
+
+[node name="Control" type="Control" parent="ScrollContainer"]
+custom_minimum_size = Vector2(0, 1500)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 2
+
+[node name="advance" type="TextureButton" parent="ScrollContainer/Control"]
+layout_mode = 0
+offset_left = 291.0
+offset_top = 257.0
+offset_right = 803.0
+offset_bottom = 769.0
+scale = Vector2(0.13290448, 0.13290448)
+texture_normal = ExtResource("2_hdrwg")
+
+[node name="ping" type="AudioStreamPlayer2D" parent="ScrollContainer/Control/advance"]
+stream = ExtResource("4_2fiki")
+
+[connection signal="pressed" from="ScrollContainer/Control/advance" to="." method="_on_advance_pressed"]

@@ -1,0 +1,106 @@
+[gd_scene load_steps=8 format=3 uid="uid://jpraix5hokpi"]
+
+[ext_resource type="Script" uid="uid://c5navywk44tjh" path="res://InterrogationRoom/Scenes/laptop.gd" id="1_xsinj"]
+[ext_resource type="Script" uid="uid://bent2seqmqsht" path="res://InterrogationRoom/Scenes/object.gd" id="2_5y0nm"]
+[ext_resource type="Texture2D" uid="uid://30dx3dhdg3wj" path="res://InterrogationRoom/images/4lA45Rp0dtl2OAzQkPzEHA_b.jpg" id="2_xsinj"]
+[ext_resource type="PackedScene" uid="uid://c5ywwd24lm2ih" path="res://InterrogationRoom/Scenes/window.tscn" id="3_xsinj"]
+[ext_resource type="Texture2D" uid="uid://dw7ubnogfdaev" path="res://StartRoom/images/paperrrr.jpg" id="4_5y0nm"]
+[ext_resource type="Texture2D" uid="uid://bqdh4r3tod5ff" path="res://StartRoom/images/Untitled.jpg" id="6_0qem7"]
+[ext_resource type="AudioStream" uid="uid://bx6crsrq8xc6g" path="res://Sound/sfx_intrigue.wav" id="7_7gy8r"]
+
+[node name="Laptop" type="Node2D"]
+script = ExtResource("1_xsinj")
+
+[node name="DesktopHome" type="TextureRect" parent="."]
+offset_right = 1024.0
+offset_bottom = 576.0
+scale = Vector2(1.1253928, 1.1253928)
+texture = ExtResource("2_xsinj")
+
+[node name="Object" type="TextureButton" parent="."]
+z_index = 1
+offset_left = 387.0
+offset_top = -467.0
+offset_right = 387.0
+offset_bottom = -467.0
+script = ExtResource("2_5y0nm")
+
+[node name="TestWindow" parent="Object" instance=ExtResource("3_xsinj")]
+layout_mode = 0
+offset_left = 138.0
+offset_top = 534.0
+offset_right = 138.0
+offset_bottom = 534.0
+
+[node name="InteractMove" type="TextureButton" parent="Object"]
+self_modulate = Color(0.2653661, 0.5013961, 1, 1)
+layout_mode = 0
+offset_left = 133.0
+offset_top = 531.0
+offset_right = 733.0
+offset_bottom = 1266.0
+scale = Vector2(0.8510616, 0.034027074)
+texture_normal = ExtResource("4_5y0nm")
+
+[node name="HideFail" type="TextureButton" parent="Object"]
+self_modulate = Color(0.38392693, 0, 0.017539086, 1)
+layout_mode = 0
+offset_left = 590.00006
+offset_top = 531.0
+offset_right = 1190.0
+offset_bottom = 1266.0
+scale = Vector2(0.0822321, 0.034027074)
+texture_normal = ExtResource("6_0qem7")
+stretch_mode = 0
+
+[node name="fail_ping" type="AudioStreamPlayer2D" parent="Object"]
+stream = ExtResource("7_7gy8r")
+
+[node name="Object2" type="TextureButton" parent="."]
+offset_left = 103.0
+offset_top = -393.0
+offset_right = 103.0
+offset_bottom = -393.0
+script = ExtResource("2_5y0nm")
+
+[node name="TestWindow" parent="Object2" instance=ExtResource("3_xsinj")]
+layout_mode = 0
+offset_left = 138.0
+offset_top = 534.0
+offset_right = 138.0
+offset_bottom = 534.0
+
+[node name="InteractMove" type="TextureButton" parent="Object2"]
+self_modulate = Color(0.2653661, 0.5013961, 1, 1)
+layout_mode = 0
+offset_left = 133.0
+offset_top = 531.0
+offset_right = 733.0
+offset_bottom = 1266.0
+scale = Vector2(0.8510616, 0.034027074)
+texture_normal = ExtResource("4_5y0nm")
+
+[node name="Hide" type="TextureButton" parent="Object2"]
+self_modulate = Color(0.38392693, 0, 0.017539086, 1)
+layout_mode = 0
+offset_left = 590.00006
+offset_top = 531.0
+offset_right = 1190.0
+offset_bottom = 1266.0
+scale = Vector2(0.0822321, 0.034027074)
+texture_normal = ExtResource("6_0qem7")
+stretch_mode = 0
+
+[connection signal="button_down" from="Object/TestWindow" to="." method="Object1"]
+[connection signal="button_down" from="Object/InteractMove" to="." method="Object1"]
+[connection signal="button_down" from="Object/InteractMove" to="Object" method="Down"]
+[connection signal="button_up" from="Object/InteractMove" to="Object" method="Up"]
+[connection signal="button_down" from="Object/HideFail" to="." method="Object1"]
+[connection signal="button_down" from="Object/HideFail" to="Object" method="Down"]
+[connection signal="button_up" from="Object/HideFail" to="Object" method="Up"]
+[connection signal="pressed" from="Object/HideFail" to="Object" method="_on_hide_fail_pressed"]
+[connection signal="button_down" from="Object2/TestWindow" to="." method="Object2"]
+[connection signal="button_down" from="Object2/InteractMove" to="." method="Object2"]
+[connection signal="button_down" from="Object2/InteractMove" to="Object2" method="Down"]
+[connection signal="button_up" from="Object2/InteractMove" to="Object2" method="Up"]
+[connection signal="pressed" from="Object2/Hide" to="Object2" method="_on_hide_pressed"]

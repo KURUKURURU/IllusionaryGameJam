@@ -1,8 +1,9 @@
-[gd_scene load_steps=19 format=3 uid="uid://cdu664noo2px5"]
+[gd_scene load_steps=23 format=3 uid="uid://cdu664noo2px5"]
 
 [ext_resource type="Script" uid="uid://dr861qg2gdbt7" path="res://InterrogationRoom/Scenes/interrogation_room.gd" id="1_uj5g0"]
-[ext_resource type="Texture2D" uid="uid://b6fbk66ob7dbu" path="res://InterrogationRoom/images/girl.jpg" id="1_xwycx"]
+[ext_resource type="Texture2D" uid="uid://b8rtwhsrohsy1" path="res://InterrogationRoom/images/pngtree-pretty-girl-sitting-on-floor-fashionable-png-image_10124036.png" id="2_mcpkv"]
 [ext_resource type="Texture2D" uid="uid://bqdh4r3tod5ff" path="res://StartRoom/images/Untitled.jpg" id="2_uj5g0"]
+[ext_resource type="PackedScene" uid="uid://b1b0mma0chsct" path="res://textbox/scenes/girl_talk_box.tscn" id="3_3gh6q"]
 [ext_resource type="Texture2D" uid="uid://dy2jittp42m2m" path="res://StartRoom/images/hover.png" id="3_5f46h"]
 [ext_resource type="Texture2D" uid="uid://db6guwp3hvp1y" path="res://InterrogationRoom/images/Screenshot 2025-11-23 at 9.04.27 PM.png" id="4_4smtm"]
 [ext_resource type="Texture2D" uid="uid://cksh36sky372v" path="res://StartRoom/images/still.png" id="4_5f46h"]
@@ -11,7 +12,10 @@
 [ext_resource type="AudioStream" uid="uid://dndkwue3fholq" path="res://StartRoom/sounds/paper.wav" id="7_mcpkv"]
 [ext_resource type="PackedScene" uid="uid://67pbacp18qgo" path="res://StartRoom/scenes/file_book.tscn" id="8_4smtm"]
 [ext_resource type="PackedScene" uid="uid://bjp1b6hm65me1" path="res://Label/label.tscn" id="8_lasee"]
-[ext_resource type="AudioStream" uid="uid://cugvuvlllbbnr" path="res://Sound/mysterytheme.wav" id="12_ie03x"]
+[ext_resource type="Texture2D" uid="uid://cxijwnt76pu1f" path="res://InterrogationRoom/images/door.png" id="9_ie03x"]
+[ext_resource type="AudioStream" uid="uid://co1vuwcf10ohp" path="res://StartRoom/sounds/music3.wav" id="12_mcpkv"]
+[ext_resource type="AudioStream" uid="uid://byffw1s080n6m" path="res://StartRoom/sounds/whoosh.wav" id="13_mcpkv"]
+[ext_resource type="PackedScene" uid="uid://cnb21alh73jw4" path="res://textbox/scenes/talking_box.tscn" id="15_14rqj"]
 
 [sub_resource type="Animation" id="Animation_m2gn2"]
 length = 0.001
@@ -201,12 +205,23 @@ position = Vector2(0, 4)
 
 [node name="ColorRect" type="ColorRect" parent="Node2D"]
 offset_right = 1153.0
-offset_bottom = 648.0
+offset_bottom = 742.0
 
 [node name="girl" type="Sprite2D" parent="Node2D"]
-position = Vector2(580, 337)
+position = Vector2(403, 604)
 scale = Vector2(1.9116682, 1.9116682)
-texture = ExtResource("1_xwycx")
+texture = ExtResource("2_mcpkv")
+
+[node name="one" type="TextureButton" parent="Node2D/girl"]
+offset_left = -46.55623
+offset_top = -274.10614
+offset_right = -6.5562286
+offset_bottom = -234.10614
+scale = Vector2(3.8700469, 6.6398535)
+
+[node name="GirlTalkBox" parent="Node2D/girl" instance=ExtResource("3_3gh6q")]
+position = Vector2(229.64232, -236.44272)
+scale = Vector2(0.6105126, 0.6105126)
 
 [node name="Table" type="TextureRect" parent="Node2D"]
 offset_left = -12.0
@@ -247,6 +262,16 @@ rotation = 1.5752046
 scale = Vector2(0.25484926, 0.23415618)
 texture_normal = ExtResource("4_4smtm")
 
+[node name="door" type="TextureButton" parent="Node2D"]
+offset_left = 920.0
+offset_top = 323.0
+offset_right = 1129.8821
+offset_bottom = 664.8347
+scale = Vector2(0.79331565, 0.79331565)
+texture_normal = ExtResource("9_ie03x")
+ignore_texture_size = true
+stretch_mode = 3
+
 [node name="UP" type="TextureButton" parent="."]
 offset_left = 49.0
 offset_top = 22.0
@@ -270,6 +295,7 @@ libraries = {
 }
 
 [node name="FileBook" parent="." instance=ExtResource("8_4smtm")]
+visible = false
 z_index = 1
 position = Vector2(98, 41)
 scale = Vector2(0.8551355, 0.8551355)
@@ -282,11 +308,22 @@ offset_right = 39.0
 offset_bottom = 649.0
 
 [node name="MainMusic" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("12_ie03x")
+stream = ExtResource("12_mcpkv")
 volume_db = -12.404
+pitch_scale = 1.5
 autoplay = true
 bus = &"Music"
 
+[node name="Whoosh" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(565, 674)
+stream = ExtResource("13_mcpkv")
+pitch_scale = 0.26
+bus = &"SFX"
+
+[node name="TalkingBox" parent="." instance=ExtResource("15_14rqj")]
+position = Vector2(1, -30)
+
+[connection signal="pressed" from="Node2D/girl/one" to="." method="IfStartTalking"]
 [connection signal="mouse_entered" from="Node2D/Table/FilesNotes" to="." method="files_mousetouch"]
 [connection signal="mouse_exited" from="Node2D/Table/FilesNotes" to="." method="files_mouseleave"]
 [connection signal="pressed" from="UP" to="." method="UP"]

@@ -1,0 +1,74 @@
+[gd_scene load_steps=6 format=3 uid="uid://b1b0mma0chsct"]
+
+[ext_resource type="Texture2D" uid="uid://c0cvniidcrxy1" path="res://InterrogationRoom/images/cloud.png" id="1_81lya"]
+[ext_resource type="FontFile" uid="uid://cjwu65abufay6" path="res://Fonts/charybdis/chary___.ttf" id="2_2uw17"]
+
+[sub_resource type="Animation" id="Animation_th87c"]
+resource_name = "talking"
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Text:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.16666667, -0.16666667, 0, 0),
+"times": PackedFloat32Array(0, 1)
+}
+
+[sub_resource type="Animation" id="Animation_g0dhb"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Text:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ucgjo"]
+_data = {
+&"RESET": SubResource("Animation_g0dhb"),
+&"talking": SubResource("Animation_th87c")
+}
+
+[node name="GirlTalkBox" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -747.0
+offset_top = -642.0
+offset_right = 1046.0
+offset_bottom = 594.0
+color = Color(1, 1, 1, 0)
+
+[node name="CloudImg" type="TextureRect" parent="."]
+offset_left = -212.0
+offset_top = -152.0
+offset_right = 1288.0
+offset_bottom = 1348.0
+scale = Vector2(0.28947076, 0.22472973)
+texture = ExtResource("1_81lya")
+
+[node name="Text" type="RichTextLabel" parent="."]
+offset_left = -82.0
+offset_top = -28.0
+offset_right = 100.0
+offset_bottom = 47.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("2_2uw17")
+theme_override_font_sizes/normal_font_size = 18
+text = "i love people they are
+ so nice and uplifting
+ yay yay yay"
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_ucgjo")
+}
