@@ -24,3 +24,4 @@ func _on_hide_pressed() -> void:
 
 func _on_hide_fail_pressed() -> void:
 	$fail_ping.play()
+	$Shake.play("shake")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://jpraix5hokpi"]
+[gd_scene load_steps=15 format=3 uid="uid://jpraix5hokpi"]
 
 [ext_resource type="Script" uid="uid://c5navywk44tjh" path="res://InterrogationRoom/Scenes/laptop.gd" id="1_xsinj"]
 [ext_resource type="Script" uid="uid://bent2seqmqsht" path="res://InterrogationRoom/Scenes/object.gd" id="2_5y0nm"]
@@ -6,7 +6,213 @@
 [ext_resource type="PackedScene" uid="uid://c5ywwd24lm2ih" path="res://InterrogationRoom/Scenes/window.tscn" id="3_xsinj"]
 [ext_resource type="Texture2D" uid="uid://dw7ubnogfdaev" path="res://StartRoom/images/paperrrr.jpg" id="4_5y0nm"]
 [ext_resource type="Texture2D" uid="uid://bqdh4r3tod5ff" path="res://StartRoom/images/Untitled.jpg" id="6_0qem7"]
-[ext_resource type="AudioStream" uid="uid://bx6crsrq8xc6g" path="res://Sound/sfx_intrigue.wav" id="7_7gy8r"]
+[ext_resource type="AudioStream" uid="uid://qpsy82dpgi7q" path="res://InterrogationRoom/sounds/computerfail.wav" id="7_7gy8r"]
+
+[sub_resource type="Animation" id="Animation_7gy8r"]
+resource_name = "shake"
+length = 0.338
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1.01, -0.034000587, -0.0016666652, 0, 0, 0.98, -0.0663821, 0.004999995, 0, 0, 1, -0.066283986, -0.0033333306, 0, 0),
+"times": PackedFloat32Array(0, 0.03333333, 0.07099649, 0.16666667)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1.01, -0.034000587, -0.0016666652, 0, 0, 0.98, -0.0663821, 0.004999995, 0, 0, 1, -0.066283986, -0.0033333306, 0, 0),
+"times": PackedFloat32Array(0, 0.03333333, 0.07099649, 0.17099647)
+}
+
+[sub_resource type="Animation" id="Animation_eq50e"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_q40cj"]
+resource_name = "popup"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_q40cj"]
+_data = {
+&"RESET": SubResource("Animation_eq50e"),
+&"popup": SubResource("Animation_q40cj"),
+&"shake": SubResource("Animation_7gy8r")
+}
+
+[sub_resource type="Animation" id="Animation_2savr"]
+resource_name = "popup"
+length = 0.313
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0.055, -0.25, 0, 0.25, 0, 1, -0.083498046, -0.15750001, 0, 0),
+"times": PackedFloat32Array(0, 0.3)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0.055, -0.25, 0, 0.25, 0, 1, -0.083498046, -0.15750001, 0, 0),
+"times": PackedFloat32Array(0, 0.3)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:modulate:r")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.083498046, 0, 0, 0),
+"times": PackedFloat32Array(0, 0.3)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:modulate:g")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.083498046, 0, 0, 0),
+"times": PackedFloat32Array(0, 0.3)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:modulate:b")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.083498046, 0, 0, 0),
+"times": PackedFloat32Array(0, 0.3)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".:modulate:a")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0.18039216, -0.25, 0, 0.25, 0, 1, -0.083498046, -0.13660131, 0, 0),
+"times": PackedFloat32Array(0, 0.3)
+}
+
+[sub_resource type="Animation" id="Animation_a2gbc"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.055, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.055, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:modulate:r")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:modulate:g")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:modulate:b")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".:modulate:a")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.18039216, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_w7ul5"]
+_data = {
+&"RESET": SubResource("Animation_a2gbc"),
+&"popup": SubResource("Animation_2savr")
+}
 
 [node name="Laptop" type="Node2D"]
 script = ExtResource("1_xsinj")
@@ -19,10 +225,11 @@ texture = ExtResource("2_xsinj")
 
 [node name="Object" type="TextureButton" parent="."]
 z_index = 1
-offset_left = 387.0
-offset_top = -467.0
-offset_right = 387.0
-offset_bottom = -467.0
+offset_left = 387.22
+offset_top = -462.0
+offset_right = 387.22
+offset_bottom = -462.0
+pivot_offset = Vector2(385.78, 753)
 script = ExtResource("2_5y0nm")
 
 [node name="TestWindow" parent="Object" instance=ExtResource("3_xsinj")]
@@ -56,11 +263,20 @@ stretch_mode = 0
 [node name="fail_ping" type="AudioStreamPlayer2D" parent="Object"]
 stream = ExtResource("7_7gy8r")
 
+[node name="Shake" type="AnimationPlayer" parent="Object"]
+libraries = {
+&"": SubResource("AnimationLibrary_q40cj")
+}
+
 [node name="Object2" type="TextureButton" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0.18039216)
 offset_left = 103.0
 offset_top = -393.0
 offset_right = 103.0
 offset_bottom = -393.0
+scale = Vector2(0.055, 0.055)
+pivot_offset = Vector2(386, 745)
 script = ExtResource("2_5y0nm")
 
 [node name="TestWindow" parent="Object2" instance=ExtResource("3_xsinj")]
@@ -91,7 +307,13 @@ scale = Vector2(0.0822321, 0.034027074)
 texture_normal = ExtResource("6_0qem7")
 stretch_mode = 0
 
+[node name="Popup" type="AnimationPlayer" parent="Object2"]
+libraries = {
+&"": SubResource("AnimationLibrary_w7ul5")
+}
+
 [connection signal="button_down" from="Object/TestWindow" to="." method="Object1"]
+[connection signal="coolpressed" from="Object/TestWindow" to="." method="_on_test_window_coolpressed"]
 [connection signal="button_down" from="Object/InteractMove" to="." method="Object1"]
 [connection signal="button_down" from="Object/InteractMove" to="Object" method="Down"]
 [connection signal="button_up" from="Object/InteractMove" to="Object" method="Up"]

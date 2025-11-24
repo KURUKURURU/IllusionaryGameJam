@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://cdu664noo2px5"]
+[gd_scene load_steps=27 format=3 uid="uid://cdu664noo2px5"]
 
 [ext_resource type="Script" uid="uid://dr861qg2gdbt7" path="res://InterrogationRoom/Scenes/interrogation_room.gd" id="1_uj5g0"]
 [ext_resource type="Texture2D" uid="uid://b8rtwhsrohsy1" path="res://InterrogationRoom/images/pngtree-pretty-girl-sitting-on-floor-fashionable-png-image_10124036.png" id="2_mcpkv"]
@@ -13,9 +13,13 @@
 [ext_resource type="PackedScene" uid="uid://67pbacp18qgo" path="res://StartRoom/scenes/file_book.tscn" id="8_4smtm"]
 [ext_resource type="PackedScene" uid="uid://bjp1b6hm65me1" path="res://Label/label.tscn" id="8_lasee"]
 [ext_resource type="Texture2D" uid="uid://cxijwnt76pu1f" path="res://InterrogationRoom/images/door.png" id="9_ie03x"]
-[ext_resource type="AudioStream" uid="uid://co1vuwcf10ohp" path="res://StartRoom/sounds/music3.wav" id="12_mcpkv"]
+[ext_resource type="AudioStream" uid="uid://cpjopblvvoe6u" path="res://StartRoom/sounds/mainmusic2.wav" id="12_mcpkv"]
 [ext_resource type="AudioStream" uid="uid://byffw1s080n6m" path="res://StartRoom/sounds/whoosh.wav" id="13_mcpkv"]
 [ext_resource type="PackedScene" uid="uid://cnb21alh73jw4" path="res://textbox/scenes/talking_box.tscn" id="15_14rqj"]
+[ext_resource type="AudioStream" uid="uid://b3xs4ppsu0qkw" path="res://InterrogationRoom/sounds/sillygoofymusic.wav" id="15_68v1o"]
+[ext_resource type="AudioStream" path="res://InterrogationRoom/sounds/686823__erokia__ambient-wave-75.wav" id="15_mb0wk"]
+[ext_resource type="AudioStream" uid="uid://djjlvy68f5mnw" path="res://InterrogationRoom/sounds/museclick.wav" id="17_1us7v"]
+[ext_resource type="PackedScene" uid="uid://jpraix5hokpi" path="res://InterrogationRoom/Scenes/laptop.tscn" id="17_4jnty"]
 
 [sub_resource type="Animation" id="Animation_m2gn2"]
 length = 0.001
@@ -249,7 +253,6 @@ bus = &"SFX"
 [node name="paper" type="AudioStreamPlayer2D" parent="Node2D/Table/FilesNotes"]
 position = Vector2(662, 175)
 stream = ExtResource("7_mcpkv")
-autoplay = true
 bus = &"SFX"
 
 [node name="Ipad" type="TextureButton" parent="Node2D/Table"]
@@ -310,9 +313,21 @@ offset_bottom = 649.0
 [node name="MainMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("12_mcpkv")
 volume_db = -12.404
-pitch_scale = 1.5
+pitch_scale = 0.58
 autoplay = true
 bus = &"Music"
+
+[node name="CompMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("15_68v1o")
+volume_db = -15.169
+pitch_scale = 1.2
+autoplay = true
+bus = &"Music"
+
+[node name="SFXGeneral" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("15_mb0wk")
+autoplay = true
+bus = &"SFX"
 
 [node name="Whoosh" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(565, 674)
@@ -320,8 +335,18 @@ stream = ExtResource("13_mcpkv")
 pitch_scale = 0.26
 bus = &"SFX"
 
+[node name="Click" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(571, 592)
+stream = ExtResource("17_1us7v")
+volume_db = -23.094
+pitch_scale = 1.48
+bus = &"SFX"
+
 [node name="TalkingBox" parent="." instance=ExtResource("15_14rqj")]
 position = Vector2(1, -30)
+
+[node name="Laptop" parent="." instance=ExtResource("17_4jnty")]
+visible = false
 
 [connection signal="pressed" from="Node2D/girl/one" to="." method="IfStartTalking"]
 [connection signal="mouse_entered" from="Node2D/Table/FilesNotes" to="." method="files_mousetouch"]
