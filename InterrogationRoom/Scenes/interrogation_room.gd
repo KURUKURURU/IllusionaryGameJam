@@ -21,12 +21,12 @@ func _process(delta: float) -> void:
 			$FileBook.show()
 	
 	if $Laptop.visible:
-		
+		$Laptop/CanvasLayer/bott.show()
 		if Input.is_action_just_pressed("click"):
 			$Click.play()
 		
 		$MainMusic.stop()
-		$SFXGeneral.stop()
+		
 		if !$CompMusic.playing:
 			$CompMusic.play()
 		
@@ -36,10 +36,11 @@ func _process(delta: float) -> void:
 			$Laptop.hide()
 		
 	elif !$Laptop.visible:
+		$Laptop/CanvasLayer/bott.hide()
 		$CompMusic.stop()
-		if !$MainMusic.playing and !$SFXGeneral.playing:
+		if !$MainMusic.playing:
 			$MainMusic.play()
-			$SFXGeneral.play()
+			
 		$Label/ColorRect.color = Color(0.0, 0.0, 0.0, 1.0)
 	
 	if $FileBook.visible:

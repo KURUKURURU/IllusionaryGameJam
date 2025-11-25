@@ -1,0 +1,54 @@
+[gd_scene load_steps=4 format=3 uid="uid://dsuyq8erds3tg"]
+
+[ext_resource type="Texture2D" uid="uid://cwv04lcx0dxvf" path="res://InterrogationRoom/images/a16efc4767f048766f9c761c6f608b7a.jpg" id="1_qpapg"]
+[ext_resource type="Texture2D" uid="uid://bab2ogwf4o5no" path="res://Start_Menu/images/ph/vector-cogs-symbol-on-white-background-settings-icon-illustration.jpg" id="2_ohigq"]
+[ext_resource type="AudioStream" uid="uid://bx6crsrq8xc6g" path="res://Sound/sfx_intrigue.wav" id="3_xuch3"]
+
+[node name="MapWindow" type="TextureButton"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 749.0
+offset_bottom = 537.0
+color = Color(0.4509804, 0, 0.4509804, 0.11372549)
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 0
+offset_right = 735.0
+offset_bottom = 1500.0
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 0
+
+[node name="Page1" type="VBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 2
+
+[node name="Webpage" type="TextureRect" parent="ScrollContainer/Page1"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 2
+texture = ExtResource("1_qpapg")
+
+[node name="Control" type="Control" parent="ScrollContainer"]
+custom_minimum_size = Vector2(0, 1500)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 2
+
+[node name="marker_job" type="TextureButton" parent="ScrollContainer/Control"]
+layout_mode = 0
+offset_left = 183.0
+offset_top = 225.0
+offset_right = 852.6538
+offset_bottom = 872.0813
+scale = Vector2(0.13290448, 0.13290448)
+texture_hover = ExtResource("2_ohigq")
+stretch_mode = 0
+
+[node name="ping" type="AudioStreamPlayer2D" parent="ScrollContainer/Control/marker_job"]
+stream = ExtResource("3_xuch3")
+volume_db = -20.194
+pitch_scale = 2.55

@@ -10,7 +10,8 @@ func wait(seconds: float) -> void:
 
 
 func _ready() -> void:
-	$Label/ColorRect.color = Color(1.0, 1.0, 1.0, 1.0)
+	$Briefcase.play("close")
+	$Label/ColorRect.hide()
 	$Label/Text.add_theme_color_override("default_color", Color(0.0, 0.0, 0.0, 1.0))
 	$SettingsPanel.hide()
 	
@@ -35,17 +36,21 @@ func click_handle() -> void:
 func _openHandle(): 
 	$Briefcase/Handle.hide()
 	
-	await wait(0.75)
+	#await wait(0.75)
 	$Briefcase/click.play()
-	$Briefcase/Texture.play("Briefcase/open")
+	await wait(0.25)
+	$Briefcase.play("open")
 	
+	await $Briefcase.animation_finished
+	$Briefcase.stop()
+	$Briefcase.play("default")
 	$Node2D.show()
 	
 func _closeHandle():
 	$Node2D.hide()
 	
 	$Briefcase/Handle.show()
-	$Briefcase/Texture.play("Briefcase/close")
+	$Briefcase.play("close")
 
 
 

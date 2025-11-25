@@ -1,22 +1,31 @@
-[gd_scene load_steps=5 format=3 uid="uid://c5ywwd24lm2ih"]
+[gd_scene load_steps=8 format=3 uid="uid://c5ywwd24lm2ih"]
 
-[ext_resource type="Texture2D" uid="uid://cpjhbfxg52543" path="res://StartRoom/images/idhover.png" id="1_l3go5"]
 [ext_resource type="Script" uid="uid://8y8moatunt74" path="res://InterrogationRoom/Scenes/window.gd" id="1_tcpfg"]
-[ext_resource type="Texture2D" uid="uid://bkqv5mmp0ataj" path="res://images/icon.jpg" id="2_hdrwg"]
+[ext_resource type="Texture2D" uid="uid://b37cqjg1xcof8" path="res://InterrogationRoom/images/pages/home page.png" id="2_2fiki"]
+[ext_resource type="Texture2D" uid="uid://b250yj7mqj0wb" path="res://InterrogationRoom/images/i-am-a-frutiger-aero-button-ask-me-anything-v0-cldgmt7pe2yb1.webp" id="3_weeyy"]
 [ext_resource type="AudioStream" uid="uid://bx6crsrq8xc6g" path="res://Sound/sfx_intrigue.wav" id="4_2fiki"]
+[ext_resource type="Texture2D" uid="uid://dw7ubnogfdaev" path="res://StartRoom/images/paperrrr.jpg" id="5_weeyy"]
+[ext_resource type="FontFile" uid="uid://cjwu65abufay6" path="res://Fonts/charybdis/chary___.ttf" id="6_qh5xi"]
+[ext_resource type="Texture2D" uid="uid://df0bgfh3fx8mg" path="res://InterrogationRoom/images/pages/herpage.png" id="7_qh5xi"]
 
 [node name="Window" type="TextureButton"]
 script = ExtResource("1_tcpfg")
 
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 420.0
+offset_bottom = 427.0
+color = Color(0.4509804, 0, 0.4509804, 0.11372549)
+
 [node name="PH" type="ColorRect" parent="."]
 layout_mode = 0
-offset_right = 54.0
+offset_right = 43.714287
 offset_bottom = 48.41129
 scale = Vector2(9.333333, 8.551724)
 
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
 layout_mode = 0
-offset_right = 500.98334
+offset_right = 407.0
 offset_bottom = 413.0
 
 [node name="Page1" type="VBoxContainer" parent="ScrollContainer"]
@@ -26,11 +35,9 @@ size_flags_vertical = 2
 
 [node name="Webpage" type="TextureRect" parent="ScrollContainer/Page1"]
 layout_mode = 2
-texture = ExtResource("1_l3go5")
-
-[node name="Webpage2" type="TextureRect" parent="ScrollContainer/Page1"]
-layout_mode = 2
-texture = ExtResource("1_l3go5")
+size_flags_horizontal = 0
+size_flags_vertical = 2
+texture = ExtResource("2_2fiki")
 
 [node name="Control" type="Control" parent="ScrollContainer"]
 custom_minimum_size = Vector2(0, 1500)
@@ -38,16 +45,99 @@ layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 2
 
-[node name="advance" type="TextureButton" parent="ScrollContainer/Control"]
+[node name="bookmark1" type="TextureButton" parent="ScrollContainer/Control"]
 layout_mode = 0
-offset_left = 291.0
-offset_top = 257.0
-offset_right = 803.0
-offset_bottom = 769.0
+offset_left = 92.0
+offset_top = 390.0
+offset_right = 1657.0339
+offset_bottom = 902.0
 scale = Vector2(0.13290448, 0.13290448)
-texture_normal = ExtResource("2_hdrwg")
+texture_normal = ExtResource("3_weeyy")
+stretch_mode = 0
 
-[node name="ping" type="AudioStreamPlayer2D" parent="ScrollContainer/Control/advance"]
+[node name="ping" type="AudioStreamPlayer2D" parent="ScrollContainer/Control/bookmark1"]
 stream = ExtResource("4_2fiki")
+volume_db = -20.194
+pitch_scale = 2.55
 
-[connection signal="pressed" from="ScrollContainer/Control/advance" to="." method="_on_advance_pressed"]
+[node name="notes" type="ScrollContainer" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 407.0
+offset_bottom = 413.0
+horizontal_scroll_mode = 3
+
+[node name="Control" type="Control" parent="notes"]
+custom_minimum_size = Vector2(0, 1500)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 2
+
+[node name="Webpage" type="TextureRect" parent="notes/Control"]
+layout_mode = 0
+offset_right = 600.0
+offset_bottom = 735.0
+scale = Vector2(0.6763154, 0.6763154)
+size_flags_horizontal = 0
+size_flags_vertical = 2
+texture = ExtResource("5_weeyy")
+
+[node name="text1" type="RichTextLabel" parent="notes/Control"]
+layout_mode = 0
+offset_left = 95.0
+offset_top = 56.0
+offset_right = 325.0
+offset_bottom = 93.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("6_qh5xi")
+text = "sigma sigma boi sigma boi"
+
+[node name="advance" type="TextureButton" parent="notes/Control"]
+layout_mode = 0
+offset_left = 83.99997
+offset_top = 55.0
+offset_right = 1025.9683
+offset_bottom = 567.0
+scale = Vector2(0.21338303, 0.041172642)
+
+[node name="ping" type="AudioStreamPlayer2D" parent="notes/Control/advance"]
+stream = ExtResource("4_2fiki")
+volume_db = -20.194
+pitch_scale = 2.55
+
+[node name="VictimPage" type="ScrollContainer" parent="."]
+layout_mode = 0
+offset_right = 407.0
+offset_bottom = 413.0
+horizontal_scroll_mode = 3
+
+[node name="Control" type="Control" parent="VictimPage"]
+custom_minimum_size = Vector2(0, 1500)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 2
+
+[node name="Webpage" type="TextureRect" parent="VictimPage/Control"]
+layout_mode = 0
+offset_right = 400.0
+offset_bottom = 650.0
+size_flags_horizontal = 0
+size_flags_vertical = 2
+texture = ExtResource("7_qh5xi")
+
+[node name="homebutt" type="TextureButton" parent="VictimPage/Control"]
+layout_mode = 0
+offset_left = 304.0
+offset_top = 77.0
+offset_right = 1245.9683
+offset_bottom = 589.0
+scale = Vector2(0.033879746, 0.059929207)
+
+[node name="ping" type="AudioStreamPlayer2D" parent="VictimPage/Control/homebutt"]
+stream = ExtResource("4_2fiki")
+volume_db = -20.194
+pitch_scale = 2.55
+
+[connection signal="pressed" from="ScrollContainer/Control/bookmark1" to="." method="_on_bookmark_1_pressed"]
+[connection signal="pressed" from="notes/Control/advance" to="." method="_on_advance_pressed"]
+[connection signal="pressed" from="VictimPage/Control/homebutt" to="." method="_on_homebutt_pressed"]

@@ -1,12 +1,14 @@
-[gd_scene load_steps=15 format=3 uid="uid://jpraix5hokpi"]
+[gd_scene load_steps=17 format=3 uid="uid://jpraix5hokpi"]
 
 [ext_resource type="Script" uid="uid://c5navywk44tjh" path="res://InterrogationRoom/Scenes/laptop.gd" id="1_xsinj"]
 [ext_resource type="Script" uid="uid://bent2seqmqsht" path="res://InterrogationRoom/Scenes/object.gd" id="2_5y0nm"]
-[ext_resource type="Texture2D" uid="uid://30dx3dhdg3wj" path="res://InterrogationRoom/images/4lA45Rp0dtl2OAzQkPzEHA_b.jpg" id="2_xsinj"]
+[ext_resource type="Texture2D" uid="uid://d1rwu04yhtijn" path="res://InterrogationRoom/images/fffhfhfg.png" id="2_7gy8r"]
 [ext_resource type="PackedScene" uid="uid://c5ywwd24lm2ih" path="res://InterrogationRoom/Scenes/window.tscn" id="3_xsinj"]
 [ext_resource type="Texture2D" uid="uid://dw7ubnogfdaev" path="res://StartRoom/images/paperrrr.jpg" id="4_5y0nm"]
 [ext_resource type="Texture2D" uid="uid://bqdh4r3tod5ff" path="res://StartRoom/images/Untitled.jpg" id="6_0qem7"]
 [ext_resource type="AudioStream" uid="uid://qpsy82dpgi7q" path="res://InterrogationRoom/sounds/computerfail.wav" id="7_7gy8r"]
+[ext_resource type="Texture2D" uid="uid://bnuyvrw16p2d7" path="res://InterrogationRoom/images/bottomcomp.png" id="8_eq50e"]
+[ext_resource type="PackedScene" uid="uid://dsuyq8erds3tg" path="res://InterrogationRoom/Scenes/MapWindow.tscn" id="9_q40cj"]
 
 [sub_resource type="Animation" id="Animation_7gy8r"]
 resource_name = "shake"
@@ -220,8 +222,8 @@ script = ExtResource("1_xsinj")
 [node name="DesktopHome" type="TextureRect" parent="."]
 offset_right = 1024.0
 offset_bottom = 576.0
-scale = Vector2(1.1253928, 1.1253928)
-texture = ExtResource("2_xsinj")
+scale = Vector2(0.9982663, 0.9982663)
+texture = ExtResource("2_7gy8r")
 
 [node name="Object" type="TextureButton" parent="."]
 z_index = 1
@@ -234,29 +236,29 @@ script = ExtResource("2_5y0nm")
 
 [node name="TestWindow" parent="Object" instance=ExtResource("3_xsinj")]
 layout_mode = 0
-offset_left = 138.0
+offset_left = 137.99997
 offset_top = 534.0
-offset_right = 138.0
+offset_right = 137.99997
 offset_bottom = 534.0
 
 [node name="InteractMove" type="TextureButton" parent="Object"]
 self_modulate = Color(0.2653661, 0.5013961, 1, 1)
 layout_mode = 0
-offset_left = 133.0
-offset_top = 531.0
-offset_right = 733.0
-offset_bottom = 1266.0
-scale = Vector2(0.8510616, 0.034027074)
+offset_left = 137.78003
+offset_top = 509.99994
+offset_right = 737.78
+offset_bottom = 1245.0
+scale = Vector2(0.60099095, 0.0334638)
 texture_normal = ExtResource("4_5y0nm")
 
 [node name="HideFail" type="TextureButton" parent="Object"]
 self_modulate = Color(0.38392693, 0, 0.017539086, 1)
 layout_mode = 0
-offset_left = 590.00006
-offset_top = 531.0
-offset_right = 1190.0
-offset_bottom = 1266.0
-scale = Vector2(0.0822321, 0.034027074)
+offset_left = 493.78003
+offset_top = 509.0
+offset_right = 1093.78
+offset_bottom = 1244.0
+scale = Vector2(0.08597288, 0.034027074)
 texture_normal = ExtResource("6_0qem7")
 stretch_mode = 0
 
@@ -269,12 +271,11 @@ libraries = {
 }
 
 [node name="Object2" type="TextureButton" parent="."]
-visible = false
 modulate = Color(1, 1, 1, 0.18039216)
-offset_left = 103.0
-offset_top = -393.0
-offset_right = 103.0
-offset_bottom = -393.0
+offset_left = -123.0
+offset_top = -385.0
+offset_right = -123.0
+offset_bottom = -385.0
 scale = Vector2(0.055, 0.055)
 pivot_offset = Vector2(386, 745)
 script = ExtResource("2_5y0nm")
@@ -289,20 +290,20 @@ offset_bottom = 534.0
 [node name="InteractMove" type="TextureButton" parent="Object2"]
 self_modulate = Color(0.2653661, 0.5013961, 1, 1)
 layout_mode = 0
-offset_left = 133.0
-offset_top = 531.0
-offset_right = 733.0
-offset_bottom = 1266.0
-scale = Vector2(0.8510616, 0.034027074)
+offset_left = 138.00002
+offset_top = 510.0
+offset_right = 738.0
+offset_bottom = 1245.0
+scale = Vector2(0.59861904, 0.034027074)
 texture_normal = ExtResource("4_5y0nm")
 
 [node name="Hide" type="TextureButton" parent="Object2"]
 self_modulate = Color(0.38392693, 0, 0.017539086, 1)
 layout_mode = 0
-offset_left = 590.00006
-offset_top = 531.0
-offset_right = 1190.0
-offset_bottom = 1266.0
+offset_left = 496.99997
+offset_top = 510.00003
+offset_right = 1097.0
+offset_bottom = 1245.0
 scale = Vector2(0.0822321, 0.034027074)
 texture_normal = ExtResource("6_0qem7")
 stretch_mode = 0
@@ -312,8 +313,72 @@ libraries = {
 &"": SubResource("AnimationLibrary_w7ul5")
 }
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="bott" type="TextureRect" parent="CanvasLayer"]
+offset_top = 610.0
+offset_right = 1150.0
+offset_bottom = 651.0
+texture = ExtResource("8_eq50e")
+
+[node name="Object3" type="TextureButton" parent="."]
+visible = false
+z_index = 1
+offset_left = 387.22
+offset_top = -462.0
+offset_right = 387.22
+offset_bottom = -462.0
+pivot_offset = Vector2(385.78, 753)
+script = ExtResource("2_5y0nm")
+
+[node name="MapWindow" parent="Object3" instance=ExtResource("9_q40cj")]
+layout_mode = 0
+offset_left = -256.22
+offset_top = 543.0
+offset_right = -256.22
+offset_bottom = 543.0
+
+[node name="InteractMove" type="TextureButton" parent="Object3"]
+self_modulate = Color(0.2653661, 0.5013961, 1, 1)
+layout_mode = 0
+offset_left = -256.22
+offset_top = 518.0
+offset_right = 900.20337
+offset_bottom = 1253.0
+scale = Vector2(0.60099095, 0.0334638)
+texture_normal = ExtResource("4_5y0nm")
+stretch_mode = 0
+
+[node name="fail_ping" type="AudioStreamPlayer2D" parent="Object3"]
+stream = ExtResource("7_7gy8r")
+
+[node name="Popup" type="AnimationPlayer" parent="Object3"]
+root_node = NodePath("")
+libraries = {
+&"": SubResource("AnimationLibrary_w7ul5")
+}
+
+[node name="Hide" type="TextureButton" parent="Object3"]
+self_modulate = Color(0.38392693, 0, 0.017539086, 1)
+layout_mode = 0
+offset_left = 429.78
+offset_top = 518.0
+offset_right = 1029.78
+offset_bottom = 1253.0
+scale = Vector2(0.0822321, 0.034027074)
+texture_normal = ExtResource("6_0qem7")
+stretch_mode = 0
+
+[node name="maps" type="TextureButton" parent="."]
+offset_left = 23.0
+offset_top = 18.0
+offset_right = 96.0
+offset_bottom = 88.0
+
+[connection signal="button_down" from="Object" to="." method="Object1"]
 [connection signal="button_down" from="Object/TestWindow" to="." method="Object1"]
 [connection signal="coolpressed" from="Object/TestWindow" to="." method="_on_test_window_coolpressed"]
+[connection signal="pressed" from="Object/TestWindow" to="." method="Object1"]
 [connection signal="button_down" from="Object/InteractMove" to="." method="Object1"]
 [connection signal="button_down" from="Object/InteractMove" to="Object" method="Down"]
 [connection signal="button_up" from="Object/InteractMove" to="Object" method="Up"]
@@ -321,8 +386,15 @@ libraries = {
 [connection signal="button_down" from="Object/HideFail" to="Object" method="Down"]
 [connection signal="button_up" from="Object/HideFail" to="Object" method="Up"]
 [connection signal="pressed" from="Object/HideFail" to="Object" method="_on_hide_fail_pressed"]
+[connection signal="button_down" from="Object2" to="." method="Object2"]
+[connection signal="bookmark1" from="Object2/TestWindow" to="." method="_on_test_window_bookmark_1"]
 [connection signal="button_down" from="Object2/TestWindow" to="." method="Object2"]
+[connection signal="homebutt" from="Object2/TestWindow" to="." method="_on_test_window_homebutt"]
 [connection signal="button_down" from="Object2/InteractMove" to="." method="Object2"]
 [connection signal="button_down" from="Object2/InteractMove" to="Object2" method="Down"]
 [connection signal="button_up" from="Object2/InteractMove" to="Object2" method="Up"]
 [connection signal="pressed" from="Object2/Hide" to="Object2" method="_on_hide_pressed"]
+[connection signal="button_down" from="Object3/InteractMove" to="Object3" method="Down"]
+[connection signal="button_up" from="Object3/InteractMove" to="Object3" method="Up"]
+[connection signal="pressed" from="Object3/Hide" to="." method="_on_hide_pressed"]
+[connection signal="pressed" from="maps" to="." method="_on_maps_pressed"]

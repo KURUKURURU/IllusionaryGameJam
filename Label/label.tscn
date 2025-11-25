@@ -7,7 +7,7 @@
 offset_right = 40.0
 offset_bottom = 40.0
 scale = Vector2(4.114397, 0.9774835)
-color = Color(0, 0, 0, 1)
+color = Color(0, 0, 0, 0)
 script = ExtResource("1_a3yin")
 
 [node name="ColorRect" type="ColorRect" parent="."]
