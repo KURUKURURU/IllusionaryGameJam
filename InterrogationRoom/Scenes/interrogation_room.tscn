@@ -346,7 +346,7 @@ bus = &"SFX"
 position = Vector2(1, -30)
 
 [node name="Laptop" parent="." instance=ExtResource("17_4jnty")]
-visible = false
+scale = Vector2(1.0065355, 1.0065355)
 
 [connection signal="pressed" from="Node2D/girl/one" to="." method="IfStartTalking"]
 [connection signal="mouse_entered" from="Node2D/Table/FilesNotes" to="." method="files_mousetouch"]

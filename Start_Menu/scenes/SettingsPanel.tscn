@@ -1,9 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://bmeglpnch1rg5"]
+[gd_scene load_steps=5 format=3 uid="uid://bmeglpnch1rg5"]
 
 [ext_resource type="Texture2D" uid="uid://dlaq3f3hiu07f" path="res://images/godotwaka.png" id="1_etaka"]
 [ext_resource type="Script" uid="uid://miccxoqn6mvh" path="res://Start_Menu/scenes/settings_panel.gd" id="1_f3gv0"]
 [ext_resource type="Script" uid="uid://clt0c3y0am13e" path="res://Start_Menu/music.gd" id="2_0txog"]
-[ext_resource type="AudioStream" uid="uid://cugvuvlllbbnr" path="res://Sound/mysterytheme.wav" id="4_eoahk"]
 [ext_resource type="AudioStream" uid="uid://bx6crsrq8xc6g" path="res://Sound/sfx_intrigue.wav" id="5_uxpx6"]
 
 [node name="SettingsPanel" type="Node2D"]
@@ -71,7 +70,6 @@ offset_bottom = 212.4412
 text = "All"
 
 [node name="MusicTest" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("4_eoahk")
 bus = &"Music"
 
 [node name="SFXTest" type="AudioStreamPlayer" parent="."]
