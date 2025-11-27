@@ -55,7 +55,7 @@ func _ready() -> void:
 	$FileBook.hide()
 	$Laptop.hide()
 	$TalkingBox.hide()
-	$Node2D/girl/GirlTalkBox.hide()
+	$Node2D/girl/Control/GirlTalkBox.hide()
 	$DOWN.show()
 
 

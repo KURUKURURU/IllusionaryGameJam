@@ -1,7 +1,7 @@
 [gd_scene load_steps=27 format=3 uid="uid://cdu664noo2px5"]
 
 [ext_resource type="Script" uid="uid://dr861qg2gdbt7" path="res://InterrogationRoom/Scenes/interrogation_room.gd" id="1_uj5g0"]
-[ext_resource type="Texture2D" uid="uid://b8rtwhsrohsy1" path="res://InterrogationRoom/images/pngtree-pretty-girl-sitting-on-floor-fashionable-png-image_10124036.png" id="2_mcpkv"]
+[ext_resource type="Texture2D" uid="uid://cj41ggjqtsrek" path="res://InterrogationRoom/images/testpng.png" id="2_68v1o"]
 [ext_resource type="Texture2D" uid="uid://bqdh4r3tod5ff" path="res://StartRoom/images/Untitled.jpg" id="2_uj5g0"]
 [ext_resource type="PackedScene" uid="uid://b1b0mma0chsct" path="res://textbox/scenes/girl_talk_box.tscn" id="3_3gh6q"]
 [ext_resource type="Texture2D" uid="uid://db6guwp3hvp1y" path="res://InterrogationRoom/images/Screenshot 2025-11-23 at 9.04.27 PM.png" id="4_4smtm"]
@@ -210,22 +210,30 @@ position = Vector2(0, 4)
 [node name="ColorRect" type="ColorRect" parent="Node2D"]
 offset_right = 1153.0
 offset_bottom = 742.0
+color = Color(0.39475074, 0.37043986, 0.5441261, 1)
 
 [node name="girl" type="Sprite2D" parent="Node2D"]
-position = Vector2(403, 604)
-scale = Vector2(1.9116682, 1.9116682)
-texture = ExtResource("2_mcpkv")
+position = Vector2(605.99994, 341)
+scale = Vector2(0.89786506, 0.89786506)
+texture = ExtResource("2_68v1o")
 
-[node name="one" type="TextureButton" parent="Node2D/girl"]
-offset_left = -46.55623
-offset_top = -274.10614
-offset_right = -6.5562286
-offset_bottom = -234.10614
-scale = Vector2(3.8700469, 6.6398535)
+[node name="Control" type="Control" parent="Node2D/girl"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
-[node name="GirlTalkBox" parent="Node2D/girl" instance=ExtResource("3_3gh6q")]
-position = Vector2(229.64232, -236.44272)
-scale = Vector2(0.6105126, 0.6105126)
+[node name="one" type="TextureButton" parent="Node2D/girl/Control"]
+layout_mode = 0
+offset_left = -397.6098
+offset_top = -319.6472
+offset_right = -357.6098
+offset_bottom = -279.6472
+scale = Vector2(10.944323, 18.907867)
+
+[node name="GirlTalkBox" parent="Node2D/girl/Control" instance=ExtResource("3_3gh6q")]
+position = Vector2(229.64227, -236.44272)
+scale = Vector2(1.1918192, 1.1918192)
 
 [node name="Table" type="TextureRect" parent="Node2D"]
 offset_left = -12.0
@@ -343,12 +351,14 @@ pitch_scale = 1.48
 bus = &"SFX"
 
 [node name="TalkingBox" parent="." instance=ExtResource("15_14rqj")]
+visible = false
 position = Vector2(1, -30)
 
 [node name="Laptop" parent="." instance=ExtResource("17_4jnty")]
+visible = false
 scale = Vector2(1.0065355, 1.0065355)
 
-[connection signal="pressed" from="Node2D/girl/one" to="." method="IfStartTalking"]
+[connection signal="pressed" from="Node2D/girl/Control/one" to="." method="IfStartTalking"]
 [connection signal="mouse_entered" from="Node2D/Table/FilesNotes" to="." method="files_mousetouch"]
 [connection signal="mouse_exited" from="Node2D/Table/FilesNotes" to="." method="files_mouseleave"]
 [connection signal="pressed" from="UP" to="." method="UP"]

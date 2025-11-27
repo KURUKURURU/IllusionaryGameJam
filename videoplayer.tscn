@@ -1,0 +1,53 @@
+[gd_scene load_steps=5 format=3 uid="uid://dnnka5th1gldj"]
+
+[ext_resource type="Script" uid="uid://dy5blwtq72x4p" path="res://test.gd" id="1_8uh7m"]
+[ext_resource type="Texture2D" uid="uid://35jufsg3n6v7" path="res://InterrogationRoom/images/Screenshot 2025-11-26 at 10.42.04 AM.png" id="2_malmy"]
+[ext_resource type="Texture2D" uid="uid://bl15a2v6n4cn0" path="res://InterrogationRoom/images/Screenshot 2025-11-26 at 10.42.02 AM.png" id="3_h1h35"]
+
+[sub_resource type="VideoStreamTheora" id="VideoStreamTheora_mf4mk"]
+file = "test.ogv"
+
+[node name="videoplayer" type="Node2D"]
+script = ExtResource("1_8uh7m")
+
+[node name="video" type="VideoStreamPlayer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.5372302, 0.5372302)
+stream = SubResource("VideoStreamTheora_mf4mk")
+volume_db = -80.0
+autoplay = true
+loop = true
+
+[node name="pause" type="TextureButton" parent="."]
+offset_top = 577.00006
+offset_right = 256.98984
+offset_bottom = 810.92645
+scale = Vector2(0.30351397, 0.30351397)
+texture_normal = ExtResource("2_malmy")
+ignore_texture_size = true
+
+[node name="unpause" type="TextureButton" parent="."]
+offset_top = 577.00006
+offset_right = 256.98984
+offset_bottom = 814.2211
+scale = Vector2(0.30351397, 0.30351397)
+texture_normal = ExtResource("3_h1h35")
+ignore_texture_size = true
+
+[node name="ColorRect" type="ColorRect" parent="unpause"]
+layout_mode = 0
+offset_top = -1891.1816
+offset_right = 3393.5837
+offset_bottom = 40.0
+color = Color(0.4627451, 0.4627451, 0.4627451, 0.4862745)
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = 78.0
+offset_top = 579.0
+offset_right = 114.73412
+offset_bottom = 619.0
+scale = Vector2(25.970406, 1.7755648)
+
+[connection signal="pressed" from="pause" to="." method="_on_pause_pressed"]
+[connection signal="pressed" from="unpause" to="." method="_on_unpause_pressed"]

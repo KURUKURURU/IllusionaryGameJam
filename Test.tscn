@@ -1,3 +1,42 @@
-[gd_scene format=3 uid="uid://dnnka5th1gldj"]
+[gd_scene load_steps=4 format=3 uid="uid://d1gn1prnmi4n4"]
 
-[node name="Test" type="Node2D"]
+[ext_resource type="Script" uid="uid://dy5blwtq72x4p" path="res://test.gd" id="1_8uh7m"]
+[ext_resource type="Texture2D" uid="uid://cpjhbfxg52543" path="res://StartRoom/images/idhover.png" id="2_6uqi0"]
+
+[sub_resource type="VideoStreamTheora" id="VideoStreamTheora_mf4mk"]
+file = "test.ogv"
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_8uh7m")
+
+[node name="video" type="VideoStreamPlayer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.5372302, 0.5372302)
+stream = SubResource("VideoStreamTheora_mf4mk")
+autoplay = true
+
+[node name="pause" type="TextureButton" parent="."]
+offset_top = 577.00006
+offset_right = 480.0
+offset_bottom = 877.00006
+scale = Vector2(0.23933388, 0.23933388)
+texture_normal = ExtResource("2_6uqi0")
+
+[node name="unpause" type="TextureButton" parent="."]
+visible = false
+offset_top = 577.00006
+offset_right = 480.0
+offset_bottom = 877.00006
+scale = Vector2(0.23933388, 0.23933388)
+texture_normal = ExtResource("2_6uqi0")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = 111.0
+offset_top = 579.0
+offset_right = 151.0
+offset_bottom = 619.0
+scale = Vector2(25.970406, 1.7755648)
+
+[connection signal="pressed" from="pause" to="." method="_on_pause_pressed"]
+[connection signal="pressed" from="unpause" to="." method="_on_unpause_pressed"]

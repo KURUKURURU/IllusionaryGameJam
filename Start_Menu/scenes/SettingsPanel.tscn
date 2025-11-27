@@ -1,25 +1,121 @@
-[gd_scene load_steps=5 format=3 uid="uid://bmeglpnch1rg5"]
+[gd_scene load_steps=21 format=3 uid="uid://bmeglpnch1rg5"]
 
-[ext_resource type="Texture2D" uid="uid://dlaq3f3hiu07f" path="res://images/godotwaka.png" id="1_etaka"]
 [ext_resource type="Script" uid="uid://miccxoqn6mvh" path="res://Start_Menu/scenes/settings_panel.gd" id="1_f3gv0"]
 [ext_resource type="Script" uid="uid://clt0c3y0am13e" path="res://Start_Menu/music.gd" id="2_0txog"]
-[ext_resource type="AudioStream" uid="uid://bx6crsrq8xc6g" path="res://Sound/sfx_intrigue.wav" id="5_uxpx6"]
+[ext_resource type="Texture2D" uid="uid://dq1dma36mbjgu" path="res://Start_Menu/images/settingsframes/1.png" id="2_3bcrs"]
+[ext_resource type="Texture2D" uid="uid://bcs2v4nhg14lu" path="res://Start_Menu/images/settingsframes/2.png" id="3_rhmlg"]
+[ext_resource type="Texture2D" uid="uid://c0d1kw8bnnh3q" path="res://Start_Menu/images/settingsframes/3.png" id="4_wba7r"]
+[ext_resource type="Texture2D" uid="uid://cgia60mq2i1qt" path="res://Start_Menu/images/settingsframes/4.png" id="5_brky1"]
+[ext_resource type="AudioStream" uid="uid://d2j4fcw5qh3g3" path="res://Start_Menu/sound/settings.wav" id="5_f3gv0"]
+[ext_resource type="Texture2D" uid="uid://c31y0lfx616pc" path="res://Start_Menu/images/settingsframes/5.png" id="6_kwodi"]
+[ext_resource type="Texture2D" uid="uid://cavc06ohqasb0" path="res://Start_Menu/images/settingsframes/6.png" id="7_i850h"]
+[ext_resource type="Texture2D" uid="uid://v3wq5seaxkhc" path="res://Start_Menu/images/settingsframes/ticker.png" id="8_rhmlg"]
+[ext_resource type="FontFile" uid="uid://cddaurpo15jrm" path="res://Fonts/toriswriting-font/Toriswriting-qD85.ttf" id="9_vus1m"]
+[ext_resource type="AudioStream" uid="uid://bufq58qg32yx3" path="res://Start_Menu/sound/cogs.mp3" id="11_rhmlg"]
+[ext_resource type="Texture2D" uid="uid://bl15a2v6n4cn0" path="res://InterrogationRoom/images/Screenshot 2025-11-26 at 10.42.02 AM.png" id="11_v08p8"]
+[ext_resource type="Texture2D" uid="uid://dhncu2rvbbpbu" path="res://Start_Menu/images/settingsframes/exitbutt.png" id="13_wba7r"]
+[ext_resource type="Texture2D" uid="uid://1rlv3gng73av" path="res://Start_Menu/images/settingsframes/butthover.png" id="14_brky1"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dxber"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_3bcrs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_rhmlg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_wba7r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_brky1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_kwodi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_i850h")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_3bcrs")
+}],
+"loop": true,
+"name": &"still",
+"speed": 5.0
+}]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_rhmlg"]
+thickness = 6
+
+[sub_resource type="Animation" id="Animation_wba7r"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_rhmlg"]
+resource_name = "zoom in"
+length = 0.409
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.39999998),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_brky1"]
+_data = {
+&"RESET": SubResource("Animation_wba7r"),
+&"zoom in": SubResource("Animation_rhmlg")
+}
 
 [node name="SettingsPanel" type="Node2D"]
 script = ExtResource("1_f3gv0")
 
-[node name="TextureRect" type="TextureRect" parent="."]
-self_modulate = Color(0, 0, 0, 1)
-offset_right = 1890.0
-offset_bottom = 1417.0
-scale = Vector2(0.3605842, 0.20058405)
-texture = ExtResource("1_etaka")
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -296.0
+offset_top = -198.0
+offset_right = 916.0
+offset_bottom = 551.0
+color = Color(1, 1, 1, 0)
+
+[node name="panel" type="AnimatedSprite2D" parent="."]
+position = Vector2(255, 119)
+sprite_frames = SubResource("SpriteFrames_dxber")
+animation = &"still"
 
 [node name="Music" type="HSlider" parent="."]
-offset_left = 148.24323
-offset_top = 49.248882
-offset_right = 593.7025
-offset_bottom = 65.248886
+offset_left = 181.0
+offset_top = 53.0
+offset_right = 626.4593
+offset_bottom = 92.0
+scale = Vector2(0.6115762, 0.6115762)
+theme_override_icons/grabber = ExtResource("8_rhmlg")
+theme_override_icons/grabber_highlight = ExtResource("8_rhmlg")
+theme_override_icons/grabber_disabled = ExtResource("8_rhmlg")
+theme_override_icons/tick = ExtResource("8_rhmlg")
+theme_override_styles/slider = SubResource("StyleBoxLine_rhmlg")
 max_value = 1.0
 step = 0.001
 value = 1.0
@@ -27,10 +123,16 @@ script = ExtResource("2_0txog")
 bus_name = "Music"
 
 [node name="SFX" type="HSlider" parent="."]
-offset_left = 148.24323
-offset_top = 115.30852
-offset_right = 452.0
-offset_bottom = 131.30852
+offset_left = 183.0
+offset_top = 119.30852
+offset_right = 626.1173
+offset_bottom = 158.30852
+scale = Vector2(0.6115762, 0.6115762)
+theme_override_icons/grabber = ExtResource("8_rhmlg")
+theme_override_icons/grabber_highlight = ExtResource("8_rhmlg")
+theme_override_icons/grabber_disabled = ExtResource("8_rhmlg")
+theme_override_icons/tick = ExtResource("8_rhmlg")
+theme_override_styles/slider = SubResource("StyleBoxLine_rhmlg")
 max_value = 1.0
 step = 0.001
 value = 1.0
@@ -38,10 +140,16 @@ script = ExtResource("2_0txog")
 bus_name = "SFX"
 
 [node name="General" type="HSlider" parent="."]
-offset_left = 148.24323
-offset_top = 176.01198
-offset_right = 593.7025
-offset_bottom = 192.01198
+offset_left = 180.75267
+offset_top = 187.57079
+offset_right = 626.212
+offset_bottom = 226.57079
+scale = Vector2(0.6115762, 0.6115762)
+theme_override_icons/grabber = ExtResource("8_rhmlg")
+theme_override_icons/grabber_highlight = ExtResource("8_rhmlg")
+theme_override_icons/grabber_disabled = ExtResource("8_rhmlg")
+theme_override_icons/tick = ExtResource("8_rhmlg")
+theme_override_styles/slider = SubResource("StyleBoxLine_rhmlg")
 max_value = 1.0
 step = 0.001
 value = 1.0
@@ -49,48 +157,72 @@ script = ExtResource("2_0txog")
 bus_name = "Master"
 
 [node name="Music2" type="RichTextLabel" parent="."]
-offset_left = 74.0
-offset_top = 43.0
-offset_right = 145.99344
-offset_bottom = 83.0
+offset_left = 129.0
+offset_top = 54.0
+offset_right = 200.99344
+offset_bottom = 94.0
+scale = Vector2(0.7880267, 0.7880267)
+theme_override_fonts/normal_font = ExtResource("9_vus1m")
+theme_override_font_sizes/normal_font_size = 36
 text = "Music"
 
 [node name="SFX2" type="RichTextLabel" parent="."]
-offset_left = 94.24815
-offset_top = 111.73773
-offset_right = 134.24815
-offset_bottom = 151.73773
+offset_left = 136.24815
+offset_top = 122.73773
+offset_right = 176.24815
+offset_bottom = 162.73773
+scale = Vector2(0.7880267, 0.7880267)
+theme_override_fonts/normal_font = ExtResource("9_vus1m")
+theme_override_font_sizes/normal_font_size = 36
 text = "SFX"
 
 [node name="General2" type="RichTextLabel" parent="."]
-offset_left = 103.24733
-offset_top = 172.4412
-offset_right = 143.24733
-offset_bottom = 212.4412
+offset_left = 143.0
+offset_top = 191.0
+offset_right = 183.0
+offset_bottom = 231.0
+scale = Vector2(0.7880267, 0.7880267)
+theme_override_fonts/normal_font = ExtResource("9_vus1m")
+theme_override_font_sizes/normal_font_size = 36
 text = "All"
 
 [node name="MusicTest" type="AudioStreamPlayer" parent="."]
 bus = &"Music"
 
 [node name="SFXTest" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("5_uxpx6")
+stream = ExtResource("11_rhmlg")
 bus = &"SFX"
 
 [node name="SFXButton" type="TextureButton" parent="."]
-offset_left = 479.0
-offset_top = 101.511154
-offset_right = 2369.0
-offset_bottom = 1518.5111
-scale = Vector2(0.069634624, 0.030575555)
-texture_normal = ExtResource("1_etaka")
+visible = false
+offset_left = 394.99997
+offset_top = 112.0
+offset_right = 651.0
+offset_bottom = 347.0
+scale = Vector2(0.1533137, 0.15496805)
+texture_normal = ExtResource("11_v08p8")
 
 [node name="Exit" type="TextureButton" parent="."]
 offset_left = 250.0
-offset_top = 223.00002
-offset_right = 2140.0
-offset_bottom = 1640.0
-scale = Vector2(0.09424584, 0.024125362)
-texture_normal = ExtResource("1_etaka")
+offset_top = 234.99998
+offset_right = 416.0
+offset_bottom = 367.0
+scale = Vector2(0.4015706, 0.4015706)
+texture_normal = ExtResource("13_wba7r")
+texture_hover = ExtResource("14_brky1")
 
+[node name="click" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(70.225266, 65.7428)
+scale = Vector2(0.7880267, 0.7880267)
+stream = ExtResource("5_f3gv0")
+bus = &"SFX"
+
+[node name="zoom" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_brky1")
+}
+
+[connection signal="value_changed" from="SFX" to="." method="_on_sfx_value_changed"]
+[connection signal="value_changed" from="General" to="." method="_on_general_value_changed"]
 [connection signal="pressed" from="SFXButton" to="." method="SFXTest"]
 [connection signal="pressed" from="Exit" to="." method="exitPanel"]

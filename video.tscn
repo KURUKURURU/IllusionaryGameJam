@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://bgfww023pmwlr"]
+
+[sub_resource type="VideoStreamTheora" id="VideoStreamTheora_88j55"]
+file = "taco.ogg"
+
+[node name="Node2D" type="Node2D"]
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+offset_left = -572.0
+offset_top = -328.0
+offset_right = 572.0
+offset_bottom = 327.0
+stream = SubResource("VideoStreamTheora_88j55")
+autoplay = true
+expand = true
+
+[node name="Camera2D" type="Camera2D" parent="."]

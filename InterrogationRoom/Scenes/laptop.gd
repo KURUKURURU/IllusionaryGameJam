@@ -34,12 +34,14 @@ func _on_test_window_coolpressed() -> void:
 
 func _on_test_window_bookmark_1() -> void:
 	$Object2/TestWindow/ScrollContainer.hide()
+	vicpage.scroll_vertical = 0
 	vicpage.show()
 
 
 func _on_test_window_homebutt() -> void:
 	vicpage.hide()
 	$Object2/TestWindow/ScrollContainer.show()
+	$Object2/TestWindow/ScrollContainer.scroll_vertical = 0
 
 
 func _on_hide_pressed() -> void:

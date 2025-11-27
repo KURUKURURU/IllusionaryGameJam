@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bawgdwbg84swm"]
+[gd_scene load_steps=33 format=3 uid="uid://bawgdwbg84swm"]
 
 [ext_resource type="Script" uid="uid://b0iosfjdnqwem" path="res://Start_Menu/scenes/start_menu.gd" id="1_sgpob"]
 [ext_resource type="PackedScene" uid="uid://bjp1b6hm65me1" path="res://Label/label.tscn" id="3_imdjc"]
@@ -7,12 +7,24 @@
 [ext_resource type="Texture2D" uid="uid://dh3w15usqqg0g" path="res://Start_Menu/images/frames/1.png" id="4_rais6"]
 [ext_resource type="Texture2D" uid="uid://by1m3fw7g828a" path="res://Start_Menu/images/frames/2.png" id="5_hoyqs"]
 [ext_resource type="Texture2D" uid="uid://cbjlpktdlll6s" path="res://Start_Menu/images/frames/3.png" id="6_68vcx"]
-[ext_resource type="Texture2D" uid="uid://sodr0iocebp" path="res://Start_Menu/images/ph/1000_F_532328806_oDZgCwtW3cyMNVesisdbleZmzyFEipF3-removebg-preview.png" id="6_csleb"]
 [ext_resource type="Texture2D" uid="uid://d0oqi4ksac4wt" path="res://Start_Menu/images/suitcase/props/cogs.png" id="6_d7er4"]
 [ext_resource type="PackedScene" uid="uid://bmeglpnch1rg5" path="res://Start_Menu/scenes/SettingsPanel.tscn" id="6_hlb2u"]
 [ext_resource type="Texture2D" uid="uid://46x5xv6keyt6" path="res://Start_Menu/images/frames/4.png" id="7_behxk"]
 [ext_resource type="Texture2D" uid="uid://betki4xav1g2n" path="res://Start_Menu/images/suitcase/props/cogslight.png" id="7_w3i02"]
-[ext_resource type="AudioStream" uid="uid://c8no6vq5q3or2" path="res://Start_Menu/sound/oddorgan.wav" id="13_rais6"]
+[ext_resource type="AudioStream" uid="uid://0io0dtg1uvgn" path="res://Sound/caseshut.wav" id="8_d42ky"]
+[ext_resource type="AudioStream" uid="uid://d2j4fcw5qh3g3" path="res://Start_Menu/sound/settings.wav" id="11_hoyqs"]
+[ext_resource type="Texture2D" uid="uid://bm7ov1d0v3r0i" path="res://Start_Menu/images/f1fileee.png" id="12_j2m1i"]
+[ext_resource type="AudioStream" uid="uid://bft88620nard2" path="res://Start_Menu/sound/crap/pageturn1.wav" id="13_68vcx"]
+[ext_resource type="Texture2D" uid="uid://dsaplhl07dw58" path="res://Start_Menu/images/hoverfileee.png" id="13_r7nyf"]
+[ext_resource type="Texture2D" uid="uid://q8r3vhf3reje" path="res://Start_Menu/images/f1credits.png" id="14_e4u3w"]
+[ext_resource type="Texture2D" uid="uid://cynjy2dxhwb3l" path="res://Start_Menu/images/hovercredits.png" id="15_j2m1i"]
+[ext_resource type="AudioStream" uid="uid://dc0qtltets2oc" path="res://Sound/generalclick.wav" id="19_r7nyf"]
+[ext_resource type="AudioStream" uid="uid://covwwl1lodlfc" path="res://Sound/title.wav" id="19_u328h"]
+[ext_resource type="Texture2D" uid="uid://cgdx6rmtjst7k" path="res://Start_Menu/images/creditspage.png" id="20_r1o3j"]
+[ext_resource type="FontFile" uid="uid://cddaurpo15jrm" path="res://Fonts/toriswriting-font/Toriswriting-qD85.ttf" id="21_d42ky"]
+[ext_resource type="FontFile" uid="uid://cjwu65abufay6" path="res://Fonts/charybdis/chary___.ttf" id="22_u328h"]
+[ext_resource type="Texture2D" uid="uid://c4o45wugqqg5p" path="res://Start_Menu/images/dwarrow1.png" id="23_apny2"]
+[ext_resource type="Texture2D" uid="uid://bnbdp5f0vknvc" path="res://Start_Menu/images/dwarrow2.png" id="24_imgov"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_hoyqs"]
 animations = [{
@@ -33,6 +45,23 @@ animations = [{
 "speed": 5.0
 }, {
 "frames": [{
+"duration": 1.21,
+"texture": ExtResource("7_behxk")
+}, {
+"duration": 1.61,
+"texture": ExtResource("6_68vcx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_hoyqs")
+}, {
+"duration": 1.31,
+"texture": ExtResource("4_rais6")
+}],
+"loop": false,
+"name": &"finished",
+"speed": 5.0
+}, {
+"frames": [{
 "duration": 1.0,
 "texture": ExtResource("4_rais6")
 }, {
@@ -50,6 +79,99 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="Animation" id="Animation_b1hon"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("oddorgan:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-0.953]
+}
+
+[sub_resource type="Animation" id="Animation_r7nyf"]
+resource_name = "musicfade"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("oddorgan:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-0.953, -47.222]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_edkd2"]
+_data = {
+&"RESET": SubResource("Animation_b1hon"),
+&"musicfade": SubResource("Animation_r7nyf")
+}
+
+[sub_resource type="Animation" id="Animation_d42ky"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1012.99994, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(521, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_r1o3j"]
+resource_name = "new_animation"
+loop_mode = 1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 2, 0),
+"points": PackedFloat32Array(1012.99994, -0.25, 0, 0.25, 0, 1012.99994, -0.085, 0, 0, 0, 1012.99994, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.51, 1)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 2, 0),
+"points": PackedFloat32Array(521, -0.25, 0, 0.25, 0, 542.99994, -0.085, -3.6666565, 0, 0, 521, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.51, 1)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_u328h"]
+_data = {
+&"RESET": SubResource("Animation_d42ky"),
+&"new_animation": SubResource("Animation_r1o3j")
+}
+
 [node name="StartMenu" type="Node2D"]
 script = ExtResource("1_sgpob")
 
@@ -59,13 +181,16 @@ offset_top = -60.0
 offset_right = 1016.0
 offset_bottom = 604.0
 scale = Vector2(1.3124394, 1.3508551)
-color = Color(1, 0.8666667, 0.75686276, 1)
+color = Color(0, 0, 0, 1)
 
 [node name="Briefcase" type="AnimatedSprite2D" parent="."]
 texture_filter = 2
 position = Vector2(582, 325)
 scale = Vector2(0.66824013, 0.66824013)
 sprite_frames = SubResource("SpriteFrames_hoyqs")
+animation = &"finished"
+frame = 1
+frame_progress = 0.75074536
 
 [node name="Handle" type="TextureButton" parent="Briefcase"]
 offset_left = -77.816376
@@ -76,12 +201,16 @@ scale = Vector2(0.85053575, 0.60917693)
 
 [node name="click" type="AudioStreamPlayer2D" parent="Briefcase"]
 stream = ExtResource("4_1ifhu")
+bus = &"SFX"
+
+[node name="shut" type="AudioStreamPlayer2D" parent="Briefcase"]
+stream = ExtResource("8_d42ky")
+bus = &"SFX"
 
 [node name="Label" parent="." instance=ExtResource("3_imdjc")]
-offset_left = -2.0
-offset_top = 611.0
-offset_right = 38.0
-offset_bottom = 651.0
+offset_top = 605.0
+offset_bottom = 645.0
+scale = Vector2(4.085002, 0.9705001)
 
 [node name="Node2D" type="Node2D" parent="."]
 
@@ -97,24 +226,97 @@ texture_hover = ExtResource("7_w3i02")
 ignore_texture_size = true
 stretch_mode = 3
 
+[node name="click" type="AudioStreamPlayer2D" parent="Node2D/Settings"]
+position = Vector2(70.225266, 65.7428)
+stream = ExtResource("11_hoyqs")
+bus = &"SFX"
+
 [node name="Start" type="TextureButton" parent="Node2D"]
-offset_left = 471.0
-offset_top = 338.0
-offset_right = 741.0
-offset_bottom = 723.0
-scale = Vector2(0.37345895, 0.37345895)
-texture_normal = ExtResource("6_csleb")
+offset_left = 446.0
+offset_top = 353.0
+offset_right = 579.19434
+offset_bottom = 511.5013
+scale = Vector2(0.6642329, 0.6642329)
+pivot_offset = Vector2(-0.5012207, -0.56817627)
+texture_normal = ExtResource("12_j2m1i")
+texture_hover = ExtResource("13_r7nyf")
 ignore_texture_size = true
-stretch_mode = 3
+
+[node name="pageturn" type="AudioStreamPlayer" parent="Node2D/Start"]
+stream = ExtResource("13_68vcx")
+bus = &"SFX"
+
+[node name="Credits" type="TextureButton" parent="Node2D"]
+offset_left = 541.00006
+offset_top = 336.0
+offset_right = 671.00006
+offset_bottom = 497.0
+scale = Vector2(0.67764497, 0.67764497)
+texture_normal = ExtResource("14_e4u3w")
+texture_hover = ExtResource("15_j2m1i")
 
 [node name="SettingsPanel" parent="." instance=ExtResource("6_hlb2u")]
 visible = false
-position = Vector2(246, 155)
+position = Vector2(313, 183)
 
 [node name="oddorgan" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("13_rais6")
+stream = ExtResource("19_u328h")
+volume_db = -0.953
+pitch_scale = 0.82
 autoplay = true
 bus = &"Music"
+
+[node name="GeneralClick" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("19_r7nyf")
+volume_db = -22.571
+pitch_scale = 2.1
+bus = &"SFX"
+
+[node name="MusicFade" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_edkd2")
+}
+
+[node name="Credits" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("20_r1o3j")
+
+[node name="SFX2" type="RichTextLabel" parent="Credits"]
+modulate = Color(0.8128568, 0.7748177, 0.7128732, 1)
+layout_mode = 0
+offset_left = 335.0
+offset_top = 106.0
+offset_right = 591.52856
+offset_bottom = 234.16718
+rotation = 0.15897475
+scale = Vector2(1.9359056, 1.9359056)
+theme_override_fonts/normal_font = ExtResource("21_d42ky")
+theme_override_fonts/bold_italics_font = ExtResource("22_u328h")
+theme_override_fonts/italics_font = ExtResource("22_u328h")
+theme_override_font_sizes/normal_font_size = 36
+theme_override_font_sizes/italics_font_size = 36
+bbcode_enabled = true
+text = "Made by [i]KURUKURUPA[/i]
+for"
+horizontal_alignment = 1
+
+[node name="PutDown" type="TextureButton" parent="Credits"]
+layout_mode = 0
+offset_left = 1012.99994
+offset_top = 521.0
+offset_right = 1146.0
+offset_bottom = 683.0
+scale = Vector2(0.5784127, 0.5784127)
+texture_normal = ExtResource("23_apny2")
+texture_hover = ExtResource("24_imgov")
+stretch_mode = 3
+
+[node name="UPDOWN" type="AnimationPlayer" parent="Credits/PutDown"]
+libraries = {
+&"": SubResource("AnimationLibrary_u328h")
+}
+autoplay = "new_animation"
 
 [connection signal="mouse_entered" from="Briefcase/Handle" to="." method="mousetouch_handle"]
 [connection signal="mouse_exited" from="Briefcase/Handle" to="." method="mouseleave_handle"]
@@ -125,3 +327,8 @@ bus = &"Music"
 [connection signal="mouse_entered" from="Node2D/Start" to="." method="Start_mousetouch"]
 [connection signal="mouse_exited" from="Node2D/Start" to="." method="Start_mouseleave"]
 [connection signal="pressed" from="Node2D/Start" to="." method="StartGame"]
+[connection signal="mouse_entered" from="Node2D/Credits" to="." method="_on_credits_mouse_entered"]
+[connection signal="mouse_exited" from="Node2D/Credits" to="." method="_on_credits_mouse_exited"]
+[connection signal="pressed" from="Node2D/Credits" to="." method="_on_credits_pressed"]
+[connection signal="mouse_entered" from="Credits/PutDown" to="." method="_on_put_down_mouse_entered"]
+[connection signal="pressed" from="Credits/PutDown" to="." method="_on_put_down_pressed"]

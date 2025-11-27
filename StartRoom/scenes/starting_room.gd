@@ -61,4 +61,4 @@ func _on_complete_pressed() -> void:
 	$AnimationPlayer.play("Fade")
 	await $AnimationPlayer.animation_finished
 	await wait(2.0)
-	get_tree().change_scene_to_file("uid://bdjuf601y1m00")
+	get_tree().change_scene_to_file("uid://cdu664noo2px5")

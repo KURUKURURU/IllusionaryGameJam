@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://bdjuf601y1m00"]
+[gd_scene load_steps=5 format=3 uid="uid://bdjuf601y1m00"]
 
 [ext_resource type="Script" uid="uid://be1ysur0gauoe" path="res://PreCutscene/scenes/pre_cutscene.gd" id="1_5vt8j"]
+[ext_resource type="PackedScene" uid="uid://dnnka5th1gldj" path="res://videoplayer.tscn" id="2_hu5de"]
+[ext_resource type="AudioStream" uid="uid://by1xhhnb48flu" path="res://Start_Menu/sound/deepbeats.mp3" id="3_hdg2c"]
+[ext_resource type="Texture2D" uid="uid://bhhbocuk1rbk5" path="res://StartRoom/images/406194-PEUW21-408.jpg" id="4_hdg2c"]
 
 [node name="PreCutscene" type="Node2D"]
 script = ExtResource("1_5vt8j")
@@ -11,3 +14,29 @@ offset_top = -5.0
 offset_right = 1164.0
 offset_bottom = 665.0
 color = Color(0, 0, 0, 1)
+
+[node name="videoplayer" parent="." instance=ExtResource("2_hu5de")]
+position = Vector2(0, 4)
+scale = Vector2(1.1163689, 1.1163689)
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+offset_left = -21.0
+offset_top = 650.0
+offset_right = 1164.0
+offset_bottom = 1320.0
+color = Color(0, 0, 0, 1)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_hdg2c")
+autoplay = true
+bus = &"Music"
+
+[node name="Next" type="TextureButton" parent="."]
+offset_left = 1006.0
+offset_top = 519.0
+offset_right = 3006.0
+offset_bottom = 2519.0
+scale = Vector2(0.05528194, 0.05528194)
+texture_normal = ExtResource("4_hdg2c")
+
+[connection signal="pressed" from="Next" to="." method="_on_next_pressed"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://c5ywwd24lm2ih"]
+[gd_scene load_steps=9 format=3 uid="uid://c5ywwd24lm2ih"]
 
 [ext_resource type="Script" uid="uid://8y8moatunt74" path="res://InterrogationRoom/Scenes/window.gd" id="1_tcpfg"]
 [ext_resource type="Texture2D" uid="uid://b37cqjg1xcof8" path="res://InterrogationRoom/images/pages/home page.png" id="2_2fiki"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dw7ubnogfdaev" path="res://StartRoom/images/paperrrr.jpg" id="5_weeyy"]
 [ext_resource type="FontFile" uid="uid://cjwu65abufay6" path="res://Fonts/charybdis/chary___.ttf" id="6_qh5xi"]
 [ext_resource type="Texture2D" uid="uid://df0bgfh3fx8mg" path="res://InterrogationRoom/images/pages/herpage.png" id="7_qh5xi"]
+[ext_resource type="PackedScene" uid="uid://dnnka5th1gldj" path="res://videoplayer.tscn" id="8_dje3n"]
 
 [node name="Window" type="TextureButton"]
 script = ExtResource("1_tcpfg")
@@ -137,6 +138,10 @@ scale = Vector2(0.033879746, 0.059929207)
 stream = ExtResource("4_2fiki")
 volume_db = -20.194
 pitch_scale = 2.55
+
+[node name="videoplayer" parent="VictimPage/Control" instance=ExtResource("8_dje3n")]
+position = Vector2(-1.9999847, 415)
+scale = Vector2(0.39528024, 0.39528024)
 
 [connection signal="pressed" from="ScrollContainer/Control/bookmark1" to="." method="_on_bookmark_1_pressed"]
 [connection signal="pressed" from="notes/Control/advance" to="." method="_on_advance_pressed"]

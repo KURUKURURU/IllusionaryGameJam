@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="IllusionaryGameJam"
+config/name="Shifty Testimony"
 run/main_scene="uid://bawgdwbg84swm"
 config/features=PackedStringArray("4.5", "Mobile")
 config/icon="res://icon.svg"
