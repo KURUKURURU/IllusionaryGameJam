@@ -7,7 +7,7 @@ func _ready() -> void:
 	
 	
 	$Next.hide()
-	await wait(4.0)
+	await wait(12.0)
 	get_tree().change_scene_to_file("uid://b1w8iudqm0htd")
 
 func _on_next_pressed() -> void:
