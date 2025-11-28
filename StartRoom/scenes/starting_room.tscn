@@ -1,9 +1,8 @@
-[gd_scene load_steps=22 format=3 uid="uid://b1w8iudqm0htd"]
+[gd_scene load_steps=25 format=3 uid="uid://b1w8iudqm0htd"]
 
 [ext_resource type="Script" uid="uid://bc5q00kmi6np8" path="res://StartRoom/scenes/starting_room.gd" id="1_6sk8y"]
 [ext_resource type="Texture2D" uid="uid://bqdh4r3tod5ff" path="res://StartRoom/images/Untitled.jpg" id="1_b652u"]
 [ext_resource type="Script" uid="uid://cnsbpo44033mx" path="res://StartRoom/scenes/object.gd" id="2_6sk8y"]
-[ext_resource type="Texture2D" uid="uid://c4352dqbyor02" path="res://images/icon.svg" id="3_txpld"]
 [ext_resource type="Texture2D" uid="uid://5bbj851jyexp" path="res://StartRoom/images/id.png" id="4_0xk7c"]
 [ext_resource type="Texture2D" uid="uid://cpjhbfxg52543" path="res://StartRoom/images/idhover.png" id="5_3excd"]
 [ext_resource type="Texture2D" uid="uid://bds33gy5dct6d" path="res://Start_Menu/images/suitcase/props/filef1.png" id="6_4aaq2"]
@@ -12,8 +11,9 @@
 [ext_resource type="AudioStream" uid="uid://dxs6cd7v2rjdp" path="res://StartRoom/sounds/openpeper.wav" id="8_kk2xe"]
 [ext_resource type="PackedScene" uid="uid://bjp1b6hm65me1" path="res://Label/label.tscn" id="8_x67wb"]
 [ext_resource type="PackedScene" uid="uid://67pbacp18qgo" path="res://StartRoom/scenes/file_book.tscn" id="9_rk5jh"]
+[ext_resource type="Texture2D" uid="uid://c4o45wugqqg5p" path="res://Start_Menu/images/dwarrow1.png" id="11_4aaq2"]
 [ext_resource type="PackedScene" uid="uid://cvx665n1ru5jd" path="res://StartRoom/scenes/card_zoom.tscn" id="11_n6jhq"]
-[ext_resource type="Texture2D" uid="uid://bkqv5mmp0ataj" path="res://images/icon.jpg" id="12_886dc"]
+[ext_resource type="Texture2D" uid="uid://bnbdp5f0vknvc" path="res://Start_Menu/images/dwarrow2.png" id="12_gb2mx"]
 [ext_resource type="AudioStream" uid="uid://cugvuvlllbbnr" path="res://Sound/mysterytheme.wav" id="15_favh6"]
 [ext_resource type="AudioStream" uid="uid://bk56q6ocaen5o" path="res://StartRoom/sounds/hmmm!.wav" id="16_4aaq2"]
 
@@ -150,6 +150,63 @@ _data = {
 &"SlideIn": SubResource("Animation_txpld")
 }
 
+[sub_resource type="Animation" id="Animation_j4u7u"]
+resource_name = "fgd"
+loop_mode = 1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 2, 0),
+"points": PackedFloat32Array(1106.4601, -0.25, 0, 0.25, 0, 1106.4601, -0.07833333, 0, 0, 0, 1106.4601, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.47, 0.96666664)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 2, 0),
+"points": PackedFloat32Array(523.9199, -0.25, 0, 0.25, 0, 498.428, -0.07833333, 15.672816, 0, 0, 523.9199, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.47, 0.96666664)
+}
+
+[sub_resource type="Animation" id="Animation_giopp"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1106.4601, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(523.9199, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ylssr"]
+_data = {
+&"RESET": SubResource("Animation_giopp"),
+&"fgd": SubResource("Animation_j4u7u")
+}
+
 [node name="StartingRoom" type="Node2D"]
 script = ExtResource("1_6sk8y")
 
@@ -212,18 +269,24 @@ libraries = {
 }
 
 [node name="FileBook" parent="." instance=ExtResource("9_rk5jh")]
-visible = false
 position = Vector2(116, 32)
 scale = Vector2(0.81882745, 0.81882745)
 
 [node name="Complete" type="TextureButton" parent="FileBook"]
-offset_left = 677.79846
-offset_top = 477.5121
-offset_right = 1086.92
-offset_bottom = 602.08044
-texture_normal = ExtResource("3_txpld")
-texture_hover = ExtResource("12_886dc")
+offset_left = 1106.4601
+offset_top = 523.9199
+offset_right = 1515.5817
+offset_bottom = 685.9202
+scale = Vector2(0.3194175, 0.9966776)
+texture_normal = ExtResource("11_4aaq2")
+texture_hover = ExtResource("12_gb2mx")
 stretch_mode = 0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="FileBook/Complete"]
+libraries = {
+&"": SubResource("AnimationLibrary_ylssr")
+}
+autoplay = "fgd"
 
 [node name="CardZoom" parent="." instance=ExtResource("11_n6jhq")]
 visible = false

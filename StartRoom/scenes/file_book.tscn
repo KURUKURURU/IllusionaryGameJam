@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://67pbacp18qgo"]
+[gd_scene load_steps=3 format=3 uid="uid://67pbacp18qgo"]
 
 [ext_resource type="Texture2D" uid="uid://dw7ubnogfdaev" path="res://StartRoom/images/paperrrr.jpg" id="1_akcku"]
+[ext_resource type="Texture2D" uid="uid://b5bpnem78ik0s" path="res://InterrogationRoom/images/4wete.png" id="2_yo6mu"]
 
 [node name="FileBook" type="Node2D"]
 
@@ -19,12 +20,14 @@ offset_right = 40.010574
 offset_bottom = 39.017815
 
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 offset_right = 40.0
 offset_bottom = 40.0
 scale = Vector2(28.729158, 16.590944)
 color = Color(0.85328186, 0.7112711, 0.4555931, 1)
 
 [node name="left" type="TextureButton" parent="."]
+visible = false
 offset_left = 27.0
 offset_top = 4.0
 offset_right = 627.0
@@ -33,9 +36,18 @@ scale = Vector2(0.8895049, 0.8895049)
 texture_normal = ExtResource("1_akcku")
 
 [node name="right" type="TextureButton" parent="."]
+visible = false
 offset_left = 602.0
 offset_top = 0.9999999
 offset_right = 1202.0
 offset_bottom = 736.0
 scale = Vector2(0.8895049, 0.8895049)
 texture_normal = ExtResource("1_akcku")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -209.0
+offset_top = -104.0
+offset_right = 941.0
+offset_bottom = 546.0
+scale = Vector2(1.3158695, 1.3158695)
+texture = ExtResource("2_yo6mu")
