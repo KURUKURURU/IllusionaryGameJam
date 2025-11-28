@@ -10,8 +10,9 @@ func _ready() -> void:
 	$Object/TestWindow/notes.show()
 	
 	$Object2/TestWindow/notes.hide()
-	$Object2/TestWindow/ScrollContainer.show()
-	vicpage.hide()
+	$Object2/TestWindow/ScrollContainer.hide()
+	
+	vicpage.show()
 	
 
 func Object1() -> void:
@@ -25,6 +26,11 @@ func Object2() -> void:
 
 
 func _on_test_window_coolpressed() -> void:
+	$Object2/TestWindow/notes.hide()
+	$Object2/TestWindow/ScrollContainer.hide()
+	
+	vicpage.show()
+	
 	$Object2/Popup.play("popup")
 	$Object2.show()
 	#
