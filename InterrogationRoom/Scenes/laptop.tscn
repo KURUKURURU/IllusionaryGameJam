@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c5navywk44tjh" path="res://InterrogationRoom/Scenes/laptop.gd" id="1_xsinj"]
 [ext_resource type="Script" uid="uid://bent2seqmqsht" path="res://InterrogationRoom/Scenes/object.gd" id="2_5y0nm"]
-[ext_resource type="Texture2D" uid="uid://d1rwu04yhtijn" path="res://InterrogationRoom/images/fffhfhfg.png" id="2_7gy8r"]
+[ext_resource type="Texture2D" uid="uid://bc72vwmyp8ot4" path="res://artlog-1764024612406.png" id="2_q40cj"]
 [ext_resource type="PackedScene" uid="uid://c5ywwd24lm2ih" path="res://InterrogationRoom/Scenes/window.tscn" id="3_xsinj"]
 [ext_resource type="Texture2D" uid="uid://dw7ubnogfdaev" path="res://StartRoom/images/paperrrr.jpg" id="4_5y0nm"]
 [ext_resource type="Texture2D" uid="uid://bqdh4r3tod5ff" path="res://StartRoom/images/Untitled.jpg" id="6_0qem7"]
@@ -222,8 +222,8 @@ script = ExtResource("1_xsinj")
 [node name="DesktopHome" type="TextureRect" parent="."]
 offset_right = 1024.0
 offset_bottom = 576.0
-scale = Vector2(0.9982663, 0.9982663)
-texture = ExtResource("2_7gy8r")
+scale = Vector2(1.0009525, 1.0061466)
+texture = ExtResource("2_q40cj")
 
 [node name="Object" type="TextureButton" parent="."]
 z_index = 1

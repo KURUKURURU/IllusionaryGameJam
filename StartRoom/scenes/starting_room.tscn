@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://bc5q00kmi6np8" path="res://StartRoom/scenes/starting_room.gd" id="1_6sk8y"]
 [ext_resource type="Texture2D" uid="uid://bqdh4r3tod5ff" path="res://StartRoom/images/Untitled.jpg" id="1_b652u"]
 [ext_resource type="Script" uid="uid://cnsbpo44033mx" path="res://StartRoom/scenes/object.gd" id="2_6sk8y"]
-[ext_resource type="Texture2D" uid="uid://5bbj851jyexp" path="res://StartRoom/images/id.png" id="4_0xk7c"]
-[ext_resource type="Texture2D" uid="uid://cpjhbfxg52543" path="res://StartRoom/images/idhover.png" id="5_3excd"]
+[ext_resource type="Texture2D" uid="uid://dcupmfsqmt0sw" path="res://StartRoom/images/id1.png" id="4_4aaq2"]
+[ext_resource type="Texture2D" uid="uid://b2dd80hhau07p" path="res://StartRoom/images/id2.png" id="5_gb2mx"]
 [ext_resource type="Texture2D" uid="uid://bds33gy5dct6d" path="res://Start_Menu/images/suitcase/props/filef1.png" id="6_4aaq2"]
 [ext_resource type="AudioStream" uid="uid://dndkwue3fholq" path="res://StartRoom/sounds/paper.wav" id="6_gwrsf"]
 [ext_resource type="Texture2D" uid="uid://8xymjklv02vy" path="res://Start_Menu/images/suitcase/props/filef12.png" id="7_4aaq2"]
@@ -150,6 +150,31 @@ _data = {
 &"SlideIn": SubResource("Animation_txpld")
 }
 
+[sub_resource type="Animation" id="Animation_giopp"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1106.4601, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(523.9199, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
 [sub_resource type="Animation" id="Animation_j4u7u"]
 resource_name = "fgd"
 loop_mode = 1
@@ -176,31 +201,6 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.47, 0.96666664)
 }
 
-[sub_resource type="Animation" id="Animation_giopp"]
-length = 0.001
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position:x")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(1106.4601, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/1/type = "bezier"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:position:y")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(523.9199, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ylssr"]
 _data = {
 &"RESET": SubResource("Animation_giopp"),
@@ -225,12 +225,12 @@ script = ExtResource("2_6sk8y")
 [node name="Card" type="TextureButton" parent="Object"]
 offset_left = 86.0
 offset_top = -1.0
-offset_right = 786.0
-offset_bottom = 444.0005
+offset_right = 1042.0
+offset_bottom = 628.0
 rotation = -0.059481572
-scale = Vector2(0.31282988, 0.29491174)
-texture_normal = ExtResource("4_0xk7c")
-texture_hover = ExtResource("5_3excd")
+scale = Vector2(0.24676132, 0.24600951)
+texture_normal = ExtResource("4_4aaq2")
+texture_hover = ExtResource("5_gb2mx")
 stretch_mode = 0
 
 [node name="Object2" type="Sprite2D" parent="."]
@@ -269,6 +269,7 @@ libraries = {
 }
 
 [node name="FileBook" parent="." instance=ExtResource("9_rk5jh")]
+visible = false
 position = Vector2(116, 32)
 scale = Vector2(0.81882745, 0.81882745)
 
@@ -289,8 +290,8 @@ libraries = {
 autoplay = "fgd"
 
 [node name="CardZoom" parent="." instance=ExtResource("11_n6jhq")]
-visible = false
-position = Vector2(16, 3)
+position = Vector2(47, 3)
+scale = Vector2(0.9224243, 0.9224243)
 
 [node name="Label" parent="." instance=ExtResource("8_x67wb")]
 z_index = 2
@@ -298,13 +299,6 @@ offset_left = -2.0
 offset_top = 610.0
 offset_right = 38.0
 offset_bottom = 650.0
-
-[node name="BlackFade" type="ColorRect" parent="."]
-offset_left = -14.0
-offset_top = -27.0
-offset_right = 1163.0
-offset_bottom = 658.0
-color = Color(0, 0, 0, 0)
 
 [node name="MainMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("15_favh6")
@@ -316,6 +310,14 @@ bus = &"Music"
 stream = ExtResource("16_4aaq2")
 volume_db = -12.404
 bus = &"SFX"
+
+[node name="BlackFade" type="ColorRect" parent="."]
+z_index = 5
+offset_left = -14.0
+offset_top = -27.0
+offset_right = 1163.0
+offset_bottom = 658.0
+color = Color(0, 0, 0, 0)
 
 [connection signal="button_down" from="Object/Card" to="." method="ID_interact"]
 [connection signal="button_down" from="Object/Card" to="Object" method="Down"]
