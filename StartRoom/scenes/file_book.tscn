@@ -1,9 +1,69 @@
-[gd_scene load_steps=3 format=3 uid="uid://67pbacp18qgo"]
+[gd_scene load_steps=8 format=3 uid="uid://67pbacp18qgo"]
 
-[ext_resource type="Texture2D" uid="uid://dw7ubnogfdaev" path="res://StartRoom/images/paperrrr.jpg" id="1_akcku"]
-[ext_resource type="Texture2D" uid="uid://b5bpnem78ik0s" path="res://InterrogationRoom/images/4wete.png" id="2_yo6mu"]
+[ext_resource type="Script" uid="uid://bu2e82sxw7jdw" path="res://StartRoom/scenes/file_book.gd" id="1_7le1h"]
+[ext_resource type="Texture2D" uid="uid://ytu2xmpei0a8" path="res://InterrogationRoom/images/report3.png" id="2_s3c8g"]
+[ext_resource type="Texture2D" uid="uid://c4o45wugqqg5p" path="res://Start_Menu/images/dwarrow1.png" id="3_d5wv1"]
+[ext_resource type="Texture2D" uid="uid://bnbdp5f0vknvc" path="res://Start_Menu/images/dwarrow2.png" id="4_qesa0"]
+
+[sub_resource type="Animation" id="Animation_bdo5c"]
+resource_name = "bounce"
+loop_mode = 1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 2, 2),
+"points": PackedFloat32Array(529, -0.25, 0, 0.25, 0, 529, -0.08166667, 0, 0.085, 0, 529, -0.16666667, 0, 0, 0),
+"times": PackedFloat32Array(0, 0.49, 1)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 2, 2),
+"points": PackedFloat32Array(453, -0.25, 0, 0.25, 0, 436.99997, -0.08166667, 0, 0.085, 0, 453, -0.16666667, 0, 0, 0),
+"times": PackedFloat32Array(0, 0.49, 1)
+}
+
+[sub_resource type="Animation" id="Animation_wvby6"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(529, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(453, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_x3gfd"]
+_data = {
+&"RESET": SubResource("Animation_wvby6"),
+&"bounce": SubResource("Animation_bdo5c")
+}
 
 [node name="FileBook" type="Node2D"]
+script = ExtResource("1_7le1h")
 
 [node name="bg" type="ColorRect" parent="."]
 offset_left = -401.99997
@@ -26,28 +86,45 @@ offset_bottom = 40.0
 scale = Vector2(28.729158, 16.590944)
 color = Color(0.85328186, 0.7112711, 0.4555931, 1)
 
-[node name="left" type="TextureButton" parent="."]
-visible = false
-offset_left = 27.0
-offset_top = 4.0
-offset_right = 627.0
-offset_bottom = 739.0
-scale = Vector2(0.8895049, 0.8895049)
-texture_normal = ExtResource("1_akcku")
-
-[node name="right" type="TextureButton" parent="."]
-visible = false
-offset_left = 602.0
-offset_top = 0.9999999
-offset_right = 1202.0
-offset_bottom = 736.0
-scale = Vector2(0.8895049, 0.8895049)
-texture_normal = ExtResource("1_akcku")
-
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="mainimg" type="TextureRect" parent="."]
 offset_left = -209.0
 offset_top = -104.0
 offset_right = 941.0
 offset_bottom = 546.0
 scale = Vector2(1.3158695, 1.3158695)
-texture = ExtResource("2_yo6mu")
+texture = ExtResource("2_s3c8g")
+
+[node name="hovernote" type="TextureButton" parent="mainimg"]
+layout_mode = 0
+offset_left = 549.4466
+offset_top = 370.0975
+offset_right = 576.80493
+offset_bottom = 513.72876
+
+[node name="bigimg" type="TextureRect" parent="."]
+offset_left = -209.00002
+offset_top = -104.0
+offset_right = 941.0
+offset_bottom = 546.0
+scale = Vector2(1.316, 1.316)
+texture = ExtResource("2_s3c8g")
+
+[node name="putdown" type="TextureButton" parent="."]
+offset_left = 529.0
+offset_top = 453.0
+offset_right = 662.0
+offset_bottom = 615.0001
+scale = Vector2(0.5861787, 0.5861787)
+texture_normal = ExtResource("3_d5wv1")
+texture_hover = ExtResource("4_qesa0")
+
+[node name="bounce" type="AnimationPlayer" parent="putdown"]
+libraries = {
+&"": SubResource("AnimationLibrary_x3gfd")
+}
+autoplay = "bounce"
+
+[connection signal="mouse_entered" from="mainimg/hovernote" to="." method="_on_hovernote_mouse_entered"]
+[connection signal="mouse_exited" from="mainimg/hovernote" to="." method="_on_hovernote_mouse_exited"]
+[connection signal="pressed" from="mainimg/hovernote" to="." method="_on_hovernote_pressed"]
+[connection signal="pressed" from="putdown" to="." method="_on_putdown_pressed"]

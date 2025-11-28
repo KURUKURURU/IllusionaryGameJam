@@ -81,33 +81,9 @@ animations = [{
 
 [sub_resource type="Animation" id="Animation_b1hon"]
 length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("oddorgan:volume_db")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [-0.953]
-}
 
 [sub_resource type="Animation" id="Animation_r7nyf"]
 resource_name = "musicfade"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("oddorgan:volume_db")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [-0.953, -47.222]
-}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_edkd2"]
 _data = {
@@ -259,10 +235,10 @@ texture_hover = ExtResource("15_j2m1i")
 visible = false
 position = Vector2(313, 183)
 
-[node name="oddorgan" type="AudioStreamPlayer" parent="."]
+[node name="oddorgan2" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("19_u328h")
-volume_db = -0.953
-pitch_scale = 0.82
+volume_db = -1.768
+pitch_scale = 0.52
 autoplay = true
 bus = &"Music"
 

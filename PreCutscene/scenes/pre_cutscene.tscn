@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bdjuf601y1m00"]
+[gd_scene load_steps=22 format=3 uid="uid://bdjuf601y1m00"]
 
 [ext_resource type="Script" uid="uid://be1ysur0gauoe" path="res://PreCutscene/scenes/pre_cutscene.gd" id="1_5vt8j"]
 [ext_resource type="AudioStream" uid="uid://by1xhhnb48flu" path="res://Start_Menu/sound/deepbeats.mp3" id="3_hdg2c"]
@@ -14,6 +14,9 @@
 [ext_resource type="Texture2D" uid="uid://b2t3v0jl8kvx0" path="res://PreCutscene/frames/9.png" id="12_gwlfk"]
 [ext_resource type="Texture2D" uid="uid://d2rvead2s4hrj" path="res://PreCutscene/frames/10.png" id="13_vcfdm"]
 [ext_resource type="Texture2D" uid="uid://c5snq6v11vxeh" path="res://PreCutscene/frames/11.png" id="14_ywaj1"]
+[ext_resource type="AudioStream" uid="uid://cpb4frt3wa22l" path="res://PreCutscene/sounds/punch.wav" id="15_reunx"]
+[ext_resource type="AudioStream" uid="uid://cfrd3uvtayeko" path="res://PreCutscene/sounds/eerie sounds lol.wav" id="16_hj24c"]
+[ext_resource type="AudioStream" uid="uid://dq6ibkjyh1iag" path="res://344407__jawbutch__male-gasp-1.wav" id="16_w7bn2"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_uiju6"]
 animations = [{
@@ -65,6 +68,42 @@ animations = [{
 "speed": 3.0
 }]
 
+[sub_resource type="Animation" id="Animation_reunx"]
+resource_name = "fade"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("th:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_hj24c"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("th:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_w7bn2"]
+_data = {
+&"RESET": SubResource("Animation_hj24c"),
+&"fade": SubResource("Animation_reunx")
+}
+
 [node name="PreCutscene" type="Node2D"]
 script = ExtResource("1_5vt8j")
 
@@ -84,7 +123,7 @@ color = Color(0, 0, 0, 1)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_hdg2c")
-volume_db = -80.0
+volume_db = -20.668
 autoplay = true
 bus = &"Music"
 
@@ -96,11 +135,40 @@ offset_bottom = 2519.0
 scale = Vector2(0.05528194, 0.05528194)
 texture_normal = ExtResource("4_hdg2c")
 
-[node name="ani" type="AnimatedSprite2D" parent="."]
+[node name="th" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ani" type="AnimatedSprite2D" parent="th"]
 position = Vector2(578, 325)
 sprite_frames = SubResource("SpriteFrames_uiju6")
-autoplay = "default"
 frame = 13
-frame_progress = 0.70083785
+frame_progress = 1.0
+
+[node name="hit" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(1100, 349)
+stream = ExtResource("15_reunx")
+volume_db = -11.107
+pitch_scale = 0.69
+panning_strength = 6.55
+bus = &"SFX"
+
+[node name="gasp" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(263, 358)
+stream = ExtResource("16_w7bn2")
+volume_db = -3.029
+panning_strength = 6.55
+bus = &"SFX"
+
+[node name="sfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("16_hj24c")
+volume_db = -13.989
+autoplay = true
+bus = &"SFX"
+
+[node name="fade" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_w7bn2")
+}
 
 [connection signal="pressed" from="Next" to="." method="_on_next_pressed"]
