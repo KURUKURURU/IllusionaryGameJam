@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://jpraix5hokpi"]
+[gd_scene load_steps=25 format=3 uid="uid://jpraix5hokpi"]
 
 [ext_resource type="Script" uid="uid://c5navywk44tjh" path="res://InterrogationRoom/Scenes/laptop.gd" id="1_xsinj"]
 [ext_resource type="Script" uid="uid://bent2seqmqsht" path="res://InterrogationRoom/Scenes/object.gd" id="2_5y0nm"]
@@ -12,8 +12,11 @@
 [ext_resource type="Texture2D" uid="uid://75jmr64v8555" path="res://45480a3100a9edc6bf3b0ce03b3830e4-blue-folder-rounded.webp" id="10_2savr"]
 [ext_resource type="PackedScene" uid="uid://d1vh3g3ojsvrt" path="res://InterrogationRoom/Scenes/image_window.tscn" id="11_a2gbc"]
 [ext_resource type="Script" uid="uid://sr7hrun08ib1" path="res://InterrogationRoom/Scenes/image_folder.gd" id="11_w7ul5"]
-[ext_resource type="Texture2D" uid="uid://cwv04lcx0dxvf" path="res://InterrogationRoom/images/a16efc4767f048766f9c761c6f608b7a.jpg" id="13_qndgv"]
+[ext_resource type="Texture2D" uid="uid://p23gx31ngx8d" path="res://InterrogationRoom/images/map.png" id="13_roxh2"]
 [ext_resource type="AudioStream" uid="uid://bx6crsrq8xc6g" path="res://Sound/sfx_intrigue.wav" id="14_58y6p"]
+[ext_resource type="Texture2D" uid="uid://bqq0rlc806f7g" path="res://security-camera-icon-video-surveillance-600nw-2498783595.webp" id="15_m2whj"]
+[ext_resource type="Script" uid="uid://tqwgyicux24i" path="res://InterrogationRoom/Scenes/icon_security_portal.gd" id="16_roxh2"]
+[ext_resource type="PackedScene" uid="uid://elr6b75453co" path="res://InterrogationRoom/Scenes/camera_portal.tscn" id="17_roxh2"]
 
 [sub_resource type="Animation" id="Animation_eq50e"]
 length = 0.001
@@ -230,6 +233,15 @@ offset_bottom = 576.0
 scale = Vector2(1.0009525, 1.0061466)
 texture = ExtResource("2_q40cj")
 
+[node name="Icon_SecurityPortal" type="TextureButton" parent="."]
+offset_left = 22.000002
+offset_top = 106.0
+offset_right = 622.0
+offset_bottom = 706.0
+scale = Vector2(0.11377623, 0.11377623)
+texture_normal = ExtResource("15_m2whj")
+script = ExtResource("16_roxh2")
+
 [node name="Object" type="TextureButton" parent="."]
 z_index = 1
 offset_left = 387.22
@@ -374,12 +386,6 @@ scale = Vector2(0.0822321, 0.034027074)
 texture_normal = ExtResource("6_0qem7")
 stretch_mode = 0
 
-[node name="maps" type="TextureButton" parent="."]
-offset_left = 23.0
-offset_top = 18.0
-offset_right = 96.0
-offset_bottom = 88.0
-
 [node name="ImageFolder" type="TextureButton" parent="."]
 offset_left = 1045.0
 offset_top = 40.999996
@@ -400,30 +406,32 @@ libraries = {
 }
 
 [node name="MapPreview" type="TextureButton" parent="."]
+visible = false
 z_index = 5
-offset_left = 205.0
-offset_top = 33.0
-offset_right = 940.0
-offset_bottom = 554.0
-texture_normal = ExtResource("13_qndgv")
+offset_left = 361.0
+offset_top = 27.0
+offset_right = 1096.0
+offset_bottom = 677.0
+scale = Vector2(0.8768245, 0.8768245)
+texture_normal = ExtResource("13_roxh2")
 
 [node name="ColorRect" type="ColorRect" parent="MapPreview"]
 show_behind_parent = true
 layout_mode = 0
-offset_left = -217.00002
-offset_top = -52.0
-offset_right = -177.00002
-offset_bottom = -12.0
-scale = Vector2(29.334932, 16.706562)
+offset_left = -415.13434
+offset_top = -37.63581
+offset_right = -375.13434
+offset_bottom = 2.3641891
+scale = Vector2(33.06093, 18.97133)
 color = Color(0.14509805, 0.19215687, 0.46666667, 0.5803922)
 
 [node name="Hide" type="TextureButton" parent="MapPreview"]
 self_modulate = Color(0.38431373, 0, 0.015686275, 0.6117647)
 layout_mode = 0
-offset_left = 751.0
-offset_top = 5.0
-offset_right = 1239.5259
-offset_bottom = 357.66037
+offset_left = 469.87732
+offset_top = 5.702395
+offset_right = 958.40326
+offset_bottom = 358.36276
 scale = Vector2(0.09031507, 0.110137545)
 texture_normal = ExtResource("6_0qem7")
 stretch_mode = 0
@@ -434,6 +442,17 @@ stream = ExtResource("14_58y6p")
 volume_db = -20.194
 pitch_scale = 2.55
 
+[node name="CameraPortal" parent="." instance=ExtResource("17_roxh2")]
+modulate = Color(1, 1, 1, 0.18039216)
+position = Vector2(319, 289)
+scale = Vector2(0.055, 0.055)
+
+[node name="Popup" type="AnimationPlayer" parent="CameraPortal"]
+libraries = {
+&"": SubResource("AnimationLibrary_w7ul5")
+}
+
+[connection signal="CameraSignal" from="Icon_SecurityPortal" to="." method="SecurityPortalActivation"]
 [connection signal="button_down" from="Object" to="." method="Object1"]
 [connection signal="button_down" from="Object/TestWindow" to="." method="Object1"]
 [connection signal="coolpressed" from="Object/TestWindow" to="." method="_on_test_window_coolpressed"]
@@ -454,7 +473,6 @@ pitch_scale = 2.55
 [connection signal="button_down" from="Object3/InteractMove" to="Object3" method="Down"]
 [connection signal="button_up" from="Object3/InteractMove" to="Object3" method="Up"]
 [connection signal="pressed" from="Object3/Hide" to="." method="_on_hide_pressed"]
-[connection signal="pressed" from="maps" to="." method="_on_maps_pressed"]
 [connection signal="ImageSignal" from="ImageFolder" to="." method="_on_image_folder_image_signal"]
 [connection signal="pressed" from="ImageFolder" to="." method="IMG_Folder"]
 [connection signal="MapPreview" from="ImageWindow" to="." method="_on_image_window_map_preview"]

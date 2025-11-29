@@ -3,6 +3,7 @@ extends Node2D
 
 func _ready() -> void:
 	$MapPreview.hide()
+	$CameraPortal.hide()
 	$ImageWindow.hide()
 	$Object2.hide()
 	
@@ -71,6 +72,7 @@ func _on_image_folder_image_signal() -> void:
 	$ImageWindow.z_index = 1
 	$Object.z_index = 0
 	$Object2.z_index = 0
+	$CameraPortal.z_index = 0
 
 
 func _on_hideMAP_pressed() -> void:
@@ -79,3 +81,13 @@ func _on_hideMAP_pressed() -> void:
 
 func _on_image_window_map_preview() -> void:
 	$MapPreview.show()
+
+
+func SecurityPortalActivation() -> void:
+	$ping.play()
+	$CameraPortal/Popup.play("popup")
+	$CameraPortal.show()
+	$CameraPortal.z_index = 1
+	$Object.z_index = 0
+	$Object2.z_index = 0
+	$ImageWindow.z_index = 0

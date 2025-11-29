@@ -104,8 +104,12 @@ func StartGame() -> void:
 	$MusicFade.play("musicfade")
 	$Node2D.hide()
 	
-	$Briefcase/shut.play()
+	
 	await $Briefcase.animation_finished
+	$Briefcase/shut.play()
+	$Briefcase/pull.play("pullback")
+	await $Briefcase/pull.animation_finished
+	
 	$Briefcase/click.play()
 	
 	await wait(2.0)

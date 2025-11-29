@@ -1,0 +1,113 @@
+[gd_scene load_steps=8 format=3 uid="uid://elr6b75453co"]
+
+[ext_resource type="Script" uid="uid://r0upp8n63nj6" path="res://InterrogationRoom/Scenes/camera_portal.gd" id="1_6ohjg"]
+[ext_resource type="Texture2D" uid="uid://dw7ubnogfdaev" path="res://StartRoom/images/paperrrr.jpg" id="1_epabe"]
+[ext_resource type="Texture2D" uid="uid://bqdh4r3tod5ff" path="res://StartRoom/images/Untitled.jpg" id="2_uqu53"]
+[ext_resource type="Texture2D" uid="uid://p23gx31ngx8d" path="res://InterrogationRoom/images/map.png" id="3_chmlq"]
+[ext_resource type="Texture2D" uid="uid://bqq0rlc806f7g" path="res://security-camera-icon-video-surveillance-600nw-2498783595.webp" id="4_6ohjg"]
+[ext_resource type="Texture2D" uid="uid://bl15a2v6n4cn0" path="res://InterrogationRoom/images/Screenshot 2025-11-26 at 10.42.02 AM.png" id="5_1ci25"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_piw1u"]
+
+[node name="CameraPortal" type="Node2D"]
+script = ExtResource("1_6ohjg")
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+offset_left = -165.00002
+offset_top = -190.0
+offset_right = 346.0
+offset_bottom = 112.0
+scale = Vector2(0.70484865, 1.4821806)
+color = Color(0.4509804, 0, 0.4509804, 0.11372549)
+
+[node name="InteractMove" type="TextureButton" parent="."]
+self_modulate = Color(0, 0, 4.009751, 1)
+offset_left = -181.0
+offset_top = -209.0
+offset_right = 419.0
+offset_bottom = 526.0
+scale = Vector2(0.5453891, 0.026475154)
+texture_normal = ExtResource("1_epabe")
+
+[node name="Hide" type="TextureButton" parent="."]
+self_modulate = Color(0.38392693, 0, 0.017539086, 1)
+offset_left = 145.0
+offset_top = -208.99998
+offset_right = 633.5259
+offset_bottom = 143.66039
+scale = Vector2(0.08588916, 0.055896945)
+texture_normal = ExtResource("2_uqu53")
+stretch_mode = 0
+
+[node name="bg" type="ColorRect" parent="."]
+offset_left = -181.0
+offset_top = -190.0
+offset_right = -141.0456
+offset_bottom = -150.0
+scale = Vector2(9.234264, 10.979021)
+color = Color(0.8462044, 0.6795119, 0.47655416, 1)
+
+[node name="map" type="TextureRect" parent="."]
+offset_left = -123.0
+offset_top = -190.0
+offset_right = 337.0
+offset_bottom = 460.0
+scale = Vector2(0.67439413, 0.67439413)
+texture = ExtResource("3_chmlq")
+
+[node name="logo" type="TextureRect" parent="."]
+offset_left = -182.0
+offset_top = -190.0
+offset_right = 418.0
+offset_bottom = 410.0
+scale = Vector2(0.09777433, 0.09777433)
+texture = ExtResource("4_6ohjg")
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Camera1" type="TextureButton" parent="Node2D"]
+offset_left = 114.0
+offset_top = 181.0
+offset_right = 370.0
+offset_bottom = 416.0
+scale = Vector2(0.13911286, 0.13911286)
+texture_normal = ExtResource("5_1ci25")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Node2D/Camera1"]
+sprite_frames = SubResource("SpriteFrames_piw1u")
+
+[node name="Camera2" type="TextureButton" parent="Node2D"]
+offset_left = 105.0
+offset_top = -57.999996
+offset_right = 361.0
+offset_bottom = 177.00002
+scale = Vector2(0.13911286, 0.13911286)
+texture_normal = ExtResource("5_1ci25")
+
+[node name="Camera3" type="TextureButton" parent="Node2D"]
+offset_left = 56.0
+offset_top = -151.0
+offset_right = 312.0
+offset_bottom = 84.000015
+scale = Vector2(0.13911286, 0.13911286)
+texture_normal = ExtResource("5_1ci25")
+
+[node name="Camera4" type="TextureButton" parent="Node2D"]
+offset_left = -120.0
+offset_top = -100.0
+offset_right = 136.0
+offset_bottom = 135.00002
+scale = Vector2(0.13911286, 0.13911286)
+texture_normal = ExtResource("5_1ci25")
+
+[node name="Camera5" type="TextureButton" parent="Node2D"]
+offset_left = 6.0
+offset_top = 2.0
+offset_right = 262.0
+offset_bottom = 237.00002
+scale = Vector2(0.13911286, 0.13911286)
+texture_normal = ExtResource("5_1ci25")
+
+[connection signal="button_down" from="InteractMove" to="." method="Down"]
+[connection signal="button_up" from="InteractMove" to="." method="Up"]
+[connection signal="pressed" from="Hide" to="." method="_on_hide_pressed"]

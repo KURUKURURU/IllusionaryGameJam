@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://bj21125bsyuej" path="res://image_window.gd" id="1_qoc1b"]
 [ext_resource type="Texture2D" uid="uid://dw7ubnogfdaev" path="res://StartRoom/images/paperrrr.jpg" id="2_uy755"]
 [ext_resource type="Texture2D" uid="uid://bqdh4r3tod5ff" path="res://StartRoom/images/Untitled.jpg" id="3_n5o75"]
-[ext_resource type="Texture2D" uid="uid://cwv04lcx0dxvf" path="res://InterrogationRoom/images/a16efc4767f048766f9c761c6f608b7a.jpg" id="4_uy755"]
+[ext_resource type="Texture2D" uid="uid://p23gx31ngx8d" path="res://InterrogationRoom/images/map.png" id="4_uy755"]
 
 [node name="ImageWindow" type="Node2D"]
 script = ExtResource("1_qoc1b")
@@ -44,21 +44,22 @@ scale = Vector2(12.514266, 7.259021)
 color = Color(0.70619625, 0.83457726, 0.9677421, 1)
 
 [node name="MapIcon" type="TextureButton" parent="."]
-offset_left = -211.0
-offset_top = -120.0
-offset_right = 524.0
-offset_bottom = 401.0
+offset_left = -192.0
+offset_top = -116.00001
+offset_right = 543.0
+offset_bottom = 534.0
 scale = Vector2(0.09418726, 0.09418726)
 texture_normal = ExtResource("4_uy755")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="MapIcon"]
+[node name="Label" type="RichTextLabel" parent="MapIcon"]
+texture_filter = 4
 layout_mode = 0
-offset_left = 169.87436
-offset_top = 541.47455
-offset_right = 615.79456
-offset_bottom = 711.3489
+offset_left = -42.468582
+offset_top = 690.1147
+offset_right = 583.9432
+offset_bottom = 859.989
 theme_override_colors/default_color = Color(3.465414e-06, 0, 0.76362056, 1)
-theme_override_font_sizes/normal_font_size = 57
+theme_override_font_sizes/normal_font_size = 81
 text = "townmap.png"
 
 [connection signal="button_down" from="InteractMove" to="." method="Down"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://bawgdwbg84swm"]
+[gd_scene load_steps=37 format=3 uid="uid://bawgdwbg84swm"]
 
 [ext_resource type="Script" uid="uid://b0iosfjdnqwem" path="res://Start_Menu/scenes/start_menu.gd" id="1_sgpob"]
 [ext_resource type="PackedScene" uid="uid://bjp1b6hm65me1" path="res://Label/label.tscn" id="3_imdjc"]
@@ -25,6 +25,7 @@
 [ext_resource type="FontFile" uid="uid://cjwu65abufay6" path="res://Fonts/charybdis/chary___.ttf" id="22_u328h"]
 [ext_resource type="Texture2D" uid="uid://c4o45wugqqg5p" path="res://Start_Menu/images/dwarrow1.png" id="23_apny2"]
 [ext_resource type="Texture2D" uid="uid://bnbdp5f0vknvc" path="res://Start_Menu/images/dwarrow2.png" id="24_imgov"]
+[ext_resource type="Texture2D" uid="uid://dab1g8pxmw7pt" path="res://clouds.png" id="26_u328h"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_hoyqs"]
 animations = [{
@@ -78,6 +79,67 @@ animations = [{
 "name": &"open",
 "speed": 5.0
 }]
+
+[sub_resource type="Animation" id="Animation_u328h"]
+resource_name = "pullback"
+length = 1.9955
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.66824013, 0.66824013), Vector2(0.478, 0.478)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.2666667, 1.9666667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.5921569), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_apny2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.66824013, 0.66824013)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_imgov"]
+_data = {
+&"RESET": SubResource("Animation_apny2"),
+&"pullback": SubResource("Animation_u328h")
+}
 
 [sub_resource type="Animation" id="Animation_b1hon"]
 length = 0.001
@@ -159,6 +221,29 @@ offset_bottom = 604.0
 scale = Vector2(1.3124394, 1.3508551)
 color = Color(0, 0, 0, 1)
 
+[node name="Clouds1" type="Parallax2D" parent="."]
+modulate = Color(1, 1, 1, 0.16470589)
+repeat_size = Vector2(2834, 0)
+autoscroll = Vector2(10.185, 0)
+
+[node name="TextureRect" type="TextureRect" parent="Clouds1"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("26_u328h")
+metadata/_edit_use_anchors_ = true
+
+[node name="Clouds2" type="Parallax2D" parent="."]
+modulate = Color(0.3764706, 0.3764706, 0.3764706, 0)
+scale = Vector2(0.88258547, 0.88258547)
+scroll_offset = Vector2(-378, 46.000004)
+repeat_size = Vector2(2834, 0)
+autoscroll = Vector2(-11.325, 0)
+
+[node name="TextureRect" type="TextureRect" parent="Clouds2"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("26_u328h")
+
 [node name="Briefcase" type="AnimatedSprite2D" parent="."]
 texture_filter = 2
 position = Vector2(582, 325)
@@ -182,6 +267,11 @@ bus = &"SFX"
 [node name="shut" type="AudioStreamPlayer2D" parent="Briefcase"]
 stream = ExtResource("8_d42ky")
 bus = &"SFX"
+
+[node name="pull" type="AnimationPlayer" parent="Briefcase"]
+libraries = {
+&"": SubResource("AnimationLibrary_imgov")
+}
 
 [node name="Label" parent="." instance=ExtResource("3_imdjc")]
 offset_top = 605.0
