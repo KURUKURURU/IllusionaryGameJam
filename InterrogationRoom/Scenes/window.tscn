@@ -78,7 +78,7 @@ size_flags_vertical = 2
 
 [node name="Webpage" type="TextureRect" parent="notes/Control"]
 layout_mode = 0
-offset_right = 600.0
+offset_right = 1200.0
 offset_bottom = 735.0
 scale = Vector2(0.6763154, 0.6763154)
 size_flags_horizontal = 0

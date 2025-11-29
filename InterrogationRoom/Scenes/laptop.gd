@@ -1,8 +1,9 @@
 extends Node2D
 @onready var vicpage = $Object2/TestWindow/VictimPage
 
-
 func _ready() -> void:
+	$MapPreview.hide()
+	$ImageWindow.hide()
 	$Object2.hide()
 	
 	$Object/TestWindow/VictimPage.hide()
@@ -56,3 +57,25 @@ func _on_hide_pressed() -> void:
 
 func _on_maps_pressed() -> void:
 	$Object3.show()
+
+
+
+func IMG_Folder() -> void:
+	pass
+
+
+func _on_image_folder_image_signal() -> void:
+	$ping.play()
+	$ImageWindow/Popup.play("popup")
+	$ImageWindow.show()
+	$ImageWindow.z_index = 1
+	$Object.z_index = 0
+	$Object2.z_index = 0
+
+
+func _on_hideMAP_pressed() -> void:
+	$MapPreview.hide()
+
+
+func _on_image_window_map_preview() -> void:
+	$MapPreview.show()

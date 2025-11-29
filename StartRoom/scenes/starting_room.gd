@@ -52,7 +52,7 @@ func _viewCard():
 	$Object/Card.z_index = 0
 	$Object2/Files.z_index = 0
 	
-	$Object2/open.play()
+	#$Object2/open.play()
 	$CardZoom.show()
 
 
@@ -62,3 +62,11 @@ func _on_complete_pressed() -> void:
 	await $AnimationPlayer.animation_finished
 	await wait(2.0)
 	get_tree().change_scene_to_file("uid://cdu664noo2px5")
+
+
+func _on_file_book_showbutt() -> void:
+	$FileBook/Complete.show()
+
+
+func _on_file_book_hidebutt() -> void:
+	$FileBook/Complete.hide()

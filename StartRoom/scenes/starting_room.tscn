@@ -1,7 +1,7 @@
 [gd_scene load_steps=25 format=3 uid="uid://b1w8iudqm0htd"]
 
 [ext_resource type="Script" uid="uid://bc5q00kmi6np8" path="res://StartRoom/scenes/starting_room.gd" id="1_6sk8y"]
-[ext_resource type="Texture2D" uid="uid://bqdh4r3tod5ff" path="res://StartRoom/images/Untitled.jpg" id="1_b652u"]
+[ext_resource type="Texture2D" uid="uid://c5wm5t8jg6gyg" path="res://InterrogationRoom/images/wood.png" id="2_4aaq2"]
 [ext_resource type="Script" uid="uid://cnsbpo44033mx" path="res://StartRoom/scenes/object.gd" id="2_6sk8y"]
 [ext_resource type="Texture2D" uid="uid://dcupmfsqmt0sw" path="res://StartRoom/images/id1.png" id="4_4aaq2"]
 [ext_resource type="Texture2D" uid="uid://b2dd80hhau07p" path="res://StartRoom/images/id2.png" id="5_gb2mx"]
@@ -211,12 +211,10 @@ _data = {
 script = ExtResource("1_6sk8y")
 
 [node name="Table" type="TextureRect" parent="."]
-offset_left = -12.0
-offset_top = -20.0
-offset_right = 252.0
-offset_bottom = 171.0
-scale = Vector2(4.4549856, 3.5780094)
-texture = ExtResource("1_b652u")
+modulate = Color(0.8862745, 0.80784315, 0.6, 1)
+offset_right = 1150.0
+offset_bottom = 650.0
+texture = ExtResource("2_4aaq2")
 
 [node name="Object" type="Sprite2D" parent="."]
 position = Vector2(185, -405)
@@ -238,10 +236,11 @@ position = Vector2(162, -530)
 script = ExtResource("2_6sk8y")
 
 [node name="Files" type="TextureButton" parent="Object2"]
-offset_left = 503.0
-offset_top = -134.99988
-offset_right = 1060.1655
-offset_bottom = 545.38544
+self_modulate = Color(1.224127, 1.0814868, 0.9816385, 1)
+offset_left = 527.99994
+offset_top = -157.99988
+offset_right = 1085.1655
+offset_bottom = 522.3854
 rotation = 0.03357922
 scale = Vector2(0.74663645, 0.74663645)
 texture_normal = ExtResource("6_4aaq2")
@@ -290,15 +289,16 @@ libraries = {
 autoplay = "fgd"
 
 [node name="CardZoom" parent="." instance=ExtResource("11_n6jhq")]
+visible = false
 position = Vector2(47, 3)
 scale = Vector2(0.9224243, 0.9224243)
 
 [node name="Label" parent="." instance=ExtResource("8_x67wb")]
 z_index = 2
 offset_left = -2.0
-offset_top = 610.0
+offset_top = 611.0
 offset_right = 38.0
-offset_bottom = 650.0
+offset_bottom = 651.0
 
 [node name="MainMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("15_favh6")
@@ -325,4 +325,6 @@ color = Color(0, 0, 0, 0)
 [connection signal="button_down" from="Object2/Files" to="." method="Files_interact"]
 [connection signal="button_down" from="Object2/Files" to="Object2" method="Down"]
 [connection signal="button_up" from="Object2/Files" to="Object2" method="Up"]
+[connection signal="hidebutt" from="FileBook" to="." method="_on_file_book_hidebutt"]
+[connection signal="showbutt" from="FileBook" to="." method="_on_file_book_showbutt"]
 [connection signal="pressed" from="FileBook/Complete" to="." method="_on_complete_pressed"]

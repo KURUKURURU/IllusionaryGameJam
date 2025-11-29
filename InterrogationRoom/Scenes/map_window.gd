@@ -1,0 +1,19 @@
+extends TextureButton
+var dragging = false
+var of = Vector2(0,0)
+
+func _on_hide_pressed() -> void:
+	self.hide()
+
+func _process(delta: float) -> void:
+	if dragging:
+		position = get_global_mouse_position() - of
+	
+	
+func Up() -> void:
+	dragging = false
+
+
+func Down() -> void:
+	dragging = true
+	of = get_global_mouse_position() - global_position

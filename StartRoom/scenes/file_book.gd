@@ -1,4 +1,6 @@
 extends Node2D
+signal hidebutt
+signal showbutt
 
 func _ready() -> void:
 	$bigimg.hide()
@@ -11,6 +13,8 @@ func _process(delta: float) -> void:
 	
 
 func _on_hovernote_pressed() -> void:
+	emit_signal("hidebutt")
+	
 	$bigimg.show()
 	$mainimg/hovernote.hide()
 	$putdown.show()
@@ -25,6 +29,7 @@ func _on_hovernote_mouse_exited() -> void:
 
 
 func _on_putdown_pressed() -> void:
+	emit_signal("showbutt")
 	$bigimg.hide()
 	$putdown.hide()
 	
