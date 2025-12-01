@@ -46,13 +46,13 @@ animations = [{
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 1.21,
+"duration": 0.91,
 "texture": ExtResource("7_behxk")
 }, {
-"duration": 1.61,
+"duration": 1.01,
 "texture": ExtResource("6_68vcx")
 }, {
-"duration": 1.0,
+"duration": 0.61,
 "texture": ExtResource("5_hoyqs")
 }, {
 "duration": 1.31,
@@ -60,7 +60,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"finished",
-"speed": 5.0
+"speed": 4.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -79,6 +79,33 @@ animations = [{
 "name": &"open",
 "speed": 5.0
 }]
+
+[sub_resource type="Animation" id="Animation_apny2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.66824013, 0.66824013)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_u328h"]
 resource_name = "pullback"
@@ -106,33 +133,6 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.5921569), Color(1, 1, 1, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_apny2"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0.66824013, 0.66824013)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:self_modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_imgov"]
@@ -250,8 +250,8 @@ position = Vector2(582, 325)
 scale = Vector2(0.66824013, 0.66824013)
 sprite_frames = SubResource("SpriteFrames_hoyqs")
 animation = &"finished"
-frame = 1
-frame_progress = 0.75074536
+frame = 3
+frame_progress = 1.0
 
 [node name="Handle" type="TextureButton" parent="Briefcase"]
 offset_left = -77.816376
@@ -274,8 +274,10 @@ libraries = {
 }
 
 [node name="Label" parent="." instance=ExtResource("3_imdjc")]
-offset_top = 605.0
-offset_bottom = 645.0
+offset_left = 421.0
+offset_top = 520.0
+offset_right = 461.0
+offset_bottom = 560.0
 scale = Vector2(4.085002, 0.9705001)
 
 [node name="Node2D" type="Node2D" parent="."]

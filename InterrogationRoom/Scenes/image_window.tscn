@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://d1vh3g3ojsvrt"]
+[gd_scene load_steps=6 format=3 uid="uid://d1vh3g3ojsvrt"]
 
 [ext_resource type="Script" uid="uid://bj21125bsyuej" path="res://image_window.gd" id="1_qoc1b"]
 [ext_resource type="Texture2D" uid="uid://dw7ubnogfdaev" path="res://StartRoom/images/paperrrr.jpg" id="2_uy755"]
 [ext_resource type="Texture2D" uid="uid://bqdh4r3tod5ff" path="res://StartRoom/images/Untitled.jpg" id="3_n5o75"]
 [ext_resource type="Texture2D" uid="uid://p23gx31ngx8d" path="res://InterrogationRoom/images/map.png" id="4_uy755"]
+[ext_resource type="AudioStream" uid="uid://dipgr8o46y6dj" path="res://delete.wav" id="5_n5o75"]
 
 [node name="ImageWindow" type="Node2D"]
 script = ExtResource("1_qoc1b")
@@ -61,6 +62,9 @@ offset_bottom = 859.989
 theme_override_colors/default_color = Color(3.465414e-06, 0, 0.76362056, 1)
 theme_override_font_sizes/normal_font_size = 81
 text = "townmap.png"
+
+[node name="deleteSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_n5o75")
 
 [connection signal="button_down" from="InteractMove" to="." method="Down"]
 [connection signal="button_up" from="InteractMove" to="." method="Up"]

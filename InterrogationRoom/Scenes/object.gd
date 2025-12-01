@@ -19,6 +19,7 @@ func Down() -> void:
 
 
 func _on_hide_pressed() -> void:
+	$deleteSound.play()
 	self.hide()
 
 

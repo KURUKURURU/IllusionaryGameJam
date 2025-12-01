@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://elr6b75453co"]
+[gd_scene load_steps=9 format=3 uid="uid://elr6b75453co"]
 
 [ext_resource type="Script" uid="uid://r0upp8n63nj6" path="res://InterrogationRoom/Scenes/camera_portal.gd" id="1_6ohjg"]
 [ext_resource type="Texture2D" uid="uid://dw7ubnogfdaev" path="res://StartRoom/images/paperrrr.jpg" id="1_epabe"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://p23gx31ngx8d" path="res://InterrogationRoom/images/map.png" id="3_chmlq"]
 [ext_resource type="Texture2D" uid="uid://bqq0rlc806f7g" path="res://security-camera-icon-video-surveillance-600nw-2498783595.webp" id="4_6ohjg"]
 [ext_resource type="Texture2D" uid="uid://bl15a2v6n4cn0" path="res://InterrogationRoom/images/Screenshot 2025-11-26 at 10.42.02 AM.png" id="5_1ci25"]
+[ext_resource type="AudioStream" uid="uid://dipgr8o46y6dj" path="res://delete.wav" id="7_1ci25"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_piw1u"]
 
@@ -107,6 +108,9 @@ offset_right = 262.0
 offset_bottom = 237.00002
 scale = Vector2(0.13911286, 0.13911286)
 texture_normal = ExtResource("5_1ci25")
+
+[node name="deleteSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_1ci25")
 
 [connection signal="button_down" from="InteractMove" to="." method="Down"]
 [connection signal="button_up" from="InteractMove" to="." method="Up"]

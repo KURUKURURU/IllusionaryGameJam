@@ -15,7 +15,7 @@ func _ready() -> void:
 	$Credits.hide()
 	$Briefcase.play("close")
 	$Label/ColorRect.hide()
-	$Label/Text.add_theme_color_override("default_color", Color(0.897, 0.51, 0.299, 1.0))
+	$Label/Text.add_theme_color_override("default_color", Color(1.0, 1.0, 1.0, 1.0))
 	$SettingsPanel.hide()
 	
 	label.text = ""
@@ -103,14 +103,15 @@ func StartGame() -> void:
 	$Briefcase.play("finished")
 	$MusicFade.play("musicfade")
 	$Node2D.hide()
-	
+	$Briefcase/shut.play()
 	
 	await $Briefcase.animation_finished
-	$Briefcase/shut.play()
+	$Briefcase/click.play()
+	
 	$Briefcase/pull.play("pullback")
 	await $Briefcase/pull.animation_finished
 	
-	$Briefcase/click.play()
+	
 	
 	await wait(2.0)
 	$Briefcase.stop()

@@ -3,6 +3,7 @@ var dragging = false
 var of = Vector2(0,0)
 
 func _on_hide_pressed() -> void:
+	$deleteSound.play()
 	self.hide()
 
 func _process(delta: float) -> void:

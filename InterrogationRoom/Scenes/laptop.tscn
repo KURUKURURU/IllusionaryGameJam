@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://jpraix5hokpi"]
+[gd_scene load_steps=26 format=3 uid="uid://jpraix5hokpi"]
 
 [ext_resource type="Script" uid="uid://c5navywk44tjh" path="res://InterrogationRoom/Scenes/laptop.gd" id="1_xsinj"]
 [ext_resource type="Script" uid="uid://bent2seqmqsht" path="res://InterrogationRoom/Scenes/object.gd" id="2_5y0nm"]
@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://bqq0rlc806f7g" path="res://security-camera-icon-video-surveillance-600nw-2498783595.webp" id="15_m2whj"]
 [ext_resource type="Script" uid="uid://tqwgyicux24i" path="res://InterrogationRoom/Scenes/icon_security_portal.gd" id="16_roxh2"]
 [ext_resource type="PackedScene" uid="uid://elr6b75453co" path="res://InterrogationRoom/Scenes/camera_portal.tscn" id="17_roxh2"]
+[ext_resource type="AudioStream" uid="uid://dipgr8o46y6dj" path="res://delete.wav" id="18_gyosh"]
 
 [sub_resource type="Animation" id="Animation_eq50e"]
 length = 0.001
@@ -330,6 +331,9 @@ libraries = {
 &"": SubResource("AnimationLibrary_w7ul5")
 }
 
+[node name="deleteSound" type="AudioStreamPlayer" parent="Object2"]
+stream = ExtResource("18_gyosh")
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="bott" type="TextureRect" parent="CanvasLayer"]
@@ -451,6 +455,9 @@ scale = Vector2(0.055, 0.055)
 libraries = {
 &"": SubResource("AnimationLibrary_w7ul5")
 }
+
+[node name="deleteSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("18_gyosh")
 
 [connection signal="CameraSignal" from="Icon_SecurityPortal" to="." method="SecurityPortalActivation"]
 [connection signal="button_down" from="Object" to="." method="Object1"]
