@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bjp1b6hm65me1"]
 
 [ext_resource type="Script" uid="uid://cqabfvejgau0a" path="res://Label/label.gd" id="1_a3yin"]
-[ext_resource type="FontFile" uid="uid://cddaurpo15jrm" path="res://Fonts/toriswriting-font/Toriswriting-qD85.ttf" id="2_bpoes"]
+[ext_resource type="FontFile" uid="uid://bx28omnoj00vk" path="res://MysteryMobileRotated2-7OYg4.otf" id="2_bpoes"]
 
 [node name="Label" type="ColorRect"]
 offset_right = 40.0
@@ -17,12 +17,16 @@ offset_bottom = 40.0
 color = Color(0, 0, 0, 1)
 
 [node name="Text" type="RichTextLabel" parent="."]
+texture_filter = 4
 layout_mode = 0
-offset_left = 4.1318326
-offset_top = 8.184281
-offset_right = 4101.8936
-offset_bottom = 193.3625
+offset_left = 4.3748817
+offset_top = 5.1151733
+offset_right = 4102.1367
+offset_bottom = 190.2934
 scale = Vector2(0.0903813, 0.35067853)
+theme_override_colors/font_outline_color = Color(0.3036233, 0.08357672, 0.07076488, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
+theme_override_constants/outline_size = 25
 theme_override_fonts/normal_font = ExtResource("2_bpoes")
 theme_override_font_sizes/normal_font_size = 86
 text = "null"

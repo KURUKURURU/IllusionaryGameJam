@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://bawgdwbg84swm"]
+[gd_scene load_steps=38 format=3 uid="uid://bawgdwbg84swm"]
 
 [ext_resource type="Script" uid="uid://b0iosfjdnqwem" path="res://Start_Menu/scenes/start_menu.gd" id="1_sgpob"]
 [ext_resource type="PackedScene" uid="uid://bjp1b6hm65me1" path="res://Label/label.tscn" id="3_imdjc"]
@@ -26,6 +26,7 @@
 [ext_resource type="Texture2D" uid="uid://c4o45wugqqg5p" path="res://Start_Menu/images/dwarrow1.png" id="23_apny2"]
 [ext_resource type="Texture2D" uid="uid://bnbdp5f0vknvc" path="res://Start_Menu/images/dwarrow2.png" id="24_imgov"]
 [ext_resource type="Texture2D" uid="uid://dab1g8pxmw7pt" path="res://clouds.png" id="26_u328h"]
+[ext_resource type="AudioStream" uid="uid://bjm4rdckp0wnr" path="res://clicnk.wav" id="27_apny2"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_hoyqs"]
 animations = [{
@@ -132,7 +133,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 1.2666667, 1.9666667),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.5921569), Color(1, 1, 1, 0)]
+"values": [Color(1, 1, 1, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_imgov"]
@@ -222,6 +223,7 @@ scale = Vector2(1.3124394, 1.3508551)
 color = Color(0, 0, 0, 1)
 
 [node name="Clouds1" type="Parallax2D" parent="."]
+visible = false
 modulate = Color(1, 1, 1, 0.16470589)
 repeat_size = Vector2(2834, 0)
 autoscroll = Vector2(10.185, 0)
@@ -233,6 +235,7 @@ texture = ExtResource("26_u328h")
 metadata/_edit_use_anchors_ = true
 
 [node name="Clouds2" type="Parallax2D" parent="."]
+visible = false
 modulate = Color(0.3764706, 0.3764706, 0.3764706, 0)
 scale = Vector2(0.88258547, 0.88258547)
 scroll_offset = Vector2(-378, 46.000004)
@@ -244,6 +247,13 @@ offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("26_u328h")
 
+[node name="Label" parent="." instance=ExtResource("3_imdjc")]
+offset_left = 422.0
+offset_top = 518.99994
+offset_right = 462.0
+offset_bottom = 558.99994
+scale = Vector2(4.085002, 0.9705001)
+
 [node name="Briefcase" type="AnimatedSprite2D" parent="."]
 texture_filter = 2
 position = Vector2(582, 325)
@@ -254,11 +264,11 @@ frame = 3
 frame_progress = 1.0
 
 [node name="Handle" type="TextureButton" parent="Briefcase"]
-offset_left = -77.816376
-offset_top = 263.37836
-offset_right = 99.183624
-offset_bottom = 353.37836
-scale = Vector2(0.85053575, 0.60917693)
+offset_left = -95.77394
+offset_top = 257.3925
+offset_right = 81.22606
+offset_bottom = 358.11078
+scale = Vector2(1.035418, 0.7415946)
 
 [node name="click" type="AudioStreamPlayer2D" parent="Briefcase"]
 stream = ExtResource("4_1ifhu")
@@ -272,13 +282,6 @@ bus = &"SFX"
 libraries = {
 &"": SubResource("AnimationLibrary_imgov")
 }
-
-[node name="Label" parent="." instance=ExtResource("3_imdjc")]
-offset_left = 421.0
-offset_top = 520.0
-offset_right = 461.0
-offset_bottom = 560.0
-scale = Vector2(4.085002, 0.9705001)
 
 [node name="Node2D" type="Node2D" parent="."]
 
@@ -386,6 +389,10 @@ libraries = {
 &"": SubResource("AnimationLibrary_u328h")
 }
 autoplay = "new_animation"
+
+[node name="clink" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("27_apny2")
+pitch_scale = 0.5
 
 [connection signal="mouse_entered" from="Briefcase/Handle" to="." method="mousetouch_handle"]
 [connection signal="mouse_exited" from="Briefcase/Handle" to="." method="mouseleave_handle"]

@@ -22,3 +22,7 @@ func _on_sfx_value_changed(value: float) -> void:
 
 func _on_general_value_changed(value: float) -> void:
 	$panel.speed_scale = value
+
+
+func clink() -> void:
+	$clink.play()

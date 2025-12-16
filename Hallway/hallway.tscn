@@ -1,0 +1,39 @@
+[gd_scene load_steps=7 format=3 uid="uid://b4rgvrr0gjroo"]
+
+[ext_resource type="Script" uid="uid://d3fwety47ocw3" path="res://Hallway/hallway.gd" id="1_peadq"]
+[ext_resource type="Texture2D" uid="uid://ch367gvb5y3h" path="res://Hallway/images/wall1.png" id="2_olku6"]
+[ext_resource type="AudioStream" uid="uid://cugvuvlllbbnr" path="res://Sound/mysterytheme.wav" id="3_mtfx4"]
+[ext_resource type="AudioStream" uid="uid://b4c11ui3lonn" path="res://office.wav" id="4_olku6"]
+[ext_resource type="Texture2D" uid="uid://bfyvre3qx05hn" path="res://Hallway/images/d1.png" id="5_riab6"]
+[ext_resource type="Texture2D" uid="uid://bkkwfdi48bnnr" path="res://Hallway/images/d1h.png" id="6_tmm3p"]
+
+[node name="Hallway" type="Node2D"]
+script = ExtResource("1_peadq")
+
+[node name="hall" type="TextureRect" parent="."]
+offset_right = 1150.0
+offset_bottom = 650.0
+texture = ExtResource("2_olku6")
+
+[node name="MainMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_mtfx4")
+volume_db = -12.404
+autoplay = true
+bus = &"Music"
+
+[node name="SFXPeople" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_olku6")
+volume_db = -53.43
+autoplay = true
+bus = &"SFX"
+
+[node name="Door_Greg" type="TextureButton" parent="."]
+offset_left = 196.0
+offset_top = -5.0
+offset_right = 364.0
+offset_bottom = 688.0
+scale = Vector2(1.0092744, 1.0092744)
+texture_normal = ExtResource("5_riab6")
+texture_hover = ExtResource("6_tmm3p")
+
+[connection signal="pressed" from="Door_Greg" to="." method="GregPath"]

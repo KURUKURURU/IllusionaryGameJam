@@ -8,8 +8,15 @@ func _ready() -> void:
 	$CardZoom.hide()
 	$BlackFade.hide()
 	$AnimationPlayer.play("StartRoom/SlideIn")
+	
+	await wait(2.0)
+	$Shadow/Walking.play("Down")
+	
+	play_Walking()
 
 func _process(delta: float) -> void:
+	
+	
 	if $Object2/Files.is_hovered():
 		$Label/Text.text = "View your case? [PRESS E]"
 		
@@ -61,7 +68,7 @@ func _on_complete_pressed() -> void:
 	$AnimationPlayer.play("Fade")
 	await $AnimationPlayer.animation_finished
 	await wait(2.0)
-	get_tree().change_scene_to_file("uid://cdu664noo2px5")
+	get_tree().change_scene_to_file("uid://b4rgvrr0gjroo")
 
 
 func _on_file_book_showbutt() -> void:
@@ -70,3 +77,25 @@ func _on_file_book_showbutt() -> void:
 
 func _on_file_book_hidebutt() -> void:
 	$FileBook/Complete.hide()
+
+func play_Walking():
+	
+	randomize()
+	var random_float = randf()
+	
+	randomize()
+	var randTime = randi_range(3, 15)
+	
+	await wait(randTime)
+	
+	if random_float > 0.5:
+		$Shadow/Walking.play("Down")
+	else:
+		$Shadow/Walking.play("Up")
+		
+	await $Shadow/Walking.animation_finished
+	
+	play_Walking()
+	
+	
+	

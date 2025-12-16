@@ -2,6 +2,7 @@ extends Node2D
 @onready var label = $Label/Text
 #@onready var Brief_open = load("res://Start_Menu/images/suitcase/armored-business-case-money-open-top-down-white-background-isolated-160765169.webp")
 #@onready var Brief_closed = load("res://Start_Menu/images/suitcase/closed-black-leather-briefcase-isolated-600nw-1807081060.webp")
+@onready var audio_bus_layout = preload("res://echoExpanse.tres")
 
 
 func wait(seconds: float) -> void:
@@ -21,7 +22,7 @@ func _ready() -> void:
 	label.text = ""
 	_closeHandle()
 	
-	
+	AudioServer.set_bus_layout(audio_bus_layout)
 	
 
 #    "Handle" interactions
@@ -72,7 +73,7 @@ func settings_mouseleave() -> void:
 
 #
 func _settings_show() -> void:
-	$Node2D/Settings/click.play()
+	$clink.play()
 	$SettingsPanel/panel.play("still")
 	$SettingsPanel/zoom.play("zoom in")
 	$SettingsPanel.show()

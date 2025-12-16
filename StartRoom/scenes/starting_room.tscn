@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://b1w8iudqm0htd"]
+[gd_scene load_steps=36 format=3 uid="uid://b1w8iudqm0htd"]
 
 [ext_resource type="Script" uid="uid://bc5q00kmi6np8" path="res://StartRoom/scenes/starting_room.gd" id="1_6sk8y"]
 [ext_resource type="Texture2D" uid="uid://c5wm5t8jg6gyg" path="res://InterrogationRoom/images/wood.png" id="2_4aaq2"]
@@ -11,11 +11,18 @@
 [ext_resource type="AudioStream" uid="uid://dxs6cd7v2rjdp" path="res://StartRoom/sounds/openpeper.wav" id="8_kk2xe"]
 [ext_resource type="PackedScene" uid="uid://bjp1b6hm65me1" path="res://Label/label.tscn" id="8_x67wb"]
 [ext_resource type="PackedScene" uid="uid://67pbacp18qgo" path="res://StartRoom/scenes/file_book.tscn" id="9_rk5jh"]
+[ext_resource type="Texture2D" uid="uid://ch1uadficr2l8" path="res://PreCutscene/frames/box/prop/coffee.png" id="10_giopp"]
 [ext_resource type="Texture2D" uid="uid://c4o45wugqqg5p" path="res://Start_Menu/images/dwarrow1.png" id="11_4aaq2"]
 [ext_resource type="PackedScene" uid="uid://cvx665n1ru5jd" path="res://StartRoom/scenes/card_zoom.tscn" id="11_n6jhq"]
 [ext_resource type="Texture2D" uid="uid://bnbdp5f0vknvc" path="res://Start_Menu/images/dwarrow2.png" id="12_gb2mx"]
 [ext_resource type="AudioStream" uid="uid://cugvuvlllbbnr" path="res://Sound/mysterytheme.wav" id="15_favh6"]
 [ext_resource type="AudioStream" uid="uid://bk56q6ocaen5o" path="res://StartRoom/sounds/hmmm!.wav" id="16_4aaq2"]
+[ext_resource type="AudioStream" uid="uid://b4c11ui3lonn" path="res://office.wav" id="16_gb2mx"]
+[ext_resource type="Texture2D" uid="uid://ixsyqq0n57oh" path="res://shadow-png-30599.png" id="18_j4u7u"]
+[ext_resource type="Texture2D" uid="uid://dslsrbjtcl3iv" path="res://PreCutscene/frames/box/prop/paper1.png" id="20_aecso"]
+[ext_resource type="Script" uid="uid://h7uumfjgr5kh" path="res://StartRoom/scenes/coffee.gd" id="20_ox26u"]
+[ext_resource type="Texture2D" uid="uid://ctrxm4hxthj4g" path="res://PreCutscene/frames/box/prop/paper2.png" id="21_q74pk"]
+[ext_resource type="Texture2D" uid="uid://c7f8esegdc7p3" path="res://PreCutscene/frames/box/prop/mouse.png" id="22_q74pk"]
 
 [sub_resource type="Animation" id="Animation_886dc"]
 resource_name = "Fade"
@@ -92,6 +99,72 @@ tracks/2/keys = {
 "points": PackedFloat32Array(-12.404, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Coffee:position:x")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(918, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Coffee:position:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-295.99994, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("paper1:position:x")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(97, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/6/type = "bezier"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("paper1:position:y")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-249, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/7/type = "bezier"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("paper2:position:x")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(291, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/8/type = "bezier"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("paper2:position:y")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-126, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_tfovf"]
 _data = {
@@ -100,6 +173,7 @@ _data = {
 }
 
 [sub_resource type="Animation" id="Animation_txpld"]
+length = 1.9355
 tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -144,10 +218,128 @@ tracks/3/keys = {
 "points": PackedFloat32Array(-54, -0.25, 0, 0.25, 0, 603.99994, -0.7, 6.1035156e-05, 0, 0),
 "times": PackedFloat32Array(0, 1)
 }
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Coffee:position:x")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(918, -0.25, 0, 0.25, 0, 918, -0.16666667, 0, 0, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Coffee:position:y")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(-295.99994, -0.25, 0, 0.25, 0, -48, -0.16666667, -41.333324, 0, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/6/type = "bezier"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("paper1:position:x")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(97, -0.25, 0, 0.25, 0, 140, -0.06666667, -7.166667, 0, 0),
+"times": PackedFloat32Array(0, 0.4)
+}
+tracks/7/type = "bezier"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("paper1:position:y")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(-249, -0.25, 0, 0.25, 0, 324, -0.6666666, 56, 0, 0),
+"times": PackedFloat32Array(0, 0.76666665)
+}
+tracks/8/type = "bezier"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("paper2:position:x")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(291, -0.25, 0, 0.25, 0, 359, -0.95, 0, 0, 0),
+"times": PackedFloat32Array(0, 1.25)
+}
+tracks/9/type = "bezier"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("paper2:position:y")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(-126, -0.25, 0, 0.25, 0, 80, -0.9166666, -1, 0, 0),
+"times": PackedFloat32Array(0, 1.25)
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_gwrsf"]
 _data = {
 &"SlideIn": SubResource("Animation_txpld")
+}
+
+[sub_resource type="Animation" id="Animation_q74pk"]
+resource_name = "Down"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-1516, -1259), Vector2(-1516, 683)]
+}
+
+[sub_resource type="Animation" id="Animation_aecso"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-1516, 571)]
+}
+
+[sub_resource type="Animation" id="Animation_ylssr"]
+resource_name = "Up"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-1516, 571), Vector2(-1516, -1238)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ox26u"]
+_data = {
+&"Down": SubResource("Animation_q74pk"),
+&"RESET": SubResource("Animation_aecso"),
+&"Up": SubResource("Animation_ylssr")
 }
 
 [sub_resource type="Animation" id="Animation_giopp"]
@@ -216,15 +408,25 @@ offset_right = 1150.0
 offset_bottom = 650.0
 texture = ExtResource("2_4aaq2")
 
+[node name="Coffee" type="TextureButton" parent="."]
+z_index = 5
+offset_left = 918.0
+offset_top = -295.99994
+offset_right = 1427.0
+offset_bottom = 35.00006
+scale = Vector2(0.7373494, 0.7373494)
+texture_normal = ExtResource("10_giopp")
+script = ExtResource("20_ox26u")
+
 [node name="Object" type="Sprite2D" parent="."]
 position = Vector2(185, -405)
 script = ExtResource("2_6sk8y")
 
 [node name="Card" type="TextureButton" parent="Object"]
-offset_left = 86.0
-offset_top = -1.0
-offset_right = 1042.0
-offset_bottom = 628.0
+offset_left = -26.0
+offset_top = -6.000001
+offset_right = 930.0022
+offset_bottom = 623.0012
 rotation = -0.059481572
 scale = Vector2(0.24676132, 0.24600951)
 texture_normal = ExtResource("4_4aaq2")
@@ -237,10 +439,10 @@ script = ExtResource("2_6sk8y")
 
 [node name="Files" type="TextureButton" parent="Object2"]
 self_modulate = Color(1.224127, 1.0814868, 0.9816385, 1)
-offset_left = 527.99994
-offset_top = -157.99988
-offset_right = 1085.1655
-offset_bottom = 522.3854
+offset_left = 447.0
+offset_top = -54.0
+offset_right = 1004.16565
+offset_bottom = 626.38434
 rotation = 0.03357922
 scale = Vector2(0.74663645, 0.74663645)
 texture_normal = ExtResource("6_4aaq2")
@@ -261,13 +463,60 @@ stream = ExtResource("8_kk2xe")
 autoplay = true
 bus = &"SFX"
 
+[node name="paper1" type="TextureButton" parent="."]
+offset_left = 97.0
+offset_top = -249.0
+offset_right = 252.96393
+offset_bottom = -106.598114
+scale = Vector2(0.7373494, 0.7373494)
+texture_normal = ExtResource("20_aecso")
+ignore_texture_size = true
+script = ExtResource("20_ox26u")
+
+[node name="paper2" type="TextureButton" parent="."]
+offset_left = 291.0
+offset_top = -126.0
+offset_right = 350.67322
+offset_bottom = -56.833298
+scale = Vector2(0.7373494, 0.7373494)
+texture_normal = ExtResource("21_q74pk")
+ignore_texture_size = true
+script = ExtResource("20_ox26u")
+
+[node name="mouse" type="TextureRect" parent="."]
+z_index = 5
+offset_left = 1097.0001
+offset_top = 45.999985
+offset_right = 1156.6733
+offset_bottom = 115.16664
+scale = Vector2(3.709928, 7.4949436)
+texture = ExtResource("22_q74pk")
+expand_mode = 1
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_tfovf"),
 &"StartRoom": SubResource("AnimationLibrary_gwrsf")
 }
 
+[node name="Shadow" type="TextureRect" parent="."]
+self_modulate = Color(0.25490198, 0.019607844, 0.32941177, 0.49803922)
+offset_left = -1516.0
+offset_top = 571.0
+offset_right = -987.0
+offset_bottom = 798.0
+scale = Vector2(5.283555, 5.283555)
+mouse_filter = 2
+texture = ExtResource("18_j4u7u")
+
+[node name="Walking" type="AnimationPlayer" parent="Shadow"]
+libraries = {
+&"": SubResource("AnimationLibrary_ox26u")
+}
+
 [node name="FileBook" parent="." instance=ExtResource("9_rk5jh")]
+visible = false
+z_index = 7
 position = Vector2(116, 32)
 scale = Vector2(0.81882745, 0.81882745)
 
@@ -290,11 +539,12 @@ autoplay = "fgd"
 
 [node name="CardZoom" parent="." instance=ExtResource("11_n6jhq")]
 visible = false
+z_index = 7
 position = Vector2(47, 3)
 scale = Vector2(0.9224243, 0.9224243)
 
 [node name="Label" parent="." instance=ExtResource("8_x67wb")]
-z_index = 2
+z_index = 10
 offset_left = -2.0
 offset_top = 611.0
 offset_right = 38.0
@@ -306,25 +556,37 @@ volume_db = -12.404
 autoplay = true
 bus = &"Music"
 
+[node name="SFXPeople" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("16_gb2mx")
+volume_db = -36.257
+autoplay = true
+bus = &"SFX"
+
 [node name="HMMM" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("16_4aaq2")
 volume_db = -12.404
 bus = &"SFX"
 
 [node name="BlackFade" type="ColorRect" parent="."]
-z_index = 5
+z_index = 16
 offset_left = -14.0
 offset_top = -27.0
 offset_right = 1163.0
 offset_bottom = 658.0
 color = Color(0, 0, 0, 0)
 
+[connection signal="button_down" from="Coffee" to="Coffee" method="Down"]
+[connection signal="button_up" from="Coffee" to="Coffee" method="Up"]
 [connection signal="button_down" from="Object/Card" to="." method="ID_interact"]
 [connection signal="button_down" from="Object/Card" to="Object" method="Down"]
 [connection signal="button_up" from="Object/Card" to="Object" method="Up"]
 [connection signal="button_down" from="Object2/Files" to="." method="Files_interact"]
 [connection signal="button_down" from="Object2/Files" to="Object2" method="Down"]
 [connection signal="button_up" from="Object2/Files" to="Object2" method="Up"]
+[connection signal="button_down" from="paper1" to="paper1" method="Down"]
+[connection signal="button_up" from="paper1" to="paper1" method="Up"]
+[connection signal="button_down" from="paper2" to="paper2" method="Down"]
+[connection signal="button_up" from="paper2" to="paper2" method="Up"]
 [connection signal="hidebutt" from="FileBook" to="." method="_on_file_book_hidebutt"]
 [connection signal="showbutt" from="FileBook" to="." method="_on_file_book_showbutt"]
 [connection signal="pressed" from="FileBook/Complete" to="." method="_on_complete_pressed"]

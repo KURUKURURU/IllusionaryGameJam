@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://bmeglpnch1rg5"]
+[gd_scene load_steps=22 format=3 uid="uid://bmeglpnch1rg5"]
 
 [ext_resource type="Script" uid="uid://miccxoqn6mvh" path="res://Start_Menu/scenes/settings_panel.gd" id="1_f3gv0"]
 [ext_resource type="Script" uid="uid://clt0c3y0am13e" path="res://Start_Menu/music.gd" id="2_0txog"]
@@ -10,11 +10,12 @@
 [ext_resource type="Texture2D" uid="uid://c31y0lfx616pc" path="res://Start_Menu/images/settingsframes/5.png" id="6_kwodi"]
 [ext_resource type="Texture2D" uid="uid://cavc06ohqasb0" path="res://Start_Menu/images/settingsframes/6.png" id="7_i850h"]
 [ext_resource type="Texture2D" uid="uid://v3wq5seaxkhc" path="res://Start_Menu/images/settingsframes/ticker.png" id="8_rhmlg"]
-[ext_resource type="FontFile" uid="uid://cddaurpo15jrm" path="res://Fonts/toriswriting-font/Toriswriting-qD85.ttf" id="9_vus1m"]
+[ext_resource type="FontFile" uid="uid://bx28omnoj00vk" path="res://MysteryMobileRotated2-7OYg4.otf" id="10_wba7r"]
 [ext_resource type="AudioStream" uid="uid://bufq58qg32yx3" path="res://Start_Menu/sound/cogs.mp3" id="11_rhmlg"]
 [ext_resource type="Texture2D" uid="uid://bl15a2v6n4cn0" path="res://InterrogationRoom/images/Screenshot 2025-11-26 at 10.42.02 AM.png" id="11_v08p8"]
 [ext_resource type="Texture2D" uid="uid://dhncu2rvbbpbu" path="res://Start_Menu/images/settingsframes/exitbutt.png" id="13_wba7r"]
 [ext_resource type="Texture2D" uid="uid://1rlv3gng73av" path="res://Start_Menu/images/settingsframes/butthover.png" id="14_brky1"]
+[ext_resource type="AudioStream" uid="uid://bjm4rdckp0wnr" path="res://clicnk.wav" id="16_brky1"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_dxber"]
 animations = [{
@@ -157,12 +158,14 @@ script = ExtResource("2_0txog")
 bus_name = "Master"
 
 [node name="Music2" type="RichTextLabel" parent="."]
-offset_left = 129.0
+offset_left = 122.0
 offset_top = 54.0
-offset_right = 200.99344
+offset_right = 193.99344
 offset_bottom = 94.0
 scale = Vector2(0.7880267, 0.7880267)
-theme_override_fonts/normal_font = ExtResource("9_vus1m")
+theme_override_colors/font_outline_color = Color(0.3553136, 0.35531354, 0.35531357, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/normal_font = ExtResource("10_wba7r")
 theme_override_font_sizes/normal_font_size = 36
 text = "Music"
 
@@ -172,7 +175,9 @@ offset_top = 122.73773
 offset_right = 176.24815
 offset_bottom = 162.73773
 scale = Vector2(0.7880267, 0.7880267)
-theme_override_fonts/normal_font = ExtResource("9_vus1m")
+theme_override_colors/font_outline_color = Color(0.3553136, 0.35531354, 0.35531357, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/normal_font = ExtResource("10_wba7r")
 theme_override_font_sizes/normal_font_size = 36
 text = "SFX"
 
@@ -182,7 +187,9 @@ offset_top = 191.0
 offset_right = 183.0
 offset_bottom = 231.0
 scale = Vector2(0.7880267, 0.7880267)
-theme_override_fonts/normal_font = ExtResource("9_vus1m")
+theme_override_colors/font_outline_color = Color(0.3553136, 0.35531354, 0.35531357, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/normal_font = ExtResource("10_wba7r")
 theme_override_font_sizes/normal_font_size = 36
 text = "All"
 
@@ -222,7 +229,16 @@ libraries = {
 &"": SubResource("AnimationLibrary_brky1")
 }
 
+[node name="clink" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("16_brky1")
+mix_target = 1
+bus = &"SFX"
+playback_type = 1
+
+[connection signal="mouse_entered" from="Music" to="." method="clink"]
+[connection signal="mouse_entered" from="SFX" to="." method="clink"]
 [connection signal="value_changed" from="SFX" to="." method="_on_sfx_value_changed"]
+[connection signal="mouse_entered" from="General" to="." method="clink"]
 [connection signal="value_changed" from="General" to="." method="_on_general_value_changed"]
 [connection signal="pressed" from="SFXButton" to="." method="SFXTest"]
 [connection signal="pressed" from="Exit" to="." method="exitPanel"]

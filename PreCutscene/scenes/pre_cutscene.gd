@@ -1,10 +1,12 @@
 extends Node2D
 
+@onready var audio_bus_layout = preload("res://default_bus_layout.tres")
+
 func wait(seconds: float) -> void:
 	await get_tree().create_timer(seconds).timeout
 	
 func _ready() -> void:
-	
+	AudioServer.set_bus_layout(audio_bus_layout)
 	
 	$Next.hide()
 	$th/ani.play("default")

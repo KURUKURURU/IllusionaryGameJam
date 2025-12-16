@@ -1,7 +1,126 @@
-[gd_scene load_steps=6 format=3 uid="uid://cnb21alh73jw4"]
+[gd_scene load_steps=13 format=3 uid="uid://cnb21alh73jw4"]
 
-[ext_resource type="Texture2D" uid="uid://c0cvniidcrxy1" path="res://InterrogationRoom/images/cloud.png" id="1_lcxfj"]
-[ext_resource type="FontFile" uid="uid://cjwu65abufay6" path="res://Fonts/charybdis/chary___.ttf" id="2_th87c"]
+[ext_resource type="Texture2D" uid="uid://dj0sc4wncjhhx" path="res://PreCutscene/frames/box/youbox/1.png" id="1_g0dhb"]
+[ext_resource type="FontFile" uid="uid://dehehyydv307r" path="res://Fonts/paaxel-font/Paaxel-xRjLO.otf" id="1_lcxfj"]
+[ext_resource type="Texture2D" uid="uid://clr0dqihmb3sd" path="res://PreCutscene/frames/box/youbox/2.png" id="2_ucgjo"]
+[ext_resource type="Texture2D" uid="uid://dq2nr3rn22cyo" path="res://PreCutscene/frames/box/click/1.png" id="4_nxrcd"]
+[ext_resource type="Texture2D" uid="uid://nqtqk0nejox2" path="res://PreCutscene/frames/box/click/2.png" id="5_uni86"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nxrcd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_g0dhb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ucgjo")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_g0dhb"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Text:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CloudImg:position:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(575, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CloudImg:position:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-171, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CloudImg:scale:x")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CloudImg:scale:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("clickicon:modulate:r")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/6/type = "bezier"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("clickicon:modulate:g")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/7/type = "bezier"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("clickicon:modulate:b")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/8/type = "bezier"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("clickicon:modulate:a")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(-0.01)
+}
 
 [sub_resource type="Animation" id="Animation_th87c"]
 resource_name = "talking"
@@ -17,52 +136,152 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 1)
 }
 
-[sub_resource type="Animation" id="Animation_g0dhb"]
-length = 0.001
+[sub_resource type="Animation" id="Animation_ucgjo"]
+resource_name = "pop"
 tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Text:visible_ratio")
+tracks/0/path = NodePath("CloudImg:position:x")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
+"handle_modes": PackedInt32Array(2, 0),
+"points": PackedFloat32Array(575, 0, 0, 0.16666667, 0, 575, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CloudImg:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(2, 0),
+"points": PackedFloat32Array(25.999998, 0, 0, 0.16666667, -32.833336, -171, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CloudImg:scale:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(2, 0),
+"points": PackedFloat32Array(0.35, 0, 0, 0.16666667, 0.108333334, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CloudImg:scale:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(2, 0),
+"points": PackedFloat32Array(0.35, 0, 0, 0.16666667, 0.108333334, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1)
+}
+
+[sub_resource type="Animation" id="Animation_nxrcd"]
+resource_name = "fadein"
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("clickicon:modulate:r")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.16666667, 0, 0, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("clickicon:modulate:g")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.16666667, 0, 0, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("clickicon:modulate:b")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.16666667, 0, 0, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("clickicon:modulate:a")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.16666667, -0.16666667, 0, 0),
+"times": PackedFloat32Array(0, 1)
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ucgjo"]
 _data = {
 &"RESET": SubResource("Animation_g0dhb"),
+&"fadein": SubResource("Animation_nxrcd"),
+&"pop": SubResource("Animation_ucgjo"),
 &"talking": SubResource("Animation_th87c")
 }
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gc6ki"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_nxrcd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_uni86")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.16
+}]
 
 [node name="TalkingBox" type="Node2D"]
 
 [node name="ColorRect" type="ColorRect" parent="."]
-offset_left = -280.0
-offset_top = -244.0
-offset_right = 1513.0
-offset_bottom = 992.0
+offset_left = -318.0
+offset_top = -852.0
+offset_right = 1475.0
+offset_bottom = 384.0
 color = Color(1, 1, 1, 0)
 
-[node name="CloudImg" type="TextureRect" parent="."]
-offset_left = -112.0
-offset_top = 349.0
-offset_right = 1388.0
-offset_bottom = 1849.0
-scale = Vector2(0.9257717, 0.40577203)
-texture = ExtResource("1_lcxfj")
+[node name="ColorRect2" type="ColorRect" parent="."]
+visible = false
+offset_right = 1793.0
+offset_bottom = 1236.0
+scale = Vector2(0.6431467, 0.092063285)
+
+[node name="CloudImg" type="AnimatedSprite2D" parent="."]
+position = Vector2(575, -171)
+sprite_frames = SubResource("SpriteFrames_nxrcd")
+autoplay = "default"
+frame_progress = 0.73193586
+speed_scale = 0.24
 
 [node name="Text" type="RichTextLabel" parent="."]
-offset_left = 252.0
-offset_top = 554.0
-offset_right = 885.0
-offset_bottom = 629.0
+offset_left = 174.0
+offset_top = 22.0
+offset_right = 1174.0
+offset_bottom = 99.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_fonts/normal_font = ExtResource("2_th87c")
-theme_override_font_sizes/normal_font_size = 24
-text = "i love people they are so nice and uplifting yay yay yay"
+theme_override_fonts/normal_font = ExtResource("1_lcxfj")
+theme_override_font_sizes/normal_font_size = 20
 visible_characters = 0
 visible_ratio = 0.0
 
@@ -70,3 +289,22 @@ visible_ratio = 0.0
 libraries = {
 &"": SubResource("AnimationLibrary_ucgjo")
 }
+
+[node name="pop up" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_ucgjo")
+}
+speed_scale = 2.01
+
+[node name="clickicon" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_right = 40.0
+offset_bottom = 40.0
+expand_mode = 1
+
+[node name="images" type="AnimatedSprite2D" parent="clickicon"]
+position = Vector2(624.00006, -104)
+scale = Vector2(0.8802069, 0.76271874)
+sprite_frames = SubResource("SpriteFrames_gc6ki")
+autoplay = "default"
+frame_progress = 0.41664112
