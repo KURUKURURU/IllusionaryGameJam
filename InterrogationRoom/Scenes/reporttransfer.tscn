@@ -1,0 +1,332 @@
+[gd_scene load_steps=18 format=3 uid="uid://d32pkj2nffux0"]
+
+[ext_resource type="Script" uid="uid://bkvfxob166if3" path="res://InterrogationRoom/Scenes/reporttransfer.gd" id="1_w7tdb"]
+[ext_resource type="Texture2D" uid="uid://kk8a6g4jh4qn" path="res://webpages/indowmove.png" id="2_ixwjd"]
+[ext_resource type="Texture2D" uid="uid://b5y2e0uals3h1" path="res://Process/ph/images.jpg" id="5_vwtrv"]
+[ext_resource type="Texture2D" uid="uid://do3xmic073ojk" path="res://webpages/buttt.png" id="6_kv1vy"]
+[ext_resource type="AudioStream" uid="uid://dipgr8o46y6dj" path="res://delete.wav" id="7_rty41"]
+[ext_resource type="Texture2D" uid="uid://bmvt5arn0r7l5" path="res://webpages/Illustration.png" id="7_u3dxm"]
+[ext_resource type="Texture2D" uid="uid://cjwpkm4fjhuy0" path="res://images/questionn.png" id="8_liesj"]
+[ext_resource type="Texture2D" uid="uid://dxkyfr20gwiwk" path="res://images/questionh.png" id="9_s3bkv"]
+[ext_resource type="Script" uid="uid://vghqteomh0cb" path="res://InterrogationRoom/Scenes/info_screen.gd" id="16_w5cpq"]
+[ext_resource type="Texture2D" uid="uid://ixsyqq0n57oh" path="res://shadow-png-30599.png" id="18_imx8w"]
+[ext_resource type="Script" uid="uid://crormvnfgw8m5" path="res://InterrogationRoom/Scenes/mouse.gd" id="19_v6pxv"]
+
+[sub_resource type="Animation" id="Animation_jf06k"]
+resource_name = "open"
+length = 6.0425
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.099999994, 4.266667, 6.035049),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible_ratio")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.100000024, 0.43333328),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_kv1vy"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible_ratio")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_u3dxm"]
+_data = {
+&"RESET": SubResource("Animation_kv1vy"),
+&"open": SubResource("Animation_jf06k")
+}
+
+[sub_resource type="Animation" id="Animation_w7tdb"]
+resource_name = "fade"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0.063304454, 0.063304454, 0.063304454, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_vwtrv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kv1vy"]
+_data = {
+&"RESET": SubResource("Animation_vwtrv"),
+&"fade": SubResource("Animation_w7tdb")
+}
+
+[node name="Report_Transfer" type="Node2D"]
+script = ExtResource("1_w7tdb")
+
+[node name="shadow" type="ColorRect" parent="."]
+offset_left = -165.00002
+offset_top = -190.0
+offset_right = 346.0
+offset_bottom = 112.0
+scale = Vector2(0.70484865, 1.4821806)
+color = Color(0.4509804, 0, 0.4509804, 0.11372549)
+
+[node name="InteractMove" type="TextureButton" parent="."]
+offset_left = -181.0
+offset_top = -209.0
+offset_right = 218.0
+offset_bottom = -187.0
+scale = Vector2(0.9231712, 0.87437046)
+texture_normal = ExtResource("2_ixwjd")
+
+[node name="Hide" type="TextureButton" parent="."]
+self_modulate = Color(0.38392693, 0, 0.017539086, 1)
+offset_left = 127.000015
+offset_top = -208.99998
+offset_right = 615.5259
+offset_bottom = 143.66039
+scale = Vector2(0.12293447, 0.050768957)
+stretch_mode = 0
+
+[node name="bg" type="ColorRect" parent="."]
+offset_left = -180.99998
+offset_top = -191.0
+offset_right = -141.04558
+offset_bottom = -151.0
+scale = Vector2(9.234264, 10.979021)
+color = Color(0.28174746, 0.026113724, 0.3854911, 1)
+
+[node name="deleteSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_rty41")
+
+[node name="Character_Option" type="OptionButton" parent="."]
+offset_left = -168.0
+offset_top = -171.0
+offset_right = -35.0
+offset_bottom = -140.0
+scale = Vector2(0.7125422, 0.7125422)
+item_count = 3
+popup/item_0/text = "Greg"
+popup/item_0/id = 0
+popup/item_1/text = "Toby"
+popup/item_1/id = 1
+popup/item_2/text = "Panya"
+popup/item_2/id = 2
+
+[node name="Greg" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -161.0
+offset_top = -134.0
+offset_right = -121.0
+offset_bottom = -94.0
+
+[node name="ColorRect" type="ColorRect" parent="Greg"]
+layout_mode = 0
+offset_left = -7.0
+offset_top = -9.000015
+offset_right = 33.0
+offset_bottom = 30.999985
+scale = Vector2(8.519891, 7.259355)
+
+[node name="alibi" type="OptionButton" parent="Greg"]
+layout_mode = 0
+offset_left = 47.0
+offset_right = 180.0
+offset_bottom = 31.0
+scale = Vector2(0.7125422, 0.7125422)
+item_count = 3
+popup/item_0/text = "false"
+popup/item_0/id = 0
+popup/item_1/text = "true"
+popup/item_1/id = 1
+popup/item_2/text = "unconclusive"
+popup/item_2/id = 2
+
+[node name="Control" type="Control" parent="."]
+visible = false
+clip_contents = true
+layout_mode = 3
+anchors_preset = 0
+offset_left = -181.0
+offset_top = -191.0
+offset_right = -141.0
+offset_bottom = -151.0
+scale = Vector2(9.137931, 10.913043)
+mouse_filter = 2
+
+[node name="mouse" type="TextureRect" parent="Control"]
+modulate = Color(5.51065, 10.651967, 18.892157, 0.10980392)
+layout_mode = 0
+offset_left = -297.22263
+offset_top = -61.027885
+offset_right = 428.45914
+offset_bottom = 202.06805
+scale = Vector2(0.009932398, 0.02111465)
+pivot_offset = Vector2(325.3056, 86.26097)
+mouse_filter = 2
+texture = ExtResource("18_imx8w")
+script = ExtResource("19_v6pxv")
+
+[node name="TutorialButton" type="TextureButton" parent="."]
+self_modulate = Color(7.2809687, 3.3457851, 6.273562, 0.5529412)
+offset_left = 146.0
+offset_top = 194.0
+offset_right = 190.0
+offset_bottom = 273.0
+scale = Vector2(0.42009658, 0.42009658)
+texture_normal = ExtResource("8_liesj")
+texture_hover = ExtResource("9_s3bkv")
+ignore_texture_size = true
+stretch_mode = 3
+
+[node name="info" type="RichTextLabel" parent="TutorialButton"]
+layout_mode = 0
+offset_left = -721.2627
+offset_top = 16.662819
+offset_right = -16.66278
+offset_bottom = 80.933784
+theme_override_font_sizes/italics_font_size = 21
+bbcode_enabled = true
+text = "[i]Fill out the form by clicking each dropdown and picking one from many options. Choose wisely and review before submitting.[/i]"
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="slide" type="AnimationPlayer" parent="TutorialButton/info"]
+libraries = {
+&"": SubResource("AnimationLibrary_u3dxm")
+}
+
+[node name="InfoScreen" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = -58.0
+offset_right = -18.0
+offset_bottom = 40.0
+script = ExtResource("16_w5cpq")
+
+[node name="TemplateSize" type="ColorRect" parent="InfoScreen"]
+clip_children = 1
+layout_mode = 0
+offset_left = -123.0
+offset_top = -191.0
+offset_right = -75.53286
+offset_bottom = -151.2884
+scale = Vector2(7.8179684, 11.065567)
+
+[node name="BG" type="ColorRect" parent="InfoScreen/TemplateSize"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(1.1800921, 1)
+color = Color(0.1651246, 0.00029561907, 0.4092976, 1)
+
+[node name="Copyright" type="RichTextLabel" parent="InfoScreen/TemplateSize"]
+texture_filter = 4
+layout_mode = 0
+offset_left = 2.9586565
+offset_top = 33.518044
+offset_right = 205.9977
+offset_bottom = 78.10573
+scale = Vector2(0.15078712, 0.11439416)
+theme_override_font_sizes/normal_font_size = 6
+text = "© 2025 Your Studio Name. All rights reserved.
+This application and its contents are a work of fiction created for demonstration purposes only. Any resemblance to real applications, persons, or organizations is purely coincidental."
+
+[node name="Intro" type="RichTextLabel" parent="InfoScreen/TemplateSize"]
+texture_filter = 4
+layout_mode = 0
+offset_left = 2.9586565
+offset_top = 2.0037956
+offset_right = 276.8054
+offset_bottom = 206.62946
+scale = Vector2(0.15078712, 0.11439416)
+theme_override_font_sizes/normal_font_size = 11
+theme_override_font_sizes/italics_font_size = 13
+bbcode_enabled = true
+text = "Please submit a report for every witness or suspect you interview. 
+
+We appreciate accuracy, and prepare for legal action if your reports don't line up with later collected footage or evidence proving dishonesty. 
+
+Exercise extreme caution submitting these reports."
+
+[node name="image" type="TextureRect" parent="InfoScreen/TemplateSize"]
+layout_mode = 0
+offset_left = 3.0698514
+offset_top = 18.254826
+offset_right = 739.0698
+offset_bottom = 754.2548
+scale = Vector2(0.02528576, 0.01194379)
+texture = ExtResource("5_vwtrv")
+
+[node name="iaccept" type="TextureButton" parent="InfoScreen/TemplateSize"]
+layout_mode = 0
+offset_left = 2.1868334
+offset_top = 29.328287
+offset_right = 445.18683
+offset_bottom = 176.3283
+scale = Vector2(0.035789296, 0.022496894)
+texture_normal = ExtResource("6_kv1vy")
+texture_hover = ExtResource("7_u3dxm")
+
+[node name="fancyfade" type="AnimationPlayer" parent="InfoScreen"]
+libraries = {
+&"": SubResource("AnimationLibrary_kv1vy")
+}
+
+[connection signal="button_down" from="InteractMove" to="." method="Down"]
+[connection signal="button_up" from="InteractMove" to="." method="Up"]
+[connection signal="pressed" from="Hide" to="." method="_on_hide_pressed"]
+[connection signal="item_selected" from="Character_Option" to="." method="Character_Option_Selection"]
+[connection signal="pressed" from="TutorialButton" to="." method="_on_tutorial_button_pressed"]
+[connection signal="pressed" from="InfoScreen/TemplateSize/iaccept" to="." method="_on_iaccept_pressed"]

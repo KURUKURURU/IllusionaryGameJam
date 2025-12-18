@@ -4,6 +4,7 @@ extends Node2D
 
 
 func _ready() -> void:
+	$Report_Transfer.hide()
 	$MapPreview.hide()
 	$CameraPortal.hide()
 	$ImageWindow.hide()
@@ -109,4 +110,17 @@ func _on_test_window_greg_page() -> void:
 	gregpage.scroll_vertical = 0
 	gregpage.show()
 	
-	
+
+func _on_icon_report_transfer_pressed() -> void:
+	$ping.play()
+	$Report_Transfer/Popup.play("popup")
+	$Report_Transfer.show()
+	$Report_Transfer.z_index = 1
+	$CameraPortal.z_index = 0
+	$Object.z_index = 0
+	$Object2.z_index = 0
+	$ImageWindow.z_index = 0
+
+
+func _on_icon_report_transfer_report_app() -> void:
+	_on_icon_report_transfer_pressed()

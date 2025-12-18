@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://jpraix5hokpi"]
+[gd_scene load_steps=32 format=3 uid="uid://jpraix5hokpi"]
 
 [ext_resource type="Script" uid="uid://c5navywk44tjh" path="res://InterrogationRoom/Scenes/laptop.gd" id="1_xsinj"]
 [ext_resource type="Script" uid="uid://bent2seqmqsht" path="res://InterrogationRoom/Scenes/object.gd" id="2_5y0nm"]
@@ -7,7 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://c5ywwd24lm2ih" path="res://InterrogationRoom/Scenes/window.tscn" id="3_xsinj"]
 [ext_resource type="Texture2D" uid="uid://dw7ubnogfdaev" path="res://StartRoom/images/paperrrr.jpg" id="4_5y0nm"]
 [ext_resource type="Texture2D" uid="uid://bb56iw0cnf285" path="res://images/notepad.png" id="5_e164m"]
+[ext_resource type="Texture2D" uid="uid://0iid3wsisrik" path="res://Start_Menu/images/app.png" id="5_kbik4"]
 [ext_resource type="Texture2D" uid="uid://bqdh4r3tod5ff" path="res://StartRoom/images/Untitled.jpg" id="6_0qem7"]
+[ext_resource type="Script" uid="uid://b45b8dg173yi7" path="res://InterrogationRoom/Scenes/icon_report_transfer.gd" id="6_t2nu6"]
 [ext_resource type="AudioStream" uid="uid://qpsy82dpgi7q" path="res://InterrogationRoom/sounds/computerfail.wav" id="7_7gy8r"]
 [ext_resource type="Texture2D" uid="uid://kk8a6g4jh4qn" path="res://webpages/indowmove.png" id="8_di5o4"]
 [ext_resource type="Texture2D" uid="uid://bnuyvrw16p2d7" path="res://InterrogationRoom/images/bottomcomp.png" id="8_eq50e"]
@@ -21,6 +23,7 @@
 [ext_resource type="Script" uid="uid://tqwgyicux24i" path="res://InterrogationRoom/Scenes/icon_security_portal.gd" id="16_roxh2"]
 [ext_resource type="PackedScene" uid="uid://elr6b75453co" path="res://InterrogationRoom/Scenes/camera_portal.tscn" id="17_roxh2"]
 [ext_resource type="AudioStream" uid="uid://dipgr8o46y6dj" path="res://delete.wav" id="18_gyosh"]
+[ext_resource type="PackedScene" uid="uid://d32pkj2nffux0" path="res://InterrogationRoom/Scenes/reporttransfer.tscn" id="22_k8q15"]
 
 [sub_resource type="Animation" id="Animation_eq50e"]
 length = 0.001
@@ -246,6 +249,16 @@ scale = Vector2(0.54423916, 0.54423916)
 texture_normal = ExtResource("3_4msrw")
 script = ExtResource("16_roxh2")
 
+[node name="Icon_ReportTransfer" type="TextureButton" parent="."]
+self_modulate = Color(1.279715, 1.4164544, 1.0499926, 1)
+offset_left = 52.0
+offset_top = 479.0
+offset_right = 201.0
+offset_bottom = 646.0
+scale = Vector2(0.54423916, 0.54423916)
+texture_normal = ExtResource("5_kbik4")
+script = ExtResource("6_t2nu6")
+
 [node name="NotepadIcon" type="TextureButton" parent="."]
 offset_left = 19.0
 offset_top = 193.0
@@ -255,6 +268,7 @@ scale = Vector2(0.4991888, 0.4991888)
 texture_normal = ExtResource("5_e164m")
 
 [node name="Object" type="TextureButton" parent="."]
+visible = false
 z_index = 1
 offset_left = 387.22
 offset_top = -462.0
@@ -298,6 +312,7 @@ libraries = {
 }
 
 [node name="Object2" type="TextureButton" parent="."]
+visible = false
 modulate = Color(1, 1, 1, 0.18039216)
 offset_left = -123.0
 offset_top = -385.0
@@ -485,7 +500,18 @@ libraries = {
 [node name="deleteSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("18_gyosh")
 
+[node name="Report_Transfer" parent="." instance=ExtResource("22_k8q15")]
+modulate = Color(1, 1, 1, 0.18039216)
+position = Vector2(368, 278)
+scale = Vector2(0.055, 0.055)
+
+[node name="Popup" type="AnimationPlayer" parent="Report_Transfer"]
+libraries = {
+&"": SubResource("AnimationLibrary_w7ul5")
+}
+
 [connection signal="CameraSignal" from="Icon_SecurityPortal" to="." method="SecurityPortalActivation"]
+[connection signal="ReportApp" from="Icon_ReportTransfer" to="." method="_on_icon_report_transfer_report_app"]
 [connection signal="button_down" from="Object" to="." method="Object1"]
 [connection signal="button_down" from="Object/TestWindow" to="." method="Object1"]
 [connection signal="coolpressed" from="Object/TestWindow" to="." method="_on_test_window_coolpressed"]

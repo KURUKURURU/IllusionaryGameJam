@@ -219,6 +219,7 @@ _data = {
 }
 
 [node name="InterrogationRoom" type="Node2D"]
+position = Vector2(-1, 0)
 script = ExtResource("1_1mumd")
 
 [node name="Node2D" type="Node2D" parent="."]
