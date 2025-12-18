@@ -1,8 +1,7 @@
-[gd_scene load_steps=23 format=3 uid="uid://elr6b75453co"]
+[gd_scene load_steps=24 format=3 uid="uid://elr6b75453co"]
 
 [ext_resource type="Script" uid="uid://r0upp8n63nj6" path="res://InterrogationRoom/Scenes/camera_portal.gd" id="1_6ohjg"]
-[ext_resource type="Texture2D" uid="uid://dw7ubnogfdaev" path="res://StartRoom/images/paperrrr.jpg" id="1_epabe"]
-[ext_resource type="Texture2D" uid="uid://bqdh4r3tod5ff" path="res://StartRoom/images/Untitled.jpg" id="2_uqu53"]
+[ext_resource type="Texture2D" uid="uid://kk8a6g4jh4qn" path="res://webpages/indowmove.png" id="2_rbdt5"]
 [ext_resource type="Texture2D" uid="uid://p23gx31ngx8d" path="res://InterrogationRoom/images/map.png" id="3_chmlq"]
 [ext_resource type="Texture2D" uid="uid://hsa7h4mbqqak" path="res://images/iconlogocam.png" id="5_piw1u"]
 [ext_resource type="Texture2D" uid="uid://whhdtemmxb8t" path="res://images/mainquestion_bottom.png" id="6_ak7ru"]
@@ -18,6 +17,77 @@
 [ext_resource type="Texture2D" uid="uid://bnbdp5f0vknvc" path="res://Start_Menu/images/dwarrow2.png" id="15_rbdt5"]
 [ext_resource type="Script" uid="uid://vghqteomh0cb" path="res://InterrogationRoom/Scenes/info_screen.gd" id="17_pkyw0"]
 [ext_resource type="Texture2D" uid="uid://cbx2adh8f0l3s" path="res://Process/ph/75b655b816c72f0e4728a143be8865c7.jpg" id="18_jrmho"]
+[ext_resource type="Texture2D" uid="uid://ixsyqq0n57oh" path="res://shadow-png-30599.png" id="18_pkyw0"]
+[ext_resource type="Script" uid="uid://crormvnfgw8m5" path="res://InterrogationRoom/Scenes/mouse.gd" id="19_jrmho"]
+
+[sub_resource type="Animation" id="Animation_2fxpn"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Base:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Base:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Shadow:modulate:r")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Shadow:modulate:g")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Shadow:modulate:b")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Shadow:modulate:a")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
 
 [sub_resource type="Animation" id="Animation_spsyk"]
 resource_name = "jumpingicon"
@@ -89,75 +159,6 @@ tracks/5/keys = {
 "times": PackedFloat32Array(0, 0.48, 1)
 }
 
-[sub_resource type="Animation" id="Animation_2fxpn"]
-length = 0.001
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Base:position:x")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/1/type = "bezier"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Base:position:y")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/2/type = "bezier"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Shadow:modulate:r")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/3/type = "bezier"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Shadow:modulate:g")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/4/type = "bezier"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Shadow:modulate:b")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/5/type = "bezier"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Shadow:modulate:a")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_bvunm"]
 _data = {
 &"RESET": SubResource("Animation_2fxpn"),
@@ -179,22 +180,20 @@ scale = Vector2(0.70484865, 1.4821806)
 color = Color(0.4509804, 0, 0.4509804, 0.11372549)
 
 [node name="InteractMove" type="TextureButton" parent="."]
-self_modulate = Color(0, 0, 4.009751, 1)
 offset_left = -181.0
 offset_top = -209.0
-offset_right = 419.0
-offset_bottom = 526.0
-scale = Vector2(0.5453891, 0.026475154)
-texture_normal = ExtResource("1_epabe")
+offset_right = 218.0
+offset_bottom = -187.0
+scale = Vector2(0.9231712, 0.87437046)
+texture_normal = ExtResource("2_rbdt5")
 
 [node name="Hide" type="TextureButton" parent="."]
 self_modulate = Color(0.38392693, 0, 0.017539086, 1)
-offset_left = 145.0
+offset_left = 127.000015
 offset_top = -208.99998
-offset_right = 633.5259
+offset_right = 615.5259
 offset_bottom = 143.66039
-scale = Vector2(0.08588916, 0.055896945)
-texture_normal = ExtResource("2_uqu53")
+scale = Vector2(0.12293447, 0.050768957)
 stretch_mode = 0
 
 [node name="bg" type="ColorRect" parent="."]
@@ -528,6 +527,30 @@ offset_right = 738.83
 offset_bottom = 750.8463
 scale = Vector2(0.016187742, 0.016187742)
 texture = ExtResource("18_jrmho")
+
+[node name="Control" type="Control" parent="."]
+clip_contents = true
+layout_mode = 3
+anchors_preset = 0
+offset_left = -181.0
+offset_top = -191.0
+offset_right = -141.0
+offset_bottom = -151.0
+scale = Vector2(9.137931, 10.913043)
+mouse_filter = 2
+
+[node name="mouse" type="TextureRect" parent="Control"]
+modulate = Color(0.003921569, 0.011764706, 0.5176471, 0.10980392)
+layout_mode = 0
+offset_left = -297.22263
+offset_top = -61.027885
+offset_right = 428.45914
+offset_bottom = 202.06805
+scale = Vector2(0.009932398, 0.02111465)
+pivot_offset = Vector2(325.3056, 86.26097)
+mouse_filter = 2
+texture = ExtResource("18_pkyw0")
+script = ExtResource("19_jrmho")
 
 [connection signal="button_down" from="InteractMove" to="." method="Down"]
 [connection signal="button_up" from="InteractMove" to="." method="Up"]

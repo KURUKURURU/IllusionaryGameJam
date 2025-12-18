@@ -1,5 +1,7 @@
 extends TextureButton
 signal coolpressed
+signal greg_page
+
 signal bookmark1
 signal homebutt
 
@@ -17,3 +19,8 @@ func _on_bookmark_1_pressed() -> void:
 func _on_homebutt_pressed() -> void:
 	$ScrollContainer/Control/bookmark1/ping.play()
 	emit_signal("homebutt")
+
+
+func _on_greg_pressed() -> void:
+	$ScrollContainer/Control/bookmark1/ping.play()
+	emit_signal("greg_page")

@@ -1,0 +1,47 @@
+[gd_scene load_steps=4 format=3 uid="uid://c5iqorqg3cc1y"]
+
+[ext_resource type="Script" uid="uid://bml80u0lm3orb" path="res://confront_app.gd" id="1_0fafu"]
+[ext_resource type="Texture2D" uid="uid://kk8a6g4jh4qn" path="res://webpages/indowmove.png" id="2_5lpgr"]
+[ext_resource type="AudioStream" uid="uid://dipgr8o46y6dj" path="res://delete.wav" id="3_wsv4v"]
+
+[node name="ConfrontApp" type="Node2D"]
+script = ExtResource("1_0fafu")
+
+[node name="bg" type="ColorRect" parent="."]
+offset_left = -235.0
+offset_top = -143.0
+offset_right = 276.0
+offset_bottom = 159.0
+scale = Vector2(0.98526704, 1)
+color = Color(0.4509804, 0, 0.4509804, 0.11372549)
+
+[node name="InteractMove" type="TextureButton" parent="."]
+offset_left = -239.0
+offset_top = -159.0
+offset_right = 160.0
+offset_bottom = -137.0
+scale = Vector2(1.2531371, 0.86514425)
+texture_normal = ExtResource("2_5lpgr")
+
+[node name="Hide" type="TextureButton" parent="."]
+self_modulate = Color(0.38392693, 0, 0.017539086, 1)
+offset_left = 180.00002
+offset_top = -159.0
+offset_right = 804.67285
+offset_bottom = 175.76999
+scale = Vector2(0.12966786, 0.055896945)
+stretch_mode = 0
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -239.0
+offset_top = -140.0
+offset_right = -199.0456
+offset_bottom = -100.0
+scale = Vector2(12.514266, 7.259021)
+color = Color(0.8066591, 0.850818, 0.5944871, 1)
+
+[node name="deleteSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_wsv4v")
+
+[connection signal="button_down" from="InteractMove" to="." method="Down"]
+[connection signal="button_up" from="InteractMove" to="." method="Up"]

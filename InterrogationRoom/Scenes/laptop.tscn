@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://jpraix5hokpi"]
+[gd_scene load_steps=29 format=3 uid="uid://jpraix5hokpi"]
 
 [ext_resource type="Script" uid="uid://c5navywk44tjh" path="res://InterrogationRoom/Scenes/laptop.gd" id="1_xsinj"]
 [ext_resource type="Script" uid="uid://bent2seqmqsht" path="res://InterrogationRoom/Scenes/object.gd" id="2_5y0nm"]
@@ -9,11 +9,13 @@
 [ext_resource type="Texture2D" uid="uid://bb56iw0cnf285" path="res://images/notepad.png" id="5_e164m"]
 [ext_resource type="Texture2D" uid="uid://bqdh4r3tod5ff" path="res://StartRoom/images/Untitled.jpg" id="6_0qem7"]
 [ext_resource type="AudioStream" uid="uid://qpsy82dpgi7q" path="res://InterrogationRoom/sounds/computerfail.wav" id="7_7gy8r"]
+[ext_resource type="Texture2D" uid="uid://kk8a6g4jh4qn" path="res://webpages/indowmove.png" id="8_di5o4"]
 [ext_resource type="Texture2D" uid="uid://bnuyvrw16p2d7" path="res://InterrogationRoom/images/bottomcomp.png" id="8_eq50e"]
 [ext_resource type="PackedScene" uid="uid://dsuyq8erds3tg" path="res://InterrogationRoom/Scenes/MapWindow.tscn" id="9_q40cj"]
 [ext_resource type="Texture2D" uid="uid://75jmr64v8555" path="res://45480a3100a9edc6bf3b0ce03b3830e4-blue-folder-rounded.webp" id="10_2savr"]
 [ext_resource type="PackedScene" uid="uid://d1vh3g3ojsvrt" path="res://InterrogationRoom/Scenes/image_window.tscn" id="11_a2gbc"]
 [ext_resource type="Script" uid="uid://sr7hrun08ib1" path="res://InterrogationRoom/Scenes/image_folder.gd" id="11_w7ul5"]
+[ext_resource type="Texture2D" uid="uid://b5mwhd458h41n" path="res://header.png" id="12_e164m"]
 [ext_resource type="Texture2D" uid="uid://p23gx31ngx8d" path="res://InterrogationRoom/images/map.png" id="13_roxh2"]
 [ext_resource type="AudioStream" uid="uid://bx6crsrq8xc6g" path="res://Sound/sfx_intrigue.wav" id="14_58y6p"]
 [ext_resource type="Script" uid="uid://tqwgyicux24i" path="res://InterrogationRoom/Scenes/icon_security_portal.gd" id="16_roxh2"]
@@ -269,24 +271,22 @@ offset_right = 137.99997
 offset_bottom = 534.0
 
 [node name="InteractMove" type="TextureButton" parent="Object"]
-self_modulate = Color(0.2653661, 0.5013961, 1, 1)
 layout_mode = 0
 offset_left = 137.78003
 offset_top = 509.99994
-offset_right = 737.78
-offset_bottom = 1245.0
-scale = Vector2(0.5932689, 0.033144984)
-texture_normal = ExtResource("4_5y0nm")
+offset_right = 536.78
+offset_bottom = 531.99994
+scale = Vector2(1.0201294, 1.0968845)
+texture_normal = ExtResource("8_di5o4")
 
 [node name="HideFail" type="TextureButton" parent="Object"]
 self_modulate = Color(0.38392693, 0, 0.017539086, 1)
 layout_mode = 0
-offset_left = 493.78003
+offset_left = 478.78003
 offset_top = 509.0
-offset_right = 1093.78
+offset_right = 1078.78
 offset_bottom = 1244.0
-scale = Vector2(0.08597288, 0.034027074)
-texture_normal = ExtResource("6_0qem7")
+scale = Vector2(0.10749647, 0.034027074)
 stretch_mode = 0
 
 [node name="fail_ping" type="AudioStreamPlayer2D" parent="Object"]
@@ -315,24 +315,22 @@ offset_right = 138.0
 offset_bottom = 534.0
 
 [node name="InteractMove" type="TextureButton" parent="Object2"]
-self_modulate = Color(0.2653661, 0.5013961, 1, 1)
 layout_mode = 0
 offset_left = 138.00002
 offset_top = 510.0
-offset_right = 738.0
-offset_bottom = 1245.0
-scale = Vector2(0.59861904, 0.034027074)
-texture_normal = ExtResource("4_5y0nm")
+offset_right = 537.0
+offset_bottom = 532.0
+scale = Vector2(1.0236827, 1.1679733)
+texture_normal = ExtResource("8_di5o4")
 
 [node name="Hide" type="TextureButton" parent="Object2"]
 self_modulate = Color(0.38392693, 0, 0.017539086, 1)
 layout_mode = 0
-offset_left = 496.99997
-offset_top = 510.00003
-offset_right = 1097.0
-offset_bottom = 1245.0
-scale = Vector2(0.0822321, 0.034027074)
-texture_normal = ExtResource("6_0qem7")
+offset_left = 480.0
+offset_top = 515.0
+offset_right = 1087.8137
+offset_bottom = 1103.0583
+scale = Vector2(0.10200489, 0.034027074)
 stretch_mode = 0
 
 [node name="Popup" type="AnimationPlayer" parent="Object2"]
@@ -342,6 +340,16 @@ libraries = {
 
 [node name="deleteSound" type="AudioStreamPlayer" parent="Object2"]
 stream = ExtResource("18_gyosh")
+
+[node name="header" type="TextureRect" parent="Object2"]
+layout_mode = 0
+offset_left = 138.0
+offset_top = 535.0
+offset_right = 538.0
+offset_bottom = 650.0
+scale = Vector2(1.0200155, 1.0102632)
+mouse_filter = 2
+texture = ExtResource("12_e164m")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -423,9 +431,9 @@ libraries = {
 visible = false
 z_index = 5
 offset_left = 361.0
-offset_top = 27.0
+offset_top = 49.0
 offset_right = 1096.0
-offset_bottom = 677.0
+offset_bottom = 699.0
 scale = Vector2(0.8768245, 0.8768245)
 texture_normal = ExtResource("13_roxh2")
 
@@ -433,21 +441,29 @@ texture_normal = ExtResource("13_roxh2")
 show_behind_parent = true
 layout_mode = 0
 offset_left = -415.13434
-offset_top = -37.63581
+offset_top = -68.42876
 offset_right = -375.13434
-offset_bottom = 2.3641891
+offset_bottom = -28.428757
 scale = Vector2(33.06093, 18.97133)
 color = Color(0.14509805, 0.19215687, 0.46666667, 0.5803922)
+
+[node name="bar" type="TextureRect" parent="MapPreview"]
+layout_mode = 0
+offset_left = 2.2809582
+offset_top = -19.388145
+offset_right = 401.28094
+offset_bottom = 20.611855
+scale = Vector2(1.1491982, 0.50310665)
+texture = ExtResource("8_di5o4")
 
 [node name="Hide" type="TextureButton" parent="MapPreview"]
 self_modulate = Color(0.38431373, 0, 0.015686275, 0.6117647)
 layout_mode = 0
-offset_left = 469.87732
-offset_top = 5.702395
-offset_right = 958.40326
-offset_bottom = 358.36276
-scale = Vector2(0.09031507, 0.110137545)
-texture_normal = ExtResource("6_0qem7")
+offset_left = 385.48193
+offset_top = -19.388145
+offset_right = 874.0079
+offset_bottom = 333.27222
+scale = Vector2(0.15497814, 0.058189314)
 stretch_mode = 0
 
 [node name="ping" type="AudioStreamPlayer2D" parent="."]
@@ -473,6 +489,7 @@ stream = ExtResource("18_gyosh")
 [connection signal="button_down" from="Object" to="." method="Object1"]
 [connection signal="button_down" from="Object/TestWindow" to="." method="Object1"]
 [connection signal="coolpressed" from="Object/TestWindow" to="." method="_on_test_window_coolpressed"]
+[connection signal="greg_page" from="Object/TestWindow" to="." method="_on_test_window_greg_page"]
 [connection signal="pressed" from="Object/TestWindow" to="." method="Object1"]
 [connection signal="button_down" from="Object/InteractMove" to="." method="Object1"]
 [connection signal="button_down" from="Object/InteractMove" to="Object" method="Down"]
@@ -482,6 +499,7 @@ stream = ExtResource("18_gyosh")
 [connection signal="button_down" from="Object2" to="." method="Object2"]
 [connection signal="bookmark1" from="Object2/TestWindow" to="." method="_on_test_window_bookmark_1"]
 [connection signal="button_down" from="Object2/TestWindow" to="." method="Object2"]
+[connection signal="greg_page" from="Object2/TestWindow" to="." method="_on_test_window_greg_page"]
 [connection signal="homebutt" from="Object2/TestWindow" to="." method="_on_test_window_homebutt"]
 [connection signal="button_down" from="Object2/InteractMove" to="." method="Object2"]
 [connection signal="button_down" from="Object2/InteractMove" to="Object2" method="Down"]

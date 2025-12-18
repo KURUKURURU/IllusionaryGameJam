@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://ckdwd36lj1glk"]
+[gd_scene load_steps=18 format=3 uid="uid://ckdwd36lj1glk"]
 
 [ext_resource type="FontFile" uid="uid://dehehyydv307r" path="res://Fonts/paaxel-font/Paaxel-xRjLO.otf" id="1_jexof"]
 [ext_resource type="Script" uid="uid://3sanst1nfm05" path="res://Process/greg_talking_scene.gd" id="1_tav40"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bcwude2aslpqe" path="res://PreCutscene/frames/box/witnessbox/2.png" id="3_vlkmw"]
 [ext_resource type="Texture2D" uid="uid://bopaiatuofuop" path="res://PreCutscene/frames/box/youbox/h1.png" id="4_3414f"]
 [ext_resource type="Texture2D" uid="uid://bf10ae3obqs8q" path="res://PreCutscene/frames/box/youbox/h2.png" id="5_2j5o1"]
+[ext_resource type="AudioStream" uid="uid://crvspgmtffjtx" path="res://264828__cmdrobot__text-message-or-videogame-jump.ogg" id="8_vlkmw"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_wxyvu"]
 animations = [{
@@ -21,6 +22,145 @@ animations = [{
 "name": &"default",
 "speed": 2.0
 }]
+
+[sub_resource type="Animation" id="Animation_i82mx"]
+resource_name = "shake"
+length = 0.544
+loop_mode = 1
+
+[sub_resource type="Animation" id="Animation_vlkmw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(39.99408, 40.00003)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(520.91205, 110.00003)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.9437727, 0.9437727)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_wxyvu"]
+resource_name = "popup"
+length = 0.068
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(-0.008333334, 0.06666666),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(39.99408, 40.00003), Vector2(39.99408, 40.00003)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(-0.008333334, 0.06666666),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(537.632, 175), Vector2(520.91205, 110.00003)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.06666666),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.058333308),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.86104745, 0.3171523), Vector2(0.9437727, 0.9437727)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.031666666),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_03b03"]
+_data = {
+&"RESET": SubResource("Animation_vlkmw"),
+&"popup": SubResource("Animation_wxyvu"),
+&"shake": SubResource("Animation_i82mx")
+}
 
 [sub_resource type="Animation" id="Animation_3414f"]
 length = 0.001
@@ -75,10 +215,10 @@ color = Color(1, 1, 1, 0)
 [node name="Main" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 495.00006
-offset_top = 110.00003
-offset_right = 535.00006
-offset_bottom = 150.00003
+offset_left = 535.77423
+offset_top = 167.77779
+offset_right = 575.7683
+offset_bottom = 207.77782
 scale = Vector2(0.9437727, 0.9437727)
 
 [node name="MainC" type="AnimatedSprite2D" parent="Main"]
@@ -100,6 +240,11 @@ theme_override_font_sizes/normal_font_size = 25
 text = "i love people they are so nice and uplifting yay yay yay"
 visible_characters = 0
 visible_ratio = 0.0
+
+[node name="personality" type="AnimationPlayer" parent="Main"]
+libraries = {
+&"": SubResource("AnimationLibrary_03b03")
+}
 
 [node name="You" parent="." instance=ExtResource("2_b5o3k")]
 position = Vector2(0, 507)
@@ -184,7 +329,11 @@ theme_override_fonts/normal_font = ExtResource("1_jexof")
 theme_override_font_sizes/normal_font_size = 15
 text = "i love people they are so nice and uplifting yay yay yay"
 
+[node name="bing" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_vlkmw")
+volume_db = -10.947
+
 [connection signal="pressed" from="You/advancebutt" to="." method="Y_AD_pressed"]
 [connection signal="pressed" from="Options/Option1" to="." method="_on_greg_name"]
-[connection signal="pressed" from="Options/Option2" to="." method="_on_greg_name"]
+[connection signal="pressed" from="Options/Option2" to="." method="where_greg"]
 [connection signal="pressed" from="Options/Option3" to="." method="_on_greg_name"]

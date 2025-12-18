@@ -1,11 +1,14 @@
 extends Node2D
 @onready var vicpage = $Object2/TestWindow/VictimPage
+@onready var gregpage = $Object2/TestWindow/GregPage
+
 
 func _ready() -> void:
 	$MapPreview.hide()
 	$CameraPortal.hide()
 	$ImageWindow.hide()
 	$Object2.hide()
+	$Object/TestWindow/GregPage.hide()
 	
 	$Object/TestWindow/VictimPage.hide()
 	$Object/TestWindow/ScrollContainer.hide()
@@ -32,7 +35,9 @@ func _on_test_window_coolpressed() -> void:
 	$Object2/TestWindow/ScrollContainer.hide()
 	
 	vicpage.show()
+	gregpage.hide()
 	
+	vicpage.scroll_vertical = 0
 	$Object2/Popup.play("popup")
 	$Object2.show()
 	#
@@ -48,6 +53,7 @@ func _on_test_window_bookmark_1() -> void:
 
 func _on_test_window_homebutt() -> void:
 	vicpage.hide()
+	gregpage.hide()
 	$Object2/TestWindow/ScrollContainer.show()
 	$Object2/TestWindow/ScrollContainer.scroll_vertical = 0
 
@@ -91,3 +97,16 @@ func SecurityPortalActivation() -> void:
 	$Object.z_index = 0
 	$Object2.z_index = 0
 	$ImageWindow.z_index = 0
+
+
+func _on_test_window_greg_page() -> void:
+	$Object2.show()
+	$Object2/TestWindow/notes.hide()
+	$Object2/TestWindow/ScrollContainer.hide()
+	vicpage.hide()
+	
+	$Object2/Popup.play("popup")
+	gregpage.scroll_vertical = 0
+	gregpage.show()
+	
+	

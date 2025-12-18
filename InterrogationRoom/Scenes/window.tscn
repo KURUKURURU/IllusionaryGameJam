@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://c5ywwd24lm2ih"]
+[gd_scene load_steps=14 format=3 uid="uid://c5ywwd24lm2ih"]
 
 [ext_resource type="Script" uid="uid://8y8moatunt74" path="res://InterrogationRoom/Scenes/window.gd" id="1_tcpfg"]
 [ext_resource type="Texture2D" uid="uid://b37cqjg1xcof8" path="res://InterrogationRoom/images/pages/home page.png" id="2_2fiki"]
@@ -6,8 +6,12 @@
 [ext_resource type="AudioStream" uid="uid://bx6crsrq8xc6g" path="res://Sound/sfx_intrigue.wav" id="4_2fiki"]
 [ext_resource type="Texture2D" uid="uid://cegsba4l1v1h3" path="res://InterrogationRoom/images/w1.jpg" id="5_dje3n"]
 [ext_resource type="FontFile" uid="uid://cjwu65abufay6" path="res://Fonts/charybdis/chary___.ttf" id="6_qh5xi"]
-[ext_resource type="Texture2D" uid="uid://df0bgfh3fx8mg" path="res://InterrogationRoom/images/pages/herpage.png" id="7_qh5xi"]
+[ext_resource type="Texture2D" uid="uid://dfvai6gbbtl7w" path="res://webpages/Megan.png" id="7_dje3n"]
 [ext_resource type="PackedScene" uid="uid://dnnka5th1gldj" path="res://videoplayer.tscn" id="8_dje3n"]
+[ext_resource type="Texture2D" uid="uid://dx10r6xovkc1f" path="res://webpages/gregpaggeeg.png" id="9_815rx"]
+[ext_resource type="Script" uid="uid://nenuaoiss4ck" path="res://InterrogationRoom/Scenes/greg_page.gd" id="9_kx4hk"]
+[ext_resource type="Texture2D" uid="uid://cv6f5sfdj0ldn" path="res://Process/ph/istockphoto-1152344841-612x612.jpg" id="10_kx4hk"]
+[ext_resource type="FontFile" uid="uid://b6ygy3613w7fw" path="res://Fonts/MYRIADAT.TTF" id="11_agmnv"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dje3n"]
 
@@ -27,10 +31,10 @@ offset_bottom = 48.41129
 scale = Vector2(9.333333, 8.551724)
 
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
-visible = false
 layout_mode = 0
 offset_right = 407.0
 offset_bottom = 413.0
+horizontal_scroll_mode = 0
 
 [node name="Page1" type="VBoxContainer" parent="ScrollContainer"]
 layout_mode = 2
@@ -50,6 +54,7 @@ size_flags_horizontal = 0
 size_flags_vertical = 2
 
 [node name="bookmark1" type="TextureButton" parent="ScrollContainer/Control"]
+visible = false
 layout_mode = 0
 offset_left = 92.0
 offset_top = 390.0
@@ -65,9 +70,11 @@ volume_db = -20.194
 pitch_scale = 2.55
 
 [node name="notes" type="ScrollContainer" parent="."]
+visible = false
 layout_mode = 0
 offset_right = 407.0
 offset_bottom = 413.0
+follow_focus = true
 horizontal_scroll_mode = 3
 
 [node name="Control" type="Control" parent="notes"]
@@ -87,40 +94,101 @@ texture = ExtResource("5_dje3n")
 
 [node name="ColorRect" type="ColorRect" parent="notes/Control/Webpage"]
 layout_mode = 0
-offset_left = 4.4358
-offset_top = 65.0584
+offset_left = -10.3502
+offset_top = 675.7202
+offset_right = 29.6498
+offset_bottom = 715.7202
+scale = Vector2(15.791805, 6.519794)
+
+[node name="ColorRect2" type="ColorRect" parent="notes/Control/Webpage"]
+layout_mode = 0
+offset_left = -10.3502
+offset_top = 675.7202
+offset_right = 29.6498
+offset_bottom = 715.7202
+scale = Vector2(0.3117383, -16.85795)
+
+[node name="ColorRect3" type="ColorRect" parent="notes/Control/Webpage"]
+layout_mode = 0
+offset_left = 4.4357996
+offset_top = 104.9806
 offset_right = 44.4358
-offset_bottom = 105.0584
+offset_bottom = 144.98059
+scale = Vector2(1.4918513, -0.9965895)
 
 [node name="text1" type="RichTextLabel" parent="notes/Control"]
 layout_mode = 0
 offset_left = 12.0
-offset_top = 58.0
+offset_top = 186.0
 offset_right = 412.0
-offset_bottom = 95.0
+offset_bottom = 205.0
 theme_override_colors/default_color = Color(0, 0, 1, 1)
 theme_override_fonts/normal_font = ExtResource("6_qh5xi")
 text = "https://www.photogram.com/account/11610911540483853/"
 
+[node name="text5" type="RichTextLabel" parent="notes/Control"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 208.0
+offset_right = 412.0
+offset_bottom = 227.0
+theme_override_colors/default_color = Color(0, 0, 1, 1)
+theme_override_fonts/normal_font = ExtResource("6_qh5xi")
+text = "https://www.photogram.com/account/38838940221/"
+
+[node name="text4" type="RichTextLabel" parent="notes/Control"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 230.0
+offset_right = 412.0
+offset_bottom = 249.0
+theme_override_colors/default_color = Color(0, 0, 1, 1)
+theme_override_fonts/normal_font = ExtResource("6_qh5xi")
+text = "https://www.photogram.com/account/2888256_private"
+
 [node name="text2" type="RichTextLabel" parent="notes/Control"]
 layout_mode = 0
 offset_left = 12.0
-offset_top = 79.0
+offset_top = 135.0
 offset_right = 412.0
-offset_bottom = 116.0
+offset_bottom = 172.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("6_qh5xi")
-text = "double click ur apps and folders to open them!!!"
+text = "also make sure to double click ur apps and folders to open them, how u not know that"
+
+[node name="text3" type="RichTextLabel" parent="notes/Control"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 81.0
+offset_right = 412.0
+offset_bottom = 156.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_constants/line_separation = -2
+theme_override_fonts/normal_font = ExtResource("6_qh5xi")
+text = "yo this is jacob the tech guy, just put the witnesses' social medias here, dont have to thank me though you could try to get me one of those kitkat bar things thx"
 
 [node name="advance" type="TextureButton" parent="notes/Control"]
 layout_mode = 0
 offset_left = 8.999992
-offset_top = 56.0
+offset_top = 184.0
 offset_right = 1747.6576
-offset_bottom = 568.0
+offset_bottom = 696.0
 scale = Vector2(0.21338303, 0.041172642)
 
 [node name="ping" type="AudioStreamPlayer2D" parent="notes/Control/advance"]
+stream = ExtResource("4_2fiki")
+volume_db = -20.194
+pitch_scale = 2.55
+
+[node name="greg" type="TextureButton" parent="notes/Control"]
+layout_mode = 0
+offset_left = 8.999992
+offset_top = 207.00002
+offset_right = 1747.6576
+offset_bottom = 719.0
+scale = Vector2(0.21338303, 0.041172642)
+
+[node name="ping" type="AudioStreamPlayer2D" parent="notes/Control/greg"]
 stream = ExtResource("4_2fiki")
 volume_db = -20.194
 pitch_scale = 2.55
@@ -129,9 +197,9 @@ pitch_scale = 2.55
 modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = 11.0
-offset_top = 97.0
-offset_right = 378.0
-offset_bottom = 429.0
+offset_top = 290.0
+offset_right = 385.0
+offset_bottom = 402.0
 theme_override_fonts/font = ExtResource("6_qh5xi")
 theme_override_font_sizes/font_size = 16
 theme_override_styles/normal = SubResource("StyleBoxEmpty_dje3n")
@@ -150,13 +218,21 @@ layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 2
 
+[node name="bg" type="ColorRect" parent="VictimPage/Control"]
+layout_mode = 0
+offset_top = 437.0
+offset_right = 40.0
+offset_bottom = 477.0
+scale = Vector2(9.999317, 1277.4146)
+color = Color(0.8980392, 0.08627451, 0.17254902, 1)
+
 [node name="Webpage" type="TextureRect" parent="VictimPage/Control"]
 layout_mode = 0
 offset_right = 400.0
-offset_bottom = 650.0
+offset_bottom = 440.0
 size_flags_horizontal = 0
 size_flags_vertical = 2
-texture = ExtResource("7_qh5xi")
+texture = ExtResource("7_dje3n")
 
 [node name="homebutt" type="TextureButton" parent="VictimPage/Control"]
 layout_mode = 0
@@ -172,9 +248,87 @@ volume_db = -20.194
 pitch_scale = 2.55
 
 [node name="videoplayer" parent="VictimPage/Control" instance=ExtResource("8_dje3n")]
-position = Vector2(-1.9999847, 415)
-scale = Vector2(0.39528024, 0.39528024)
+position = Vector2(18, 459)
+scale = Vector2(0.3590136, 0.3590136)
+tag = "Crazy night at this new place i found downtown!"
+path = "res://party1.ogv"
+
+[node name="videoplayer2" parent="VictimPage/Control" instance=ExtResource("8_dje3n")]
+position = Vector2(18, 711)
+scale = Vector2(0.3590136, 0.3590136)
+tag = "drinks drinks drinks, if my teachers could see me now!"
+path = "res://party2.ogv"
+
+[node name="GregPage" type="ScrollContainer" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 407.0
+offset_bottom = 413.0
+horizontal_scroll_mode = 3
+script = ExtResource("9_kx4hk")
+
+[node name="Control" type="Control" parent="GregPage"]
+custom_minimum_size = Vector2(0, 1500)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 2
+
+[node name="bg" type="ColorRect" parent="GregPage/Control"]
+layout_mode = 0
+offset_top = 437.0
+offset_right = 40.0
+offset_bottom = 477.0
+scale = Vector2(9.999317, 1277.4146)
+color = Color(0.6392157, 0.6509804, 0.67058825, 1)
+
+[node name="Webpage" type="TextureRect" parent="GregPage/Control"]
+layout_mode = 0
+offset_right = 400.0
+offset_bottom = 440.0
+size_flags_horizontal = 0
+size_flags_vertical = 2
+texture = ExtResource("9_815rx")
+
+[node name="homebutt" type="TextureButton" parent="GregPage/Control"]
+layout_mode = 0
+offset_left = 304.0
+offset_top = 79.00001
+offset_right = 1245.9683
+offset_bottom = 591.0
+scale = Vector2(0.033879746, 0.059929207)
+
+[node name="ping" type="AudioStreamPlayer2D" parent="GregPage/Control/homebutt"]
+stream = ExtResource("4_2fiki")
+volume_db = -20.194
+pitch_scale = 2.55
+
+[node name="img" type="TextureRect" parent="GregPage/Control"]
+layout_mode = 0
+offset_left = 45.0
+offset_top = 459.0
+offset_right = 657.0
+offset_bottom = 867.0
+scale = Vector2(0.5072855, 0.5072855)
+texture = ExtResource("10_kx4hk")
+
+[node name="tag" type="RichTextLabel" parent="GregPage/Control/img"]
+layout_mode = 0
+offset_left = 15.770209
+offset_top = 413.9681
+offset_right = 597.2968
+offset_bottom = 453.9681
+theme_override_fonts/normal_font = ExtResource("11_agmnv")
+theme_override_font_sizes/normal_font_size = 26
+text = "check out my blog, where I explain camera tools and..."
+
+[node name="videoplayer" parent="GregPage" instance=ExtResource("8_dje3n")]
+position = Vector2(18, 708)
+scale = Vector2(0.3590136, 0.3590136)
+tag = "Crazy night at this new place i found downtown!"
 
 [connection signal="pressed" from="ScrollContainer/Control/bookmark1" to="." method="_on_bookmark_1_pressed"]
 [connection signal="pressed" from="notes/Control/advance" to="." method="_on_advance_pressed"]
+[connection signal="pressed" from="notes/Control/greg" to="." method="_on_greg_pressed"]
+[connection signal="pressed" from="notes/Control/greg" to="GregPage" method="_on_greg_pressed"]
 [connection signal="pressed" from="VictimPage/Control/homebutt" to="." method="_on_homebutt_pressed"]
+[connection signal="pressed" from="GregPage/Control/homebutt" to="." method="_on_homebutt_pressed"]

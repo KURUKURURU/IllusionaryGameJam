@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://d1vh3g3ojsvrt"]
+[gd_scene load_steps=5 format=3 uid="uid://d1vh3g3ojsvrt"]
 
 [ext_resource type="Script" uid="uid://bj21125bsyuej" path="res://image_window.gd" id="1_qoc1b"]
-[ext_resource type="Texture2D" uid="uid://dw7ubnogfdaev" path="res://StartRoom/images/paperrrr.jpg" id="2_uy755"]
-[ext_resource type="Texture2D" uid="uid://bqdh4r3tod5ff" path="res://StartRoom/images/Untitled.jpg" id="3_n5o75"]
+[ext_resource type="Texture2D" uid="uid://kk8a6g4jh4qn" path="res://webpages/indowmove.png" id="2_uy755"]
 [ext_resource type="Texture2D" uid="uid://p23gx31ngx8d" path="res://InterrogationRoom/images/map.png" id="4_uy755"]
 [ext_resource type="AudioStream" uid="uid://dipgr8o46y6dj" path="res://delete.wav" id="5_n5o75"]
 
@@ -18,22 +17,20 @@ scale = Vector2(0.98526704, 1)
 color = Color(0.4509804, 0, 0.4509804, 0.11372549)
 
 [node name="InteractMove" type="TextureButton" parent="."]
-self_modulate = Color(0, 0, 4.009751, 1)
 offset_left = -239.0
 offset_top = -159.0
-offset_right = 361.0
-offset_bottom = 576.0
-scale = Vector2(0.7636175, 0.026475154)
+offset_right = 160.0
+offset_bottom = -137.0
+scale = Vector2(1.2531371, 0.86514425)
 texture_normal = ExtResource("2_uy755")
 
 [node name="Hide" type="TextureButton" parent="."]
 self_modulate = Color(0.38392693, 0, 0.017539086, 1)
-offset_left = 219.0
-offset_top = -158.99998
-offset_right = 707.5259
-offset_bottom = 193.66039
-scale = Vector2(0.08588916, 0.055896945)
-texture_normal = ExtResource("3_n5o75")
+offset_left = 180.00002
+offset_top = -159.0
+offset_right = 804.67285
+offset_bottom = 175.76999
+scale = Vector2(0.12966786, 0.055896945)
 stretch_mode = 0
 
 [node name="ColorRect" type="ColorRect" parent="."]

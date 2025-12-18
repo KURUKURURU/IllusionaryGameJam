@@ -223,7 +223,6 @@ scale = Vector2(1.3124394, 1.3508551)
 color = Color(0, 0, 0, 1)
 
 [node name="Clouds1" type="Parallax2D" parent="."]
-visible = false
 modulate = Color(1, 1, 1, 0.16470589)
 repeat_size = Vector2(2834, 0)
 autoscroll = Vector2(10.185, 0)
@@ -235,7 +234,6 @@ texture = ExtResource("26_u328h")
 metadata/_edit_use_anchors_ = true
 
 [node name="Clouds2" type="Parallax2D" parent="."]
-visible = false
 modulate = Color(0.3764706, 0.3764706, 0.3764706, 0)
 scale = Vector2(0.88258547, 0.88258547)
 scroll_offset = Vector2(-378, 46.000004)

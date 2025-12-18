@@ -18,6 +18,8 @@ extends Node2D
 @onready var op3_text = $Options/Option3/Text
 
 var knows_shes_dead = false
+var told_where = false
+
 var knows_shes_cute = false
 var knows_shes_boring = false
 
@@ -95,9 +97,14 @@ func say(message, num):
 func Wit_say(message, num):
 	
 	W_txt.text = ""
-	W_txt.text = message
 	
 	$Main.show()
+	
+	$Main/personality.play("popup")
+	await $Main/personality.animation_finished
+	$bing.play()
+	
+	W_txt.text = message
 	
 	await vis()
 	
@@ -135,4 +142,21 @@ func _on_greg_name() -> void:
 	elif knows_shes_dead:
 		await Wit_say("Didn't know her.", 2.0)
 	
+	alldone()
+
+func where_greg() -> void:
+	
+	emit_signal("done_op")
+	$Options.hide()
+	
+	if told_where: 
+		await Wit_say("I said I was with a girl. We were on a lovely date.", 2.0)
+		await Wit_say("We ate, shopped, hung around...", 2.0)
+		await Wit_say("Heh.", 1.0)
+	if !told_where:
+		await Wit_say("Where was I? I was on a date with a girl, a cute one.", 2.0)
+		await Wit_say("I think we were mostly just hanging around all over.", 3.0)
+		await Wit_say("I, of course, bought her everything she wanted.", 3.0)
+		told_where = true
+		
 	alldone()

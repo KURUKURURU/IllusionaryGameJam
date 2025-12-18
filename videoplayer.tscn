@@ -1,53 +1,68 @@
-[gd_scene load_steps=5 format=3 uid="uid://dnnka5th1gldj"]
+[gd_scene load_steps=8 format=3 uid="uid://dnnka5th1gldj"]
 
 [ext_resource type="Script" uid="uid://dy5blwtq72x4p" path="res://test.gd" id="1_8uh7m"]
-[ext_resource type="Texture2D" uid="uid://35jufsg3n6v7" path="res://InterrogationRoom/images/Screenshot 2025-11-26 at 10.42.04 AM.png" id="2_malmy"]
-[ext_resource type="Texture2D" uid="uid://bl15a2v6n4cn0" path="res://InterrogationRoom/images/Screenshot 2025-11-26 at 10.42.02 AM.png" id="3_h1h35"]
+[ext_resource type="Texture2D" uid="uid://cufbqydfq8tpa" path="res://playervideo/play?.png" id="2_dy520"]
+[ext_resource type="Texture2D" uid="uid://dpyioa4pxpg76" path="res://playervideo/play!.png" id="3_7qygu"]
+[ext_resource type="Texture2D" uid="uid://dqyvsbi2bgsxo" path="res://playervideo/pause?.png" id="4_ujdcq"]
+[ext_resource type="Texture2D" uid="uid://b1w2rkdfr150q" path="res://playervideo/pause!.png" id="5_cjn7b"]
+[ext_resource type="FontFile" uid="uid://b6ygy3613w7fw" path="res://Fonts/MYRIADAT.TTF" id="6_7qygu"]
 
 [sub_resource type="VideoStreamTheora" id="VideoStreamTheora_mf4mk"]
-file = "op.ogv"
+file = "party1.ogv"
 
 [node name="videoplayer" type="Node2D"]
 script = ExtResource("1_8uh7m")
 
 [node name="video" type="VideoStreamPlayer" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
-scale = Vector2(0.89564, 0.89564)
+offset_top = 4.0
+offset_right = 1920.0
+offset_bottom = 1084.0
+scale = Vector2(0.5262654, 0.5273515)
 stream = SubResource("VideoStreamTheora_mf4mk")
 volume_db = -80.0
 autoplay = true
 loop = true
 
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+offset_top = 578.0
+offset_right = 36.734123
+offset_bottom = 618.0
+scale = Vector2(27.687334, 1.7961127)
+
 [node name="pause" type="TextureButton" parent="."]
 offset_top = 577.00006
-offset_right = 256.98984
-offset_bottom = 810.92645
-scale = Vector2(0.30351397, 0.30351397)
-texture_normal = ExtResource("2_malmy")
+offset_right = 132.00272
+offset_bottom = 718.7087
+scale = Vector2(0.5151409, 0.5151409)
+texture_normal = ExtResource("4_ujdcq")
+texture_hover = ExtResource("5_cjn7b")
 ignore_texture_size = true
 
 [node name="unpause" type="TextureButton" parent="."]
 offset_top = 577.00006
-offset_right = 256.98984
-offset_bottom = 814.2211
-scale = Vector2(0.30351397, 0.30351397)
-texture_normal = ExtResource("3_h1h35")
+offset_right = 140.99738
+offset_bottom = 716.06573
+scale = Vector2(0.51774013, 0.51774013)
+texture_normal = ExtResource("2_dy520")
+texture_hover = ExtResource("3_7qygu")
 ignore_texture_size = true
 
 [node name="ColorRect" type="ColorRect" parent="unpause"]
 layout_mode = 0
-offset_top = -1891.1816
+offset_top = -1116.3904
 offset_right = 3393.5837
-offset_bottom = 40.0
+offset_bottom = 814.79126
+scale = Vector2(0.57906806, 0.57906806)
 color = Color(0.4627451, 0.4627451, 0.4627451, 0.4862745)
 
-[node name="ColorRect" type="ColorRect" parent="."]
-offset_left = 78.0
-offset_top = 579.0
-offset_right = 114.73412
-offset_bottom = 619.0
-scale = Vector2(25.970406, 1.7755648)
+[node name="tag" type="RichTextLabel" parent="."]
+offset_left = 103.0
+offset_top = 595.0
+offset_right = 1013.0
+offset_bottom = 635.0
+theme_override_fonts/normal_font = ExtResource("6_7qygu")
+theme_override_font_sizes/normal_font_size = 31
 
 [connection signal="pressed" from="pause" to="." method="_on_pause_pressed"]
 [connection signal="pressed" from="unpause" to="." method="_on_unpause_pressed"]
