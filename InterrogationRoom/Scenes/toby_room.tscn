@@ -1,38 +1,38 @@
-[gd_scene load_steps=32 format=3 uid="uid://bdycqhfyd38af"]
+[gd_scene load_steps=32 format=3 uid="uid://j3tclxiknunw"]
 
-[ext_resource type="Script" uid="uid://dr861qg2gdbt7" path="res://InterrogationRoom/Scenes/interrogation_room.gd" id="1_1mumd"]
-[ext_resource type="Texture2D" uid="uid://br4n76b444t6k" path="res://InterrogationRoom/images/metal.png" id="2_7dqrx"]
-[ext_resource type="Texture2D" uid="uid://d0ywlrf5ocu7l" path="res://PreCutscene/frames/box/ph/walll1.png" id="2_nbt26"]
-[ext_resource type="Texture2D" uid="uid://c8rqi01ue115l" path="res://PreCutscene/frames/box/greg1/open.png" id="3_1mumd"]
-[ext_resource type="Texture2D" uid="uid://dvm4xpg1x5bs1" path="res://PreCutscene/frames/box/greg1/highlight.png" id="4_7dqrx"]
-[ext_resource type="Texture2D" uid="uid://bds33gy5dct6d" path="res://Start_Menu/images/suitcase/props/filef1.png" id="5_0sp6g"]
-[ext_resource type="Texture2D" uid="uid://b786ql6oxuyhl" path="res://PreCutscene/frames/box/greg1/blink.png" id="5_1agbd"]
-[ext_resource type="BitMap" uid="uid://cbq2uq3dnas6r" path="res://PreCutscene/frames/box/greg1/open copy.png" id="6_7dqrx"]
-[ext_resource type="Texture2D" uid="uid://8xymjklv02vy" path="res://Start_Menu/images/suitcase/props/filef12.png" id="6_r56nm"]
-[ext_resource type="AudioStream" uid="uid://dxs6cd7v2rjdp" path="res://StartRoom/sounds/openpeper.wav" id="7_ihoij"]
-[ext_resource type="AudioStream" uid="uid://dndkwue3fholq" path="res://StartRoom/sounds/paper.wav" id="8_7jdnr"]
-[ext_resource type="Texture2D" uid="uid://c7d4g5thmbwjj" path="res://images/godotwaka2.png" id="11_kcsn1"]
-[ext_resource type="Texture2D" uid="uid://dd6cr0k0bj70m" path="res://images/comp1.png" id="12_6n7f2"]
-[ext_resource type="PackedScene" uid="uid://67pbacp18qgo" path="res://StartRoom/scenes/file_book.tscn" id="12_hqco2"]
-[ext_resource type="Texture2D" uid="uid://djkvxysryj3na" path="res://images/comp2.png" id="13_0sp6g"]
-[ext_resource type="PackedScene" uid="uid://bjp1b6hm65me1" path="res://Label/label.tscn" id="13_cfjoo"]
-[ext_resource type="AudioStream" uid="uid://cpjopblvvoe6u" path="res://StartRoom/sounds/mainmusic2.wav" id="14_5wks0"]
-[ext_resource type="AudioStream" uid="uid://b3xs4ppsu0qkw" path="res://InterrogationRoom/sounds/sillygoofymusic.wav" id="15_jy17t"]
-[ext_resource type="AudioStream" uid="uid://4xrwfwo0ubfb" path="res://InterrogationRoom/sounds/sad soundscape.wav" id="16_88lll"]
-[ext_resource type="AudioStream" uid="uid://byffw1s080n6m" path="res://StartRoom/sounds/whoosh.wav" id="17_gqnji"]
-[ext_resource type="AudioStream" uid="uid://djjlvy68f5mnw" path="res://InterrogationRoom/sounds/museclick.wav" id="18_uaefa"]
-[ext_resource type="PackedScene" uid="uid://jpraix5hokpi" path="res://InterrogationRoom/Scenes/laptop.tscn" id="19_oinx6"]
-[ext_resource type="PackedScene" uid="uid://ckdwd36lj1glk" path="res://Process/greg_talking_scene.tscn" id="20_pnadc"]
-[ext_resource type="AudioStream" uid="uid://dipgr8o46y6dj" path="res://delete.wav" id="24_0sp6g"]
+[ext_resource type="Script" uid="uid://dr861qg2gdbt7" path="res://InterrogationRoom/Scenes/interrogation_room.gd" id="1_txwsd"]
+[ext_resource type="Texture2D" uid="uid://d0ywlrf5ocu7l" path="res://PreCutscene/frames/box/ph/walll1.png" id="2_5g7nn"]
+[ext_resource type="Texture2D" uid="uid://br4n76b444t6k" path="res://InterrogationRoom/images/metal.png" id="3_y2qu5"]
+[ext_resource type="Texture2D" uid="uid://c8rqi01ue115l" path="res://PreCutscene/frames/box/greg1/open.png" id="4_yx3hl"]
+[ext_resource type="Texture2D" uid="uid://b786ql6oxuyhl" path="res://PreCutscene/frames/box/greg1/blink.png" id="5_g2kdc"]
+[ext_resource type="Texture2D" uid="uid://dvm4xpg1x5bs1" path="res://PreCutscene/frames/box/greg1/highlight.png" id="6_tpbgd"]
+[ext_resource type="BitMap" uid="uid://cbq2uq3dnas6r" path="res://PreCutscene/frames/box/greg1/open copy.png" id="7_wnmp5"]
+[ext_resource type="Texture2D" uid="uid://bds33gy5dct6d" path="res://Start_Menu/images/suitcase/props/filef1.png" id="8_y00nr"]
+[ext_resource type="Texture2D" uid="uid://8xymjklv02vy" path="res://Start_Menu/images/suitcase/props/filef12.png" id="9_arjck"]
+[ext_resource type="AudioStream" uid="uid://dxs6cd7v2rjdp" path="res://StartRoom/sounds/openpeper.wav" id="10_8svlb"]
+[ext_resource type="AudioStream" uid="uid://dndkwue3fholq" path="res://StartRoom/sounds/paper.wav" id="11_y20em"]
+[ext_resource type="Texture2D" uid="uid://dd6cr0k0bj70m" path="res://images/comp1.png" id="12_puqdb"]
+[ext_resource type="Texture2D" uid="uid://djkvxysryj3na" path="res://images/comp2.png" id="13_gd877"]
+[ext_resource type="Texture2D" uid="uid://c7d4g5thmbwjj" path="res://images/godotwaka2.png" id="14_qtj2t"]
+[ext_resource type="PackedScene" uid="uid://67pbacp18qgo" path="res://StartRoom/scenes/file_book.tscn" id="15_kh77y"]
+[ext_resource type="PackedScene" uid="uid://bjp1b6hm65me1" path="res://Label/label.tscn" id="16_j2tg6"]
+[ext_resource type="AudioStream" uid="uid://cpjopblvvoe6u" path="res://StartRoom/sounds/mainmusic2.wav" id="17_ggr68"]
+[ext_resource type="AudioStream" uid="uid://b3xs4ppsu0qkw" path="res://InterrogationRoom/sounds/sillygoofymusic.wav" id="18_wjy4w"]
+[ext_resource type="AudioStream" uid="uid://4xrwfwo0ubfb" path="res://InterrogationRoom/sounds/sad soundscape.wav" id="19_t6tqc"]
+[ext_resource type="AudioStream" uid="uid://byffw1s080n6m" path="res://StartRoom/sounds/whoosh.wav" id="20_4cnrh"]
+[ext_resource type="AudioStream" uid="uid://djjlvy68f5mnw" path="res://InterrogationRoom/sounds/museclick.wav" id="21_2uyjd"]
+[ext_resource type="PackedScene" uid="uid://jpraix5hokpi" path="res://InterrogationRoom/Scenes/laptop.tscn" id="22_fh600"]
+[ext_resource type="PackedScene" uid="uid://ckdwd36lj1glk" path="res://Process/greg_talking_scene.tscn" id="23_dw0p6"]
+[ext_resource type="AudioStream" uid="uid://dipgr8o46y6dj" path="res://delete.wav" id="24_rrjsa"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_6n7f2"]
 animations = [{
 "frames": [{
 "duration": 7.27,
-"texture": ExtResource("3_1mumd")
+"texture": ExtResource("4_yx3hl")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_1agbd")
+"texture": ExtResource("5_g2kdc")
 }],
 "loop": true,
 "name": &"default",
@@ -220,7 +220,7 @@ _data = {
 }
 
 [node name="InterrogationRoom" type="Node2D"]
-script = ExtResource("1_1mumd")
+script = ExtResource("1_txwsd")
 
 [node name="Node2D" type="Node2D" parent="."]
 position = Vector2(0, 4)
@@ -229,14 +229,14 @@ position = Vector2(0, 4)
 offset_top = -4.0
 offset_right = 1150.0
 offset_bottom = 646.0
-texture = ExtResource("2_nbt26")
+texture = ExtResource("2_5g7nn")
 
 [node name="TextureRect3" type="TextureRect" parent="Node2D"]
 offset_top = 613.0
 offset_right = 1150.0
 offset_bottom = 1281.5483
 scale = Vector2(1, 1.2400006)
-texture = ExtResource("2_7dqrx")
+texture = ExtResource("3_y2qu5")
 
 [node name="greg" type="AnimatedSprite2D" parent="Node2D"]
 position = Vector2(575, 321)
@@ -250,16 +250,16 @@ offset_left = -575.0
 offset_top = -325.0
 offset_right = 575.0
 offset_bottom = 325.0
-texture_hover = ExtResource("4_7dqrx")
-texture_click_mask = ExtResource("6_7dqrx")
+texture_hover = ExtResource("6_tpbgd")
+texture_click_mask = ExtResource("7_wnmp5")
 
 [node name="question" type="TextureButton" parent="Node2D/greg"]
 offset_left = -575.0
 offset_top = -325.0
 offset_right = 575.0
 offset_bottom = 325.0
-texture_hover = ExtResource("4_7dqrx")
-texture_click_mask = ExtResource("6_7dqrx")
+texture_hover = ExtResource("6_tpbgd")
+texture_click_mask = ExtResource("7_wnmp5")
 
 [node name="Table" type="TextureRect" parent="Node2D"]
 texture_filter = 4
@@ -276,17 +276,17 @@ offset_top = 230.01616
 offset_right = 456.46698
 offset_bottom = 808.0162
 scale = Vector2(0.1978267, 0.226693)
-texture_normal = ExtResource("5_0sp6g")
-texture_hover = ExtResource("6_r56nm")
+texture_normal = ExtResource("8_y00nr")
+texture_hover = ExtResource("9_arjck")
 
 [node name="open" type="AudioStreamPlayer2D" parent="Node2D/Table/FilesNotes"]
 position = Vector2(662, 175)
-stream = ExtResource("7_ihoij")
+stream = ExtResource("10_8svlb")
 bus = &"SFX"
 
 [node name="paper" type="AudioStreamPlayer2D" parent="Node2D/Table/FilesNotes"]
 position = Vector2(662, 175)
-stream = ExtResource("8_7jdnr")
+stream = ExtResource("11_y20em")
 bus = &"SFX"
 
 [node name="Ipad" type="TextureButton" parent="Node2D/Table"]
@@ -296,8 +296,8 @@ offset_top = 250.69264
 offset_right = 755.8324
 offset_bottom = 750.69305
 scale = Vector2(0.28381443, 0.28381443)
-texture_normal = ExtResource("12_6n7f2")
-texture_hover = ExtResource("13_0sp6g")
+texture_normal = ExtResource("12_puqdb")
+texture_hover = ExtResource("13_gd877")
 
 [node name="door" type="TextureButton" parent="Node2D"]
 offset_left = 837.00006
@@ -315,7 +315,7 @@ offset_top = -17.0
 offset_right = 1939.0
 offset_bottom = 1400.0
 scale = Vector2(0.5523441, 0.07151253)
-texture_hover = ExtResource("11_kcsn1")
+texture_hover = ExtResource("14_qtj2t")
 
 [node name="DOWN" type="TextureButton" parent="."]
 visible = false
@@ -324,7 +324,7 @@ offset_top = 534.0
 offset_right = 1939.0
 offset_bottom = 1951.0
 scale = Vector2(0.5523441, 0.07151253)
-texture_hover = ExtResource("11_kcsn1")
+texture_hover = ExtResource("14_qtj2t")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -332,13 +332,13 @@ libraries = {
 &"sliding": SubResource("AnimationLibrary_ie03x")
 }
 
-[node name="FileBook" parent="." instance=ExtResource("12_hqco2")]
+[node name="FileBook" parent="." instance=ExtResource("15_kh77y")]
 visible = false
 z_index = 1
 position = Vector2(98, 41)
 scale = Vector2(0.8551355, 0.8551355)
 
-[node name="Label" parent="." instance=ExtResource("13_cfjoo")]
+[node name="Label" parent="." instance=ExtResource("16_j2tg6")]
 z_index = 5
 offset_left = -1.0
 offset_top = 613.0
@@ -346,48 +346,48 @@ offset_right = 39.0
 offset_bottom = 653.0
 
 [node name="MainMusic" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("14_5wks0")
+stream = ExtResource("17_ggr68")
 volume_db = -12.404
 pitch_scale = 0.58
 autoplay = true
 bus = &"Music"
 
 [node name="CompMusic" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("15_jy17t")
+stream = ExtResource("18_wjy4w")
 volume_db = -15.169
 pitch_scale = 1.2
 autoplay = true
 bus = &"Music"
 
 [node name="SFXGeneral" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("16_88lll")
+stream = ExtResource("19_t6tqc")
 autoplay = true
 bus = &"SFX"
 
 [node name="Whoosh" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(565, 674)
-stream = ExtResource("17_gqnji")
+stream = ExtResource("20_4cnrh")
 pitch_scale = 0.26
 bus = &"SFX"
 
 [node name="Click" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(571, 592)
-stream = ExtResource("18_uaefa")
+stream = ExtResource("21_2uyjd")
 volume_db = -23.094
 pitch_scale = 1.48
 bus = &"SFX"
 
-[node name="Laptop" parent="." instance=ExtResource("19_oinx6")]
+[node name="Laptop" parent="." instance=ExtResource("22_fh600")]
 visible = false
 scale = Vector2(1.0065355, 1.0065355)
 witness = "Greg"
 
-[node name="GregTalkingScene" parent="." instance=ExtResource("20_pnadc")]
+[node name="GregTalkingScene" parent="." instance=ExtResource("23_dw0p6")]
 visible = false
 position = Vector2(-0.9999962, 2)
 
 [node name="bing" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("24_0sp6g")
+stream = ExtResource("24_rrjsa")
 
 [connection signal="intro" from="." to="GregTalkingScene" method="introduce"]
 [connection signal="questioning_1" from="." to="GregTalkingScene" method="_on_interrogation_room_questioning_1"]

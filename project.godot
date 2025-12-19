@@ -15,6 +15,10 @@ run/main_scene="uid://bawgdwbg84swm"
 config/features=PackedStringArray("4.5", "Mobile")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Global="*res://global.gd"
+
 [display]
 
 window/size/viewport_width=1150
@@ -22,6 +26,10 @@ window/size/viewport_height=650
 window/size/mode=3
 window/stretch/mode="viewport"
 mouse_cursor/custom_image="uid://by4w7a2kdh2re"
+
+[editor]
+
+movie_writer/movie_file="/Users/avabisset/Downloads/GameFolder/experiment/IllusionaryGameJam/movie/movie.avi"
 
 [editor_plugins]
 
@@ -74,4 +82,5 @@ scrolldown={
 
 [rendering]
 
-renderer/rendering_method="mobile"
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"

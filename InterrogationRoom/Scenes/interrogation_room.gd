@@ -34,7 +34,7 @@ func _process(delta: float) -> void:
 		#if Input.is_action_just_pressed("space"):
 			#$Laptop.show()
 		
-	elif !$DOWN.is_hovered() and !$UP.is_hovered() and  !$Node2D/Table/FilesNotes.is_hovered() and !$Node2D/Table/Ipad.is_hovered():
+	elif !$DOWN.is_hovered() and !$UP.is_hovered() and  !$Node2D/Table/FilesNotes.is_hovered() and !$Node2D/Table/Ipad.is_hovered() and !$Node2D/door.is_hovered():
 		$Label/Text.text = ""
 	
 	if $Node2D/Table/FilesNotes.is_hovered():
@@ -101,7 +101,6 @@ func _process(delta: float) -> void:
 			
 			startSwitch = true
 		
-
 func _ready() -> void:
 	
 	$'Node2D/greg/intro'.show()
@@ -175,10 +174,15 @@ func _on_door_mouse_exited() -> void:
 
 
 func _on_door_mouse_entered() -> void:
-	$Label/Text.text = "Leave?"
+	if Global.greg_saved:
+		$Label/Text.text = "Leave?"
+	else:
+		$Label/Text.text = "Complete your report!"
 	$Node2D/TextureRect2.texture = hover_door
 
 
 func Leave() -> void:
 	if Global.greg_saved:
 		get_tree().change_scene_to_file("uid://b4rgvrr0gjroo")
+	else:
+		$bing.play()

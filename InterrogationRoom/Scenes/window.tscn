@@ -71,6 +71,7 @@ volume_db = -20.194
 pitch_scale = 2.55
 
 [node name="notes" type="ScrollContainer" parent="."]
+visible = false
 layout_mode = 0
 offset_right = 407.0
 offset_bottom = 413.0
@@ -326,9 +327,76 @@ position = Vector2(18, 708)
 scale = Vector2(0.3590136, 0.3590136)
 tag = "Crazy night at this new place i found downtown!"
 
+[node name="TobyPage" type="ScrollContainer" parent="."]
+layout_mode = 0
+offset_right = 407.0
+offset_bottom = 413.0
+horizontal_scroll_mode = 3
+script = ExtResource("9_kx4hk")
+
+[node name="Control" type="Control" parent="TobyPage"]
+custom_minimum_size = Vector2(0, 1500)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 2
+
+[node name="bg" type="ColorRect" parent="TobyPage/Control"]
+layout_mode = 0
+offset_top = 437.0
+offset_right = 40.0
+offset_bottom = 477.0
+scale = Vector2(9.999317, 1277.4146)
+color = Color(0.6392157, 0.6509804, 0.67058825, 1)
+
+[node name="Webpage" type="TextureRect" parent="TobyPage/Control"]
+layout_mode = 0
+offset_right = 400.0
+offset_bottom = 440.0
+size_flags_horizontal = 0
+size_flags_vertical = 2
+texture = ExtResource("9_815rx")
+
+[node name="homebutt" type="TextureButton" parent="TobyPage/Control"]
+layout_mode = 0
+offset_left = 304.0
+offset_top = 79.00001
+offset_right = 1245.9683
+offset_bottom = 591.0
+scale = Vector2(0.033879746, 0.059929207)
+
+[node name="ping" type="AudioStreamPlayer2D" parent="TobyPage/Control/homebutt"]
+stream = ExtResource("4_2fiki")
+volume_db = -20.194
+pitch_scale = 2.55
+
+[node name="img" type="TextureRect" parent="TobyPage/Control"]
+layout_mode = 0
+offset_left = 45.0
+offset_top = 459.0
+offset_right = 657.0
+offset_bottom = 867.0
+scale = Vector2(0.5072855, 0.5072855)
+texture = ExtResource("10_kx4hk")
+
+[node name="tag" type="RichTextLabel" parent="TobyPage/Control/img"]
+layout_mode = 0
+offset_left = 15.770209
+offset_top = 413.9681
+offset_right = 597.2968
+offset_bottom = 453.9681
+theme_override_fonts/normal_font = ExtResource("11_agmnv")
+theme_override_font_sizes/normal_font_size = 26
+text = "check out my blog, where I explain camera tools and..."
+
+[node name="videoplayer" parent="TobyPage" instance=ExtResource("8_dje3n")]
+position = Vector2(18, 708)
+scale = Vector2(0.3590136, 0.3590136)
+tag = "Crazy night at this new place i found downtown!"
+
 [connection signal="pressed" from="ScrollContainer/Control/bookmark1" to="." method="_on_bookmark_1_pressed"]
 [connection signal="pressed" from="notes/Control/advance" to="." method="_on_advance_pressed"]
 [connection signal="pressed" from="notes/Control/greg" to="." method="_on_greg_pressed"]
 [connection signal="pressed" from="notes/Control/greg" to="GregPage" method="_on_greg_pressed"]
 [connection signal="pressed" from="VictimPage/Control/homebutt" to="." method="_on_homebutt_pressed"]
 [connection signal="pressed" from="GregPage/Control/homebutt" to="." method="_on_homebutt_pressed"]
+[connection signal="pressed" from="TobyPage/Control/homebutt" to="." method="_on_homebutt_pressed"]

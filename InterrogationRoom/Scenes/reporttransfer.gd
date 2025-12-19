@@ -1,4 +1,7 @@
 extends Node2D
+
+var scene: String
+
 var dragging = false
 var of = Vector2(0,0)
 
@@ -16,6 +19,19 @@ func wait(seconds: float) -> void:
 
 func _process(delta: float) -> void:
 	
+	if scene == "Greg":
+		$default/Character_Option.set_item_disabled(1, true)
+		$default/Character_Option.set_item_disabled(2, true)
+	
+	if !$Toby/emotion.selected == -1 \
+	and !$Toby/connection.selected == -1 \
+	and !$Toby/crim.selected == -1 \
+	and !$Toby/violent.selected == -1 \
+	and !$Toby/place.text == "" \
+	and !$Toby/trust.selected == -1:
+		$Toby/SAVE.disabled = false
+	else:
+		$Toby/SAVE.disabled = true
 	
 	if !$Greg/emotion.selected == -1 \
 	and !$Greg/connection.selected == -1 \
@@ -49,9 +65,11 @@ func _on_iaccept_pressed() -> void:
 func Character_Option_Selection(index: int) -> void:
 	
 	if index == 0:
+		$Toby.hide()
 		$Greg.show()
 	elif index == 1:
 		$Greg.hide()
+		$Toby.show()
 		
 
 

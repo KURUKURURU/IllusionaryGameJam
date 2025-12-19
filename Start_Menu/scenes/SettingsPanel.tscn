@@ -231,6 +231,7 @@ libraries = {
 
 [node name="clink" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("16_brky1")
+volume_db = -20.07
 mix_target = 1
 bus = &"SFX"
 playback_type = 1

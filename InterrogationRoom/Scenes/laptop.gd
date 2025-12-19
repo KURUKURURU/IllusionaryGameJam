@@ -1,7 +1,7 @@
 extends Node2D
 @onready var vicpage = $Object2/TestWindow/VictimPage
 @onready var gregpage = $Object2/TestWindow/GregPage
-
+@export var witness: String
 
 func _ready() -> void:
 	$Report_Transfer.hide()
@@ -21,6 +21,8 @@ func _ready() -> void:
 	vicpage.show()
 	
 func _process(delta: float) -> void:
+	$Report_Transfer.scene = witness
+	
 	if $Report_Transfer.visible:
 		$Icon_ReportTransfer.texture_normal = load("res://Start_Menu/images/f1fileeewefwe.png")
 	else:
