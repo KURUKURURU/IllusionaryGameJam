@@ -20,7 +20,12 @@ func wait(seconds: float) -> void:
 func _process(delta: float) -> void:
 	
 	if scene == "Greg":
+		$default/Character_Option.set_item_disabled(0, false)
 		$default/Character_Option.set_item_disabled(1, true)
+		$default/Character_Option.set_item_disabled(2, true)
+	elif scene == "Toby":
+		$default/Character_Option.set_item_disabled(0, true)
+		$default/Character_Option.set_item_disabled(1, false)
 		$default/Character_Option.set_item_disabled(2, true)
 	
 	if !$Toby/emotion.selected == -1 \

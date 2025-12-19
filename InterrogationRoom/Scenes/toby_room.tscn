@@ -1,12 +1,12 @@
 [gd_scene load_steps=32 format=3 uid="uid://j3tclxiknunw"]
 
-[ext_resource type="Script" uid="uid://dr861qg2gdbt7" path="res://InterrogationRoom/Scenes/interrogation_room.gd" id="1_txwsd"]
+[ext_resource type="Script" uid="uid://8u3hvnkc8kst" path="res://InterrogationRoom/Scenes/toby_room.gd" id="1_y2qu5"]
 [ext_resource type="Texture2D" uid="uid://d0ywlrf5ocu7l" path="res://PreCutscene/frames/box/ph/walll1.png" id="2_5g7nn"]
 [ext_resource type="Texture2D" uid="uid://br4n76b444t6k" path="res://InterrogationRoom/images/metal.png" id="3_y2qu5"]
-[ext_resource type="Texture2D" uid="uid://c8rqi01ue115l" path="res://PreCutscene/frames/box/greg1/open.png" id="4_yx3hl"]
-[ext_resource type="Texture2D" uid="uid://b786ql6oxuyhl" path="res://PreCutscene/frames/box/greg1/blink.png" id="5_g2kdc"]
-[ext_resource type="Texture2D" uid="uid://dvm4xpg1x5bs1" path="res://PreCutscene/frames/box/greg1/highlight.png" id="6_tpbgd"]
-[ext_resource type="BitMap" uid="uid://cbq2uq3dnas6r" path="res://PreCutscene/frames/box/greg1/open copy.png" id="7_wnmp5"]
+[ext_resource type="Texture2D" uid="uid://reyd7ut880sp" path="res://PreCutscene/frames/box/toby/tobysmile.png" id="4_txwsd"]
+[ext_resource type="Texture2D" uid="uid://drm67snfp6ewo" path="res://PreCutscene/frames/box/toby/tobyblink.png" id="5_5g7nn"]
+[ext_resource type="Texture2D" uid="uid://bgs3ywgx3i3ob" path="res://webpages/hover.png" id="6_y2qu5"]
+[ext_resource type="BitMap" uid="uid://dqt7v1yc0sfmv" path="res://webpages/maskthing.png" id="7_yx3hl"]
 [ext_resource type="Texture2D" uid="uid://bds33gy5dct6d" path="res://Start_Menu/images/suitcase/props/filef1.png" id="8_y00nr"]
 [ext_resource type="Texture2D" uid="uid://8xymjklv02vy" path="res://Start_Menu/images/suitcase/props/filef12.png" id="9_arjck"]
 [ext_resource type="AudioStream" uid="uid://dxs6cd7v2rjdp" path="res://StartRoom/sounds/openpeper.wav" id="10_8svlb"]
@@ -22,21 +22,21 @@
 [ext_resource type="AudioStream" uid="uid://byffw1s080n6m" path="res://StartRoom/sounds/whoosh.wav" id="20_4cnrh"]
 [ext_resource type="AudioStream" uid="uid://djjlvy68f5mnw" path="res://InterrogationRoom/sounds/museclick.wav" id="21_2uyjd"]
 [ext_resource type="PackedScene" uid="uid://jpraix5hokpi" path="res://InterrogationRoom/Scenes/laptop.tscn" id="22_fh600"]
-[ext_resource type="PackedScene" uid="uid://ckdwd36lj1glk" path="res://Process/greg_talking_scene.tscn" id="23_dw0p6"]
 [ext_resource type="AudioStream" uid="uid://dipgr8o46y6dj" path="res://delete.wav" id="24_rrjsa"]
+[ext_resource type="PackedScene" uid="uid://bysxu7yf4gv4r" path="res://Process/toby_talking_scene.tscn" id="25_y2qu5"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_6n7f2"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_y2qu5"]
 animations = [{
 "frames": [{
-"duration": 7.27,
-"texture": ExtResource("4_yx3hl")
+"duration": 20.0,
+"texture": ExtResource("4_txwsd")
 }, {
-"duration": 1.0,
-"texture": ExtResource("5_g2kdc")
+"duration": 0.31,
+"texture": ExtResource("5_5g7nn")
 }],
 "loop": true,
 "name": &"default",
-"speed": 1.79
+"speed": 5.0
 }]
 
 [sub_resource type="Animation" id="Animation_m2gn2"]
@@ -220,7 +220,7 @@ _data = {
 }
 
 [node name="InterrogationRoom" type="Node2D"]
-script = ExtResource("1_txwsd")
+script = ExtResource("1_y2qu5")
 
 [node name="Node2D" type="Node2D" parent="."]
 position = Vector2(0, 4)
@@ -238,28 +238,28 @@ offset_bottom = 1281.5483
 scale = Vector2(1, 1.2400006)
 texture = ExtResource("3_y2qu5")
 
-[node name="greg" type="AnimatedSprite2D" parent="Node2D"]
+[node name="toby" type="AnimatedSprite2D" parent="Node2D"]
 position = Vector2(575, 321)
-sprite_frames = SubResource("SpriteFrames_6n7f2")
+sprite_frames = SubResource("SpriteFrames_y2qu5")
 autoplay = "default"
-frame_progress = 0.5414105
+frame_progress = 0.48596942
 
-[node name="intro" type="TextureButton" parent="Node2D/greg"]
+[node name="intro" type="TextureButton" parent="Node2D/toby"]
 visible = false
 offset_left = -575.0
 offset_top = -325.0
 offset_right = 575.0
 offset_bottom = 325.0
-texture_hover = ExtResource("6_tpbgd")
-texture_click_mask = ExtResource("7_wnmp5")
+texture_hover = ExtResource("6_y2qu5")
+texture_click_mask = ExtResource("7_yx3hl")
 
-[node name="question" type="TextureButton" parent="Node2D/greg"]
+[node name="question" type="TextureButton" parent="Node2D/toby"]
 offset_left = -575.0
 offset_top = -325.0
 offset_right = 575.0
 offset_bottom = 325.0
-texture_hover = ExtResource("6_tpbgd")
-texture_click_mask = ExtResource("7_wnmp5")
+texture_hover = ExtResource("6_y2qu5")
+texture_click_mask = ExtResource("7_yx3hl")
 
 [node name="Table" type="TextureRect" parent="Node2D"]
 texture_filter = 4
@@ -380,19 +380,17 @@ bus = &"SFX"
 [node name="Laptop" parent="." instance=ExtResource("22_fh600")]
 visible = false
 scale = Vector2(1.0065355, 1.0065355)
-witness = "Greg"
+witness = "Toby"
 
-[node name="GregTalkingScene" parent="." instance=ExtResource("23_dw0p6")]
+[node name="TobyTalkingScene" parent="." instance=ExtResource("25_y2qu5")]
 visible = false
-position = Vector2(-0.9999962, 2)
 
 [node name="bing" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("24_rrjsa")
 
-[connection signal="intro" from="." to="GregTalkingScene" method="introduce"]
-[connection signal="questioning_1" from="." to="GregTalkingScene" method="_on_interrogation_room_questioning_1"]
-[connection signal="pressed" from="Node2D/greg/intro" to="." method="IfStartTalking"]
-[connection signal="pressed" from="Node2D/greg/question" to="." method="question_witness"]
+[connection signal="intro" from="." to="TobyTalkingScene" method="_on_interrogation_room_intro"]
+[connection signal="pressed" from="Node2D/toby/intro" to="." method="TobyIntro"]
+[connection signal="pressed" from="Node2D/toby/question" to="." method="question_witness"]
 [connection signal="mouse_entered" from="Node2D/Table/FilesNotes" to="." method="files_mousetouch"]
 [connection signal="mouse_exited" from="Node2D/Table/FilesNotes" to="." method="files_mouseleave"]
 [connection signal="pressed" from="Node2D/Table/FilesNotes" to="." method="_on_files_notes_pressed"]
@@ -402,4 +400,4 @@ stream = ExtResource("24_rrjsa")
 [connection signal="pressed" from="Node2D/door" to="." method="Leave"]
 [connection signal="pressed" from="UP" to="." method="UP"]
 [connection signal="pressed" from="DOWN" to="." method="Down"]
-[connection signal="done" from="GregTalkingScene" to="." method="alldone_connect"]
+[connection signal="done" from="TobyTalkingScene" to="." method="_on_toby_talking_scene_done"]

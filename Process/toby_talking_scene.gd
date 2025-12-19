@@ -34,28 +34,7 @@ signal done_op
 
 func wait(seconds: float) -> void:
 	await get_tree().create_timer(seconds).timeout
-
-func introduce():
-	Y_AD.hide()
-	$You.show()
-	$Main.hide()
-	$Options.hide()
 	
-	$"You/pop up".play("pop")
-	await $"You/pop up".animation_finished
-	
-	Y_txt.text = ""
-	await say("Good evening.", 2.0)
-	await say("I'm Detective Ward, and I'm investigating a crime that took place near 
-	you tonight.", 5.0)
-	await say("That's why you're here– you're going to give your statement.", 4.0)
-	
-	
-	await Wit_say("Uhh,", 0.0)
-	await Wit_say("I'm like, not even aware of what happened.", 4.0) 
-	await Wit_say("I do know it's a chick. She pretty?", 3.0)
-	
-	alldone()
 func _on_interrogation_room_questioning_1() -> void:
 	Y_AD.hide()
 	$You.hide()
@@ -63,11 +42,11 @@ func _on_interrogation_room_questioning_1() -> void:
 	$Options.hide()
 	self.show()
 	
-	Wit_say("What would you need to know?", 100)
+	Wit_say("...", 100)
 	
 	op1_text.text = "How well do you know Megan Camargo?"
 	op2_text.text = "Where were you at 7:30?"
-	op3_text.text = "Why are you interested in the victim's looks?"
+	op3_text.text = ""
 	
 	$Options.show()
 	
@@ -158,4 +137,27 @@ func where_greg() -> void:
 		await Wit_say("I, of course, bought her everything she wanted.", 3.0)
 		told_where = true
 		
+	alldone()
+
+
+func _on_interrogation_room_intro() -> void:
+	Y_AD.hide()
+	$You.show()
+	$Main.hide()
+	$Options.hide()
+	
+	$"You/pop up".play("pop")
+	await $"You/pop up".animation_finished
+	
+	Y_txt.text = ""
+	await say("Good evening.", 2.0)
+	await say("I'm Detective Ward, and I'm investigating a crime that took place near 
+	you tonight.", 5.0)
+	await say("That's why you're here– you're going to give your statement.", 4.0)
+	
+	
+	await Wit_say("Alright, though I can't say I'll be helpful.", 3.0)
+	await Wit_say("That poor child.", 4.0) 
+	await Wit_say(" Though I couldn't say she didn't have it coming.", 3.0)
+	
 	alldone()

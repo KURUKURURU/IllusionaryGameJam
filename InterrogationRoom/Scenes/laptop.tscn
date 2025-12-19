@@ -556,6 +556,7 @@ libraries = {
 [connection signal="coolpressed" from="Object/TestWindow" to="." method="_on_test_window_coolpressed"]
 [connection signal="greg_page" from="Object/TestWindow" to="." method="_on_test_window_greg_page"]
 [connection signal="pressed" from="Object/TestWindow" to="." method="Object1"]
+[connection signal="toby_page" from="Object/TestWindow" to="." method="_on_test_window_toby_page"]
 [connection signal="button_down" from="Object/InteractMove" to="." method="Object1"]
 [connection signal="button_down" from="Object/InteractMove" to="Object" method="Down"]
 [connection signal="button_up" from="Object/InteractMove" to="Object" method="Up"]

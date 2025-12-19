@@ -1,6 +1,7 @@
 extends Node2D
 @onready var vicpage = $Object2/TestWindow/VictimPage
 @onready var gregpage = $Object2/TestWindow/GregPage
+@onready var tobypage = $Object2/TestWindow/TobyPage
 @export var witness: String
 
 func _ready() -> void:
@@ -10,6 +11,7 @@ func _ready() -> void:
 	$ImageWindow.hide()
 	$Object2.hide()
 	$Object/TestWindow/GregPage.hide()
+	$Object/TestWindow/TobyPage.hide()
 	
 	$Object/TestWindow/VictimPage.hide()
 	$Object/TestWindow/ScrollContainer.hide()
@@ -44,6 +46,7 @@ func _on_test_window_coolpressed() -> void:
 	
 	vicpage.show()
 	gregpage.hide()
+	tobypage.hide()
 	
 	vicpage.scroll_vertical = 0
 	$Object2/Popup.play("popup")
@@ -62,6 +65,7 @@ func _on_test_window_bookmark_1() -> void:
 func _on_test_window_homebutt() -> void:
 	vicpage.hide()
 	gregpage.hide()
+	tobypage.hide()
 	$Object2/TestWindow/ScrollContainer.show()
 	$Object2/TestWindow/ScrollContainer.scroll_vertical = 0
 
@@ -112,6 +116,7 @@ func _on_test_window_greg_page() -> void:
 	$Object2/TestWindow/notes.hide()
 	$Object2/TestWindow/ScrollContainer.hide()
 	vicpage.hide()
+	tobypage.hide()
 	
 	$Object2/Popup.play("popup")
 	gregpage.scroll_vertical = 0
@@ -131,3 +136,15 @@ func _on_icon_report_transfer_pressed() -> void:
 
 func _on_icon_report_transfer_report_app() -> void:
 	_on_icon_report_transfer_pressed()
+
+
+func _on_test_window_toby_page() -> void:
+	$Object2.show()
+	$Object2/TestWindow/notes.hide()
+	$Object2/TestWindow/ScrollContainer.hide()
+	vicpage.hide()
+	gregpage.hide()
+	
+	$Object2/Popup.play("popup")
+	tobypage.scroll_vertical = 0
+	tobypage.show()

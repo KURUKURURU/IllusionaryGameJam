@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://c5ywwd24lm2ih"]
+[gd_scene load_steps=18 format=3 uid="uid://c5ywwd24lm2ih"]
 
 [ext_resource type="Script" uid="uid://8y8moatunt74" path="res://InterrogationRoom/Scenes/window.gd" id="1_tcpfg"]
 [ext_resource type="Texture2D" uid="uid://b37cqjg1xcof8" path="res://InterrogationRoom/images/pages/home page.png" id="2_2fiki"]
@@ -12,6 +12,10 @@
 [ext_resource type="Script" uid="uid://nenuaoiss4ck" path="res://InterrogationRoom/Scenes/greg_page.gd" id="9_kx4hk"]
 [ext_resource type="Texture2D" uid="uid://cv6f5sfdj0ldn" path="res://Process/ph/istockphoto-1152344841-612x612.jpg" id="10_kx4hk"]
 [ext_resource type="FontFile" uid="uid://b6ygy3613w7fw" path="res://Fonts/MYRIADAT.TTF" id="11_agmnv"]
+[ext_resource type="Texture2D" uid="uid://c6ww285cyaj18" path="res://webpages/toby.png" id="13_1h5m1"]
+[ext_resource type="Texture2D" uid="uid://csunbmh1o2bvj" path="res://Process/ph/docks.jpeg" id="14_ey36s"]
+[ext_resource type="Texture2D" uid="uid://dvi51yccs7lk1" path="res://PreCutscene/frames/box/ph/posst2.png" id="15_q8cl6"]
+[ext_resource type="Texture2D" uid="uid://brdm4px2bg0ra" path="res://PreCutscene/frames/box/ph/Illustration4.png" id="16_ey36s"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dje3n"]
 
@@ -71,7 +75,6 @@ volume_db = -20.194
 pitch_scale = 2.55
 
 [node name="notes" type="ScrollContainer" parent="."]
-visible = false
 layout_mode = 0
 offset_right = 407.0
 offset_bottom = 413.0
@@ -145,7 +148,7 @@ offset_right = 412.0
 offset_bottom = 249.0
 theme_override_colors/default_color = Color(0, 0, 1, 1)
 theme_override_fonts/normal_font = ExtResource("6_qh5xi")
-text = "https://www.photogram.com/account/2888256_private"
+text = "https://www.photogram.com/account/2888256555432/"
 
 [node name="text2" type="RichTextLabel" parent="notes/Control"]
 layout_mode = 0
@@ -190,6 +193,19 @@ offset_bottom = 719.0
 scale = Vector2(0.21338303, 0.041172642)
 
 [node name="ping" type="AudioStreamPlayer2D" parent="notes/Control/greg"]
+stream = ExtResource("4_2fiki")
+volume_db = -20.194
+pitch_scale = 2.55
+
+[node name="toby" type="TextureButton" parent="notes/Control"]
+layout_mode = 0
+offset_left = 8.999992
+offset_top = 229.0
+offset_right = 1747.6576
+offset_bottom = 741.0
+scale = Vector2(0.21338303, 0.041172642)
+
+[node name="ping" type="AudioStreamPlayer2D" parent="notes/Control/toby"]
 stream = ExtResource("4_2fiki")
 volume_db = -20.194
 pitch_scale = 2.55
@@ -328,6 +344,7 @@ scale = Vector2(0.3590136, 0.3590136)
 tag = "Crazy night at this new place i found downtown!"
 
 [node name="TobyPage" type="ScrollContainer" parent="."]
+visible = false
 layout_mode = 0
 offset_right = 407.0
 offset_bottom = 413.0
@@ -345,8 +362,8 @@ layout_mode = 0
 offset_top = 437.0
 offset_right = 40.0
 offset_bottom = 477.0
-scale = Vector2(9.999317, 1277.4146)
-color = Color(0.6392157, 0.6509804, 0.67058825, 1)
+scale = Vector2(9.991567, 30.502106)
+color = Color(0.33333334, 0.6313726, 1, 1)
 
 [node name="Webpage" type="TextureRect" parent="TobyPage/Control"]
 layout_mode = 0
@@ -354,7 +371,7 @@ offset_right = 400.0
 offset_bottom = 440.0
 size_flags_horizontal = 0
 size_flags_vertical = 2
-texture = ExtResource("9_815rx")
+texture = ExtResource("13_1h5m1")
 
 [node name="homebutt" type="TextureButton" parent="TobyPage/Control"]
 layout_mode = 0
@@ -375,28 +392,71 @@ offset_left = 45.0
 offset_top = 459.0
 offset_right = 657.0
 offset_bottom = 867.0
-scale = Vector2(0.5072855, 0.5072855)
-texture = ExtResource("10_kx4hk")
+scale = Vector2(0.07539478, 0.07539478)
+texture = ExtResource("14_ey36s")
 
 [node name="tag" type="RichTextLabel" parent="TobyPage/Control/img"]
 layout_mode = 0
-offset_left = 15.770209
-offset_top = 413.9681
-offset_right = 597.2968
-offset_bottom = 453.9681
+offset_left = 66.31759
+offset_top = 2851.6565
+offset_right = 647.8442
+offset_bottom = 2891.6565
+scale = Vector2(6.782167, 5.7301135)
 theme_override_fonts/normal_font = ExtResource("11_agmnv")
 theme_override_font_sizes/normal_font_size = 26
-text = "check out my blog, where I explain camera tools and..."
+text = "just want to upload my latest pretty picture, this'll..."
+
+[node name="img2" type="TextureRect" parent="TobyPage/Control"]
+layout_mode = 0
+offset_left = 45.0
+offset_top = 954.0
+offset_right = 4231.0
+offset_bottom = 3745.0
+scale = Vector2(0.07539478, 0.07539478)
+texture = ExtResource("15_q8cl6")
+
+[node name="tag" type="RichTextLabel" parent="TobyPage/Control/img2"]
+layout_mode = 0
+offset_left = 66.31759
+offset_top = 2851.6565
+offset_right = 647.8442
+offset_bottom = 2891.6565
+scale = Vector2(6.782167, 5.7301135)
+theme_override_fonts/normal_font = ExtResource("11_agmnv")
+theme_override_font_sizes/normal_font_size = 26
+text = "me and my handsome husband God gave me! I'm ble.."
+
+[node name="img3" type="TextureRect" parent="TobyPage/Control"]
+layout_mode = 0
+offset_left = 45.0
+offset_top = 1200.0
+offset_right = 4231.0
+offset_bottom = 3991.0
+scale = Vector2(0.07539478, 0.07539478)
+texture = ExtResource("16_ey36s")
+
+[node name="tag" type="RichTextLabel" parent="TobyPage/Control/img3"]
+layout_mode = 0
+offset_left = 66.31759
+offset_top = 2851.6565
+offset_right = 647.8442
+offset_bottom = 2921.0977
+scale = Vector2(6.782167, 5.7301135)
+theme_override_fonts/normal_font = ExtResource("11_agmnv")
+theme_override_font_sizes/normal_font_size = 26
+text = "love the smell of dead fish! can never hate the smell of dead things."
 
 [node name="videoplayer" parent="TobyPage" instance=ExtResource("8_dje3n")]
 position = Vector2(18, 708)
 scale = Vector2(0.3590136, 0.3590136)
-tag = "Crazy night at this new place i found downtown!"
+tag = "just fishin'"
+path = "fishing.ogv"
 
 [connection signal="pressed" from="ScrollContainer/Control/bookmark1" to="." method="_on_bookmark_1_pressed"]
 [connection signal="pressed" from="notes/Control/advance" to="." method="_on_advance_pressed"]
 [connection signal="pressed" from="notes/Control/greg" to="." method="_on_greg_pressed"]
 [connection signal="pressed" from="notes/Control/greg" to="GregPage" method="_on_greg_pressed"]
+[connection signal="pressed" from="notes/Control/toby" to="." method="_on_toby_pressed"]
 [connection signal="pressed" from="VictimPage/Control/homebutt" to="." method="_on_homebutt_pressed"]
 [connection signal="pressed" from="GregPage/Control/homebutt" to="." method="_on_homebutt_pressed"]
 [connection signal="pressed" from="TobyPage/Control/homebutt" to="." method="_on_homebutt_pressed"]

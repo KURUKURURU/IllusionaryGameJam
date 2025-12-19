@@ -23,7 +23,6 @@ Global="*res://global.gd"
 
 window/size/viewport_width=1150
 window/size/viewport_height=650
-window/size/mode=3
 window/stretch/mode="viewport"
 mouse_cursor/custom_image="uid://by4w7a2kdh2re"
 
