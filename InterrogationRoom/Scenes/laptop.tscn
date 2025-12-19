@@ -268,7 +268,6 @@ scale = Vector2(0.4991888, 0.4991888)
 texture_normal = ExtResource("5_e164m")
 
 [node name="Object" type="TextureButton" parent="."]
-visible = false
 z_index = 1
 offset_left = 387.22
 offset_top = -462.0
@@ -311,8 +310,17 @@ libraries = {
 &"": SubResource("AnimationLibrary_q40cj")
 }
 
+[node name="appname" type="Label" parent="Object"]
+layout_mode = 0
+offset_left = 161.78003
+offset_top = 519.0
+offset_right = 435.78003
+offset_bottom = 542.0
+scale = Vector2(0.8979859, 0.6927789)
+theme_override_font_sizes/font_size = 10
+text = "Notes"
+
 [node name="Object2" type="TextureButton" parent="."]
-visible = false
 modulate = Color(1, 1, 1, 0.18039216)
 offset_left = -123.0
 offset_top = -385.0
@@ -365,6 +373,16 @@ offset_bottom = 650.0
 scale = Vector2(1.0200155, 1.0102632)
 mouse_filter = 2
 texture = ExtResource("12_e164m")
+
+[node name="appname" type="Label" parent="Object2"]
+layout_mode = 0
+offset_left = 161.78003
+offset_top = 520.00006
+offset_right = 435.78003
+offset_bottom = 543.00006
+scale = Vector2(0.8979859, 0.6927789)
+theme_override_font_sizes/font_size = 10
+text = "Dhrome"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -481,6 +499,16 @@ offset_bottom = 333.27222
 scale = Vector2(0.15497814, 0.058189314)
 stretch_mode = 0
 
+[node name="appname" type="Label" parent="MapPreview"]
+layout_mode = 0
+offset_left = 27.371536
+offset_top = -11.404724
+offset_right = 301.37152
+offset_bottom = 11.595276
+scale = Vector2(0.8979859, 0.6927789)
+theme_override_font_sizes/font_size = 10
+text = "townmap.png"
+
 [node name="ping" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(205, 33)
 stream = ExtResource("14_58y6p")
@@ -488,6 +516,7 @@ volume_db = -20.194
 pitch_scale = 2.55
 
 [node name="CameraPortal" parent="." instance=ExtResource("17_roxh2")]
+visible = false
 modulate = Color(1, 1, 1, 0.18039216)
 position = Vector2(319, 289)
 scale = Vector2(0.055, 0.055)
@@ -497,10 +526,20 @@ libraries = {
 &"": SubResource("AnimationLibrary_w7ul5")
 }
 
+[node name="appname" type="Label" parent="CameraPortal"]
+offset_left = -158.0
+offset_top = -203.00002
+offset_right = 116.0
+offset_bottom = -180.00002
+scale = Vector2(0.8979859, 0.6927789)
+theme_override_font_sizes/font_size = 10
+text = "Camera Portal"
+
 [node name="deleteSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("18_gyosh")
 
 [node name="Report_Transfer" parent="." instance=ExtResource("22_k8q15")]
+visible = false
 modulate = Color(1, 1, 1, 0.18039216)
 position = Vector2(368, 278)
 scale = Vector2(0.055, 0.055)

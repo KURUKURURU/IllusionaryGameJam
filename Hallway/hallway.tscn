@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://b4rgvrr0gjroo"]
+[gd_scene load_steps=8 format=3 uid="uid://b4rgvrr0gjroo"]
 
 [ext_resource type="Script" uid="uid://d3fwety47ocw3" path="res://Hallway/hallway.gd" id="1_peadq"]
 [ext_resource type="Texture2D" uid="uid://ch367gvb5y3h" path="res://Hallway/images/wall1.png" id="2_olku6"]
@@ -6,6 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://b4c11ui3lonn" path="res://office.wav" id="4_olku6"]
 [ext_resource type="Texture2D" uid="uid://bfyvre3qx05hn" path="res://Hallway/images/d1.png" id="5_riab6"]
 [ext_resource type="Texture2D" uid="uid://bkkwfdi48bnnr" path="res://Hallway/images/d1h.png" id="6_tmm3p"]
+[ext_resource type="AudioStream" uid="uid://dipgr8o46y6dj" path="res://delete.wav" id="7_riab6"]
 
 [node name="Hallway" type="Node2D"]
 script = ExtResource("1_peadq")
@@ -35,5 +36,8 @@ offset_bottom = 688.0
 scale = Vector2(1.0092744, 1.0092744)
 texture_normal = ExtResource("5_riab6")
 texture_hover = ExtResource("6_tmm3p")
+
+[node name="bing" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_riab6")
 
 [connection signal="pressed" from="Door_Greg" to="." method="GregPath"]

@@ -219,7 +219,6 @@ _data = {
 }
 
 [node name="InterrogationRoom" type="Node2D"]
-position = Vector2(-1, 0)
 script = ExtResource("1_1mumd")
 
 [node name="Node2D" type="Node2D" parent="."]
@@ -395,6 +394,7 @@ position = Vector2(-0.9999962, 2)
 [connection signal="pressed" from="Node2D/Table/Ipad" to="." method="_on_ipad_pressed"]
 [connection signal="mouse_entered" from="Node2D/door" to="." method="_on_door_mouse_entered"]
 [connection signal="mouse_exited" from="Node2D/door" to="." method="_on_door_mouse_exited"]
+[connection signal="pressed" from="Node2D/door" to="." method="Leave"]
 [connection signal="pressed" from="UP" to="." method="UP"]
 [connection signal="pressed" from="DOWN" to="." method="Down"]
 [connection signal="done" from="GregTalkingScene" to="." method="alldone_connect"]

@@ -280,6 +280,7 @@ bus = &"SFX"
 libraries = {
 &"": SubResource("AnimationLibrary_imgov")
 }
+speed_scale = 0.442
 
 [node name="Node2D" type="Node2D" parent="."]
 

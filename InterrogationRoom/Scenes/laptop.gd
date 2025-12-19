@@ -20,6 +20,11 @@ func _ready() -> void:
 	
 	vicpage.show()
 	
+func _process(delta: float) -> void:
+	if $Report_Transfer.visible:
+		$Icon_ReportTransfer.texture_normal = load("res://Start_Menu/images/f1fileeewefwe.png")
+	else:
+		$Icon_ReportTransfer.texture_normal = load("res://Start_Menu/images/app.png") 
 
 func Object1() -> void:
 	$Object.z_index = 1

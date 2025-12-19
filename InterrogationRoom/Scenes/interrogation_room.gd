@@ -177,3 +177,8 @@ func _on_door_mouse_exited() -> void:
 func _on_door_mouse_entered() -> void:
 	$Label/Text.text = "Leave?"
 	$Node2D/TextureRect2.texture = hover_door
+
+
+func Leave() -> void:
+	if Global.greg_saved:
+		get_tree().change_scene_to_file("uid://b4rgvrr0gjroo")

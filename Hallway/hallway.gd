@@ -5,5 +5,7 @@ func _ready() -> void:
 	AudioServer.set_bus_layout(audio_bus_layout)
 
 func GregPath() -> void:
-	get_tree().change_scene_to_file("uid://bdycqhfyd38af")
-	
+	if !Global.greg_saved:
+		get_tree().change_scene_to_file("uid://bdycqhfyd38af")
+	elif Global.greg_saved:
+		$bing.play()

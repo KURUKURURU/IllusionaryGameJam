@@ -1,16 +1,41 @@
-[gd_scene load_steps=18 format=3 uid="uid://d32pkj2nffux0"]
+[gd_scene load_steps=30 format=3 uid="uid://d32pkj2nffux0"]
 
 [ext_resource type="Script" uid="uid://bkvfxob166if3" path="res://InterrogationRoom/Scenes/reporttransfer.gd" id="1_w7tdb"]
 [ext_resource type="Texture2D" uid="uid://kk8a6g4jh4qn" path="res://webpages/indowmove.png" id="2_ixwjd"]
+[ext_resource type="Texture2D" uid="uid://dvreymb8n8j03" path="res://Start_Menu/images/rrg.png" id="4_w7tdb"]
+[ext_resource type="Texture2D" uid="uid://cphkwvxyaeidr" path="res://Start_Menu/images/savenorm.png" id="5_j6qxt"]
 [ext_resource type="Texture2D" uid="uid://b5y2e0uals3h1" path="res://Process/ph/images.jpg" id="5_vwtrv"]
+[ext_resource type="Texture2D" uid="uid://dg4ytf3bju5yv" path="res://Start_Menu/images/savehigh.png" id="6_37e3v"]
 [ext_resource type="Texture2D" uid="uid://do3xmic073ojk" path="res://webpages/buttt.png" id="6_kv1vy"]
+[ext_resource type="Texture2D" uid="uid://bwb2hh4iyypt1" path="res://Start_Menu/images/savedisable.png" id="7_7jkhj"]
 [ext_resource type="AudioStream" uid="uid://dipgr8o46y6dj" path="res://delete.wav" id="7_rty41"]
 [ext_resource type="Texture2D" uid="uid://bmvt5arn0r7l5" path="res://webpages/Illustration.png" id="7_u3dxm"]
 [ext_resource type="Texture2D" uid="uid://cjwpkm4fjhuy0" path="res://images/questionn.png" id="8_liesj"]
 [ext_resource type="Texture2D" uid="uid://dxkyfr20gwiwk" path="res://images/questionh.png" id="9_s3bkv"]
+[ext_resource type="Texture2D" uid="uid://bfv8wvu4yfvj0" path="res://Process/ph/submit-button-png-9.png" id="16_ixwjd"]
 [ext_resource type="Script" uid="uid://vghqteomh0cb" path="res://InterrogationRoom/Scenes/info_screen.gd" id="16_w5cpq"]
+[ext_resource type="Texture2D" uid="uid://prdubd6icbfo" path="res://Screenshot 2025-12-18 at 4.44.32 PM.png" id="17_e151u"]
 [ext_resource type="Texture2D" uid="uid://ixsyqq0n57oh" path="res://shadow-png-30599.png" id="18_imx8w"]
 [ext_resource type="Script" uid="uid://crormvnfgw8m5" path="res://InterrogationRoom/Scenes/mouse.gd" id="19_v6pxv"]
+
+[sub_resource type="DPITexture" id="DPITexture_w7tdb"]
+_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"12\" height=\"12\"><path fill=\"none\" stroke=\"#b2b2b2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-opacity=\".85\" stroke-width=\"2\" d=\"m2 4 4 4 4-4\"/></svg>
+"
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vwtrv"]
+content_margin_left = 8.0
+content_margin_top = 4.0
+content_margin_right = 8.0
+content_margin_bottom = 4.0
+bg_color = Color(0.74138474, 0.7413847, 0.74138457, 0.6)
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="Theme" id="Theme_kv1vy"]
+OptionButton/icons/arrow = SubResource("DPITexture_w7tdb")
+OptionButton/styles/normal = SubResource("StyleBoxFlat_vwtrv")
 
 [sub_resource type="Animation" id="Animation_jf06k"]
 resource_name = "open"
@@ -71,6 +96,43 @@ tracks/1/keys = {
 _data = {
 &"RESET": SubResource("Animation_kv1vy"),
 &"open": SubResource("Animation_jf06k")
+}
+
+[sub_resource type="Animation" id="Animation_u3dxm"]
+resource_name = "sliding"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("bg/text:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.46252698, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(39.883453, 6.1690674), Vector2(0.43351555, 6.1690674), Vector2(-39.775074, 6.1690674)]
+}
+
+[sub_resource type="Animation" id="Animation_xhp1j"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("bg/text:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.43351555, 6.1690674)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_j6qxt"]
+_data = {
+&"RESET": SubResource("Animation_xhp1j"),
+&"sliding": SubResource("Animation_u3dxm")
 }
 
 [sub_resource type="Animation" id="Animation_w7tdb"]
@@ -148,12 +210,20 @@ color = Color(0.28174746, 0.026113724, 0.3854911, 1)
 [node name="deleteSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_rty41")
 
-[node name="Character_Option" type="OptionButton" parent="."]
-offset_left = -168.0
+[node name="default" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Character_Option" type="OptionButton" parent="default"]
+layout_mode = 0
+offset_left = -88.0
 offset_top = -171.0
-offset_right = -35.0
+offset_right = 45.0
 offset_bottom = -140.0
 scale = Vector2(0.7125422, 0.7125422)
+theme = SubResource("Theme_kv1vy")
 item_count = 3
 popup/item_0/text = "Greg"
 popup/item_0/id = 0
@@ -162,7 +232,37 @@ popup/item_1/id = 1
 popup/item_2/text = "Panya"
 popup/item_2/id = 2
 
+[node name="bg" type="ColorRect" parent="default"]
+clip_contents = true
+layout_mode = 0
+offset_left = -168.0
+offset_top = -143.0
+offset_right = -128.0
+offset_bottom = -103.0
+scale = Vector2(8.519891, 7.259355)
+
+[node name="img" type="TextureRect" parent="default/bg"]
+layout_mode = 0
+offset_left = 2.93431
+offset_right = 408.9343
+offset_bottom = 470.0
+scale = Vector2(0.08455076, 0.08455076)
+texture = ExtResource("4_w7tdb")
+
+[node name="text" type="RichTextLabel" parent="default"]
+layout_mode = 0
+offset_left = -166.0
+offset_top = -171.0
+offset_right = -90.81719
+offset_bottom = -148.83072
+scale = Vector2(1.0374712, 1.0374712)
+mouse_filter = 2
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/normal_font_size = 14
+text = "Report on:"
+
 [node name="Greg" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_left = -161.0
@@ -175,54 +275,146 @@ layout_mode = 0
 offset_left = -7.0
 offset_top = -9.000015
 offset_right = 33.0
-offset_bottom = 30.999985
+offset_bottom = 35.356544
 scale = Vector2(8.519891, 7.259355)
 
-[node name="alibi" type="OptionButton" parent="Greg"]
+[node name="emotion" type="OptionButton" parent="Greg"]
 layout_mode = 0
-offset_left = 47.0
-offset_right = 180.0
-offset_bottom = 31.0
-scale = Vector2(0.7125422, 0.7125422)
-item_count = 3
-popup/item_0/text = "false"
+offset_left = 124.0
+offset_top = 165.0
+offset_right = 257.0
+offset_bottom = 196.0
+scale = Vector2(0.8211847, 0.8211847)
+fit_to_longest_item = false
+item_count = 4
+popup/item_0/text = "deceptive."
 popup/item_0/id = 0
-popup/item_1/text = "true"
+popup/item_1/text = "nervous."
 popup/item_1/id = 1
-popup/item_2/text = "unconclusive"
+popup/item_2/text = "forthcoming."
 popup/item_2/id = 2
+popup/item_3/text = "careful."
+popup/item_3/id = 3
 
-[node name="Control" type="Control" parent="."]
-visible = false
-clip_contents = true
-layout_mode = 3
-anchors_preset = 0
-offset_left = -181.0
-offset_top = -191.0
-offset_right = -141.0
-offset_bottom = -151.0
-scale = Vector2(9.137931, 10.913043)
-mouse_filter = 2
-
-[node name="mouse" type="TextureRect" parent="Control"]
-modulate = Color(5.51065, 10.651967, 18.892157, 0.10980392)
+[node name="connection" type="OptionButton" parent="Greg"]
 layout_mode = 0
-offset_left = -297.22263
-offset_top = -61.027885
-offset_right = 428.45914
-offset_bottom = 202.06805
-scale = Vector2(0.009932398, 0.02111465)
-pivot_offset = Vector2(325.3056, 86.26097)
+offset_left = 46.0
+offset_top = 5.0
+offset_right = 179.0
+offset_bottom = 36.0
+scale = Vector2(0.8211847, 0.8211847)
+fit_to_longest_item = false
+item_count = 2
+popup/item_0/text = "didn't have"
+popup/item_0/id = 0
+popup/item_1/text = "had"
+popup/item_1/id = 1
+
+[node name="crim" type="OptionButton" parent="Greg"]
+layout_mode = 0
+offset_left = 243.0
+offset_top = 126.0
+offset_right = 288.0
+offset_bottom = 158.87933
+scale = Vector2(0.8211847, 0.8211847)
+fit_to_longest_item = false
+item_count = 2
+popup/item_0/text = "Y"
+popup/item_0/id = 0
+popup/item_1/text = "N"
+popup/item_1/id = 1
+
+[node name="violent" type="OptionButton" parent="Greg"]
+layout_mode = 0
+offset_left = 191.0
+offset_top = 91.0
+offset_right = 236.0
+offset_bottom = 123.87933
+scale = Vector2(0.8211847, 0.8211847)
+fit_to_longest_item = false
+item_count = 2
+popup/item_0/text = "Y"
+popup/item_0/id = 0
+popup/item_1/text = "N"
+popup/item_1/id = 1
+
+[node name="place" type="TextEdit" parent="Greg"]
+layout_mode = 0
+offset_left = 9.000001
+offset_top = 228.99997
+offset_right = 384.5365
+offset_bottom = 260.48157
+scale = Vector2(0.5858286, 0.5858286)
+theme_override_colors/font_placeholder_color = Color(0.8745098, 0.8745098, 0.8745098, 0.3529412)
+theme_override_constants/line_spacing = -3
+theme_override_font_sizes/font_size = 22
+placeholder_text = "ex. Rublix Grocery (just the name!)"
+
+[node name="trust" type="OptionButton" parent="Greg"]
+layout_mode = 0
+offset_left = 9.000001
+offset_top = 269.0
+offset_right = 169.55591
+offset_bottom = 300.0
+scale = Vector2(0.7650765, 0.7972109)
+fit_to_longest_item = false
+item_count = 2
+popup/item_0/text = "supported."
+popup/item_0/id = 0
+popup/item_1/text = "unsupported."
+popup/item_1/id = 1
+
+[node name="text" type="RichTextLabel" parent="Greg"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = -12.0
+offset_right = 333.0
+offset_bottom = 288.0
 mouse_filter = 2
-texture = ExtResource("18_imx8w")
-script = ExtResource("19_v6pxv")
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 14
+text = "
+They                                 a connection with the victim.
+
+Do they have violent tendencies or feelings? Are there any small hints?
+
+Do they have a criminal history?
+
+They seem to be
+
+ At the victim’s time of death, they were at 
+                    
+and the alibi supporting this is itself 
+"
+
+[node name="period" type="RichTextLabel" parent="Greg"]
+layout_mode = 0
+offset_left = 232.0
+offset_top = 231.0
+offset_right = 250.0
+offset_bottom = 254.0
+mouse_filter = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 14
+text = ","
+
+[node name="SAVE" type="TextureButton" parent="Greg"]
+layout_mode = 0
+offset_left = 262.0
+offset_top = 277.0
+offset_right = 555.0
+offset_bottom = 410.0
+scale = Vector2(0.23647971, 0.23647971)
+texture_normal = ExtResource("5_j6qxt")
+texture_hover = ExtResource("6_37e3v")
+texture_disabled = ExtResource("7_7jkhj")
 
 [node name="TutorialButton" type="TextureButton" parent="."]
 self_modulate = Color(7.2809687, 3.3457851, 6.273562, 0.5529412)
 offset_left = 146.0
-offset_top = 194.0
+offset_top = 191.0
 offset_right = 190.0
-offset_bottom = 273.0
+offset_bottom = 270.0
 scale = Vector2(0.42009658, 0.42009658)
 texture_normal = ExtResource("8_liesj")
 texture_hover = ExtResource("9_s3bkv")
@@ -245,6 +437,41 @@ visible_ratio = 0.0
 libraries = {
 &"": SubResource("AnimationLibrary_u3dxm")
 }
+
+[node name="Ad" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="bg" type="ColorRect" parent="Ad"]
+clip_contents = true
+layout_mode = 0
+offset_left = -181.0
+offset_top = 234.99998
+offset_right = -141.0
+offset_bottom = 275.0
+scale = Vector2(9.226884, 0.32419944)
+color = Color(1, 0.5372549, 0.27058825, 1)
+
+[node name="text" type="RichTextLabel" parent="Ad/bg"]
+texture_filter = 6
+layout_mode = 0
+offset_left = 14.668997
+offset_top = 6.1690674
+offset_right = 375.669
+offset_bottom = 16.169067
+scale = Vector2(0.12910277, 2.900992)
+theme_override_font_sizes/normal_font_size = 6
+bbcode_enabled = true
+text = "---  -   - -- - --- ENJOY OUR NEW YEAR'S EVE SALE!! EVERYTHING IS 50% MORE! BUY BUY BUY!  ENJOY! --  ----  -   - "
+
+[node name="ani" type="AnimationPlayer" parent="Ad"]
+libraries = {
+&"": SubResource("AnimationLibrary_j6qxt")
+}
+autoplay = "sliding"
+speed_scale = 0.256
 
 [node name="InfoScreen" type="Control" parent="."]
 visible = false
@@ -324,9 +551,98 @@ libraries = {
 &"": SubResource("AnimationLibrary_kv1vy")
 }
 
+[node name="appname" type="Label" parent="."]
+offset_left = -154.0
+offset_top = -203.0
+offset_right = 120.0
+offset_bottom = -180.0
+scale = Vector2(0.8979859, 0.6927789)
+theme_override_font_sizes/font_size = 10
+text = "Report Transfer"
+
+[node name="submit" type="TextureButton" parent="."]
+visible = false
+modulate = Color(1.0095856, 1.0899334, 0.38020644, 1)
+offset_left = 91.0
+offset_top = -172.0
+offset_right = 691.0
+offset_bottom = 20.0
+scale = Vector2(0.13197662, 0.13197662)
+texture_normal = ExtResource("16_ixwjd")
+
+[node name="areyousure" type="TextureRect" parent="."]
+visible = false
+offset_left = -81.0
+offset_right = 212.0
+offset_bottom = 56.0
+scale = Vector2(0.5844826, 0.5844826)
+texture = ExtResource("17_e151u")
+
+[node name="ColorRect" type="ColorRect" parent="areyousure"]
+show_behind_parent = true
+layout_mode = 0
+offset_left = -171.09149
+offset_top = -326.78473
+offset_right = -131.09149
+offset_bottom = -286.78473
+scale = Vector2(15.784691, 18.77497)
+color = Color(0.012617188, 0.004135638, 0.012617188, 0.4862745)
+
+[node name="yes" type="TextureButton" parent="areyousure"]
+layout_mode = 0
+offset_left = 167.66966
+offset_top = 8.554575
+offset_right = 207.66966
+offset_bottom = 48.554573
+
+[node name="no" type="TextureButton" parent="areyousure"]
+layout_mode = 0
+offset_left = 217.2862
+offset_top = 8.554575
+offset_right = 257.2862
+offset_bottom = 48.554573
+
+[node name="text" type="Label" parent="."]
+visible = false
+offset_left = 58.000004
+offset_top = 152.0
+offset_right = 108.00001
+offset_bottom = 175.0
+scale = Vector2(0.8422784, 0.8422784)
+theme_override_colors/font_color = Color(0.9070152, 0.7798721, 0.07612061, 1)
+theme_override_colors/font_outline_color = Color(1, 0.38039216, 0, 0.654902)
+theme_override_constants/outline_size = 3
+text = "saved!"
+
+[node name="Control" type="Control" parent="."]
+visible = false
+clip_contents = true
+layout_mode = 3
+anchors_preset = 0
+offset_left = -181.0
+offset_top = -191.0
+offset_right = -141.0
+offset_bottom = -151.0
+scale = Vector2(9.137931, 10.913043)
+mouse_filter = 2
+
+[node name="mouse" type="TextureRect" parent="Control"]
+modulate = Color(5.51065, 10.651967, 18.892157, 0.10980392)
+layout_mode = 0
+offset_left = -297.22263
+offset_top = -61.027885
+offset_right = 428.45914
+offset_bottom = 202.06805
+scale = Vector2(0.009932398, 0.02111465)
+pivot_offset = Vector2(325.3056, 86.26097)
+mouse_filter = 2
+texture = ExtResource("18_imx8w")
+script = ExtResource("19_v6pxv")
+
 [connection signal="button_down" from="InteractMove" to="." method="Down"]
 [connection signal="button_up" from="InteractMove" to="." method="Up"]
 [connection signal="pressed" from="Hide" to="." method="_on_hide_pressed"]
-[connection signal="item_selected" from="Character_Option" to="." method="Character_Option_Selection"]
+[connection signal="item_selected" from="default/Character_Option" to="." method="Character_Option_Selection"]
+[connection signal="pressed" from="Greg/SAVE" to="." method="_on_save_pressed"]
 [connection signal="pressed" from="TutorialButton" to="." method="_on_tutorial_button_pressed"]
 [connection signal="pressed" from="InfoScreen/TemplateSize/iaccept" to="." method="_on_iaccept_pressed"]
