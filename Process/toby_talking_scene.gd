@@ -47,6 +47,7 @@ func _on_interrogation_room_questioning_1() -> void:
 	op1_text.text = "How well do you know Megan Camargo?"
 	op2_text.text = "Where were you at 7:30?"
 	op3_text.text = ""
+	op3.hide()
 	
 	$Options.show()
 	

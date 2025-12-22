@@ -9,3 +9,10 @@ func GregPath() -> void:
 		get_tree().change_scene_to_file("uid://bdycqhfyd38af")
 	elif Global.greg_saved:
 		$bing.play()
+
+
+func TobyPath() -> void:
+	if Global.greg_saved:
+		get_tree().change_scene_to_file("uid://j3tclxiknunw")
+	elif !Global.greg_saved:
+		$bing.play()

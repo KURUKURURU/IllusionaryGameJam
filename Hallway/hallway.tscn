@@ -1,12 +1,19 @@
-[gd_scene load_steps=8 format=3 uid="uid://b4rgvrr0gjroo"]
+[gd_scene load_steps=15 format=3 uid="uid://b4rgvrr0gjroo"]
 
 [ext_resource type="Script" uid="uid://d3fwety47ocw3" path="res://Hallway/hallway.gd" id="1_peadq"]
 [ext_resource type="Texture2D" uid="uid://ch367gvb5y3h" path="res://Hallway/images/wall1.png" id="2_olku6"]
 [ext_resource type="AudioStream" uid="uid://cugvuvlllbbnr" path="res://Sound/mysterytheme.wav" id="3_mtfx4"]
 [ext_resource type="AudioStream" uid="uid://b4c11ui3lonn" path="res://office.wav" id="4_olku6"]
-[ext_resource type="Texture2D" uid="uid://bfyvre3qx05hn" path="res://Hallway/images/d1.png" id="5_riab6"]
-[ext_resource type="Texture2D" uid="uid://bkkwfdi48bnnr" path="res://Hallway/images/d1h.png" id="6_tmm3p"]
+[ext_resource type="Texture2D" uid="uid://dv23v3i70c523" path="res://Hallway/images/doors/d1.png" id="5_306o8"]
+[ext_resource type="Texture2D" uid="uid://0yptrbhcu5eb" path="res://Hallway/images/doors/d1h.png" id="6_q4lx7"]
+[ext_resource type="Texture2D" uid="uid://bhqa84e0qg723" path="res://Hallway/images/doors/d3.png" id="7_gn7mw"]
 [ext_resource type="AudioStream" uid="uid://dipgr8o46y6dj" path="res://delete.wav" id="7_riab6"]
+[ext_resource type="Texture2D" uid="uid://d0q525fssa62w" path="res://Hallway/images/doors/d3h.png" id="8_4ii4t"]
+[ext_resource type="Texture2D" uid="uid://dm7ebxet4turs" path="res://Hallway/images/doors/d2.png" id="9_dcsau"]
+[ext_resource type="Texture2D" uid="uid://des1d7gkeqv6o" path="res://Hallway/images/doors/d2h.png" id="10_hw517"]
+[ext_resource type="Texture2D" uid="uid://c7fcqgy0p02q0" path="res://Hallway/images/d4.png" id="11_y32sv"]
+[ext_resource type="Texture2D" uid="uid://cnv2x2ln86gun" path="res://Hallway/images/doors/d4h.png" id="12_7b8g2"]
+[ext_resource type="Texture2D" uid="uid://cd718d6hqoxde" path="res://Hallway/images/doors/board.png" id="14_q4lx7"]
 
 [node name="Hallway" type="Node2D"]
 script = ExtResource("1_peadq")
@@ -34,10 +41,41 @@ offset_top = -5.0
 offset_right = 364.0
 offset_bottom = 688.0
 scale = Vector2(1.0092744, 1.0092744)
-texture_normal = ExtResource("5_riab6")
-texture_hover = ExtResource("6_tmm3p")
+texture_normal = ExtResource("5_306o8")
+texture_hover = ExtResource("6_q4lx7")
+
+[node name="Door_Toby" type="TextureButton" parent="."]
+offset_left = 402.0
+offset_top = 72.0
+offset_right = 455.0
+offset_bottom = 514.0
+texture_normal = ExtResource("7_gn7mw")
+texture_hover = ExtResource("8_4ii4t")
+
+[node name="Door_Panya" type="TextureButton" parent="."]
+offset_left = 872.0
+offset_right = 1055.0
+offset_bottom = 650.0
+texture_normal = ExtResource("9_dcsau")
+texture_hover = ExtResource("10_hw517")
+
+[node name="Door_Riley" type="TextureButton" parent="."]
+offset_left = 749.0
+offset_top = 84.0
+offset_right = 802.0
+offset_bottom = 526.0
+texture_normal = ExtResource("11_y32sv")
+texture_hover = ExtResource("12_7b8g2")
 
 [node name="bing" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_riab6")
 
+[node name="board" type="TextureRect" parent="."]
+offset_left = 501.0
+offset_top = 120.0
+offset_right = 549.0
+offset_bottom = 249.0
+texture = ExtResource("14_q4lx7")
+
 [connection signal="pressed" from="Door_Greg" to="." method="GregPath"]
+[connection signal="pressed" from="Door_Toby" to="." method="TobyPath"]

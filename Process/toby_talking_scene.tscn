@@ -263,9 +263,10 @@ libraries = {
 }
 
 [node name="Options" type="HBoxContainer" parent="."]
-offset_left = 106.0
+layout_direction = 3
+offset_left = -1053.0
 offset_top = 481.0
-offset_right = 1161.0
+offset_right = 2.0
 offset_bottom = 640.0
 theme_override_constants/separation = -40
 
@@ -278,9 +279,9 @@ stretch_mode = 0
 [node name="Text" type="RichTextLabel" parent="Options/Option1"]
 texture_filter = 4
 layout_mode = 0
-offset_left = 56.000004
+offset_left = 85.65759
 offset_top = 38.99999
-offset_right = 259.34238
+offset_right = 288.99997
 offset_bottom = 90.64017
 scale = Vector2(1.2012075, 1.3251145)
 mouse_filter = 2
@@ -298,9 +299,9 @@ stretch_mode = 0
 [node name="Text" type="RichTextLabel" parent="Options/Option2"]
 texture_filter = 4
 layout_mode = 0
-offset_left = 56.000004
+offset_left = 87.65762
 offset_top = 38.99999
-offset_right = 259.34238
+offset_right = 291.0
 offset_bottom = 90.64017
 scale = Vector2(1.2012075, 1.3251145)
 mouse_filter = 2
@@ -318,9 +319,9 @@ stretch_mode = 0
 [node name="Text" type="RichTextLabel" parent="Options/Option3"]
 texture_filter = 4
 layout_mode = 0
-offset_left = 56.000004
+offset_left = 86.65762
 offset_top = 38.99999
-offset_right = 259.34238
+offset_right = 290.0
 offset_bottom = 90.64017
 scale = Vector2(1.2012075, 1.3251145)
 mouse_filter = 2

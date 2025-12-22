@@ -389,6 +389,7 @@ visible = false
 stream = ExtResource("24_rrjsa")
 
 [connection signal="intro" from="." to="TobyTalkingScene" method="_on_interrogation_room_intro"]
+[connection signal="questioning_1" from="." to="TobyTalkingScene" method="_on_interrogation_room_questioning_1"]
 [connection signal="pressed" from="Node2D/toby/intro" to="." method="TobyIntro"]
 [connection signal="pressed" from="Node2D/toby/question" to="." method="question_witness"]
 [connection signal="mouse_entered" from="Node2D/Table/FilesNotes" to="." method="files_mousetouch"]

@@ -83,7 +83,10 @@ func _on_tutorial_button_pressed() -> void:
 
 
 func _on_save_pressed() -> void:
-	Global.greg_saved = true
+	if scene == "Greg":
+		Global.greg_saved = true
+	if scene == "Toby":
+		Global.toby_saved = true
 	
 	$text.show()
 	await wait(2.0)

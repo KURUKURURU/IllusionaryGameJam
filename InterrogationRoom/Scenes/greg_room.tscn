@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://bdycqhfyd38af"]
+[gd_scene load_steps=33 format=3 uid="uid://bdycqhfyd38af"]
 
 [ext_resource type="Script" uid="uid://dr861qg2gdbt7" path="res://InterrogationRoom/Scenes/interrogation_room.gd" id="1_1mumd"]
 [ext_resource type="Texture2D" uid="uid://br4n76b444t6k" path="res://InterrogationRoom/images/metal.png" id="2_7dqrx"]
@@ -24,6 +24,7 @@
 [ext_resource type="PackedScene" uid="uid://jpraix5hokpi" path="res://InterrogationRoom/Scenes/laptop.tscn" id="19_oinx6"]
 [ext_resource type="PackedScene" uid="uid://ckdwd36lj1glk" path="res://Process/greg_talking_scene.tscn" id="20_pnadc"]
 [ext_resource type="AudioStream" uid="uid://dipgr8o46y6dj" path="res://delete.wav" id="24_0sp6g"]
+[ext_resource type="PackedScene" uid="uid://ca3361nyh8rd7" path="res://points/bar/uppermenu.tscn" id="25_r56nm"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_6n7f2"]
 animations = [{
@@ -388,6 +389,8 @@ position = Vector2(-0.9999962, 2)
 
 [node name="bing" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("24_0sp6g")
+
+[node name="uppermenu" parent="." instance=ExtResource("25_r56nm")]
 
 [connection signal="intro" from="." to="GregTalkingScene" method="introduce"]
 [connection signal="questioning_1" from="." to="GregTalkingScene" method="_on_interrogation_room_questioning_1"]

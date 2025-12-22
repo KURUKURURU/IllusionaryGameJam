@@ -1,0 +1,97 @@
+[gd_scene load_steps=10 format=3 uid="uid://cq31vvoapuav"]
+
+[ext_resource type="Script" uid="uid://d3wa2ferrg8i2" path="res://point_popup.gd" id="1_gbff5"]
+[ext_resource type="Texture2D" uid="uid://8v5e71lsddfs" path="res://points/pointadd.png" id="2_idptr"]
+[ext_resource type="Texture2D" uid="uid://d0omkuat8u5u0" path="res://points/pointremove.png" id="3_4ei5f"]
+[ext_resource type="AudioStream" uid="uid://tslp6xerxljp" path="res://points/gainpoint.mp3" id="4_o60oo"]
+[ext_resource type="AudioStream" uid="uid://cunnqbujwhbx5" path="res://points/losepoint.wav" id="5_a06hl"]
+
+[sub_resource type="Animation" id="Animation_d64na"]
+resource_name = "add"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("point_add:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.01, 2, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_dlb3x"]
+resource_name = "remove"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("point_remove:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_x4a4n"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("point_remove:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("point_add:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pwtif"]
+_data = {
+&"RESET": SubResource("Animation_x4a4n"),
+&"add": SubResource("Animation_d64na"),
+&"remove": SubResource("Animation_dlb3x")
+}
+
+[node name="point_popup" type="Node2D"]
+script = ExtResource("1_gbff5")
+
+[node name="point_add" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_idptr")
+
+[node name="point_remove" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("3_4ei5f")
+
+[node name="fade" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_pwtif")
+}
+
+[node name="coin" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_o60oo")
+
+[node name="losecoin" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_a06hl")

@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://bekye8y3so4aj"]
+
+[node name="point_system" type="Node2D"]
+
+[node name="img" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0

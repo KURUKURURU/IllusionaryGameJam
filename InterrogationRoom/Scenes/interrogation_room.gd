@@ -18,6 +18,11 @@ signal questioning_1
 
 func _process(delta: float) -> void:
 	
+	if !$Laptop.visible:
+		$uppermenu.show()
+	else:
+		$uppermenu.hide()
+	
 	if !$Laptop.visible && !$GregTalkingScene.visible:
 		enable = true
 	if $GregTalkingScene.visible:
