@@ -22,6 +22,7 @@ var told_where = false
 
 var knows_shes_cute = false
 var knows_shes_boring = false
+var alibi_question = false
 
 var mg
 signal Y_advance
@@ -69,8 +70,23 @@ func _on_interrogation_room_questioning_1() -> void:
 	op2_text.text = "Where were you at 7:30?"
 	op3_text.text = "Why are you interested in the victim's looks?"
 	
-	$Options.show()
+	$Options.show()	
+func advance_1():
+	Y_AD.hide()
+	$You.hide()
+	$Main.hide()
+	$advance_1.hide()
+	$Options.hide()
+	self.show()
 	
+	Wit_say("I mean, it's not like it's creepy. I have a girlfriend myself, just curious.", 100)
+	await wait(3.0)
+	
+	$advance_1/Option1/Text.text = "Do you get that a lot?" #I never said it was creepy. Do you get that a lot?
+	$advance_1/Option2/Text.text = "Alright." #How did you meet your girlfriend? I'm curious
+	$advance_1/Option3.hide()
+	
+	$advance_1.show()
 	
 func say(message, num):
 	
@@ -100,12 +116,15 @@ func Wit_say(message, num):
 	
 	$Main.show()
 	
-	$Main/personality.play("popup")
+	
+	if num == 2.5:
+		$Main/personality.play("shake")
+	else:
+		$Main/personality.play("popup")
+	
 	await $Main/personality.animation_finished
 	$bing.play()
-	
 	W_txt.text = message
-	
 	await vis()
 	
 	if num == 100:
@@ -125,7 +144,13 @@ func Y_AD_pressed() -> void:
 func alldone():
 	emit_signal("done")
 
-
+func wrong(message : String, num):
+	
+	Global.greg_cp = Global.greg_cp - 2
+	#$Main/personality.play("shake")
+	$point_popup.remove_point()
+	
+	await Wit_say(message, 2.5)
 
 func _on_greg_name() -> void:
 	
@@ -151,11 +176,34 @@ func where_greg() -> void:
 	if told_where: 
 		await Wit_say("I said I was with a girl. We were on a lovely date.", 2.0)
 		await Wit_say("We ate, shopped, hung around...", 2.0)
-		await Wit_say("Heh.", 1.0)
+		
+		await Wit_say("Heh.", 3)
+		
 	if !told_where:
 		await Wit_say("Where was I? I was on a date with a girl, a cute one.", 2.0)
 		await Wit_say("I think we were mostly just hanging around all over.", 3.0)
-		await Wit_say("I, of course, bought her everything she wanted.", 3.0)
+		
 		told_where = true
 		
+		
+		await Wit_say("I, of course, bought her everything she wanted.", 3)
+	alldone()
+
+
+func ad1_1() -> void:
+	$advance_1.hide()
+	$Main.hide()
+	
+	await say("I never said it was creepy. Do you get that a lot? That you're creepy?", 0)
+	
+	await Wit_say("Yeah..", 0.5)
+	await Wit_say("No. No I don't.", 3)
+	alldone()
+
+
+func ad1_2() -> void:
+	$advance_1.hide()
+	$Main.hide()
+	
+	await say("Alright.", 0)
 	alldone()

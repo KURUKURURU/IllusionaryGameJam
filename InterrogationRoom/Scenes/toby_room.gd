@@ -18,6 +18,11 @@ signal questioning_1
 
 func _process(delta: float) -> void:
 	
+	if $Label.visible and !$Laptop.visible:
+		$uppermenu.show()
+	else:
+		$uppermenu.hide()
+	
 	if !$Laptop.visible && !$TobyTalkingScene.visible:
 		enable = true
 	if $TobyTalkingScene.visible:
@@ -115,6 +120,8 @@ func _ready() -> void:
 	$Laptop.hide()
 	#$TalkingBox.hide()
 	#$Node2D/girl/Control/GirlTalkBox.hide()
+	
+	TobyIntro()
 	
 func wait(seconds: float) -> void:
 	await get_tree().create_timer(seconds).timeout

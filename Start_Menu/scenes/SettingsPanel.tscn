@@ -158,6 +158,7 @@ script = ExtResource("2_0txog")
 bus_name = "Master"
 
 [node name="Music2" type="RichTextLabel" parent="."]
+clip_contents = false
 offset_left = 122.0
 offset_top = 54.0
 offset_right = 193.99344
@@ -170,6 +171,7 @@ theme_override_font_sizes/normal_font_size = 36
 text = "Music"
 
 [node name="SFX2" type="RichTextLabel" parent="."]
+clip_contents = false
 offset_left = 136.24815
 offset_top = 122.73773
 offset_right = 176.24815
@@ -182,6 +184,7 @@ theme_override_font_sizes/normal_font_size = 36
 text = "SFX"
 
 [node name="General2" type="RichTextLabel" parent="."]
+clip_contents = false
 offset_left = 143.0
 offset_top = 191.0
 offset_right = 183.0

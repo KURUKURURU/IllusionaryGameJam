@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://j3tclxiknunw"]
+[gd_scene load_steps=33 format=3 uid="uid://j3tclxiknunw"]
 
 [ext_resource type="Script" uid="uid://8u3hvnkc8kst" path="res://InterrogationRoom/Scenes/toby_room.gd" id="1_y2qu5"]
 [ext_resource type="Texture2D" uid="uid://d0ywlrf5ocu7l" path="res://PreCutscene/frames/box/ph/walll1.png" id="2_5g7nn"]
@@ -23,6 +23,7 @@
 [ext_resource type="AudioStream" uid="uid://djjlvy68f5mnw" path="res://InterrogationRoom/sounds/museclick.wav" id="21_2uyjd"]
 [ext_resource type="PackedScene" uid="uid://jpraix5hokpi" path="res://InterrogationRoom/Scenes/laptop.tscn" id="22_fh600"]
 [ext_resource type="AudioStream" uid="uid://dipgr8o46y6dj" path="res://delete.wav" id="24_rrjsa"]
+[ext_resource type="PackedScene" uid="uid://ca3361nyh8rd7" path="res://points/bar/uppermenu.tscn" id="25_5g7nn"]
 [ext_resource type="PackedScene" uid="uid://bysxu7yf4gv4r" path="res://Process/toby_talking_scene.tscn" id="25_y2qu5"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_y2qu5"]
@@ -231,15 +232,8 @@ offset_right = 1150.0
 offset_bottom = 646.0
 texture = ExtResource("2_5g7nn")
 
-[node name="TextureRect3" type="TextureRect" parent="Node2D"]
-offset_top = 613.0
-offset_right = 1150.0
-offset_bottom = 1281.5483
-scale = Vector2(1, 1.2400006)
-texture = ExtResource("3_y2qu5")
-
 [node name="toby" type="AnimatedSprite2D" parent="Node2D"]
-position = Vector2(575, 321)
+position = Vector2(575, 296)
 sprite_frames = SubResource("SpriteFrames_y2qu5")
 autoplay = "default"
 frame_progress = 0.48596942
@@ -260,6 +254,13 @@ offset_right = 575.0
 offset_bottom = 325.0
 texture_hover = ExtResource("6_y2qu5")
 texture_click_mask = ExtResource("7_yx3hl")
+
+[node name="TextureRect3" type="TextureRect" parent="Node2D"]
+offset_top = 613.0
+offset_right = 1150.0
+offset_bottom = 1281.5483
+scale = Vector2(1, 1.2400006)
+texture = ExtResource("3_y2qu5")
 
 [node name="Table" type="TextureRect" parent="Node2D"]
 texture_filter = 4
@@ -387,6 +388,8 @@ visible = false
 
 [node name="bing" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("24_rrjsa")
+
+[node name="uppermenu" parent="." instance=ExtResource("25_5g7nn")]
 
 [connection signal="intro" from="." to="TobyTalkingScene" method="_on_interrogation_room_intro"]
 [connection signal="questioning_1" from="." to="TobyTalkingScene" method="_on_interrogation_room_questioning_1"]

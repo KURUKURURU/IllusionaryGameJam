@@ -263,6 +263,7 @@ libraries = {
 }
 
 [node name="Options" type="HBoxContainer" parent="."]
+visible = false
 layout_direction = 3
 offset_left = -1053.0
 offset_top = 481.0
@@ -330,6 +331,55 @@ theme_override_fonts/normal_font = ExtResource("4_dfqs7")
 theme_override_font_sizes/normal_font_size = 15
 text = "i love people they are so nice and uplifting yay yay yay"
 
+[node name="Work" type="HBoxContainer" parent="."]
+visible = false
+layout_direction = 3
+offset_left = -1053.0
+offset_top = 481.0
+offset_right = 2.0
+offset_bottom = 640.0
+theme_override_constants/separation = -40
+
+[node name="Option1" type="TextureButton" parent="Work"]
+layout_mode = 2
+texture_normal = ExtResource("6_vaivd")
+texture_hover = ExtResource("7_lscxh")
+stretch_mode = 0
+
+[node name="Text" type="RichTextLabel" parent="Work/Option1"]
+texture_filter = 4
+layout_mode = 0
+offset_left = 59.657593
+offset_top = 60.999985
+offset_right = 262.99997
+offset_bottom = 112.64017
+scale = Vector2(1.2012075, 1.3251145)
+mouse_filter = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("4_dfqs7")
+theme_override_font_sizes/normal_font_size = 15
+text = "Where do you work?"
+
+[node name="Option2" type="TextureButton" parent="Work"]
+layout_mode = 2
+texture_normal = ExtResource("6_vaivd")
+texture_hover = ExtResource("7_lscxh")
+stretch_mode = 0
+
+[node name="Text" type="RichTextLabel" parent="Work/Option2"]
+texture_filter = 4
+layout_mode = 0
+offset_left = 30.657623
+offset_top = 61.999985
+offset_right = 234.0
+offset_bottom = 113.64017
+scale = Vector2(1.2012075, 1.3251145)
+mouse_filter = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("4_dfqs7")
+theme_override_font_sizes/normal_font_size = 15
+text = "A nuisance?"
+
 [node name="bing" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_xvlm3")
 volume_db = -10.947
@@ -338,3 +388,5 @@ volume_db = -10.947
 [connection signal="pressed" from="Options/Option1" to="." method="_on_greg_name"]
 [connection signal="pressed" from="Options/Option2" to="." method="where_greg"]
 [connection signal="pressed" from="Options/Option3" to="." method="_on_greg_name"]
+[connection signal="pressed" from="Work/Option1" to="." method="w1"]
+[connection signal="pressed" from="Work/Option2" to="." method="w2"]

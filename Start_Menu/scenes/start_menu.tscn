@@ -13,9 +13,9 @@
 [ext_resource type="Texture2D" uid="uid://betki4xav1g2n" path="res://Start_Menu/images/suitcase/props/cogslight.png" id="7_w3i02"]
 [ext_resource type="AudioStream" uid="uid://0io0dtg1uvgn" path="res://Sound/caseshut.wav" id="8_d42ky"]
 [ext_resource type="AudioStream" uid="uid://d2j4fcw5qh3g3" path="res://Start_Menu/sound/settings.wav" id="11_hoyqs"]
-[ext_resource type="Texture2D" uid="uid://bm7ov1d0v3r0i" path="res://Start_Menu/images/f1fileee.png" id="12_j2m1i"]
 [ext_resource type="AudioStream" uid="uid://bft88620nard2" path="res://Start_Menu/sound/crap/pageturn1.wav" id="13_68vcx"]
 [ext_resource type="Texture2D" uid="uid://dsaplhl07dw58" path="res://Start_Menu/images/hoverfileee.png" id="13_r7nyf"]
+[ext_resource type="Texture2D" uid="uid://b5urc6dwnqxmo" path="res://file.png" id="14_apny2"]
 [ext_resource type="Texture2D" uid="uid://q8r3vhf3reje" path="res://Start_Menu/images/f1credits.png" id="14_e4u3w"]
 [ext_resource type="Texture2D" uid="uid://cynjy2dxhwb3l" path="res://Start_Menu/images/hovercredits.png" id="15_j2m1i"]
 [ext_resource type="AudioStream" uid="uid://dc0qtltets2oc" path="res://Sound/generalclick.wav" id="19_r7nyf"]
@@ -110,7 +110,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_u328h"]
 resource_name = "pullback"
-length = 1.9955
+length = 2.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -130,10 +130,10 @@ tracks/1/path = NodePath(".:self_modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 1.2666667, 1.9666667),
+"times": PackedFloat32Array(0, 0.8333334, 1.9666667),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+"values": [Color(1, 1, 1, 1), Color(0.14509805, 0, 0, 0.47843137), Color(0.86887354, 0.43420088, 0, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_imgov"]
@@ -216,11 +216,11 @@ script = ExtResource("1_sgpob")
 
 [node name="Background" type="ColorRect" parent="."]
 offset_left = -151.0
-offset_top = -60.0
+offset_top = -60.000004
 offset_right = 1016.0
 offset_bottom = 604.0
 scale = Vector2(1.3124394, 1.3508551)
-color = Color(0, 0, 0, 1)
+color = Color(0.9827147, 0.83411276, 0.70500004, 1)
 
 [node name="Clouds1" type="Parallax2D" parent="."]
 modulate = Color(1, 1, 1, 0.16470589)
@@ -308,7 +308,7 @@ offset_right = 579.19434
 offset_bottom = 511.5013
 scale = Vector2(0.6642329, 0.6642329)
 pivot_offset = Vector2(-0.5012207, -0.56817627)
-texture_normal = ExtResource("12_j2m1i")
+texture_normal = ExtResource("14_apny2")
 texture_hover = ExtResource("13_r7nyf")
 ignore_texture_size = true
 

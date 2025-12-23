@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://ckdwd36lj1glk"]
+[gd_scene load_steps=19 format=3 uid="uid://ckdwd36lj1glk"]
 
 [ext_resource type="FontFile" uid="uid://dehehyydv307r" path="res://Fonts/paaxel-font/Paaxel-xRjLO.otf" id="1_jexof"]
 [ext_resource type="Script" uid="uid://3sanst1nfm05" path="res://Process/greg_talking_scene.gd" id="1_tav40"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bopaiatuofuop" path="res://PreCutscene/frames/box/youbox/h1.png" id="4_3414f"]
 [ext_resource type="Texture2D" uid="uid://bf10ae3obqs8q" path="res://PreCutscene/frames/box/youbox/h2.png" id="5_2j5o1"]
 [ext_resource type="AudioStream" uid="uid://crvspgmtffjtx" path="res://264828__cmdrobot__text-message-or-videogame-jump.ogg" id="8_vlkmw"]
+[ext_resource type="PackedScene" uid="uid://cq31vvoapuav" path="res://points/point_popup.tscn" id="9_wxyvu"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_wxyvu"]
 animations = [{
@@ -22,11 +23,6 @@ animations = [{
 "name": &"default",
 "speed": 2.0
 }]
-
-[sub_resource type="Animation" id="Animation_i82mx"]
-resource_name = "shake"
-length = 0.544
-loop_mode = 1
 
 [sub_resource type="Animation" id="Animation_vlkmw"]
 length = 0.001
@@ -155,6 +151,22 @@ tracks/4/keys = {
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 
+[sub_resource type="Animation" id="Animation_i82mx"]
+resource_name = "shake"
+length = 0.6125
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.10000001, 0.19999999, 0.4, 0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 0.15932031),
+"update": 0,
+"values": [Vector2(505, 110.00003), Vector2(520.91205, 110.00003), Vector2(505, 110.00003), Vector2(505, 110.00003), Vector2(520.91205, 110.00003), Vector2(505, 110.00003)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_03b03"]
 _data = {
 &"RESET": SubResource("Animation_vlkmw"),
@@ -215,24 +227,24 @@ color = Color(1, 1, 1, 0)
 [node name="Main" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 535.77423
-offset_top = 167.77779
-offset_right = 575.7683
-offset_bottom = 207.77782
+offset_left = 520.91205
+offset_top = 110.00003
+offset_right = 560.9061
+offset_bottom = 150.00006
 scale = Vector2(0.9437727, 0.9437727)
 
 [node name="MainC" type="AnimatedSprite2D" parent="Main"]
-position = Vector2(57.009125, 250.06284)
+position = Vector2(3.067566, 253.18417)
 sprite_frames = SubResource("SpriteFrames_wxyvu")
 autoplay = "default"
 frame_progress = 0.9803936
 
 [node name="Text" type="RichTextLabel" parent="Main"]
 layout_mode = 0
-offset_left = 282.45435
-offset_top = -20.730595
-offset_right = 539.2095
-offset_bottom = 111.213
+offset_left = 228.51279
+offset_top = -17.609259
+offset_right = 485.2679
+offset_bottom = 114.33433
 scale = Vector2(1.09, 1.09)
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("1_jexof")
@@ -263,11 +275,13 @@ libraries = {
 }
 
 [node name="Options" type="HBoxContainer" parent="."]
-offset_left = 106.0
+visible = false
+offset_left = 20.0
 offset_top = 481.0
-offset_right = 1161.0
+offset_right = 1075.0
 offset_bottom = 640.0
-theme_override_constants/separation = -40
+theme_override_constants/separation = -20
+alignment = 2
 
 [node name="Option1" type="TextureButton" parent="Options"]
 layout_mode = 2
@@ -279,9 +293,9 @@ stretch_mode = 0
 texture_filter = 4
 layout_mode = 0
 offset_left = 56.000004
-offset_top = 38.99999
+offset_top = 47.99999
 offset_right = 259.34238
-offset_bottom = 90.64017
+offset_bottom = 99.64017
 scale = Vector2(1.2012075, 1.3251145)
 mouse_filter = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
@@ -299,9 +313,9 @@ stretch_mode = 0
 texture_filter = 4
 layout_mode = 0
 offset_left = 56.000004
-offset_top = 38.99999
+offset_top = 49.99999
 offset_right = 259.34238
-offset_bottom = 90.64017
+offset_bottom = 101.64017
 scale = Vector2(1.2012075, 1.3251145)
 mouse_filter = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
@@ -319,9 +333,9 @@ stretch_mode = 0
 texture_filter = 4
 layout_mode = 0
 offset_left = 56.000004
-offset_top = 38.99999
+offset_top = 51.99999
 offset_right = 259.34238
-offset_bottom = 90.64017
+offset_bottom = 103.64017
 scale = Vector2(1.2012075, 1.3251145)
 mouse_filter = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
@@ -329,11 +343,85 @@ theme_override_fonts/normal_font = ExtResource("1_jexof")
 theme_override_font_sizes/normal_font_size = 15
 text = "i love people they are so nice and uplifting yay yay yay"
 
+[node name="advance_1" type="HBoxContainer" parent="."]
+visible = false
+offset_left = 19.0
+offset_top = 482.0
+offset_right = 1074.0
+offset_bottom = 641.0
+theme_override_constants/separation = -20
+alignment = 2
+
+[node name="Option1" type="TextureButton" parent="advance_1"]
+layout_mode = 2
+texture_normal = ExtResource("4_3414f")
+texture_hover = ExtResource("5_2j5o1")
+stretch_mode = 0
+
+[node name="Text" type="RichTextLabel" parent="advance_1/Option1"]
+texture_filter = 4
+layout_mode = 0
+offset_left = 56.000004
+offset_top = 61.999985
+offset_right = 259.34238
+offset_bottom = 113.64017
+scale = Vector2(1.2012075, 1.3251145)
+mouse_filter = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("1_jexof")
+theme_override_font_sizes/normal_font_size = 15
+text = "s"
+
+[node name="Option2" type="TextureButton" parent="advance_1"]
+layout_mode = 2
+texture_normal = ExtResource("4_3414f")
+texture_hover = ExtResource("5_2j5o1")
+stretch_mode = 0
+
+[node name="Text" type="RichTextLabel" parent="advance_1/Option2"]
+texture_filter = 4
+layout_mode = 0
+offset_left = 56.000004
+offset_top = 61.999985
+offset_right = 259.34238
+offset_bottom = 113.64017
+scale = Vector2(1.2012075, 1.3251145)
+mouse_filter = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("1_jexof")
+theme_override_font_sizes/normal_font_size = 15
+text = "s"
+
+[node name="Option3" type="TextureButton" parent="advance_1"]
+layout_mode = 2
+texture_normal = ExtResource("4_3414f")
+texture_hover = ExtResource("5_2j5o1")
+stretch_mode = 0
+
+[node name="Text" type="RichTextLabel" parent="advance_1/Option3"]
+texture_filter = 4
+layout_mode = 0
+offset_left = 56.000004
+offset_top = 62.999985
+offset_right = 259.34238
+offset_bottom = 114.64017
+scale = Vector2(1.2012075, 1.3251145)
+mouse_filter = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("1_jexof")
+theme_override_font_sizes/normal_font_size = 15
+text = "s"
+
 [node name="bing" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_vlkmw")
 volume_db = -10.947
 
+[node name="point_popup" parent="." instance=ExtResource("9_wxyvu")]
+
 [connection signal="pressed" from="You/advancebutt" to="." method="Y_AD_pressed"]
 [connection signal="pressed" from="Options/Option1" to="." method="_on_greg_name"]
 [connection signal="pressed" from="Options/Option2" to="." method="where_greg"]
-[connection signal="pressed" from="Options/Option3" to="." method="_on_greg_name"]
+[connection signal="pressed" from="Options/Option3" to="." method="advance_1"]
+[connection signal="pressed" from="advance_1/Option1" to="." method="ad1_1"]
+[connection signal="pressed" from="advance_1/Option2" to="." method="ad1_2"]
+[connection signal="pressed" from="advance_1/Option3" to="." method="ad1_3"]

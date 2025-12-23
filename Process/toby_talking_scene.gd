@@ -55,11 +55,12 @@ func _on_interrogation_room_questioning_1() -> void:
 func say(message, num):
 	
 	Y_txt.text = ""
-	Y_txt.text = message
+	
 	
 	Y_ani.play("talking")
 	$You.show()
 	
+	Y_txt.text = message
 	await Y_ani.animation_finished
 	print(num)
 	Y_AD.show()
@@ -114,12 +115,18 @@ func _on_greg_name() -> void:
 	$Options.hide()
 	
 	if !knows_shes_dead:
-		await Wit_say("Never heard of her. She dead?", 2.0)
-		await Wit_say("Woah, really! Jeez.", 2.0)
-		await Wit_say("Well, at least I didn't know her.", 2.0)
+		await Wit_say("Oh I know her well. She frequents where I work.", 2.0)
+		await Wit_say("I can't believe she's passed.", 2.0)
+		await Wit_say("She was quite a nuisance, but it's obviously still tragic.", 2.0)
+		
 		knows_shes_dead = true
+		
+		$Work.show()
+		await Wit_say("...Poor girl.", 100)
+		
 	elif knows_shes_dead:
-		await Wit_say("Didn't know her.", 2.0)
+		$Work.show()
+		await Wit_say("She was a daily nuisance at my job but she was important to somebody I'm sure.", 100)
 	
 	alldone()
 
@@ -129,19 +136,18 @@ func where_greg() -> void:
 	$Options.hide()
 	
 	if told_where: 
-		await Wit_say("I said I was with a girl. We were on a lovely date.", 2.0)
-		await Wit_say("We ate, shopped, hung around...", 2.0)
-		await Wit_say("Heh.", 1.0)
+		await Wit_say("I was working right before that I think, and then left right around 7:30ish. Yes I did.", 2.0)
 	if !told_where:
-		await Wit_say("Where was I? I was on a date with a girl, a cute one.", 2.0)
-		await Wit_say("I think we were mostly just hanging around all over.", 3.0)
-		await Wit_say("I, of course, bought her everything she wanted.", 3.0)
+		await Wit_say("I had just ended my shift, because you know most buildings tonight close 7:15,", 2.0)
+		await Wit_say("For some random holiday or soomething. Forgot.", 3.0)
+		await Wit_say("And I made it home maybe 7:40, and then received your call.", 3.0)
 		told_where = true
 		
 	alldone()
 
 
 func _on_interrogation_room_intro() -> void:
+	Y_txt.text = ""
 	Y_AD.hide()
 	$You.show()
 	$Main.hide()
@@ -150,7 +156,7 @@ func _on_interrogation_room_intro() -> void:
 	$"You/pop up".play("pop")
 	await $"You/pop up".animation_finished
 	
-	Y_txt.text = ""
+	
 	await say("Good evening.", 2.0)
 	await say("I'm Detective Ward, and I'm investigating a crime that took place near 
 	you tonight.", 5.0)
@@ -160,5 +166,55 @@ func _on_interrogation_room_intro() -> void:
 	await Wit_say("Alright, though I can't say I'll be helpful.", 3.0)
 	await Wit_say("That poor child.", 4.0) 
 	await Wit_say(" Though I couldn't say she didn't have it coming.", 3.0)
+	
+	alldone()
+
+
+func w2() -> void:
+	
+	Y_txt.text = ""
+	Y_AD.hide()
+	$You.show()
+	$Main.hide()
+	$Options.hide()
+	$Work.hide()
+	
+	await say("She was a nuisance? What'd she do?", 2.0)
+	
+	await Wit_say("She always loitered around store messing with customers,", 3)
+	await Wit_say("She'd argue with my coworkers all the time, constant backtalking. She's such a mess-", 2)
+	await Wit_say("Was I mean. Was.", 2)
+	
+	await Wit_say("Something must have gone wrong a few years ago to make her end up like... that.", 2)
+	
+	alldone()
+
+
+func w1() -> void:
+	Y_txt.text = ""
+	Y_AD.hide()
+	$You.show()
+	$Main.hide()
+	$Options.hide()
+	$Work.hide()
+	
+	$"You/pop up".play("pop")
+	await $"You/pop up".animation_finished
+	
+	await say("Where do you work?", 2.0)
+	
+	await Wit_say("Oh I work at Rublix Grocery, the building across from the gallery.", 3)
+	
+	await Wit_say("It's a busy store, and she used to just rile my coworkers up-", 0)
+	await Wit_say("Woo~ don't know why I'm getting empathatic.", 2)
+	await Wit_say("What a tragic loss.", 2)
+	
+	Y_txt.text = ""
+	Y_AD.hide()
+	$You.show()
+	$Main.hide()
+	$Options.hide()
+	$Work.hide()
+	await say("...", 2.0)
 	
 	alldone()

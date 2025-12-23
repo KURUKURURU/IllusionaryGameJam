@@ -18,10 +18,11 @@ signal questioning_1
 
 func _process(delta: float) -> void:
 	
-	if !$Laptop.visible:
+	if $Label.visible and !$Laptop.visible:
 		$uppermenu.show()
 	else:
 		$uppermenu.hide()
+	
 	
 	if !$Laptop.visible && !$GregTalkingScene.visible:
 		enable = true
@@ -108,8 +109,8 @@ func _process(delta: float) -> void:
 		
 func _ready() -> void:
 	
-	$'Node2D/greg/intro'.show()
-	$Node2D/greg/question.hide()
+	$'Node2D/greg/intro'.hide()
+	$Node2D/greg/question.show()
 	
 	#$Node2D/greg/question.texture_hover = hover_intro
 	AudioServer.set_bus_layout(audio_bus_layout)
@@ -120,6 +121,8 @@ func _ready() -> void:
 	$Laptop.hide()
 	#$TalkingBox.hide()
 	#$Node2D/girl/Control/GirlTalkBox.hide()
+	
+	IfStartTalking()
 	
 func wait(seconds: float) -> void:
 	await get_tree().create_timer(seconds).timeout

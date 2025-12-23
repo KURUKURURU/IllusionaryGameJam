@@ -8,37 +8,10 @@
 [ext_resource type="Texture2D" uid="uid://tohcjfpdack8" path="res://points/bar/boardh.png" id="5_s84pe"]
 [ext_resource type="PackedScene" uid="uid://bmeglpnch1rg5" path="res://Start_Menu/scenes/SettingsPanel.tscn" id="6_ny6oh"]
 [ext_resource type="Texture2D" uid="uid://cvkmv6j2brhpe" path="res://points/clipboard.png" id="8_cgx4b"]
+[ext_resource type="Script" uid="uid://cpe865tyx7650" path="res://points/bar/board.gd" id="9_cf2x5"]
 [ext_resource type="FontFile" uid="uid://bysf6wbshpyl0" path="res://Handwriting-Regular.ttf" id="9_n5vp8"]
-[ext_resource type="Texture2D" uid="uid://bgvcbgk7pmkg0" path="res://Illustration6.png" id="10_cf2x5"]
 [ext_resource type="Texture2D" uid="uid://c4o45wugqqg5p" path="res://Start_Menu/images/dwarrow1.png" id="11_n5vp8"]
 [ext_resource type="Texture2D" uid="uid://bnbdp5f0vknvc" path="res://Start_Menu/images/dwarrow2.png" id="12_cf2x5"]
-
-[sub_resource type="Animation" id="Animation_jf227"]
-resource_name = "s_on"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("SettingsPanel:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(0.4249623, 0.40176928, 0.4249623, 0), Color(1, 1, 1, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("color2:color")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(0.1254902, 0.14117648, 0.15294118, 0), Color(0.12610315, 0.13968377, 0.15439609, 0.45882353)]
-}
 
 [sub_resource type="Animation" id="Animation_7tdh0"]
 length = 0.001
@@ -103,31 +76,43 @@ tracks/4/keys = {
 "values": [Color(0.12610315, 0.13968377, 0.15439609, 0.45882353)]
 }
 
-[sub_resource type="Animation" id="Animation_dvsx8"]
-resource_name = "s_off"
+[sub_resource type="Animation" id="Animation_5t8ke"]
+resource_name = "b_down"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("SettingsPanel:modulate")
+tracks/0/path = NodePath("Board:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 0.2666667),
+"transitions": PackedFloat32Array(0.15932035, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+"values": [Vector2(158.795, 11.135), Vector2(158.795, 666)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("color2:color")
+tracks/1/path = NodePath("Board:scale")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1.731, 1.731)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("color:color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.16666667),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Color(0.12610315, 0.13968377, 0.15439609, 0.45882353), Color(0.1254902, 0.14117648, 0.15294118, 0)]
+"values": [Color(0.050980393, 0.05882353, 0.06666667, 0.74509805), Color(0.1254902, 0.14117648, 0.15294118, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_3t616"]
@@ -169,43 +154,58 @@ tracks/2/keys = {
 "values": [Vector2(1, 1), Vector2(1, 1), Vector2(1.731, 1.731)]
 }
 
-[sub_resource type="Animation" id="Animation_5t8ke"]
-resource_name = "b_down"
+[sub_resource type="Animation" id="Animation_dvsx8"]
+resource_name = "s_off"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Board:position")
+tracks/0/path = NodePath("SettingsPanel:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2666667),
-"transitions": PackedFloat32Array(0.15932035, 1),
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(158.795, 11.135), Vector2(158.795, 666)]
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Board:scale")
+tracks/1/path = NodePath("color2:color")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1.731, 1.731)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("color:color")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.16666667),
+"times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Color(0.050980393, 0.05882353, 0.06666667, 0.74509805), Color(0.1254902, 0.14117648, 0.15294118, 0)]
+"values": [Color(0.12610315, 0.13968377, 0.15439609, 0.45882353), Color(0.1254902, 0.14117648, 0.15294118, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_jf227"]
+resource_name = "s_on"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SettingsPanel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.4249623, 0.40176928, 0.4249623, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("color2:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.1254902, 0.14117648, 0.15294118, 0), Color(0.12610315, 0.13968377, 0.15439609, 0.45882353)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_4lxiv"]
@@ -215,6 +215,21 @@ _data = {
 &"b_op": SubResource("Animation_3t616"),
 &"s_off": SubResource("Animation_dvsx8"),
 &"s_on": SubResource("Animation_jf227")
+}
+
+[sub_resource type="Animation" id="Animation_cgx4b"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
 }
 
 [sub_resource type="Animation" id="Animation_21uyo"]
@@ -233,34 +248,19 @@ tracks/0/keys = {
 "values": [0.0, 6.2831855]
 }
 
-[sub_resource type="Animation" id="Animation_cgx4b"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_n5vp8"]
 _data = {
 &"RESET": SubResource("Animation_cgx4b"),
 &"kk": SubResource("Animation_21uyo")
 }
 
+[sub_resource type="Animation" id="Animation_1tst0"]
+length = 0.001
+
 [sub_resource type="Animation" id="Animation_4lxiv"]
 resource_name = "wig"
 length = 0.4495
 loop_mode = 1
-
-[sub_resource type="Animation" id="Animation_1tst0"]
-length = 0.001
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_iy1dt"]
 _data = {
@@ -334,63 +334,93 @@ offset_bottom = 663.0
 color = Color(0.12610315, 0.13968377, 0.15439609, 0.45882353)
 
 [node name="Board" type="TextureRect" parent="."]
+self_modulate = Color(0.9195968, 0.88605607, 1.1379994, 1)
 z_index = 1
 offset_left = 347.0
 offset_top = 666.0
 offset_right = 828.0018
 offset_bottom = 1285.0007
 texture = ExtResource("8_cgx4b")
+script = ExtResource("9_cf2x5")
 
-[node name="g" type="RichTextLabel" parent="Board"]
+[node name="intro" type="RichTextLabel" parent="Board"]
+modulate = Color(2.038017, 0.8286125, 0, 0.8509804)
 layout_mode = 0
-offset_left = 253.28217
-offset_top = 134.37875
-offset_right = 487.96475
-offset_bottom = 252.07646
-scale = Vector2(0.6171298, 0.6171298)
-theme_override_colors/default_color = Color(0.32044965, 1.6544945e-07, 9.62615e-08, 0.6862745)
+offset_left = 342.0
+offset_top = 266.0
+offset_right = 563.0596
+offset_bottom = 310.9961
+rotation = -0.08614082
+scale = Vector2(0.31631908, 0.26719567)
+theme_override_colors/default_color = Color(0.32156864, 0, 0, 0.39215687)
+theme_override_colors/font_outline_color = Color(0.003291297, 0, 0, 0.70980394)
+theme_override_constants/outline_size = 7
 theme_override_fonts/normal_font = ExtResource("9_n5vp8")
 theme_override_font_sizes/normal_font_size = 46
-text = "Greg = 3"
+text = "ava was here"
 
-[node name="t" type="RichTextLabel" parent="Board"]
+[node name="intro2" type="RichTextLabel" parent="Board"]
+modulate = Color(2.038017, 0.8286125, 0, 0.8509804)
 layout_mode = 0
-offset_left = 253.28217
-offset_top = 163.56396
-offset_right = 487.96475
-offset_bottom = 281.26166
-scale = Vector2(0.61713, 0.61713)
-theme_override_colors/default_color = Color(0.32044965, 1.6544945e-07, 9.62615e-08, 0.6862745)
+offset_left = 133.0
+offset_top = 129.00002
+offset_right = 921.6904
+offset_bottom = 544.49316
+scale = Vector2(0.336, 0.284)
+theme_override_colors/default_color = Color(0.32156864, 0, 0, 0.39215687)
+theme_override_colors/font_outline_color = Color(0.003291297, 0, 0, 0.70980394)
+theme_override_constants/line_separation = 14
+theme_override_constants/outline_size = 7
 theme_override_fonts/normal_font = ExtResource("9_n5vp8")
 theme_override_font_sizes/normal_font_size = 46
-text = "Toby = 3"
+text = "To find the killer remember to review: footage, alibis, and social media.
 
-[node name="p" type="RichTextLabel" parent="Board"]
+You must look past their outer appearances and find out whether they are capable of killing.
+
+This game might be too easy but I hope you enjoy."
+
+[node name="intro3" type="RichTextLabel" parent="Board"]
+modulate = Color(2.038017, 0.8286125, 0, 0.8509804)
 layout_mode = 0
-offset_left = 253.28217
-offset_top = 191.79225
-offset_right = 487.96475
-offset_bottom = 309.49
-scale = Vector2(0.61712986, 0.61712986)
-theme_override_colors/default_color = Color(0.32044965, 1.6544945e-07, 9.62615e-08, 0.6862745)
+offset_left = 133.0
+offset_top = 129.00002
+offset_right = 921.6904
+offset_bottom = 544.49316
+scale = Vector2(0.336, 0.284)
+theme_override_colors/default_color = Color(0.32156864, 0, 0, 0.39215687)
+theme_override_colors/font_outline_color = Color(0.003291297, 0, 0, 0.70980394)
+theme_override_constants/line_separation = 14
+theme_override_constants/outline_size = 7
 theme_override_fonts/normal_font = ExtResource("9_n5vp8")
 theme_override_font_sizes/normal_font_size = 46
-text = "Panya = 3"
+text = "To find the killer remember to review: footage, alibis, and social media.
 
-[node name="note" type="TextureRect" parent="Board"]
+You must look past their outer appearances and find out whether they are capable of killing.
+
+This game might be too easy but I hope you enjoy."
+
+[node name="intro4" type="RichTextLabel" parent="Board"]
+modulate = Color(2.038017, 0.8286125, 0, 0.8509804)
 layout_mode = 0
-offset_left = -163.92279
-offset_right = 317.0772
-offset_bottom = 619.0
-mouse_filter = 2
-texture = ExtResource("10_cf2x5")
+offset_left = 133.0
+offset_top = 105.000015
+offset_right = 350.26184
+offset_bottom = 143.73244
+scale = Vector2(0.61573267, 0.5204407)
+theme_override_colors/default_color = Color(0.32156864, 0, 0, 0.39215687)
+theme_override_colors/font_outline_color = Color(0.003291297, 0, 0, 0.70980394)
+theme_override_constants/line_separation = 14
+theme_override_constants/outline_size = 7
+theme_override_fonts/normal_font = ExtResource("9_n5vp8")
+theme_override_font_sizes/normal_font_size = 46
+text = "Instructions"
 
 [node name="down" type="TextureButton" parent="Board"]
 layout_mode = 0
-offset_left = 211.1789
-offset_top = 239.15843
-offset_right = 445.55365
-offset_bottom = 532.60046
+offset_left = 215.0
+offset_top = 244.0
+offset_right = 449.37476
+offset_bottom = 537.442
 scale = Vector2(0.27421778, 0.27421778)
 texture_normal = ExtResource("11_n5vp8")
 texture_pressed = ExtResource("11_n5vp8")

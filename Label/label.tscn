@@ -18,6 +18,7 @@ color = Color(0, 0, 0, 1)
 
 [node name="Text" type="RichTextLabel" parent="."]
 texture_filter = 4
+clip_contents = false
 layout_mode = 0
 offset_left = 4.3748817
 offset_top = 5.1151733
