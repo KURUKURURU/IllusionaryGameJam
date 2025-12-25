@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://rxrui67ik10y"]
+[gd_scene load_steps=15 format=3 uid="uid://rxrui67ik10y"]
 
 [ext_resource type="Script" uid="uid://t7s48xk4j5xt" path="res://criminal_history_app.gd" id="1_4mwq2"]
 [ext_resource type="Texture2D" uid="uid://kk8a6g4jh4qn" path="res://webpages/indowmove.png" id="2_uvc5e"]
@@ -9,8 +9,15 @@
 [ext_resource type="FontFile" uid="uid://d3c4n3td5hjnr" path="res://white-rabbit/whitrabt.ttf" id="7_1ixq5"]
 [ext_resource type="Texture2D" uid="uid://beowubt15qm8g" path="res://icon_cab.png" id="8_tap71"]
 [ext_resource type="Texture2D" uid="uid://dhf1ygwm248m4" path="res://card_ph.png" id="8_uvc5e"]
+[ext_resource type="Texture2D" uid="uid://ccv0c8ime0km4" path="res://pan/Illustration.png" id="9_5uff6"]
+[ext_resource type="Texture2D" uid="uid://bmgbpnv7y4tes" path="res://pan/ggh.png" id="10_1ixq5"]
+[ext_resource type="Texture2D" uid="uid://ci7ul8jokolh8" path="res://pan/fgg.png" id="11_4sq4p"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4sq4p"]
+
+[sub_resource type="Theme" id="Theme_5uff6"]
+RichTextLabel/colors/default_color = Color(0, 0, 0, 1)
+RichTextLabel/fonts/normal_font = ExtResource("7_1ixq5")
 
 [node name="CriminalHistory_App" type="Node2D"]
 script = ExtResource("1_4mwq2")
@@ -85,16 +92,14 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="input" type="TextEdit" parent="search"]
+[node name="input" type="LineEdit" parent="search"]
 layout_mode = 0
-offset_left = -150.0
-offset_top = -169.0
-offset_right = 116.0
-offset_bottom = -152.0
-theme_override_colors/search_result_color = Color(0.29951698, 0.29951698, 0.29951698, 1)
+offset_left = -154.0
+offset_top = -171.0
+offset_right = 128.0
+offset_bottom = -151.0
 theme_override_colors/font_color = Color(0.17744178, 0.20142081, 0.2835078, 1)
 theme_override_colors/font_placeholder_color = Color(0.30748522, 0.09320182, 0.012920001, 0.282)
-theme_override_colors/current_line_color = Color(0.25030932, 0.25030932, 0.26006752, 0)
 theme_override_fonts/font = ExtResource("7_1ixq5")
 theme_override_font_sizes/font_size = 11
 theme_override_styles/normal = SubResource("StyleBoxTexture_4sq4p")
@@ -146,8 +151,9 @@ horizontal_alignment = 1
 visible = false
 layout_mode = 3
 anchors_preset = 0
+offset_top = -8.0
 offset_right = 40.0
-offset_bottom = 40.0
+offset_bottom = 32.0
 
 [node name="PanyaCard" type="TextureRect" parent="Output"]
 layout_mode = 0
@@ -155,22 +161,311 @@ offset_left = -148.0
 offset_top = -110.0
 offset_right = 154.0
 offset_bottom = 107.0
-texture = ExtResource("8_uvc5e")
+texture = ExtResource("9_5uff6")
+
+[node name="Name" type="RichTextLabel" parent="Output/PanyaCard"]
+layout_mode = 0
+offset_left = 165.0
+offset_top = 23.0
+offset_right = 288.0
+offset_bottom = 39.0
+theme = SubResource("Theme_5uff6")
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "Tanya Gibson"
+
+[node name="offenseTitle" type="RichTextLabel" parent="Output/PanyaCard"]
+layout_mode = 0
+offset_left = 167.0
+offset_top = 44.0
+offset_right = 290.0
+offset_bottom = 60.0
+scale = Vector2(0.7758039, 0.7758039)
+theme = SubResource("Theme_5uff6")
+theme_override_colors/default_color = Color(0.80888695, 0, 0, 0.48100004)
+text = "Offense:"
+
+[node name="offenseTitle2" type="RichTextLabel" parent="Output/PanyaCard"]
+layout_mode = 0
+offset_left = 167.0
+offset_top = 98.0
+offset_right = 290.0
+offset_bottom = 114.0
+scale = Vector2(0.7758039, 0.7758039)
+theme = SubResource("Theme_5uff6")
+theme_override_colors/default_color = Color(0.80888695, 0, 0, 0.48100004)
+text = "Charges:"
+
+[node name="Description" type="RichTextLabel" parent="Output/PanyaCard"]
+layout_mode = 0
+offset_left = 167.0
+offset_top = 59.0
+offset_right = 316.52234
+offset_bottom = 119.58232
+scale = Vector2(0.7758039, 0.7758039)
+theme = SubResource("Theme_5uff6")
+theme_override_font_sizes/normal_font_size = 11
+text = "Shoplifting at Rublix Grocery, briefly fought with officers afterward."
+
+[node name="Description2" type="RichTextLabel" parent="Output/PanyaCard"]
+layout_mode = 0
+offset_left = 167.0
+offset_top = 112.0
+offset_right = 290.0
+offset_bottom = 197.07306
+scale = Vector2(0.7758039, 0.7758039)
+theme = SubResource("Theme_5uff6")
+theme_override_font_sizes/normal_font_size = 11
+text = "Petit Theft (Misdemeanor)
+
+Obstruction of Justice (Misdemeanor) 
+
+Jailed 60 days."
+
+[node name="Description3" type="RichTextLabel" parent="Output/PanyaCard"]
+layout_mode = 0
+offset_left = 166.0
+offset_top = 12.0
+offset_right = 289.0
+offset_bottom = 23.600868
+scale = Vector2(0.7758039, 0.7758039)
+theme = SubResource("Theme_5uff6")
+theme_override_font_sizes/normal_font_size = 11
+text = "2 years ago:"
 
 [node name="TobyCard" type="TextureRect" parent="Output"]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = -148.0
+offset_top = -110.0
+offset_right = 154.0
+offset_bottom = 107.0
+texture = ExtResource("10_1ixq5")
+
+[node name="Name" type="RichTextLabel" parent="Output/TobyCard"]
+layout_mode = 0
+offset_left = 167.0
+offset_top = 23.0
+offset_right = 290.0
+offset_bottom = 39.0
+theme = SubResource("Theme_5uff6")
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "Toby Neely"
+
+[node name="offenseTitle" type="RichTextLabel" parent="Output/TobyCard"]
+layout_mode = 0
+offset_left = 167.0
+offset_top = 46.0
+offset_right = 290.0
+offset_bottom = 62.0
+scale = Vector2(0.7758039, 0.7758039)
+theme = SubResource("Theme_5uff6")
+theme_override_colors/default_color = Color(0.80888695, 0, 0, 0.48100004)
+text = "Offense:"
+
+[node name="offenseTitle2" type="RichTextLabel" parent="Output/TobyCard"]
+layout_mode = 0
+offset_left = 167.0
+offset_top = 114.0
+offset_right = 290.0
+offset_bottom = 130.0
+scale = Vector2(0.7758039, 0.7758039)
+theme = SubResource("Theme_5uff6")
+theme_override_colors/default_color = Color(0.80888695, 0, 0, 0.48100004)
+text = "Charges:"
+
+[node name="Description" type="RichTextLabel" parent="Output/TobyCard"]
+layout_mode = 0
+offset_left = 167.0
+offset_top = 60.0
+offset_right = 313.94434
+offset_bottom = 129.60522
+scale = Vector2(0.7758039, 0.7758039)
+theme = SubResource("Theme_5uff6")
+theme_override_font_sizes/normal_font_size = 11
+text = "Road rage incident, other  driver's at fault, fight ensued and ended doing most damage."
+
+[node name="Description2" type="RichTextLabel" parent="Output/TobyCard"]
+layout_mode = 0
+offset_left = 167.0
+offset_top = 128.0
+offset_right = 290.0
+offset_bottom = 189.8713
+scale = Vector2(0.7758039, 0.7758039)
+theme = SubResource("Theme_5uff6")
+theme_override_font_sizes/normal_font_size = 11
+text = "Simple assault/battery (misdemeanor)
+
+Jailed 1 month."
+
+[node name="Description3" type="RichTextLabel" parent="Output/TobyCard"]
+layout_mode = 0
+offset_left = 166.0
+offset_top = 12.0
+offset_right = 289.0
+offset_bottom = 23.600868
+scale = Vector2(0.7758039, 0.7758039)
+theme = SubResource("Theme_5uff6")
+theme_override_font_sizes/normal_font_size = 11
+text = "6 years ago:"
 
 [node name="GregCard" type="TextureRect" parent="Output"]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = -148.0
+offset_top = -110.0
+offset_right = 154.0
+offset_bottom = 107.0
+texture = ExtResource("11_4sq4p")
+
+[node name="Name" type="RichTextLabel" parent="Output/GregCard"]
+layout_mode = 0
+offset_left = 167.0
+offset_top = 23.0
+offset_right = 290.0
+offset_bottom = 39.0
+theme = SubResource("Theme_5uff6")
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "Gregory Wayne"
+
+[node name="offenseTitle" type="RichTextLabel" parent="Output/GregCard"]
+layout_mode = 0
+offset_left = 167.0
+offset_top = 48.0
+offset_right = 290.0
+offset_bottom = 64.0
+scale = Vector2(0.7758039, 0.7758039)
+theme = SubResource("Theme_5uff6")
+theme_override_colors/default_color = Color(0.80888695, 0, 0, 0.48100004)
+text = "Offense:"
+
+[node name="offenseTitle2" type="RichTextLabel" parent="Output/GregCard"]
+layout_mode = 0
+offset_left = 167.0
+offset_top = 94.0
+offset_right = 290.0
+offset_bottom = 110.0
+scale = Vector2(0.7758039, 0.7758039)
+theme = SubResource("Theme_5uff6")
+theme_override_colors/default_color = Color(0.80888695, 0, 0, 0.48100004)
+text = "Charges:"
+
+[node name="Description" type="RichTextLabel" parent="Output/GregCard"]
+layout_mode = 0
+offset_left = 167.0
+offset_top = 63.0
+offset_right = 290.0
+offset_bottom = 79.0
+scale = Vector2(0.7758039, 0.7758039)
+theme = SubResource("Theme_5uff6")
+theme_override_font_sizes/normal_font_size = 11
+text = "Disclosed."
+
+[node name="Description2" type="RichTextLabel" parent="Output/GregCard"]
+layout_mode = 0
+offset_left = 167.0
+offset_top = 108.0
+offset_right = 290.0
+offset_bottom = 171.1603
+scale = Vector2(0.7758039, 0.7758039)
+theme = SubResource("Theme_5uff6")
+theme_override_font_sizes/normal_font_size = 11
+text = "RESTRAINING ORDER ISSUED AGAINST GREGORY WAYNE PROHIBITING ANY FORM OF CONTACT WITH ELIZA MORROW."
+
+[node name="Description3" type="RichTextLabel" parent="Output/GregCard"]
+layout_mode = 0
+offset_left = 166.0
+offset_top = 12.0
+offset_right = 289.0
+offset_bottom = 23.600868
+scale = Vector2(0.7758039, 0.7758039)
+theme = SubResource("Theme_5uff6")
+theme_override_font_sizes/normal_font_size = 11
+text = "1 year ago:"
 
 [node name="GreenCard" type="TextureRect" parent="Output"]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = -148.0
+offset_top = -110.0
+offset_right = 154.0
+offset_bottom = 107.0
+texture = ExtResource("8_uvc5e")
+
+[node name="Name" type="RichTextLabel" parent="Output/GreenCard"]
+layout_mode = 0
+offset_left = 167.0
+offset_top = 23.0
+offset_right = 290.0
+offset_bottom = 39.0
+theme = SubResource("Theme_5uff6")
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "Herald Roman"
+
+[node name="offenseTitle" type="RichTextLabel" parent="Output/GreenCard"]
+layout_mode = 0
+offset_left = 167.0
+offset_top = 48.0
+offset_right = 290.0
+offset_bottom = 64.0
+scale = Vector2(0.7758039, 0.7758039)
+theme = SubResource("Theme_5uff6")
+theme_override_colors/default_color = Color(0.80888695, 0, 0, 0.48100004)
+text = "Offense:"
+
+[node name="offenseTitle2" type="RichTextLabel" parent="Output/GreenCard"]
+layout_mode = 0
+offset_left = 167.0
+offset_top = 122.0
+offset_right = 290.0
+offset_bottom = 138.0
+scale = Vector2(0.7758039, 0.7758039)
+theme = SubResource("Theme_5uff6")
+theme_override_colors/default_color = Color(0.80888695, 0, 0, 0.48100004)
+text = "Charges:"
+
+[node name="Description" type="RichTextLabel" parent="Output/GreenCard"]
+layout_mode = 0
+offset_left = 167.0
+offset_top = 63.0
+offset_right = 328.12317
+offset_bottom = 163.54086
+scale = Vector2(0.7758039, 0.7758039)
+theme = SubResource("Theme_5uff6")
+theme_override_font_sizes/normal_font_size = 11
+text = "Engaged in a physical altercation that escalated due to his reckless actions. No intent to kill, his conduct resulted in fatal injuries."
+
+[node name="Description2" type="RichTextLabel" parent="Output/GreenCard"]
+layout_mode = 0
+offset_left = 167.0
+offset_top = 136.0
+offset_right = 290.0
+offset_bottom = 183.69246
+scale = Vector2(0.7758039, 0.7758039)
+theme = SubResource("Theme_5uff6")
+theme_override_font_sizes/normal_font_size = 11
+text = "Manslaughter (Felony)
+
+Prisoned 20 years."
+
+[node name="Description3" type="RichTextLabel" parent="Output/GreenCard"]
+layout_mode = 0
+offset_left = 166.0
+offset_top = 12.0
+offset_right = 289.0
+offset_bottom = 23.600868
+scale = Vector2(0.7758039, 0.7758039)
+theme = SubResource("Theme_5uff6")
+theme_override_font_sizes/normal_font_size = 11
+text = "2 years ago:"
+
+[node name="1" type="RichTextLabel" parent="Output"]
+layout_mode = 0
+offset_left = -35.0
+offset_top = 114.00001
+offset_right = 136.30722
+offset_bottom = 231.0
+scale = Vector2(0.5712194, 0.5712194)
+mouse_filter = 2
+theme_override_colors/default_color = Color(0.8284013, 0.13770345, 6.738305e-07, 0.6627451)
+theme_override_fonts/normal_font = ExtResource("7_1ixq5")
+text = "< File Found. >"
 
 [connection signal="button_down" from="InteractMove" to="." method="Down"]
 [connection signal="button_up" from="InteractMove" to="." method="Up"]

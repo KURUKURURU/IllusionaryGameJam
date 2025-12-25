@@ -22,20 +22,41 @@ func Down() -> void:
 
 
 func OnTextSubmit() -> void:
-	if $search/input.text == "Panya Juarez":
+	if $search/input.text == "Panya Gibson":
 		$Output.show()
 		$NothingFound.hide()
 		$Output/PanyaCard.show()
+		
+		$Output/GreenCard.hide()
+		$Output/GregCard.hide()
+		$Output/TobyCard.hide()
 		
 	elif $search/input.text == "Toby Neely":
 		$Output.show()
 		$NothingFound.hide()
 		$Output/TobyCard.show()
 		
-	elif $search/input.text == "Gregory Waine":
+		$Output/GregCard.hide()
+		$Output/PanyaCard.hide()
+		$Output/GreenCard.hide()
+		
+	elif $search/input.text == "Gregory Wayne":
 		$Output.show()
 		$NothingFound.hide()
 		$Output/GregCard.show()
+		
+		$Output/TobyCard.hide()
+		$Output/PanyaCard.hide()
+		$Output/GreenCard.hide()
+	
+	elif $search/input.text == "Herald Roman":
+		$Output.show()
+		$NothingFound.hide()
+		$Output/GreenCard.show()
+		
+		$Output/TobyCard.hide()
+		$Output/PanyaCard.hide()
+		$Output/GregCard.hide()
 		
 	elif $search/input.text == "":
 		$Output.hide()

@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://cgglb2bacrvsm"
+path="res://.godot/imported/masdk.png-758ee4805696dac354455a71d4e46b39.res"
+
+[deps]
+
+source_file="res://pan/masdk.png"
+dest_files=["res://.godot/imported/masdk.png-758ee4805696dac354455a71d4e46b39.res"]
+
+[params]
+
+create_from=1
+threshold=0.5

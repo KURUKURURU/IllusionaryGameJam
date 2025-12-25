@@ -148,3 +148,10 @@ func _on_test_window_toby_page() -> void:
 	$Object2/Popup.play("popup")
 	tobypage.scroll_vertical = 0
 	tobypage.show()
+
+
+func OpenHistoryApp() -> void:
+	$ping.play()
+	$CriminalHistory_App/Popup.play("popup")
+	$CriminalHistory_App.show()
+	

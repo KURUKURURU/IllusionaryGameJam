@@ -1,0 +1,413 @@
+[gd_scene load_steps=33 format=3 uid="uid://dil28dp02varo"]
+
+[ext_resource type="Script" uid="uid://8u3hvnkc8kst" path="res://InterrogationRoom/Scenes/toby_room.gd" id="1_71y20"]
+[ext_resource type="Texture2D" uid="uid://d0ywlrf5ocu7l" path="res://PreCutscene/frames/box/ph/walll1.png" id="2_u8or1"]
+[ext_resource type="Texture2D" uid="uid://dj0jxtnvxixxc" path="res://pan/Illustration2.png" id="3_71y20"]
+[ext_resource type="Texture2D" uid="uid://dyw2mokrayu7d" path="res://pan/chick.png" id="4_u8or1"]
+[ext_resource type="Texture2D" uid="uid://rwsc8r72no1n" path="res://pan/eerrr.png" id="5_71y20"]
+[ext_resource type="BitMap" uid="uid://cgglb2bacrvsm" path="res://pan/masdk.png" id="6_u8or1"]
+[ext_resource type="Texture2D" uid="uid://br4n76b444t6k" path="res://InterrogationRoom/images/metal.png" id="7_ekdur"]
+[ext_resource type="Texture2D" uid="uid://bds33gy5dct6d" path="res://Start_Menu/images/suitcase/props/filef1.png" id="8_7p01a"]
+[ext_resource type="Texture2D" uid="uid://8xymjklv02vy" path="res://Start_Menu/images/suitcase/props/filef12.png" id="9_yie7j"]
+[ext_resource type="AudioStream" uid="uid://dxs6cd7v2rjdp" path="res://StartRoom/sounds/openpeper.wav" id="10_6up7d"]
+[ext_resource type="AudioStream" uid="uid://dndkwue3fholq" path="res://StartRoom/sounds/paper.wav" id="11_8dixk"]
+[ext_resource type="Texture2D" uid="uid://dd6cr0k0bj70m" path="res://images/comp1.png" id="12_3qcq3"]
+[ext_resource type="Texture2D" uid="uid://djkvxysryj3na" path="res://images/comp2.png" id="13_26a4f"]
+[ext_resource type="Texture2D" uid="uid://c7d4g5thmbwjj" path="res://images/godotwaka2.png" id="14_e1kto"]
+[ext_resource type="PackedScene" uid="uid://67pbacp18qgo" path="res://StartRoom/scenes/file_book.tscn" id="15_08j8m"]
+[ext_resource type="PackedScene" uid="uid://bjp1b6hm65me1" path="res://Label/label.tscn" id="16_6ocav"]
+[ext_resource type="AudioStream" uid="uid://cpjopblvvoe6u" path="res://StartRoom/sounds/mainmusic2.wav" id="17_007o5"]
+[ext_resource type="AudioStream" uid="uid://b3xs4ppsu0qkw" path="res://InterrogationRoom/sounds/sillygoofymusic.wav" id="18_0weg7"]
+[ext_resource type="AudioStream" uid="uid://4xrwfwo0ubfb" path="res://InterrogationRoom/sounds/sad soundscape.wav" id="19_cpier"]
+[ext_resource type="AudioStream" uid="uid://byffw1s080n6m" path="res://StartRoom/sounds/whoosh.wav" id="20_d2fot"]
+[ext_resource type="AudioStream" uid="uid://djjlvy68f5mnw" path="res://InterrogationRoom/sounds/museclick.wav" id="21_xpv82"]
+[ext_resource type="PackedScene" uid="uid://jpraix5hokpi" path="res://InterrogationRoom/Scenes/laptop.tscn" id="22_0cugg"]
+[ext_resource type="PackedScene" uid="uid://dca64hdh2xxav" path="res://Process/panya_talking_scene.tscn" id="23_or7gf"]
+[ext_resource type="AudioStream" uid="uid://dipgr8o46y6dj" path="res://delete.wav" id="24_hweig"]
+[ext_resource type="PackedScene" uid="uid://ca3361nyh8rd7" path="res://points/bar/uppermenu.tscn" id="25_tj6eu"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_y2qu5"]
+animations = [{
+"frames": [{
+"duration": 10.0,
+"texture": ExtResource("3_71y20")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_u8or1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_71y20")
+}, {
+"duration": 2.0,
+"texture": ExtResource("4_u8or1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_u8or1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
+
+[sub_resource type="Animation" id="Animation_m2gn2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Node2D:position:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Node2D:position:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(4, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Node2D/Table/FilesNotes:position:x")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(24.46697, -0.0005, 0, 0.0005, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Node2D/Table/FilesNotes:position:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(230.01616, -0.0005, 0, 0.0005, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Node2D/Table/Ipad:position:x")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(249.83243, -0.0005, 0, 0.0005, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/6/type = "bezier"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Node2D/Table/Ipad:position:y")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(250.69264, -0.0005, 0, 0.0005, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yv8a8"]
+_data = {
+&"RESET": SubResource("Animation_m2gn2")
+}
+
+[sub_resource type="Animation" id="Animation_njfv0"]
+length = 0.2435
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.23333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -710)]
+}
+
+[sub_resource type="Animation" id="Animation_xwycx"]
+resource_name = "items"
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node2D/Table/FilesNotes:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(24.46697, -0.25, 0, 0.25, 0, 24.46697, -0.08166667, 0, 0, 0),
+"times": PackedFloat32Array(0, 0.49)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Node2D/Table/FilesNotes:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(206.81891, -0.25, 0, 0.23333333, -119.31891, 35.5, -0.36666667, 1, 0, 0),
+"times": PackedFloat32Array(0, 0.6666667)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Node2D/Table/Ipad:position:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(2),
+"points": PackedFloat32Array(119.41676, 0, 0, 0.33333334, 2.5832367),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Node2D/Table/Ipad:position:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(2, 2),
+"points": PackedFloat32Array(206.25995, 0, 0, 0.16666667, -25.013908, 17.60756, -0.93333334, 10.392441, 0, 0),
+"times": PackedFloat32Array(0, 1)
+}
+
+[sub_resource type="Animation" id="Animation_mcpkv"]
+length = 0.454
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node2D:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.16666667, 0, 0, 0),
+"times": PackedFloat32Array(0, 0.43333334)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Node2D:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(-710, -0.25, 0, 0.25, 0, 4, -0.16666667, -119, 0, 0),
+"times": PackedFloat32Array(0, 0.43333334)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ie03x"]
+_data = {
+&"down": SubResource("Animation_njfv0"),
+&"items": SubResource("Animation_xwycx"),
+&"up": SubResource("Animation_mcpkv")
+}
+
+[node name="InterrogationRoom" type="Node2D"]
+script = ExtResource("1_71y20")
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(0, 4)
+
+[node name="TextureRect2" type="TextureRect" parent="Node2D"]
+offset_top = -4.0
+offset_right = 1150.0
+offset_bottom = 646.0
+texture = ExtResource("2_u8or1")
+
+[node name="panya" type="AnimatedSprite2D" parent="Node2D"]
+position = Vector2(575, 312)
+sprite_frames = SubResource("SpriteFrames_y2qu5")
+autoplay = "default"
+frame_progress = 0.26039198
+
+[node name="intro" type="TextureButton" parent="Node2D/panya"]
+visible = false
+offset_left = -575.0
+offset_top = -325.0
+offset_right = 575.0
+offset_bottom = 325.0
+texture_hover = ExtResource("5_71y20")
+texture_click_mask = ExtResource("6_u8or1")
+
+[node name="question" type="TextureButton" parent="Node2D/panya"]
+offset_left = -575.0
+offset_top = -325.0
+offset_right = 575.0
+offset_bottom = 325.0
+texture_hover = ExtResource("5_71y20")
+texture_click_mask = ExtResource("6_u8or1")
+
+[node name="TextureRect3" type="TextureRect" parent="Node2D"]
+offset_top = 613.0
+offset_right = 1150.0
+offset_bottom = 1281.5483
+scale = Vector2(1, 1.2400006)
+texture = ExtResource("7_ekdur")
+
+[node name="Table" type="TextureRect" parent="Node2D"]
+texture_filter = 4
+offset_left = -12.0
+offset_top = 700.0
+offset_right = 252.0
+offset_bottom = 891.0
+scale = Vector2(4.4549856, 3.5780094)
+
+[node name="FilesNotes" type="TextureButton" parent="Node2D/Table"]
+layout_mode = 0
+offset_left = 24.46697
+offset_top = 230.01616
+offset_right = 456.46698
+offset_bottom = 808.0162
+scale = Vector2(0.1978267, 0.226693)
+texture_normal = ExtResource("8_7p01a")
+texture_hover = ExtResource("9_yie7j")
+
+[node name="open" type="AudioStreamPlayer2D" parent="Node2D/Table/FilesNotes"]
+position = Vector2(662, 175)
+stream = ExtResource("10_6up7d")
+bus = &"SFX"
+
+[node name="paper" type="AudioStreamPlayer2D" parent="Node2D/Table/FilesNotes"]
+position = Vector2(662, 175)
+stream = ExtResource("11_8dixk")
+bus = &"SFX"
+
+[node name="Ipad" type="TextureButton" parent="Node2D/Table"]
+layout_mode = 0
+offset_left = 249.83243
+offset_top = 250.69264
+offset_right = 755.8324
+offset_bottom = 750.69305
+scale = Vector2(0.28381443, 0.28381443)
+texture_normal = ExtResource("12_3qcq3")
+texture_hover = ExtResource("13_26a4f")
+
+[node name="door" type="TextureButton" parent="Node2D"]
+offset_left = 837.00006
+offset_top = 187.00005
+offset_right = 1046.8821
+offset_bottom = 528.8348
+scale = Vector2(0.9407415, 0.7788439)
+ignore_texture_size = true
+stretch_mode = 3
+
+[node name="UP" type="TextureButton" parent="."]
+visible = false
+offset_left = 49.0
+offset_top = -17.0
+offset_right = 1939.0
+offset_bottom = 1400.0
+scale = Vector2(0.5523441, 0.07151253)
+texture_hover = ExtResource("14_e1kto")
+
+[node name="DOWN" type="TextureButton" parent="."]
+visible = false
+offset_left = 49.0
+offset_top = 534.0
+offset_right = 1939.0
+offset_bottom = 1951.0
+scale = Vector2(0.5523441, 0.07151253)
+texture_hover = ExtResource("14_e1kto")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_yv8a8"),
+&"sliding": SubResource("AnimationLibrary_ie03x")
+}
+
+[node name="FileBook" parent="." instance=ExtResource("15_08j8m")]
+visible = false
+z_index = 1
+position = Vector2(98, 41)
+scale = Vector2(0.8551355, 0.8551355)
+
+[node name="Label" parent="." instance=ExtResource("16_6ocav")]
+z_index = 5
+offset_left = -1.0
+offset_top = 613.0
+offset_right = 39.0
+offset_bottom = 653.0
+
+[node name="MainMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("17_007o5")
+volume_db = -12.404
+pitch_scale = 0.58
+autoplay = true
+bus = &"Music"
+
+[node name="CompMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("18_0weg7")
+volume_db = -15.169
+pitch_scale = 1.2
+autoplay = true
+bus = &"Music"
+
+[node name="SFXGeneral" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("19_cpier")
+autoplay = true
+bus = &"SFX"
+
+[node name="Whoosh" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(565, 674)
+stream = ExtResource("20_d2fot")
+pitch_scale = 0.26
+bus = &"SFX"
+
+[node name="Click" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(571, 592)
+stream = ExtResource("21_xpv82")
+volume_db = -23.094
+pitch_scale = 1.48
+bus = &"SFX"
+
+[node name="Laptop" parent="." instance=ExtResource("22_0cugg")]
+visible = false
+scale = Vector2(1.0065355, 1.0065355)
+witness = "Toby"
+
+[node name="TobyTalkingScene" parent="." instance=ExtResource("23_or7gf")]
+visible = false
+
+[node name="bing" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("24_hweig")
+
+[node name="uppermenu" parent="." instance=ExtResource("25_tj6eu")]
+
+[connection signal="pressed" from="Node2D/panya/intro" to="." method="TobyIntro"]
+[connection signal="pressed" from="Node2D/panya/question" to="." method="question_witness"]
+[connection signal="mouse_entered" from="Node2D/Table/FilesNotes" to="." method="files_mousetouch"]
+[connection signal="mouse_exited" from="Node2D/Table/FilesNotes" to="." method="files_mouseleave"]
+[connection signal="pressed" from="Node2D/Table/FilesNotes" to="." method="_on_files_notes_pressed"]
+[connection signal="pressed" from="Node2D/Table/Ipad" to="." method="_on_ipad_pressed"]
+[connection signal="mouse_entered" from="Node2D/door" to="." method="_on_door_mouse_entered"]
+[connection signal="mouse_exited" from="Node2D/door" to="." method="_on_door_mouse_exited"]
+[connection signal="pressed" from="Node2D/door" to="." method="Leave"]
+[connection signal="pressed" from="UP" to="." method="UP"]
+[connection signal="pressed" from="DOWN" to="." method="Down"]
