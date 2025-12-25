@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://jpraix5hokpi"]
+[gd_scene load_steps=33 format=3 uid="uid://jpraix5hokpi"]
 
 [ext_resource type="Script" uid="uid://c5navywk44tjh" path="res://InterrogationRoom/Scenes/laptop.gd" id="1_xsinj"]
 [ext_resource type="Script" uid="uid://bent2seqmqsht" path="res://InterrogationRoom/Scenes/object.gd" id="2_5y0nm"]
@@ -24,6 +24,7 @@
 [ext_resource type="PackedScene" uid="uid://elr6b75453co" path="res://InterrogationRoom/Scenes/camera_portal.tscn" id="17_roxh2"]
 [ext_resource type="AudioStream" uid="uid://dipgr8o46y6dj" path="res://delete.wav" id="18_gyosh"]
 [ext_resource type="PackedScene" uid="uid://d32pkj2nffux0" path="res://InterrogationRoom/Scenes/reporttransfer.tscn" id="22_k8q15"]
+[ext_resource type="PackedScene" uid="uid://rxrui67ik10y" path="res://webpages/criminal_history_app.tscn" id="25_t2nu6"]
 
 [sub_resource type="Animation" id="Animation_eq50e"]
 length = 0.001
@@ -290,6 +291,7 @@ offset_top = 509.99994
 offset_right = 536.78
 offset_bottom = 531.99994
 scale = Vector2(1.0201294, 1.0968845)
+mouse_default_cursor_shape = 6
 texture_normal = ExtResource("8_di5o4")
 
 [node name="HideFail" type="TextureButton" parent="Object"]
@@ -344,6 +346,7 @@ offset_top = 510.0
 offset_right = 537.0
 offset_bottom = 532.0
 scale = Vector2(1.0236827, 1.1679733)
+mouse_default_cursor_shape = 6
 texture_normal = ExtResource("8_di5o4")
 
 [node name="Hide" type="TextureButton" parent="Object2"]
@@ -548,6 +551,9 @@ scale = Vector2(0.055, 0.055)
 libraries = {
 &"": SubResource("AnimationLibrary_w7ul5")
 }
+
+[node name="CriminalHistory_App" parent="." instance=ExtResource("25_t2nu6")]
+position = Vector2(322, 357)
 
 [connection signal="CameraSignal" from="Icon_SecurityPortal" to="." method="SecurityPortalActivation"]
 [connection signal="ReportApp" from="Icon_ReportTransfer" to="." method="_on_icon_report_transfer_report_app"]

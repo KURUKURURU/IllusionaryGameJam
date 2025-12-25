@@ -65,9 +65,9 @@ func say(message, num):
 	print(num)
 	Y_AD.show()
 	
-	$You/clickicon.show()
-	$You/AnimationPlayer.play("fadein")
 	
+	$You/AnimationPlayer.play("fadein")
+	$You/clickicon.show()
 	
 	await Y_advance
 	

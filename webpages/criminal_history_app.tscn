@@ -1,0 +1,178 @@
+[gd_scene load_steps=11 format=3 uid="uid://rxrui67ik10y"]
+
+[ext_resource type="Script" uid="uid://t7s48xk4j5xt" path="res://criminal_history_app.gd" id="1_4mwq2"]
+[ext_resource type="Texture2D" uid="uid://kk8a6g4jh4qn" path="res://webpages/indowmove.png" id="2_uvc5e"]
+[ext_resource type="Texture2D" uid="uid://cews2kjmur1ow" path="res://crimeapp.png" id="3_tap71"]
+[ext_resource type="AudioStream" uid="uid://dipgr8o46y6dj" path="res://delete.wav" id="4_x8ua8"]
+[ext_resource type="Texture2D" uid="uid://d3vsmhb1y30o1" path="res://butt1.png" id="5_mjh3d"]
+[ext_resource type="Texture2D" uid="uid://dih55l8e0onsn" path="res://butt2.png" id="6_5uff6"]
+[ext_resource type="FontFile" uid="uid://d3c4n3td5hjnr" path="res://white-rabbit/whitrabt.ttf" id="7_1ixq5"]
+[ext_resource type="Texture2D" uid="uid://beowubt15qm8g" path="res://icon_cab.png" id="8_tap71"]
+[ext_resource type="Texture2D" uid="uid://dhf1ygwm248m4" path="res://card_ph.png" id="8_uvc5e"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4sq4p"]
+
+[node name="CriminalHistory_App" type="Node2D"]
+script = ExtResource("1_4mwq2")
+
+[node name="shadow" type="ColorRect" parent="."]
+offset_left = -165.00002
+offset_top = -190.0
+offset_right = 346.0
+offset_bottom = 36.01834
+scale = Vector2(0.70484865, 1.4821806)
+color = Color(0.4509804, 0, 0.4509804, 0.11372549)
+
+[node name="InteractMove" type="TextureButton" parent="."]
+offset_left = -181.0
+offset_top = -209.0
+offset_right = 218.0
+offset_bottom = -187.0
+scale = Vector2(0.9231712, 0.87437046)
+mouse_default_cursor_shape = 6
+texture_normal = ExtResource("2_uvc5e")
+
+[node name="Hide" type="TextureButton" parent="."]
+self_modulate = Color(0.38392693, 0, 0.017539086, 1)
+offset_left = 127.000015
+offset_top = -208.99998
+offset_right = 615.5259
+offset_bottom = 143.66039
+scale = Vector2(0.12293447, 0.050768957)
+stretch_mode = 0
+
+[node name="bg" type="ColorRect" parent="."]
+offset_left = -180.99998
+offset_top = -191.0
+offset_right = -141.04558
+offset_bottom = -161.21593
+scale = Vector2(9.234264, 10.979021)
+color = Color(0.5372549, 0.5372549, 0.5372549, 1)
+
+[node name="img" type="TextureRect" parent="."]
+offset_left = -175.0
+offset_top = -185.0
+offset_right = 181.0
+offset_bottom = 128.0
+texture = ExtResource("3_tap71")
+
+[node name="deleteSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_x8ua8")
+
+[node name="appname" type="Label" parent="."]
+offset_left = -154.0
+offset_top = -203.0
+offset_right = 120.0
+offset_bottom = -180.0
+scale = Vector2(0.8979859, 0.6927789)
+theme_override_font_sizes/font_size = 10
+text = "Criminal History"
+
+[node name="submit" type="TextureButton" parent="."]
+modulate = Color(1.0095856, 1.0899334, 0.38020644, 1)
+offset_left = 140.0
+offset_top = -178.0
+offset_right = 174.0
+offset_bottom = -144.0
+pivot_offset = Vector2(-214, -14)
+texture_normal = ExtResource("5_mjh3d")
+texture_pressed = ExtResource("5_mjh3d")
+texture_hover = ExtResource("6_5uff6")
+
+[node name="search" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="input" type="TextEdit" parent="search"]
+layout_mode = 0
+offset_left = -150.0
+offset_top = -169.0
+offset_right = 116.0
+offset_bottom = -152.0
+theme_override_colors/search_result_color = Color(0.29951698, 0.29951698, 0.29951698, 1)
+theme_override_colors/font_color = Color(0.17744178, 0.20142081, 0.2835078, 1)
+theme_override_colors/font_placeholder_color = Color(0.30748522, 0.09320182, 0.012920001, 0.282)
+theme_override_colors/current_line_color = Color(0.25030932, 0.25030932, 0.26006752, 0)
+theme_override_fonts/font = ExtResource("7_1ixq5")
+theme_override_font_sizes/font_size = 11
+theme_override_styles/normal = SubResource("StyleBoxTexture_4sq4p")
+placeholder_text = "Input a name and access records..."
+
+[node name="icon" type="TextureRect" parent="."]
+self_modulate = Color(1, 0.81178766, 0.7547807, 0.238)
+offset_left = -104.0
+offset_top = -79.000015
+offset_right = 510.0
+offset_bottom = 381.0
+scale = Vector2(0.3382148, 0.3382148)
+texture = ExtResource("8_tap71")
+
+[node name="NothingFound" type="TextureRect" parent="."]
+visible = false
+offset_top = 158.0
+offset_right = 151.0
+offset_bottom = 267.0
+mouse_filter = 2
+
+[node name="1" type="RichTextLabel" parent="NothingFound"]
+layout_mode = 0
+offset_left = -47.0
+offset_top = -75.0
+offset_right = 124.30722
+offset_bottom = 42.0
+scale = Vector2(0.8055701, 0.8055701)
+mouse_filter = 2
+theme_override_colors/default_color = Color(0.8284013, 0.13770345, 6.738305e-07, 0.6627451)
+theme_override_fonts/normal_font = ExtResource("7_1ixq5")
+text = "Nothing Found. "
+
+[node name="2" type="RichTextLabel" parent="NothingFound"]
+layout_mode = 0
+offset_left = -44.0
+offset_top = -58.000004
+offset_right = 156.60185
+offset_bottom = 58.999996
+scale = Vector2(0.45837992, 0.45837992)
+mouse_filter = 2
+theme_override_colors/default_color = Color(0.11851549, 0, 0, 0.45900002)
+theme_override_constants/line_separation = 5
+theme_override_fonts/normal_font = ExtResource("7_1ixq5")
+text = "Be sure to double-check spelling."
+horizontal_alignment = 1
+
+[node name="Output" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="PanyaCard" type="TextureRect" parent="Output"]
+layout_mode = 0
+offset_left = -148.0
+offset_top = -110.0
+offset_right = 154.0
+offset_bottom = 107.0
+texture = ExtResource("8_uvc5e")
+
+[node name="TobyCard" type="TextureRect" parent="Output"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="GregCard" type="TextureRect" parent="Output"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="GreenCard" type="TextureRect" parent="Output"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[connection signal="button_down" from="InteractMove" to="." method="Down"]
+[connection signal="button_up" from="InteractMove" to="." method="Up"]
+[connection signal="pressed" from="Hide" to="." method="_on_hide_pressed"]
+[connection signal="pressed" from="submit" to="." method="OnTextSubmit"]

@@ -412,11 +412,82 @@ theme_override_fonts/normal_font = ExtResource("1_jexof")
 theme_override_font_sizes/normal_font_size = 15
 text = "s"
 
+[node name="spec" type="HBoxContainer" parent="."]
+visible = false
+offset_left = 19.0
+offset_top = 482.0
+offset_right = 1074.0
+offset_bottom = 641.0
+theme_override_constants/separation = -20
+alignment = 2
+
+[node name="Option1" type="TextureButton" parent="spec"]
+layout_mode = 2
+texture_normal = ExtResource("4_3414f")
+texture_hover = ExtResource("5_2j5o1")
+stretch_mode = 0
+
+[node name="Text" type="RichTextLabel" parent="spec/Option1"]
+texture_filter = 4
+layout_mode = 0
+offset_left = 58.000015
+offset_top = 53.999985
+offset_right = 261.3424
+offset_bottom = 105.64017
+scale = Vector2(1.2012075, 1.3251145)
+mouse_filter = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("1_jexof")
+theme_override_font_sizes/normal_font_size = 15
+text = "Do you remember where you were exactly at 7:30?"
+
+[node name="Option2" type="TextureButton" parent="spec"]
+layout_mode = 2
+texture_normal = ExtResource("4_3414f")
+texture_hover = ExtResource("5_2j5o1")
+stretch_mode = 0
+
+[node name="Text" type="RichTextLabel" parent="spec/Option2"]
+texture_filter = 4
+layout_mode = 0
+offset_left = 56.000004
+offset_top = 55.999985
+offset_right = 259.34238
+offset_bottom = 107.64017
+scale = Vector2(1.2012075, 1.3251145)
+mouse_filter = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("1_jexof")
+theme_override_font_sizes/normal_font_size = 15
+text = "What does your girlfriend look like?"
+
+[node name="Option3" type="TextureButton" parent="spec"]
+visible = false
+layout_mode = 2
+texture_normal = ExtResource("4_3414f")
+texture_hover = ExtResource("5_2j5o1")
+stretch_mode = 0
+
+[node name="Text" type="RichTextLabel" parent="spec/Option3"]
+texture_filter = 4
+layout_mode = 0
+offset_left = 56.000004
+offset_top = 62.999985
+offset_right = 259.34238
+offset_bottom = 114.64017
+scale = Vector2(1.2012075, 1.3251145)
+mouse_filter = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("1_jexof")
+theme_override_font_sizes/normal_font_size = 15
+text = "s"
+
 [node name="bing" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_vlkmw")
 volume_db = -10.947
 
 [node name="point_popup" parent="." instance=ExtResource("9_wxyvu")]
+position = Vector2(0, -13)
 
 [connection signal="pressed" from="You/advancebutt" to="." method="Y_AD_pressed"]
 [connection signal="pressed" from="Options/Option1" to="." method="_on_greg_name"]
@@ -425,3 +496,6 @@ volume_db = -10.947
 [connection signal="pressed" from="advance_1/Option1" to="." method="ad1_1"]
 [connection signal="pressed" from="advance_1/Option2" to="." method="ad1_2"]
 [connection signal="pressed" from="advance_1/Option3" to="." method="ad1_3"]
+[connection signal="pressed" from="spec/Option1" to="." method="_on_option_1_pressed"]
+[connection signal="pressed" from="spec/Option2" to="." method="_on_option_2_pressed"]
+[connection signal="pressed" from="spec/Option3" to="." method="ad1_3"]

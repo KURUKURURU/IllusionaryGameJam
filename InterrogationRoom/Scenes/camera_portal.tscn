@@ -185,6 +185,7 @@ offset_top = -209.0
 offset_right = 218.0
 offset_bottom = -187.0
 scale = Vector2(0.9231712, 0.87437046)
+mouse_default_cursor_shape = 6
 texture_normal = ExtResource("2_rbdt5")
 
 [node name="Hide" type="TextureButton" parent="."]

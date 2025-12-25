@@ -100,9 +100,9 @@ func say(message, num):
 	print(num)
 	Y_AD.show()
 	
-	$You/clickicon.show()
-	$You/AnimationPlayer.play("fadein")
 	
+	$You/AnimationPlayer.play("fadein")
+	$You/clickicon.show()
 	
 	await Y_advance
 	
@@ -172,11 +172,14 @@ func where_greg() -> void:
 	
 	emit_signal("done_op")
 	$Options.hide()
+	self.show()
+	$Main.show()
 	
 	if told_where: 
 		await Wit_say("I said I was with a girl. We were on a lovely date.", 2.0)
 		await Wit_say("We ate, shopped, hung around...", 2.0)
 		
+		$spec.show()
 		await Wit_say("Heh.", 3)
 		
 	if !told_where:
@@ -185,8 +188,10 @@ func where_greg() -> void:
 		
 		told_where = true
 		
+		$spec.show()
+		await Wit_say("I, of course, bought her everything she wanted.", 100)
 		
-		await Wit_say("I, of course, bought her everything she wanted.", 3)
+		
 	alldone()
 
 
@@ -206,4 +211,32 @@ func ad1_2() -> void:
 	$Main.hide()
 	
 	await say("Alright.", 0)
+	alldone()
+
+
+func _on_option_1_pressed() -> void:
+	$spec.hide()
+	$Main.hide()
+	
+	await say("Can you narrow it down?", 1)
+	
+	await Wit_say("Uh. Yeah.", 0)
+	await Wit_say("I think we primarily hung around the art gallery. I don't check the time.", 2)
+	await Wit_say("It's the only thing around here that'll close at 9.", 3)
+	await Wit_say("Everything else closes at like 7:15 for this holiday or something. Like a parade.", 3)
+	
+	alldone()
+
+
+func _on_option_2_pressed() -> void:
+	$spec.hide()
+	$Main.hide()
+	
+	await say("Can you narrow it down?", 1)
+	
+	await Wit_say("Uh. Yeah.", 0)
+	await Wit_say("I think we primarily hung around the art gallery. I don't check the time.", 2)
+	await Wit_say("It's the only thing around here that'll close at 9.", 3)
+	await Wit_say("Everything else closes at like 7:15 for this holiday or something. Like a parade.", 3)
+	
 	alldone()

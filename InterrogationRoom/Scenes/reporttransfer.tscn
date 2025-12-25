@@ -18,11 +18,11 @@
 [ext_resource type="Texture2D" uid="uid://ixsyqq0n57oh" path="res://shadow-png-30599.png" id="18_imx8w"]
 [ext_resource type="Script" uid="uid://crormvnfgw8m5" path="res://InterrogationRoom/Scenes/mouse.gd" id="19_v6pxv"]
 
-[sub_resource type="DPITexture" id="DPITexture_w7tdb"]
+[sub_resource type="DPITexture" id="DPITexture_j6qxt"]
 _source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"12\" height=\"12\"><path fill=\"none\" stroke=\"#b2b2b2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-opacity=\".85\" stroke-width=\"2\" d=\"m2 4 4 4 4-4\"/></svg>
 "
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vwtrv"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_37e3v"]
 content_margin_left = 8.0
 content_margin_top = 4.0
 content_margin_right = 8.0
@@ -34,8 +34,8 @@ corner_radius_bottom_left = 3
 corner_detail = 5
 
 [sub_resource type="Theme" id="Theme_kv1vy"]
-OptionButton/icons/arrow = SubResource("DPITexture_w7tdb")
-OptionButton/styles/normal = SubResource("StyleBoxFlat_vwtrv")
+OptionButton/icons/arrow = SubResource("DPITexture_j6qxt")
+OptionButton/styles/normal = SubResource("StyleBoxFlat_37e3v")
 
 [sub_resource type="Animation" id="Animation_kv1vy"]
 length = 0.001
@@ -188,6 +188,7 @@ offset_top = -209.0
 offset_right = 218.0
 offset_bottom = -187.0
 scale = Vector2(0.9231712, 0.87437046)
+mouse_default_cursor_shape = 6
 texture_normal = ExtResource("2_ixwjd")
 
 [node name="Hide" type="TextureButton" parent="."]
