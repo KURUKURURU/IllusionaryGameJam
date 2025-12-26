@@ -24,10 +24,15 @@ func _process(delta: float) -> void:
 		$default/Character_Option.set_item_disabled(1, true)
 		$default/Character_Option.set_item_disabled(2, true)
 	elif scene == "Toby":
-		$default/Character_Option.set_item_disabled(0, true)
+		$default/Character_Option.set_item_disabled(0, false)
 		$default/Character_Option.set_item_disabled(1, false)
 		$default/Character_Option.set_item_disabled(2, true)
-	
+	elif scene == "Panya":
+		$default/Character_Option.set_item_disabled(0, false)
+		$default/Character_Option.set_item_disabled(1, false)
+		$default/Character_Option.set_item_disabled(2, false)
+		
+		
 	if !$Toby/emotion.selected == -1 \
 	and !$Toby/connection.selected == -1 \
 	and !$Toby/crim.selected == -1 \
@@ -47,6 +52,16 @@ func _process(delta: float) -> void:
 		$Greg/SAVE.disabled = false
 	else:
 		$Greg/SAVE.disabled = true
+		
+	if !$Panya/emotion.selected == -1 \
+	and !$Panya/connection.selected == -1 \
+	and !$Panya/crim.selected == -1 \
+	and !$Panya/violent.selected == -1 \
+	and !$Panya/place.text == "" \
+	and !$Panya/trust.selected == -1:
+		$Panya/SAVE.disabled = false
+	else:
+		$Panya/SAVE.disabled = true
 	
 	if dragging:
 		position = get_global_mouse_position() - of
@@ -70,11 +85,17 @@ func _on_iaccept_pressed() -> void:
 func Character_Option_Selection(index: int) -> void:
 	
 	if index == 0:
+		$Panya.hide()
 		$Toby.hide()
 		$Greg.show()
 	elif index == 1:
+		$Panya.hide()
 		$Greg.hide()
 		$Toby.show()
+	elif index == 2:
+		$Panya.show()
+		$Greg.hide()
+		$Toby.hide()
 		
 
 
@@ -87,7 +108,8 @@ func _on_save_pressed() -> void:
 		Global.greg_saved = true
 	if scene == "Toby":
 		Global.toby_saved = true
-	
+	if scene == "Panya":
+		Global.panya_saved = true
 	$text.show()
 	await wait(2.0)
 	$text.hide()

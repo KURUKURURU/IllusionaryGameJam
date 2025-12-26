@@ -1,6 +1,6 @@
 [gd_scene load_steps=33 format=3 uid="uid://dil28dp02varo"]
 
-[ext_resource type="Script" uid="uid://8u3hvnkc8kst" path="res://InterrogationRoom/Scenes/toby_room.gd" id="1_71y20"]
+[ext_resource type="Script" uid="uid://dq1dipbbr7r0q" path="res://InterrogationRoom/Scenes/panya_room.gd" id="1_71y20"]
 [ext_resource type="Texture2D" uid="uid://d0ywlrf5ocu7l" path="res://PreCutscene/frames/box/ph/walll1.png" id="2_u8or1"]
 [ext_resource type="Texture2D" uid="uid://dj0jxtnvxixxc" path="res://pan/Illustration2.png" id="3_71y20"]
 [ext_resource type="Texture2D" uid="uid://dyw2mokrayu7d" path="res://pan/chick.png" id="4_u8or1"]
@@ -16,7 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://c7d4g5thmbwjj" path="res://images/godotwaka2.png" id="14_e1kto"]
 [ext_resource type="PackedScene" uid="uid://67pbacp18qgo" path="res://StartRoom/scenes/file_book.tscn" id="15_08j8m"]
 [ext_resource type="PackedScene" uid="uid://bjp1b6hm65me1" path="res://Label/label.tscn" id="16_6ocav"]
-[ext_resource type="AudioStream" uid="uid://cpjopblvvoe6u" path="res://StartRoom/sounds/mainmusic2.wav" id="17_007o5"]
+[ext_resource type="AudioStream" uid="uid://dp4l0rqnu4r4w" path="res://dramatic.wav" id="17_71y20"]
 [ext_resource type="AudioStream" uid="uid://b3xs4ppsu0qkw" path="res://InterrogationRoom/sounds/sillygoofymusic.wav" id="18_0weg7"]
 [ext_resource type="AudioStream" uid="uid://4xrwfwo0ubfb" path="res://InterrogationRoom/sounds/sad soundscape.wav" id="19_cpier"]
 [ext_resource type="AudioStream" uid="uid://byffw1s080n6m" path="res://StartRoom/sounds/whoosh.wav" id="20_d2fot"]
@@ -356,9 +356,9 @@ offset_right = 39.0
 offset_bottom = 653.0
 
 [node name="MainMusic" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("17_007o5")
+stream = ExtResource("17_71y20")
 volume_db = -12.404
-pitch_scale = 0.58
+pitch_scale = 1.51
 autoplay = true
 bus = &"Music"
 
@@ -371,6 +371,7 @@ bus = &"Music"
 
 [node name="SFXGeneral" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("19_cpier")
+volume_db = -12.117
 autoplay = true
 bus = &"SFX"
 
@@ -390,17 +391,18 @@ bus = &"SFX"
 [node name="Laptop" parent="." instance=ExtResource("22_0cugg")]
 visible = false
 scale = Vector2(1.0065355, 1.0065355)
-witness = "Toby"
-
-[node name="TobyTalkingScene" parent="." instance=ExtResource("23_or7gf")]
-visible = false
+witness = "Panya"
 
 [node name="bing" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("24_hweig")
 
 [node name="uppermenu" parent="." instance=ExtResource("25_tj6eu")]
 
-[connection signal="pressed" from="Node2D/panya/intro" to="." method="TobyIntro"]
+[node name="PanyaTalkingScene" parent="." instance=ExtResource("23_or7gf")]
+
+[connection signal="intro" from="." to="PanyaTalkingScene" method="_on_interrogation_room_intro"]
+[connection signal="questioning_1" from="." to="PanyaTalkingScene" method="_on_interrogation_room_questioning_1"]
+[connection signal="pressed" from="Node2D/panya/intro" to="." method="PanyaIntro"]
 [connection signal="pressed" from="Node2D/panya/question" to="." method="question_witness"]
 [connection signal="mouse_entered" from="Node2D/Table/FilesNotes" to="." method="files_mousetouch"]
 [connection signal="mouse_exited" from="Node2D/Table/FilesNotes" to="." method="files_mouseleave"]
@@ -411,3 +413,4 @@ stream = ExtResource("24_hweig")
 [connection signal="pressed" from="Node2D/door" to="." method="Leave"]
 [connection signal="pressed" from="UP" to="." method="UP"]
 [connection signal="pressed" from="DOWN" to="." method="Down"]
+[connection signal="done" from="PanyaTalkingScene" to="." method="_on_panya_talking_scene_done"]

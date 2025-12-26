@@ -1,6 +1,6 @@
 [gd_scene load_steps=18 format=3 uid="uid://dca64hdh2xxav"]
 
-[ext_resource type="Script" uid="uid://dam0m6tpig2jg" path="res://Process/toby_talking_scene.gd" id="1_2igaj"]
+[ext_resource type="Script" uid="uid://cglvo1iklav5u" path="res://Process/panya_talking_scene.gd" id="1_2igaj"]
 [ext_resource type="Texture2D" uid="uid://du55tjc1dd3s3" path="res://PreCutscene/frames/box/witnessbox/1.png" id="2_bs7wo"]
 [ext_resource type="Texture2D" uid="uid://bcwude2aslpqe" path="res://PreCutscene/frames/box/witnessbox/2.png" id="3_c1od0"]
 [ext_resource type="FontFile" uid="uid://dehehyydv307r" path="res://Fonts/paaxel-font/Paaxel-xRjLO.otf" id="4_7nox3"]
@@ -331,7 +331,7 @@ theme_override_fonts/normal_font = ExtResource("4_7nox3")
 theme_override_font_sizes/normal_font_size = 15
 text = "i love people they are so nice and uplifting yay yay yay"
 
-[node name="Work" type="HBoxContainer" parent="."]
+[node name="Connection" type="HBoxContainer" parent="."]
 visible = false
 layout_direction = 3
 offset_left = -1053.0
@@ -340,33 +340,33 @@ offset_right = 2.0
 offset_bottom = 640.0
 theme_override_constants/separation = -40
 
-[node name="Option1" type="TextureButton" parent="Work"]
+[node name="Option1" type="TextureButton" parent="Connection"]
 layout_mode = 2
 texture_normal = ExtResource("6_27a2m")
 texture_hover = ExtResource("7_a1i2k")
 stretch_mode = 0
 
-[node name="Text" type="RichTextLabel" parent="Work/Option1"]
+[node name="Text" type="RichTextLabel" parent="Connection/Option1"]
 texture_filter = 4
 layout_mode = 0
-offset_left = 59.657593
-offset_top = 60.999985
-offset_right = 262.99997
-offset_bottom = 112.64017
+offset_left = 88.65759
+offset_top = 41.999985
+offset_right = 291.99997
+offset_bottom = 93.64017
 scale = Vector2(1.2012075, 1.3251145)
 mouse_filter = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("4_7nox3")
 theme_override_font_sizes/normal_font_size = 15
-text = "Where do you work?"
+text = "Can you explain what happened this evening between 5 and 8?"
 
-[node name="Option2" type="TextureButton" parent="Work"]
+[node name="Option2" type="TextureButton" parent="Connection"]
 layout_mode = 2
 texture_normal = ExtResource("6_27a2m")
 texture_hover = ExtResource("7_a1i2k")
 stretch_mode = 0
 
-[node name="Text" type="RichTextLabel" parent="Work/Option2"]
+[node name="Text" type="RichTextLabel" parent="Connection/Option2"]
 texture_filter = 4
 layout_mode = 0
 offset_left = 30.657623
@@ -387,6 +387,6 @@ volume_db = -10.947
 [connection signal="pressed" from="You/advancebutt" to="." method="Y_AD_pressed"]
 [connection signal="pressed" from="Options/Option1" to="." method="_on_greg_name"]
 [connection signal="pressed" from="Options/Option2" to="." method="where_greg"]
-[connection signal="pressed" from="Options/Option3" to="." method="_on_greg_name"]
-[connection signal="pressed" from="Work/Option1" to="." method="w1"]
-[connection signal="pressed" from="Work/Option2" to="." method="w2"]
+[connection signal="pressed" from="Options/Option3" to="." method="naem"]
+[connection signal="pressed" from="Connection/Option1" to="." method="w1"]
+[connection signal="pressed" from="Connection/Option2" to="." method="w2"]

@@ -79,3 +79,4 @@ texture = ExtResource("14_q4lx7")
 
 [connection signal="pressed" from="Door_Greg" to="." method="GregPath"]
 [connection signal="pressed" from="Door_Toby" to="." method="TobyPath"]
+[connection signal="pressed" from="Door_Panya" to="." method="PanyaPath"]

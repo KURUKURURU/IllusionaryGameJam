@@ -1,4 +1,5 @@
 extends Node2D
+
 @onready var audio_bus_layout = preload("res://default_bus_layout.tres")
 
 func _ready() -> void:
@@ -7,12 +8,20 @@ func _ready() -> void:
 func GregPath() -> void:
 	if !Global.greg_saved:
 		get_tree().change_scene_to_file("uid://bdycqhfyd38af")
-	elif Global.greg_saved:
-		$bing.play()
-
+		return
+	
+	$bing.play()
 
 func TobyPath() -> void:
-	if Global.greg_saved:
+	if !Global.toby_saved && Global.greg_saved:
 		get_tree().change_scene_to_file("uid://j3tclxiknunw")
-	elif !Global.greg_saved:
-		$bing.play()
+		return
+	
+	$bing.play()
+
+func PanyaPath() -> void:
+	if !Global.panya_saved && Global.greg_saved && Global.toby_saved:
+		get_tree().change_scene_to_file("uid://dil28dp02varo")
+		return
+	
+	$bing.play()

@@ -32,12 +32,12 @@ animations = [{
 "duration": 10.0,
 "texture": ExtResource("3_dmghv")
 }, {
-"duration": 1.01,
+"duration": 0.41,
 "texture": ExtResource("4_vmip0")
 }],
 "loop": true,
 "name": &"default",
-"speed": 1.0
+"speed": 2.0
 }]
 
 [sub_resource type="Animation" id="Animation_m2gn2"]
@@ -237,7 +237,7 @@ position = Vector2(575.00006, 237.00002)
 scale = Vector2(1.173413, 1.173413)
 sprite_frames = SubResource("SpriteFrames_y2qu5")
 autoplay = "default"
-frame_progress = 0.84894884
+frame_progress = 0.02498063
 
 [node name="intro" type="TextureButton" parent="Node2D/green"]
 visible = false
