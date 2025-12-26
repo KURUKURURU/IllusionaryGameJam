@@ -22,8 +22,8 @@
 [ext_resource type="AudioStream" uid="uid://byffw1s080n6m" path="res://StartRoom/sounds/whoosh.wav" id="20_b1npc"]
 [ext_resource type="AudioStream" uid="uid://djjlvy68f5mnw" path="res://InterrogationRoom/sounds/museclick.wav" id="21_ig18n"]
 [ext_resource type="PackedScene" uid="uid://jpraix5hokpi" path="res://InterrogationRoom/Scenes/laptop.tscn" id="22_i68ol"]
-[ext_resource type="PackedScene" uid="uid://dca64hdh2xxav" path="res://Process/panya_talking_scene.tscn" id="23_excpa"]
 [ext_resource type="AudioStream" uid="uid://dipgr8o46y6dj" path="res://delete.wav" id="24_i8uc0"]
+[ext_resource type="PackedScene" uid="uid://dbbyt1nqytcnq" path="res://Process/green_talking_scene.tscn" id="25_dmghv"]
 [ext_resource type="PackedScene" uid="uid://ca3361nyh8rd7" path="res://points/bar/uppermenu.tscn" id="25_iq3ac"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_y2qu5"]
@@ -237,7 +237,7 @@ position = Vector2(575.00006, 237.00002)
 scale = Vector2(1.173413, 1.173413)
 sprite_frames = SubResource("SpriteFrames_y2qu5")
 autoplay = "default"
-frame_progress = 0.02498063
+frame_progress = 0.45444036
 
 [node name="intro" type="TextureButton" parent="Node2D/green"]
 visible = false
@@ -384,13 +384,12 @@ visible = false
 scale = Vector2(1.0065355, 1.0065355)
 witness = "Toby"
 
-[node name="TobyTalkingScene" parent="." instance=ExtResource("23_excpa")]
-visible = false
-
 [node name="bing" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("24_i8uc0")
 
 [node name="uppermenu" parent="." instance=ExtResource("25_iq3ac")]
+
+[node name="GreenTalkingScene" parent="." instance=ExtResource("25_dmghv")]
 
 [connection signal="pressed" from="Node2D/green/intro" to="." method="TobyIntro"]
 [connection signal="pressed" from="Node2D/green/question" to="." method="question_witness"]
@@ -403,3 +402,4 @@ stream = ExtResource("24_i8uc0")
 [connection signal="pressed" from="Node2D/door" to="." method="Leave"]
 [connection signal="pressed" from="UP" to="." method="UP"]
 [connection signal="pressed" from="DOWN" to="." method="Down"]
+[connection signal="done" from="GreenTalkingScene" to="." method="_on_green_talking_scene_done"]

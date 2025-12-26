@@ -23,9 +23,9 @@ func _process(delta: float) -> void:
 	else:
 		$uppermenu.hide()
 	
-	if !$Laptop.visible && !$TobyTalkingScene.visible:
+	if !$Laptop.visible && !$GreenTalkingScene.visible:
 		enable = true
-	if $TobyTalkingScene.visible:
+	if $GreenTalkingScene.visible:
 		$Label.hide()
 		enable = false
 	
@@ -108,20 +108,20 @@ func _process(delta: float) -> void:
 		
 func _ready() -> void:
 	
-	$'Node2D/panya/intro'.show()
-	$Node2D/panya/question.hide()
+	$'Node2D/green/intro'.show()
+	$Node2D/green/question.hide()
 	
 	#$Node2D/greg/question.texture_hover = hover_intro
 	AudioServer.set_bus_layout(audio_bus_layout)
 	$Label/Text.text = ""
 	
-	$TobyTalkingScene.hide()
+	$GreenTalkingScene.hide()
 	$FileBook.hide()
 	$Laptop.hide()
 	#$TalkingBox.hide()
 	#$Node2D/girl/Control/GirlTalkBox.hide()
 	
-	TobyIntro()
+	GreenIntro()
 	
 func wait(seconds: float) -> void:
 	await get_tree().create_timer(seconds).timeout
@@ -167,7 +167,7 @@ func _on_door_mouse_exited() -> void:
 
 
 func _on_door_mouse_entered() -> void:
-	if Global.greg_saved:
+	if Global.green_saved:
 		$Label/Text.text = "Leave?"
 	else:
 		$Label/Text.text = "Complete your report!"
@@ -175,23 +175,23 @@ func _on_door_mouse_entered() -> void:
 
 
 func Leave() -> void:
-	if Global.greg_saved:
+	if Global.green_saved:
 		get_tree().change_scene_to_file("uid://b4rgvrr0gjroo")
 	else:
 		$bing.play()
 
 
-func TobyIntro() -> void:
+func GreenIntro() -> void:
 	
 	$Label.hide()
-	$Node2D/panya/intro.hide()
-	$TobyTalkingScene.show()
+	$Node2D/green/intro.hide()
+	$GreenTalkingScene.show()
 	
 	#$Node2D/greg/question.texture_hover = hover_question
-	$Node2D/panya/question.show()
+	$Node2D/green/question.show()
 	emit_signal("intro")	
 
 
-func _on_toby_talking_scene_done() -> void:
-	$TobyTalkingScene.hide()
+func _on_green_talking_scene_done() -> void:
+	$GreenTalkingScene.hide()
 	$Label.show()

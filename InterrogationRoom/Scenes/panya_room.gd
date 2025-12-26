@@ -53,7 +53,7 @@ func _process(delta: float) -> void:
 		if Input.is_action_just_pressed("click"):
 			$Click.play()
 		
-		$MainMusic.stop()
+		#$MainMusic.stop()
 		
 		if !$CompMusic.playing:
 			$CompMusic.play()
