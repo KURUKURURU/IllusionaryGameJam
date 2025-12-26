@@ -44,9 +44,9 @@ func _on_interrogation_room_questioning_1() -> void:
 	
 	Wit_say("...", 100)
 	
-	op1_text.text = "How close were you two?"
-	op2_text.text = "Where were you at 7:30?"
-	op3_text.text = "What's your full name? For the report."
+	op1_text.text = "Explain what you were doing before you found her." #mention schedule and newspaper
+	op2_text.text = "Have you seen her around the park before?" #mention picking trash
+	#op3_text.hide
 	op3.hide()
 	
 	$Options.show()
@@ -114,22 +114,46 @@ func _on_greg_name() -> void:
 	emit_signal("done_op")
 	$Options.hide()
 	
-	if !knows_shes_dead:
-		await Wit_say("We were like sisters.", 3.0)
-		await Wit_say("I can't believe she's dead. We were just together two hours ago...", 4.0)
-		await Wit_say("...and now she's gone.", 4.0)
-		
-		$Connection.show()
-		await Wit_say("Whoever did this...", 100)
-		
-	elif knows_shes_dead:
-		$Work.show()
-		await Wit_say("We were just shopping hours ago.", 2.0)
-		await Wit_say("...", 0)
-		
-		$Connection.show()
-		await Wit_say("I think I'm going to throw up.", 100)
-		
+	#if !knows_shes_dead:
+		#await Wit_say("We were like sisters.", 3.0)
+		#await Wit_say("I can't believe she's dead. We were just together two hours ago...", 4.0)
+		#await Wit_say("...and now she's gone.", 4.0)
+		#
+		#$Connection.show()
+		#await Wit_say("Whoever did this...", 100)
+		#
+	#elif knows_shes_dead:
+		#$Work.show()
+		#await Wit_say("We were just shopping hours ago.", 2.0)
+		#await Wit_say("...", 0)
+		#
+		#$Connection.show()
+		#await Wit_say("I think I'm going to throw up.", 100)
+	
+	await Wit_say("Well,", 0)
+	await Wit_say("Maybe around 4 or 5 I was walking around town,", 2)
+	await Wit_say("to get my blood pumping, keep me young,", 3)
+	await Wit_say("And around 6 I picked up a newspaper, read it a bit, and walked back to the park.", 4)
+	
+	Y_txt.text = ""
+	Y_AD.hide()
+	$You.show()
+	$Main.hide()
+	$Options.hide()
+	$Connection.hide()
+	
+	await say("You sleep in the park?", 2.0)
+	
+	await Wit_say("The park is basically my house.", 4)
+	await Wit_say("People call me 'Green' all the time because of it.", 4)
+	await Wit_say("Well, I feel it's more because I pick up trash around there.", 5)
+	await Wit_say("Anyways, I arrived back at the park around 7ish I think.", 4)
+	await Wit_say("Laid on my bench at the southeastern part of the park,", 3)
+	await Wit_say("and after a few I heard some commotion.", 3)
+	await Wit_say("Got up and headed straight towards the source obviously.", 3)
+	await Wit_say("...", 0)
+	await Wit_say("The kid was dead.", 5)
+	
 	
 	alldone()
 
@@ -175,62 +199,11 @@ func _on_interrogation_room_intro() -> void:
 	
 	
 	await say("Good evening.", 2.0)
-	await say("I'm Detective Ward, but you can call me Theo.", 5.0)
-	await say("I'm investigating your friend Megan's death, and I just need a few answers.", 5.0)
-	await say("Take your time.", 4.0)
+	await say("I'm Detective Ward, and I can see from the report you're Herald Roman.", 5.0)
+	await say("I understand you found the body, and I just need you to answer a few things.", 3.0)
+	await say("Tell me if you need anything.", 4.0)
 	
-	
-	await Wit_say("Ok.", 3.0)
-	
-	alldone()
-
-
-func w2() -> void:
-	
-	Y_txt.text = ""
-	Y_AD.hide()
-	$You.show()
-	$Main.hide()
-	$Options.hide()
-	$Connection.hide()
-	
-	await say("She was a nuisance? What'd she do?", 2.0)
-	
-	await Wit_say("She always loitered around store messing with customers,", 3)
-	await Wit_say("She'd argue with my coworkers all the time, constant backtalking. She's such a mess-", 2)
-	await Wit_say("Was I mean. Was.", 2)
-	
-	await Wit_say("Something must have gone wrong a few years ago to make her end up like... that.", 2)
-	
-	alldone()
-
-
-func w1() -> void:
-	Y_txt.text = ""
-	Y_AD.hide()
-	$You.show()
-	$Main.hide()
-	$Options.hide()
-	$Connection.hide()
-	
-	$"You/pop up".play("pop")
-	await $"You/pop up".animation_finished
-	
-	await say("What were you doing with Megan before 7:30?", 2.0)
-	
-	await Wit_say("Oh I work at Rublix Grocery, the building across from the gallery.", 3)
-	
-	await Wit_say("It's a busy store, and she used to just rile my coworkers up-", 0)
-	await Wit_say("Woo~ don't know why I'm getting empathatic.", 2)
-	await Wit_say("What a tragic loss.", 2)
-	
-	Y_txt.text = ""
-	Y_AD.hide()
-	$You.show()
-	$Main.hide()
-	$Options.hide()
-	$Work.hide()
-	await say("...", 2.0)
+	await Wit_say("Yes sir.", 3.0)
 	
 	alldone()
 
@@ -243,3 +216,32 @@ func naem() -> void:
 	await Wit_say("I don't mind the nickname.", 3)
 	
 	alldone()
+
+
+func green_seen() -> void:
+	$Connection.hide()
+	
+	await Wit_say("I have seen her before,", 2)
+	await Wit_say("A few times before in the park, in fact.", 2)
+	await Wit_say("It's usually earlier, before I get to bed.", 2)
+	await Wit_say("I also know her as the local trouble maker,", 2)
+	await Wit_say("Constantly getting into fights and shoplifting. A bad kid, ya know?", 2)
+	
+	$Why.show()
+	await Wit_say("I'm surprised she lived that long with that kind of attitude.", 100)
+	
+	
+	
+	alldone()
+
+
+func whysay() -> void:
+	await Wit_say("I've spent a good while in prison.", 4)
+	await Wit_say("You know that too, after all you're a cop. Cops know everything.", 6)
+	await Wit_say("Though I doubt her life was that extreme,", 2)
+	await Wit_say("You get to know what kind of people last in worlds of crime.", 2)
+	await Wit_say("Especially when you've dealt with youths dying daily for doing less ballsy things that her in prison.", 2)
+
+
+func seen() -> void:
+	pass # Replace with function body.

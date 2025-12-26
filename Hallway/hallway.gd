@@ -25,3 +25,10 @@ func PanyaPath() -> void:
 		return
 	
 	$bing.play()
+	
+func GreenPath() -> void:
+	if !Global.green_saved && Global.greg_saved && Global.toby_saved && Global.panya_saved:
+		get_tree().change_scene_to_file("uid://d23pckgwjyxuc")
+		return
+	
+	$bing.play()

@@ -148,7 +148,6 @@ text = "Be sure to double-check spelling."
 horizontal_alignment = 1
 
 [node name="Output" type="Control" parent="."]
-visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_top = -8.0
@@ -453,7 +452,7 @@ offset_bottom = 23.600868
 scale = Vector2(0.7758039, 0.7758039)
 theme = SubResource("Theme_5uff6")
 theme_override_font_sizes/normal_font_size = 11
-text = "2 years ago:"
+text = "22 years ago:"
 
 [node name="1" type="RichTextLabel" parent="Output"]
 layout_mode = 0

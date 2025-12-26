@@ -380,13 +380,63 @@ theme_override_fonts/normal_font = ExtResource("4_rucj8")
 theme_override_font_sizes/normal_font_size = 15
 text = "A nuisance?"
 
+[node name="Why" type="HBoxContainer" parent="."]
+layout_direction = 3
+offset_left = -1053.0
+offset_top = 481.0
+offset_right = 2.0
+offset_bottom = 640.0
+theme_override_constants/separation = -40
+
+[node name="Option1" type="TextureButton" parent="Why"]
+layout_mode = 2
+texture_normal = ExtResource("6_kcak2")
+texture_hover = ExtResource("7_4kot4")
+stretch_mode = 0
+
+[node name="Text" type="RichTextLabel" parent="Why/Option1"]
+texture_filter = 4
+layout_mode = 0
+offset_left = 79.65759
+offset_top = 61.999985
+offset_right = 282.99997
+offset_bottom = 113.64017
+scale = Vector2(1.2012075, 1.3251145)
+mouse_filter = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("4_rucj8")
+theme_override_font_sizes/normal_font_size = 15
+text = "Why would you say that?"
+
+[node name="Option2" type="TextureButton" parent="Why"]
+layout_mode = 2
+texture_normal = ExtResource("6_kcak2")
+texture_hover = ExtResource("7_4kot4")
+stretch_mode = 0
+
+[node name="Text" type="RichTextLabel" parent="Why/Option2"]
+texture_filter = 4
+layout_mode = 0
+offset_left = 66.65762
+offset_top = 42.999985
+offset_right = 270.0
+offset_bottom = 94.64017
+scale = Vector2(1.2012075, 1.3251145)
+mouse_filter = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("4_rucj8")
+theme_override_font_sizes/normal_font_size = 15
+text = "Have you seen here commit these crimes? From the park?"
+
 [node name="bing" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_kady4")
 volume_db = -10.947
 
 [connection signal="pressed" from="You/advancebutt" to="." method="Y_AD_pressed"]
 [connection signal="pressed" from="Options/Option1" to="." method="_on_greg_name"]
-[connection signal="pressed" from="Options/Option2" to="." method="where_greg"]
+[connection signal="pressed" from="Options/Option2" to="." method="green_seen"]
 [connection signal="pressed" from="Options/Option3" to="." method="naem"]
 [connection signal="pressed" from="Connection/Option1" to="." method="w1"]
 [connection signal="pressed" from="Connection/Option2" to="." method="w2"]
+[connection signal="pressed" from="Why/Option1" to="." method="whysay"]
+[connection signal="pressed" from="Why/Option2" to="." method="seen"]

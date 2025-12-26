@@ -237,7 +237,7 @@ position = Vector2(575.00006, 237.00002)
 scale = Vector2(1.173413, 1.173413)
 sprite_frames = SubResource("SpriteFrames_y2qu5")
 autoplay = "default"
-frame_progress = 0.45444036
+frame_progress = 0.08593529
 
 [node name="intro" type="TextureButton" parent="Node2D/green"]
 visible = false
@@ -391,6 +391,8 @@ stream = ExtResource("24_i8uc0")
 
 [node name="GreenTalkingScene" parent="." instance=ExtResource("25_dmghv")]
 
+[connection signal="intro" from="." to="GreenTalkingScene" method="_on_interrogation_room_intro"]
+[connection signal="questioning_1" from="." to="GreenTalkingScene" method="_on_interrogation_room_questioning_1"]
 [connection signal="pressed" from="Node2D/green/intro" to="." method="TobyIntro"]
 [connection signal="pressed" from="Node2D/green/question" to="." method="question_witness"]
 [connection signal="mouse_entered" from="Node2D/Table/FilesNotes" to="." method="files_mousetouch"]
