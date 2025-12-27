@@ -1,45 +1,49 @@
-[gd_scene load_steps=16 format=3 uid="uid://lk7mvn3lujw3"]
+[gd_scene load_steps=21 format=3 uid="uid://lk7mvn3lujw3"]
 
 [ext_resource type="Texture2D" uid="uid://b61ucq0h6mpxe" path="res://gardes/table.png" id="1_vwu8u"]
 [ext_resource type="Script" uid="uid://duy6pf758x5um" path="res://ending_screen.gd" id="1_ypcyh"]
 [ext_resource type="Texture2D" uid="uid://d20la0tkr1qbc" path="res://gardes/t2.png" id="2_xu77g"]
 [ext_resource type="FontFile" uid="uid://bx28omnoj00vk" path="res://MysteryMobileRotated2-7OYg4.otf" id="3_xnln8"]
 [ext_resource type="Texture2D" uid="uid://n40je6v585ml" path="res://gardes/t1.png" id="4_67cay"]
+[ext_resource type="Script" uid="uid://yxvw7w16e5i5" path="res://tab_2.gd" id="5_p0nac"]
 [ext_resource type="Texture2D" uid="uid://b1ibxr0qcblii" path="res://pan/hovert.png" id="5_tqeas"]
 [ext_resource type="Texture2D" uid="uid://rwsc8r72no1n" path="res://pan/eerrr.png" id="7_3p6th"]
 [ext_resource type="Texture2D" uid="uid://df581qikwog66" path="res://PreCutscene/frames/box/toby/tobyserious.png" id="8_xq1wf"]
 [ext_resource type="Texture2D" uid="uid://c8rqi01ue115l" path="res://PreCutscene/frames/box/greg1/open.png" id="9_eyuyi"]
 [ext_resource type="FontFile" uid="uid://d3c4n3td5hjnr" path="res://white-rabbit/whitrabt.ttf" id="10_p0nac"]
 [ext_resource type="PackedScene" uid="uid://d32pkj2nffux0" path="res://InterrogationRoom/Scenes/reporttransfer.tscn" id="11_jtpfn"]
+[ext_resource type="Script" uid="uid://qn78ccuptc38" path="res://who.gd" id="12_jtpfn"]
+[ext_resource type="Texture2D" uid="uid://d3vsmhb1y30o1" path="res://butt1.png" id="13_onvfb"]
+[ext_resource type="Texture2D" uid="uid://dih55l8e0onsn" path="res://butt2.png" id="14_apyb2"]
 
 [sub_resource type="Animation" id="Animation_onvfb"]
 resource_name = "slide"
 tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath(".:position:x")
+tracks/0/path = NodePath(".:modulate:r")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"handle_modes": PackedInt32Array(0, 2),
-"points": PackedFloat32Array(62.71, -0.25, 0, 0.25, 0, 0, -1.2333333, 5.5, 0, 0),
+"handle_modes": PackedInt32Array(2, 0),
+"points": PackedFloat32Array(1, 0, 0, 0.16666667, 0, 1, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0, 1)
 }
 tracks/1/type = "bezier"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath(".:position:y")
+tracks/1/path = NodePath(".:modulate:g")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"handle_modes": PackedInt32Array(0, 2),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.16666667, 0, 0, 0),
+"handle_modes": PackedInt32Array(2, 0),
+"points": PackedFloat32Array(1, 0, 0, 0.16666667, 0, 1, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0, 1)
 }
 tracks/2/type = "bezier"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath(".:modulate:r")
+tracks/2/path = NodePath(".:modulate:b")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -50,32 +54,10 @@ tracks/2/keys = {
 tracks/3/type = "bezier"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath(".:modulate:g")
+tracks/3/path = NodePath(".:modulate:a")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"handle_modes": PackedInt32Array(2, 0),
-"points": PackedFloat32Array(1, 0, 0, 0.16666667, 0, 1, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 1)
-}
-tracks/4/type = "bezier"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath(".:modulate:b")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"handle_modes": PackedInt32Array(2, 0),
-"points": PackedFloat32Array(1, 0, 0, 0.16666667, 0, 1, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 1)
-}
-tracks/5/type = "bezier"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath(".:modulate:a")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
 "handle_modes": PackedInt32Array(2, 0),
 "points": PackedFloat32Array(0, 0, 0, 0.16666667, 0.16666667, 1, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0, 1)
@@ -86,29 +68,29 @@ length = 0.001
 tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath(".:position:x")
+tracks/0/path = NodePath(".:modulate:r")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(62.71, -0.25, 0, 0.25, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
 tracks/1/type = "bezier"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath(".:position:y")
+tracks/1/path = NodePath(".:modulate:g")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
 tracks/2/type = "bezier"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath(".:modulate:r")
+tracks/2/path = NodePath(".:modulate:b")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -119,32 +101,10 @@ tracks/2/keys = {
 tracks/3/type = "bezier"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath(".:modulate:g")
+tracks/3/path = NodePath(".:modulate:a")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/4/type = "bezier"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath(".:modulate:b")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/5/type = "bezier"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath(".:modulate:a")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
 "handle_modes": PackedInt32Array(0),
 "points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
@@ -204,6 +164,9 @@ _data = {
 &"slide_out": SubResource("Animation_rh1ni")
 }
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rh1ni"]
+bg_color = Color(0.6, 0.6, 0.6, 0.30980393)
+
 [node name="EndingScreen" type="Node2D"]
 script = ExtResource("1_ypcyh")
 
@@ -217,8 +180,7 @@ texture = ExtResource("1_vwu8u")
 visible = false
 layout_mode = 3
 anchors_preset = 0
-offset_left = 62.71
-offset_right = 102.70999
+offset_right = 39.999992
 offset_bottom = 40.0
 
 [node name="bg" type="TextureRect" parent="tab_1"]
@@ -282,6 +244,7 @@ anchors_preset = 0
 offset_left = 62.71
 offset_right = 102.71
 offset_bottom = 40.0
+script = ExtResource("5_p0nac")
 
 [node name="bg" type="TextureRect" parent="tab_2"]
 layout_mode = 0
@@ -291,7 +254,7 @@ offset_right = 1113.0
 offset_bottom = 345.0
 texture = ExtResource("4_67cay")
 
-[node name="facecrad_accuse" type="ColorRect" parent="tab_2"]
+[node name="facecard_accuse" type="ColorRect" parent="tab_2"]
 clip_children = 2
 layout_mode = 0
 offset_left = 624.0
@@ -301,7 +264,7 @@ offset_bottom = 105.0
 scale = Vector2(5.7474294, 5.9673004)
 color = Color(0.8055839, 0.7364433, 0.67838556, 1)
 
-[node name="herald" type="TextureRect" parent="tab_2/facecrad_accuse"]
+[node name="herald" type="TextureRect" parent="tab_2/facecard_accuse"]
 visible = false
 layout_mode = 0
 offset_left = -23.314768
@@ -311,7 +274,7 @@ offset_bottom = 628.88495
 scale = Vector2(0.10248703, 0.10248703)
 texture = ExtResource("5_tqeas")
 
-[node name="tanya" type="TextureRect" parent="tab_2/facecrad_accuse"]
+[node name="tanya" type="TextureRect" parent="tab_2/facecard_accuse"]
 visible = false
 layout_mode = 0
 offset_left = -12.353351
@@ -321,7 +284,7 @@ offset_bottom = 641.4534
 scale = Vector2(0.08344947, 0.08344947)
 texture = ExtResource("7_3p6th")
 
-[node name="riley" type="TextureRect" parent="tab_2/facecrad_accuse"]
+[node name="riley" type="TextureRect" parent="tab_2/facecard_accuse"]
 visible = false
 layout_mode = 0
 offset_left = -23.314768
@@ -331,7 +294,7 @@ offset_bottom = 628.88495
 scale = Vector2(0.10248703, 0.10248703)
 texture = ExtResource("5_tqeas")
 
-[node name="toby" type="TextureRect" parent="tab_2/facecrad_accuse"]
+[node name="toby" type="TextureRect" parent="tab_2/facecard_accuse"]
 visible = false
 layout_mode = 0
 offset_left = -12.527336
@@ -341,7 +304,7 @@ offset_bottom = 639.2749
 scale = Vector2(0.085906506, 0.085906506)
 texture = ExtResource("8_xq1wf")
 
-[node name="greg" type="TextureRect" parent="tab_2/facecrad_accuse"]
+[node name="greg" type="TextureRect" parent="tab_2/facecard_accuse"]
 visible = false
 layout_mode = 0
 offset_left = -12.353346
@@ -351,7 +314,7 @@ offset_bottom = 642.1237
 scale = Vector2(0.081266515, 0.081266515)
 texture = ExtResource("9_eyuyi")
 
-[node name="steph" type="TextureRect" parent="tab_2/facecrad_accuse"]
+[node name="steph" type="TextureRect" parent="tab_2/facecard_accuse"]
 visible = false
 layout_mode = 0
 offset_left = -23.314768
@@ -438,6 +401,152 @@ libraries = {
 &"": SubResource("AnimationLibrary_c2qv3")
 }
 
+[node name="WHO" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = -293.0
+offset_top = 139.0
+offset_right = -253.0
+offset_bottom = 179.0
+script = ExtResource("12_jtpfn")
+
+[node name="bg" type="TextureRect" parent="WHO"]
+layout_mode = 0
+offset_left = 599.0
+offset_top = 33.0
+offset_right = 1113.0
+offset_bottom = 345.0
+texture = ExtResource("4_67cay")
+
+[node name="facecard_accuse" type="ColorRect" parent="WHO"]
+clip_children = 2
+layout_mode = 0
+offset_left = 624.0
+offset_top = 65.0
+offset_right = 664.0
+offset_bottom = 105.0
+scale = Vector2(5.7474294, 5.9673004)
+color = Color(0.8055839, 0.7364433, 0.67838556, 1)
+
+[node name="herald" type="TextureRect" parent="WHO/facecard_accuse"]
+visible = false
+layout_mode = 0
+offset_left = -23.314768
+offset_top = -21.115078
+offset_right = 1126.6852
+offset_bottom = 628.88495
+scale = Vector2(0.10248703, 0.10248703)
+texture = ExtResource("5_tqeas")
+
+[node name="tanya" type="TextureRect" parent="WHO/facecard_accuse"]
+visible = false
+layout_mode = 0
+offset_left = -12.353351
+offset_top = -8.546579
+offset_right = 1137.6466
+offset_bottom = 641.4534
+scale = Vector2(0.08344947, 0.08344947)
+texture = ExtResource("7_3p6th")
+
+[node name="riley" type="TextureRect" parent="WHO/facecard_accuse"]
+visible = false
+layout_mode = 0
+offset_left = -23.314768
+offset_top = -21.115078
+offset_right = 1126.6852
+offset_bottom = 628.88495
+scale = Vector2(0.10248703, 0.10248703)
+texture = ExtResource("5_tqeas")
+
+[node name="toby" type="TextureRect" parent="WHO/facecard_accuse"]
+visible = false
+layout_mode = 0
+offset_left = -12.527336
+offset_top = -10.725118
+offset_right = 1137.4727
+offset_bottom = 639.2749
+scale = Vector2(0.085906506, 0.085906506)
+texture = ExtResource("8_xq1wf")
+
+[node name="greg" type="TextureRect" parent="WHO/facecard_accuse"]
+visible = false
+layout_mode = 0
+offset_left = -12.353346
+offset_top = -7.876259
+offset_right = 1137.6466
+offset_bottom = 642.1237
+scale = Vector2(0.081266515, 0.081266515)
+texture = ExtResource("9_eyuyi")
+
+[node name="steph" type="TextureRect" parent="WHO/facecard_accuse"]
+visible = false
+layout_mode = 0
+offset_left = -23.314768
+offset_top = -21.115078
+offset_right = 1126.6852
+offset_bottom = 628.88495
+scale = Vector2(0.10248703, 0.10248703)
+texture = ExtResource("5_tqeas")
+
+[node name="WHO" type="OptionButton" parent="WHO"]
+layout_mode = 0
+offset_left = 874.0
+offset_top = 114.999985
+offset_right = 1303.96
+offset_bottom = 219.79417
+scale = Vector2(0.5035883, 0.5035883)
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("3_xnln8")
+theme_override_font_sizes/font_size = 86
+theme_override_styles/normal = SubResource("StyleBoxFlat_rh1ni")
+flat = true
+alignment = 1
+item_count = 6
+popup/item_0/text = "Gregory"
+popup/item_0/id = 0
+popup/item_1/text = "Toby"
+popup/item_1/id = 1
+popup/item_2/text = "Panya"
+popup/item_2/id = 2
+popup/item_3/text = "Green"
+popup/item_3/id = 3
+popup/item_4/text = "Riley"
+popup/item_4/id = 4
+popup/item_5/text = "Steph"
+popup/item_5/id = 5
+
+[node name="decription3" type="RichTextLabel" parent="WHO"]
+layout_mode = 0
+offset_left = 893.0
+offset_top = 172.99998
+offset_right = 1258.2799
+offset_bottom = 304.6324
+scale = Vector2(0.4806683, 0.4806683)
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 14
+theme_override_fonts/normal_font = ExtResource("3_xnln8")
+theme_override_font_sizes/normal_font_size = 56
+text = "killed Megan camargo."
+horizontal_alignment = 1
+
+[node name="slide" type="AnimationPlayer" parent="WHO"]
+libraries = {
+&"": SubResource("AnimationLibrary_c2qv3")
+}
+
+[node name="done" type="TextureButton" parent="WHO"]
+modulate = Color(1.269618, 1.269618, 0.7329267, 1)
+z_index = 7
+layout_mode = 0
+offset_left = 961.0
+offset_top = 235.0
+offset_right = 995.0
+offset_bottom = 269.0
+texture_normal = ExtResource("13_onvfb")
+texture_pressed = ExtResource("13_onvfb")
+texture_hover = ExtResource("14_apyb2")
+
 [node name="2" type="Control" parent="."]
 visible = false
 layout_mode = 3
@@ -448,7 +557,6 @@ offset_right = 580.0
 offset_bottom = 359.0
 
 [node name="Report_Transfer" parent="2" instance=ExtResource("11_jtpfn")]
-position = Vector2(62.71, 0)
 
 [node name="slide" type="AnimationPlayer" parent="2/Report_Transfer"]
 libraries = {
@@ -456,10 +564,10 @@ libraries = {
 }
 
 [node name="finalwarning" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 0
-offset_left = 62.71
-offset_right = 102.71006
+offset_right = 40.00006
 offset_bottom = 40.0
 
 [node name="bg" type="TextureRect" parent="finalwarning"]
@@ -491,3 +599,8 @@ theme_override_fonts/normal_font = ExtResource("3_xnln8")
 theme_override_font_sizes/normal_font_size = 141
 text = "you're about to fill your final report. make any needed adjustments!"
 horizontal_alignment = 1
+
+[connection signal="item_selected" from="WHO/WHO" to="." method="_on_who_item_selected"]
+[connection signal="item_selected" from="WHO/WHO" to="WHO" method="_on_who_item_selected"]
+[connection signal="pressed" from="WHO/done" to="." method="DoneAccused"]
+[connection signal="DONE" from="2/Report_Transfer" to="." method="_on_report_transfer_done"]

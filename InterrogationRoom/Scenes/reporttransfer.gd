@@ -5,6 +5,8 @@ var scene: String
 var dragging = false
 var of = Vector2(0,0)
 
+signal DONE
+
 func _ready() -> void:
 	$text.hide()
 	$Greg.hide()
@@ -161,9 +163,9 @@ func SUBMIT() -> void:
 		add_end = add_end + 1
 	if Global.G_crim == 0:
 		add_end = add_end + 1
-	if Global.G_violent == 0:
+	if Global.G_violent == 1:
 		add_end = add_end + 1
-	if Global.G_place == "":
+	if Global.G_place == "Art Gallery":
 		add_end = add_end + 1
 	if Global.G_trust == 0:
 		add_end = add_end + 1
@@ -172,43 +174,43 @@ func SUBMIT() -> void:
 	
 	if Global.T_emotion == 0:
 		add_end = add_end + 1
-	if Global.T_connection == 0:
+	if Global.T_connection == 1:
 		add_end = add_end + 1
 	if Global.T_crim == 0:
 		add_end = add_end + 1
 	if Global.T_violent == 0:
 		add_end = add_end + 1
-	if Global.T_place == "":
+	if Global.T_place == "Luther St":
 		add_end = add_end + 1
 	if Global.T_trust == 0:
 		add_end = add_end + 1
 		
 	#Panya
 	
-	if Global.P_emotion == 0:
+	if Global.P_emotion == 2:
 		add_end = add_end + 1
-	if Global.P_connection == 0:
+	if Global.P_connection == 1:
 		add_end = add_end + 1
 	if Global.P_crim == 0:
 		add_end = add_end + 1
-	if Global.P_violent == 0:
+	if Global.P_violent == 1:
 		add_end = add_end + 1
-	if Global.P_place == "":
+	if Global.P_place == "Shotgun Rd":
 		add_end = add_end + 1
 	if Global.P_trust == 0:
 		add_end = add_end + 1
 		
 	#Herald
 	
-	if Global.H_emotion == 0:
+	if Global.H_emotion == 2:
 		add_end = add_end + 1
-	if Global.H_connection == 0:
+	if Global.H_connection == 1:
 		add_end = add_end + 1
 	if Global.H_crim == 0:
 		add_end = add_end + 1
 	if Global.H_violent == 0:
 		add_end = add_end + 1
-	if Global.H_place == "":
+	if Global.H_place == "Park":
 		add_end = add_end + 1
 	if Global.H_trust == 0:
 		add_end = add_end + 1
@@ -244,3 +246,15 @@ func SUBMIT() -> void:
 		add_end = add_end + 1
 		
 	print(add_end)
+	
+	Global.total = add_end/36
+	
+	
+
+
+func _on_yes_pressed() -> void:
+	emit_signal("DONE")
+
+
+func _on_submit_pressed() -> void:
+	$areyousure.show()

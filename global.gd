@@ -1,5 +1,7 @@
 extends Node
 
+var total: int
+
 var greg_saved: bool = false
 var toby_saved: bool = false
 var panya_saved: bool = false

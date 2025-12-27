@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://d32pkj2nffux0"]
+[gd_scene load_steps=41 format=3 uid="uid://d32pkj2nffux0"]
 
 [ext_resource type="Script" uid="uid://bkvfxob166if3" path="res://InterrogationRoom/Scenes/reporttransfer.gd" id="1_w7tdb"]
 [ext_resource type="Texture2D" uid="uid://kk8a6g4jh4qn" path="res://webpages/indowmove.png" id="2_ixwjd"]
@@ -27,6 +27,7 @@
 [ext_resource type="Texture2D" uid="uid://ixsyqq0n57oh" path="res://shadow-png-30599.png" id="18_imx8w"]
 [ext_resource type="Texture2D" uid="uid://7pwne5fqf2il" path="res://Process/ph/disbutt.png" id="19_a7u46"]
 [ext_resource type="Script" uid="uid://crormvnfgw8m5" path="res://InterrogationRoom/Scenes/mouse.gd" id="19_v6pxv"]
+[ext_resource type="Script" uid="uid://c22cju53ayjab" path="res://InterrogationRoom/Scenes/areyousure.gd" id="26_ky3ly"]
 
 [sub_resource type="DPITexture" id="DPITexture_j6qxt"]
 _source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"12\" height=\"12\"><path fill=\"none\" stroke=\"#b2b2b2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-opacity=\".85\" stroke-width=\"2\" d=\"m2 4 4 4 4-4\"/></svg>
@@ -1241,14 +1242,12 @@ offset_top = -172.0
 offset_right = 691.0
 offset_bottom = 20.0
 scale = Vector2(0.13197662, 0.13197662)
-disabled = true
 texture_normal = ExtResource("16_ixwjd")
 texture_pressed = ExtResource("16_ixwjd")
 texture_hover = ExtResource("18_a3q1a")
 texture_disabled = ExtResource("19_a7u46")
 
 [node name="InfoScreen" type="Control" parent="."]
-visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_left = -58.0
@@ -1341,6 +1340,7 @@ offset_right = 212.0
 offset_bottom = 56.0
 scale = Vector2(0.5844826, 0.5844826)
 texture = ExtResource("17_e151u")
+script = ExtResource("26_ky3ly")
 
 [node name="ColorRect" type="ColorRect" parent="areyousure"]
 show_behind_parent = true
@@ -1416,4 +1416,9 @@ script = ExtResource("19_v6pxv")
 [connection signal="pressed" from="Riley/SAVE" to="." method="_on_save_pressed"]
 [connection signal="pressed" from="Steph/SAVE" to="." method="_on_save_pressed"]
 [connection signal="pressed" from="TutorialButton" to="." method="_on_tutorial_button_pressed"]
+[connection signal="pressed" from="submit" to="." method="_on_submit_pressed"]
 [connection signal="pressed" from="InfoScreen/TemplateSize/iaccept" to="." method="_on_iaccept_pressed"]
+[connection signal="SUBMIT" from="areyousure" to="." method="SUBMIT"]
+[connection signal="pressed" from="areyousure/yes" to="." method="_on_yes_pressed"]
+[connection signal="pressed" from="areyousure/yes" to="areyousure" method="_on_yes_pressed"]
+[connection signal="pressed" from="areyousure/no" to="areyousure" method="_on_no_pressed"]
