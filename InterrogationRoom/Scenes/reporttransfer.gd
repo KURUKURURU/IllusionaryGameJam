@@ -130,13 +130,117 @@ func _on_tutorial_button_pressed() -> void:
 
 
 func _on_save_pressed() -> void:
+	
 	if scene == "Greg":
 		Global.greg_saved = true
 	if scene == "Toby":
 		Global.toby_saved = true
 	if scene == "Panya":
 		Global.panya_saved = true
+	if scene == "Herald":
+		Global.panya_saved = true
+	if scene == "Riley":
+		Global.panya_saved = true
+	if scene == "Steph":
+		Global.panya_saved = true
+	
 	$text.show()
 	await wait(2.0)
 	$text.hide()
 	
+
+func SUBMIT() -> void:
+	
+	var add_end = 0
+	
+	#GREG
+	
+	if Global.G_emotion == 0:
+		add_end = add_end + 1
+	if Global.G_connection == 0:
+		add_end = add_end + 1
+	if Global.G_crim == 0:
+		add_end = add_end + 1
+	if Global.G_violent == 0:
+		add_end = add_end + 1
+	if Global.G_place == "":
+		add_end = add_end + 1
+	if Global.G_trust == 0:
+		add_end = add_end + 1
+		
+	#Toby
+	
+	if Global.T_emotion == 0:
+		add_end = add_end + 1
+	if Global.T_connection == 0:
+		add_end = add_end + 1
+	if Global.T_crim == 0:
+		add_end = add_end + 1
+	if Global.T_violent == 0:
+		add_end = add_end + 1
+	if Global.T_place == "":
+		add_end = add_end + 1
+	if Global.T_trust == 0:
+		add_end = add_end + 1
+		
+	#Panya
+	
+	if Global.P_emotion == 0:
+		add_end = add_end + 1
+	if Global.P_connection == 0:
+		add_end = add_end + 1
+	if Global.P_crim == 0:
+		add_end = add_end + 1
+	if Global.P_violent == 0:
+		add_end = add_end + 1
+	if Global.P_place == "":
+		add_end = add_end + 1
+	if Global.P_trust == 0:
+		add_end = add_end + 1
+		
+	#Herald
+	
+	if Global.H_emotion == 0:
+		add_end = add_end + 1
+	if Global.H_connection == 0:
+		add_end = add_end + 1
+	if Global.H_crim == 0:
+		add_end = add_end + 1
+	if Global.H_violent == 0:
+		add_end = add_end + 1
+	if Global.H_place == "":
+		add_end = add_end + 1
+	if Global.H_trust == 0:
+		add_end = add_end + 1
+		
+	#Riley
+	
+	if Global.R_emotion == 0:
+		add_end = add_end + 1
+	if Global.R_connection == 0:
+		add_end = add_end + 1
+	if Global.R_crim == 0:
+		add_end = add_end + 1
+	if Global.R_violent == 0:
+		add_end = add_end + 1
+	if Global.R_place == "":
+		add_end = add_end + 1
+	if Global.R_trust == 0:
+		add_end = add_end + 1
+		
+	#Steph
+	
+	if Global.S_emotion == 0:
+		add_end = add_end + 1
+	if Global.S_connection == 0:
+		add_end = add_end + 1
+	if Global.S_crim == 0:
+		add_end = add_end + 1
+	if Global.S_violent == 0:
+		add_end = add_end + 1
+	if Global.S_place == "":
+		add_end = add_end + 1
+	if Global.S_trust == 0:
+		add_end = add_end + 1
+		
+	print(add_end)

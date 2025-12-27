@@ -1,21 +1,31 @@
-[gd_scene load_steps=30 format=3 uid="uid://d32pkj2nffux0"]
+[gd_scene load_steps=40 format=3 uid="uid://d32pkj2nffux0"]
 
 [ext_resource type="Script" uid="uid://bkvfxob166if3" path="res://InterrogationRoom/Scenes/reporttransfer.gd" id="1_w7tdb"]
 [ext_resource type="Texture2D" uid="uid://kk8a6g4jh4qn" path="res://webpages/indowmove.png" id="2_ixwjd"]
+[ext_resource type="Texture2D" uid="uid://bi3d4umvjyrn8" path="res://Screenshot 2025-12-27 at 1.34.14 PM.png" id="3_ixwjd"]
 [ext_resource type="Texture2D" uid="uid://dvreymb8n8j03" path="res://Start_Menu/images/rrg.png" id="4_w7tdb"]
+[ext_resource type="FontFile" uid="uid://d3c4n3td5hjnr" path="res://white-rabbit/whitrabt.ttf" id="5_e151u"]
 [ext_resource type="Texture2D" uid="uid://cphkwvxyaeidr" path="res://Start_Menu/images/savenorm.png" id="5_j6qxt"]
 [ext_resource type="Texture2D" uid="uid://b5y2e0uals3h1" path="res://Process/ph/images.jpg" id="5_vwtrv"]
 [ext_resource type="Texture2D" uid="uid://dg4ytf3bju5yv" path="res://Start_Menu/images/savehigh.png" id="6_37e3v"]
 [ext_resource type="Texture2D" uid="uid://do3xmic073ojk" path="res://webpages/buttt.png" id="6_kv1vy"]
 [ext_resource type="Texture2D" uid="uid://bwb2hh4iyypt1" path="res://Start_Menu/images/savedisable.png" id="7_7jkhj"]
+[ext_resource type="Script" uid="uid://dou5tq2yothob" path="res://InterrogationRoom/Scenes/greg.gd" id="7_a3q1a"]
 [ext_resource type="AudioStream" uid="uid://dipgr8o46y6dj" path="res://delete.wav" id="7_rty41"]
 [ext_resource type="Texture2D" uid="uid://bmvt5arn0r7l5" path="res://webpages/Illustration.png" id="7_u3dxm"]
 [ext_resource type="Texture2D" uid="uid://cjwpkm4fjhuy0" path="res://images/questionn.png" id="8_liesj"]
 [ext_resource type="Texture2D" uid="uid://dxkyfr20gwiwk" path="res://images/questionh.png" id="9_s3bkv"]
+[ext_resource type="Script" uid="uid://dtd8adaci5v7w" path="res://InterrogationRoom/Scenes/toby.gd" id="11_rty41"]
+[ext_resource type="Script" uid="uid://dvx6k2abbw08n" path="res://InterrogationRoom/Scenes/panya.gd" id="12_liesj"]
+[ext_resource type="Script" uid="uid://dhgyo6y2x12fp" path="res://InterrogationRoom/Scenes/herald.gd" id="13_s3bkv"]
+[ext_resource type="Script" uid="uid://lnv577r0bu86" path="res://InterrogationRoom/Scenes/riley.gd" id="14_s3bkv"]
+[ext_resource type="Script" uid="uid://dhwl0bnt3xnyp" path="res://InterrogationRoom/Scenes/steph.gd" id="15_ky3ly"]
 [ext_resource type="Texture2D" uid="uid://bfv8wvu4yfvj0" path="res://Process/ph/submit-button-png-9.png" id="16_ixwjd"]
 [ext_resource type="Script" uid="uid://vghqteomh0cb" path="res://InterrogationRoom/Scenes/info_screen.gd" id="16_w5cpq"]
 [ext_resource type="Texture2D" uid="uid://prdubd6icbfo" path="res://Screenshot 2025-12-18 at 4.44.32 PM.png" id="17_e151u"]
+[ext_resource type="Texture2D" uid="uid://dqex8su22thb" path="res://Process/ph/hoverbuttttt.png" id="18_a3q1a"]
 [ext_resource type="Texture2D" uid="uid://ixsyqq0n57oh" path="res://shadow-png-30599.png" id="18_imx8w"]
+[ext_resource type="Texture2D" uid="uid://7pwne5fqf2il" path="res://Process/ph/disbutt.png" id="19_a7u46"]
 [ext_resource type="Script" uid="uid://crormvnfgw8m5" path="res://InterrogationRoom/Scenes/mouse.gd" id="19_v6pxv"]
 
 [sub_resource type="DPITexture" id="DPITexture_j6qxt"]
@@ -200,13 +210,13 @@ offset_bottom = 143.66039
 scale = Vector2(0.12293447, 0.050768957)
 stretch_mode = 0
 
-[node name="bg" type="ColorRect" parent="."]
+[node name="bg" type="TextureRect" parent="."]
 offset_left = -180.99998
 offset_top = -191.0
 offset_right = -141.04558
 offset_bottom = -151.0
-scale = Vector2(9.234264, 10.979021)
-color = Color(0.28174746, 0.026113724, 0.3854911, 1)
+scale = Vector2(0.61965203, 0.6299799)
+texture = ExtResource("3_ixwjd")
 
 [node name="deleteSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_rty41")
@@ -219,12 +229,13 @@ offset_bottom = 40.0
 
 [node name="Character_Option" type="OptionButton" parent="default"]
 layout_mode = 0
-offset_left = -88.0
+offset_left = -78.0
 offset_top = -171.0
-offset_right = 45.0
+offset_right = 55.0
 offset_bottom = -140.0
 scale = Vector2(0.7125422, 0.7125422)
 theme = SubResource("Theme_kv1vy")
+theme_override_fonts/font = ExtResource("5_e151u")
 item_count = 4
 popup/item_0/text = "Greg"
 popup/item_0/id = 0
@@ -254,13 +265,14 @@ texture = ExtResource("4_w7tdb")
 
 [node name="text" type="RichTextLabel" parent="default"]
 layout_mode = 0
-offset_left = -166.0
-offset_top = -171.0
-offset_right = -90.81719
-offset_bottom = -148.83072
+offset_left = -167.0
+offset_top = -166.0
+offset_right = -73.50343
+offset_bottom = -143.83072
 scale = Vector2(1.0374712, 1.0374712)
 mouse_filter = 2
 theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = ExtResource("5_e151u")
 theme_override_font_sizes/normal_font_size = 14
 text = "Report on:"
 
@@ -272,6 +284,7 @@ offset_left = -161.0
 offset_top = -134.0
 offset_right = -121.0
 offset_bottom = -94.0
+script = ExtResource("7_a3q1a")
 
 [node name="ColorRect" type="ColorRect" parent="Greg"]
 layout_mode = 0
@@ -420,6 +433,7 @@ offset_left = -161.0
 offset_top = -134.0
 offset_right = -121.0
 offset_bottom = -94.0
+script = ExtResource("11_rty41")
 
 [node name="ColorRect" type="ColorRect" parent="Toby"]
 layout_mode = 0
@@ -568,6 +582,7 @@ offset_left = -161.0
 offset_top = -134.0
 offset_right = -121.0
 offset_bottom = -94.0
+script = ExtResource("12_liesj")
 
 [node name="ColorRect" type="ColorRect" parent="Panya"]
 layout_mode = 0
@@ -716,6 +731,7 @@ offset_left = -161.0
 offset_top = -134.0
 offset_right = -121.0
 offset_bottom = -94.0
+script = ExtResource("13_s3bkv")
 
 [node name="ColorRect" type="ColorRect" parent="Herald"]
 layout_mode = 0
@@ -856,6 +872,304 @@ texture_normal = ExtResource("5_j6qxt")
 texture_hover = ExtResource("6_37e3v")
 texture_disabled = ExtResource("7_7jkhj")
 
+[node name="Riley" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = -161.0
+offset_top = -134.0
+offset_right = -121.0
+offset_bottom = -94.0
+script = ExtResource("14_s3bkv")
+
+[node name="ColorRect" type="ColorRect" parent="Riley"]
+layout_mode = 0
+offset_left = -7.0
+offset_top = -9.000015
+offset_right = 33.0
+offset_bottom = 35.356544
+scale = Vector2(8.519891, 7.259355)
+
+[node name="emotion" type="OptionButton" parent="Riley"]
+layout_mode = 0
+offset_left = 124.0
+offset_top = 165.0
+offset_right = 257.0
+offset_bottom = 196.0
+scale = Vector2(0.8211847, 0.8211847)
+fit_to_longest_item = false
+item_count = 4
+popup/item_0/text = "deceptive."
+popup/item_0/id = 0
+popup/item_1/text = "nervous."
+popup/item_1/id = 1
+popup/item_2/text = "forthcoming."
+popup/item_2/id = 2
+popup/item_3/text = "careful."
+popup/item_3/id = 3
+
+[node name="connection" type="OptionButton" parent="Riley"]
+layout_mode = 0
+offset_left = 46.0
+offset_top = 5.0
+offset_right = 179.0
+offset_bottom = 36.0
+scale = Vector2(0.8211847, 0.8211847)
+fit_to_longest_item = false
+item_count = 2
+popup/item_0/text = "didn't have"
+popup/item_0/id = 0
+popup/item_1/text = "had"
+popup/item_1/id = 1
+
+[node name="crim" type="OptionButton" parent="Riley"]
+layout_mode = 0
+offset_left = 243.0
+offset_top = 126.0
+offset_right = 288.0
+offset_bottom = 158.87933
+scale = Vector2(0.8211847, 0.8211847)
+fit_to_longest_item = false
+item_count = 2
+popup/item_0/text = "Y"
+popup/item_0/id = 0
+popup/item_1/text = "N"
+popup/item_1/id = 1
+
+[node name="violent" type="OptionButton" parent="Riley"]
+layout_mode = 0
+offset_left = 191.0
+offset_top = 91.0
+offset_right = 236.0
+offset_bottom = 123.87933
+scale = Vector2(0.8211847, 0.8211847)
+fit_to_longest_item = false
+item_count = 2
+popup/item_0/text = "Y"
+popup/item_0/id = 0
+popup/item_1/text = "N"
+popup/item_1/id = 1
+
+[node name="place" type="TextEdit" parent="Riley"]
+layout_mode = 0
+offset_left = 9.000001
+offset_top = 228.99997
+offset_right = 384.5365
+offset_bottom = 260.48157
+scale = Vector2(0.5858286, 0.5858286)
+theme_override_colors/font_placeholder_color = Color(0.8745098, 0.8745098, 0.8745098, 0.3529412)
+theme_override_constants/line_spacing = -3
+theme_override_font_sizes/font_size = 22
+placeholder_text = "ex. Rublix Grocery (just the name!)"
+
+[node name="trust" type="OptionButton" parent="Riley"]
+layout_mode = 0
+offset_left = 9.000001
+offset_top = 269.0
+offset_right = 169.55591
+offset_bottom = 300.0
+scale = Vector2(0.7650765, 0.7972109)
+fit_to_longest_item = false
+item_count = 2
+popup/item_0/text = "supported."
+popup/item_0/id = 0
+popup/item_1/text = "unsupported."
+popup/item_1/id = 1
+
+[node name="text" type="RichTextLabel" parent="Riley"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = -12.0
+offset_right = 333.0
+offset_bottom = 288.0
+mouse_filter = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 14
+text = "
+They                                 a connection with the victim.
+
+Do they have violent tendencies or feelings? Are there any small hints?
+
+Do they have a criminal history?
+
+They seem to be
+
+ At the victim’s time of death, they were at 
+                    
+and the alibi supporting this is itself 
+"
+
+[node name="period" type="RichTextLabel" parent="Riley"]
+layout_mode = 0
+offset_left = 232.0
+offset_top = 231.0
+offset_right = 250.0
+offset_bottom = 254.0
+mouse_filter = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 14
+text = ","
+
+[node name="SAVE" type="TextureButton" parent="Riley"]
+layout_mode = 0
+offset_left = 262.0
+offset_top = 277.0
+offset_right = 555.0
+offset_bottom = 410.0
+scale = Vector2(0.23647971, 0.23647971)
+texture_normal = ExtResource("5_j6qxt")
+texture_hover = ExtResource("6_37e3v")
+texture_disabled = ExtResource("7_7jkhj")
+
+[node name="Steph" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = -161.0
+offset_top = -134.0
+offset_right = -121.0
+offset_bottom = -94.0
+script = ExtResource("15_ky3ly")
+
+[node name="ColorRect" type="ColorRect" parent="Steph"]
+layout_mode = 0
+offset_left = -7.0
+offset_top = -9.000015
+offset_right = 33.0
+offset_bottom = 35.356544
+scale = Vector2(8.519891, 7.259355)
+
+[node name="emotion" type="OptionButton" parent="Steph"]
+layout_mode = 0
+offset_left = 124.0
+offset_top = 165.0
+offset_right = 257.0
+offset_bottom = 196.0
+scale = Vector2(0.8211847, 0.8211847)
+fit_to_longest_item = false
+item_count = 4
+popup/item_0/text = "deceptive."
+popup/item_0/id = 0
+popup/item_1/text = "nervous."
+popup/item_1/id = 1
+popup/item_2/text = "forthcoming."
+popup/item_2/id = 2
+popup/item_3/text = "careful."
+popup/item_3/id = 3
+
+[node name="connection" type="OptionButton" parent="Steph"]
+layout_mode = 0
+offset_left = 46.0
+offset_top = 5.0
+offset_right = 179.0
+offset_bottom = 36.0
+scale = Vector2(0.8211847, 0.8211847)
+fit_to_longest_item = false
+item_count = 2
+popup/item_0/text = "didn't have"
+popup/item_0/id = 0
+popup/item_1/text = "had"
+popup/item_1/id = 1
+
+[node name="crim" type="OptionButton" parent="Steph"]
+layout_mode = 0
+offset_left = 243.0
+offset_top = 126.0
+offset_right = 288.0
+offset_bottom = 158.87933
+scale = Vector2(0.8211847, 0.8211847)
+fit_to_longest_item = false
+item_count = 2
+popup/item_0/text = "Y"
+popup/item_0/id = 0
+popup/item_1/text = "N"
+popup/item_1/id = 1
+
+[node name="violent" type="OptionButton" parent="Steph"]
+layout_mode = 0
+offset_left = 191.0
+offset_top = 91.0
+offset_right = 236.0
+offset_bottom = 123.87933
+scale = Vector2(0.8211847, 0.8211847)
+fit_to_longest_item = false
+item_count = 2
+popup/item_0/text = "Y"
+popup/item_0/id = 0
+popup/item_1/text = "N"
+popup/item_1/id = 1
+
+[node name="place" type="TextEdit" parent="Steph"]
+layout_mode = 0
+offset_left = 9.000001
+offset_top = 228.99997
+offset_right = 384.5365
+offset_bottom = 260.48157
+scale = Vector2(0.5858286, 0.5858286)
+theme_override_colors/font_placeholder_color = Color(0.8745098, 0.8745098, 0.8745098, 0.3529412)
+theme_override_constants/line_spacing = -3
+theme_override_font_sizes/font_size = 22
+placeholder_text = "ex. Rublix Grocery (just the name!)"
+
+[node name="trust" type="OptionButton" parent="Steph"]
+layout_mode = 0
+offset_left = 9.000001
+offset_top = 269.0
+offset_right = 169.55591
+offset_bottom = 300.0
+scale = Vector2(0.7650765, 0.7972109)
+fit_to_longest_item = false
+item_count = 2
+popup/item_0/text = "supported."
+popup/item_0/id = 0
+popup/item_1/text = "unsupported."
+popup/item_1/id = 1
+
+[node name="text" type="RichTextLabel" parent="Steph"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = -12.0
+offset_right = 333.0
+offset_bottom = 288.0
+mouse_filter = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 14
+text = "
+They                                 a connection with the victim.
+
+Do they have violent tendencies or feelings? Are there any small hints?
+
+Do they have a criminal history?
+
+They seem to be
+
+ At the victim’s time of death, they were at 
+                    
+and the alibi supporting this is itself 
+"
+
+[node name="period" type="RichTextLabel" parent="Steph"]
+layout_mode = 0
+offset_left = 232.0
+offset_top = 231.0
+offset_right = 250.0
+offset_bottom = 254.0
+mouse_filter = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 14
+text = ","
+
+[node name="SAVE" type="TextureButton" parent="Steph"]
+layout_mode = 0
+offset_left = 262.0
+offset_top = 277.0
+offset_right = 555.0
+offset_bottom = 410.0
+scale = Vector2(0.23647971, 0.23647971)
+texture_normal = ExtResource("5_j6qxt")
+texture_hover = ExtResource("6_37e3v")
+texture_disabled = ExtResource("7_7jkhj")
+
 [node name="TutorialButton" type="TextureButton" parent="."]
 self_modulate = Color(7.2809687, 3.3457851, 6.273562, 0.5529412)
 offset_left = 146.0
@@ -919,6 +1233,19 @@ libraries = {
 }
 autoplay = "sliding"
 speed_scale = 0.256
+
+[node name="submit" type="TextureButton" parent="."]
+modulate = Color(1.0095856, 1.0899334, 0.38020644, 1)
+offset_left = 91.0
+offset_top = -172.0
+offset_right = 691.0
+offset_bottom = 20.0
+scale = Vector2(0.13197662, 0.13197662)
+disabled = true
+texture_normal = ExtResource("16_ixwjd")
+texture_pressed = ExtResource("16_ixwjd")
+texture_hover = ExtResource("18_a3q1a")
+texture_disabled = ExtResource("19_a7u46")
 
 [node name="InfoScreen" type="Control" parent="."]
 visible = false
@@ -1007,16 +1334,6 @@ scale = Vector2(0.8979859, 0.6927789)
 theme_override_font_sizes/font_size = 10
 text = "Report Transfer"
 
-[node name="submit" type="TextureButton" parent="."]
-visible = false
-modulate = Color(1.0095856, 1.0899334, 0.38020644, 1)
-offset_left = 91.0
-offset_top = -172.0
-offset_right = 691.0
-offset_bottom = 20.0
-scale = Vector2(0.13197662, 0.13197662)
-texture_normal = ExtResource("16_ixwjd")
-
 [node name="areyousure" type="TextureRect" parent="."]
 visible = false
 offset_left = -81.0
@@ -1033,7 +1350,7 @@ offset_top = -326.78473
 offset_right = -131.09149
 offset_bottom = -286.78473
 scale = Vector2(15.784691, 18.77497)
-color = Color(0.012617188, 0.004135638, 0.012617188, 0.4862745)
+color = Color(0, 0, 0, 0.74509805)
 
 [node name="yes" type="TextureButton" parent="areyousure"]
 layout_mode = 0
@@ -1090,9 +1407,13 @@ script = ExtResource("19_v6pxv")
 [connection signal="button_up" from="InteractMove" to="." method="Up"]
 [connection signal="pressed" from="Hide" to="." method="_on_hide_pressed"]
 [connection signal="item_selected" from="default/Character_Option" to="." method="Character_Option_Selection"]
+[connection signal="item_selected" from="Greg/emotion" to="Greg" method="emotion_set"]
 [connection signal="pressed" from="Greg/SAVE" to="." method="_on_save_pressed"]
+[connection signal="pressed" from="Greg/SAVE" to="Greg" method="_on_save_pressed"]
 [connection signal="pressed" from="Toby/SAVE" to="." method="_on_save_pressed"]
 [connection signal="pressed" from="Panya/SAVE" to="." method="_on_save_pressed"]
 [connection signal="pressed" from="Herald/SAVE" to="." method="_on_save_pressed"]
+[connection signal="pressed" from="Riley/SAVE" to="." method="_on_save_pressed"]
+[connection signal="pressed" from="Steph/SAVE" to="." method="_on_save_pressed"]
 [connection signal="pressed" from="TutorialButton" to="." method="_on_tutorial_button_pressed"]
 [connection signal="pressed" from="InfoScreen/TemplateSize/iaccept" to="." method="_on_iaccept_pressed"]
