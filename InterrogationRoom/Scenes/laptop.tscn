@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://c5navywk44tjh" path="res://InterrogationRoom/Scenes/laptop.gd" id="1_xsinj"]
 [ext_resource type="Script" uid="uid://bent2seqmqsht" path="res://InterrogationRoom/Scenes/object.gd" id="2_5y0nm"]
 [ext_resource type="Texture2D" uid="uid://bc72vwmyp8ot4" path="res://artlog-1764024612406.png" id="2_q40cj"]
-[ext_resource type="Texture2D" uid="uid://df0iaqeg0enle" path="res://images/camera.png" id="3_4msrw"]
+[ext_resource type="Texture2D" uid="uid://c30pgbff2k5m0" path="res://images/hbknl.png" id="3_j3wg0"]
 [ext_resource type="PackedScene" uid="uid://c5ywwd24lm2ih" path="res://InterrogationRoom/Scenes/window.tscn" id="3_xsinj"]
 [ext_resource type="Texture2D" uid="uid://dw7ubnogfdaev" path="res://StartRoom/images/paperrrr.jpg" id="4_5y0nm"]
 [ext_resource type="Texture2D" uid="uid://bb56iw0cnf285" path="res://images/notepad.png" id="5_e164m"]
@@ -249,7 +249,7 @@ offset_top = 106.0
 offset_right = 154.0
 offset_bottom = 250.0
 scale = Vector2(0.54423916, 0.54423916)
-texture_normal = ExtResource("3_4msrw")
+texture_normal = ExtResource("3_j3wg0")
 script = ExtResource("16_roxh2")
 
 [node name="Icon_ReportTransfer" type="TextureButton" parent="."]

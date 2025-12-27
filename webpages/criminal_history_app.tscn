@@ -148,6 +148,7 @@ text = "Be sure to double-check spelling."
 horizontal_alignment = 1
 
 [node name="Output" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_top = -8.0
@@ -436,7 +437,7 @@ offset_left = 167.0
 offset_top = 136.0
 offset_right = 290.0
 offset_bottom = 183.69246
-scale = Vector2(0.7758039, 0.7758039)
+scale = Vector2(0.9697716, 0.9697716)
 theme = SubResource("Theme_5uff6")
 theme_override_font_sizes/normal_font_size = 11
 text = "Manslaughter (Felony)

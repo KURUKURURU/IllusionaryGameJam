@@ -1,0 +1,174 @@
+[gd_scene load_steps=6 format=3 uid="uid://lk7mvn3lujw3"]
+
+[ext_resource type="Texture2D" uid="uid://b61ucq0h6mpxe" path="res://gardes/table.png" id="1_vwu8u"]
+[ext_resource type="Texture2D" uid="uid://d20la0tkr1qbc" path="res://gardes/t2.png" id="2_xu77g"]
+[ext_resource type="FontFile" uid="uid://bx28omnoj00vk" path="res://MysteryMobileRotated2-7OYg4.otf" id="3_xnln8"]
+[ext_resource type="Texture2D" uid="uid://n40je6v585ml" path="res://gardes/t1.png" id="4_67cay"]
+[ext_resource type="Texture2D" uid="uid://b1ibxr0qcblii" path="res://pan/hovert.png" id="5_tqeas"]
+
+[node name="EndingScreen" type="Node2D"]
+
+[node name="bg" type="TextureRect" parent="."]
+self_modulate = Color(1.0964829, 1.0964829, 1.0964829, 1)
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_vwu8u")
+
+[node name="tab_1" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="bg" type="TextureRect" parent="tab_1"]
+layout_mode = 0
+offset_left = 45.0
+offset_top = 32.0
+offset_right = 593.0
+offset_bottom = 619.0
+texture = ExtResource("2_xu77g")
+
+[node name="grade" type="RichTextLabel" parent="tab_1"]
+layout_mode = 0
+offset_left = 51.0
+offset_top = 108.0
+offset_right = 591.0
+offset_bottom = 437.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 14
+theme_override_fonts/normal_font = ExtResource("3_xnln8")
+theme_override_font_sizes/normal_font_size = 371
+text = "67%"
+horizontal_alignment = 1
+
+[node name="grade2" type="RichTextLabel" parent="tab_1"]
+layout_mode = 0
+offset_left = 84.0
+offset_top = 394.0
+offset_right = 624.0
+offset_bottom = 723.0
+scale = Vector2(0.8769421, 0.8769421)
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 14
+theme_override_fonts/normal_font = ExtResource("3_xnln8")
+theme_override_font_sizes/normal_font_size = 56
+text = "of your report was correct."
+horizontal_alignment = 1
+
+[node name="decription" type="RichTextLabel" parent="tab_1"]
+layout_mode = 0
+offset_left = 84.0
+offset_top = 450.0
+offset_right = 872.1489
+offset_bottom = 779.0
+scale = Vector2(0.60775316, 0.60775316)
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 14
+theme_override_fonts/normal_font = ExtResource("3_xnln8")
+theme_override_font_sizes/normal_font_size = 56
+text = "You assessed their alibis and records effectively and accurately."
+horizontal_alignment = 1
+
+[node name="tab_2" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="bg" type="TextureRect" parent="tab_2"]
+layout_mode = 0
+offset_left = 599.0
+offset_top = 33.0
+offset_right = 1113.0
+offset_bottom = 345.0
+texture = ExtResource("4_67cay")
+
+[node name="ColorRect" type="ColorRect" parent="tab_2"]
+clip_children = 1
+layout_mode = 0
+offset_left = 624.0
+offset_top = 65.0
+offset_right = 664.0
+offset_bottom = 105.0
+scale = Vector2(5.7474294, 5.9673004)
+
+[node name="img" type="TextureRect" parent="tab_2/ColorRect"]
+layout_mode = 0
+offset_left = -23.314768
+offset_top = -21.115078
+offset_right = 1126.6852
+offset_bottom = 628.88495
+scale = Vector2(0.10248703, 0.10248703)
+texture = ExtResource("5_tqeas")
+
+[node name="decription" type="RichTextLabel" parent="tab_2"]
+layout_mode = 0
+offset_left = 870.0
+offset_top = 59.0
+offset_right = 1235.2799
+offset_bottom = 388.0
+scale = Vector2(0.60775316, 0.60775316)
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 14
+theme_override_fonts/normal_font = ExtResource("3_xnln8")
+theme_override_font_sizes/normal_font_size = 56
+text = "You"
+horizontal_alignment = 1
+
+[node name="ACCURATE" type="RichTextLabel" parent="tab_2"]
+clip_contents = false
+layout_mode = 0
+offset_left = 870.0
+offset_top = 101.0
+offset_right = 1235.2799
+offset_bottom = 430.0
+scale = Vector2(0.60775316, 0.60775316)
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 28
+theme_override_fonts/normal_font = ExtResource("3_xnln8")
+theme_override_font_sizes/normal_font_size = 81
+text = "Falsely"
+horizontal_alignment = 1
+
+[node name="WHO" type="RichTextLabel" parent="tab_2"]
+clip_contents = false
+layout_mode = 0
+offset_left = 870.0
+offset_top = 198.0
+offset_right = 1235.2799
+offset_bottom = 276.97943
+scale = Vector2(0.60775316, 0.60775316)
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 34
+theme_override_fonts/normal_font = ExtResource("3_xnln8")
+theme_override_font_sizes/normal_font_size = 81
+text = "herald roman"
+horizontal_alignment = 1
+
+[node name="decription2" type="RichTextLabel" parent="tab_2"]
+layout_mode = 0
+offset_left = 870.0
+offset_top = 154.0
+offset_right = 1235.2799
+offset_bottom = 209.94376
+scale = Vector2(0.60775316, 0.60775316)
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 14
+theme_override_fonts/normal_font = ExtResource("3_xnln8")
+theme_override_font_sizes/normal_font_size = 56
+text = "accused "
+horizontal_alignment = 1
+
+[node name="decription3" type="RichTextLabel" parent="tab_2"]
+layout_mode = 0
+offset_left = 870.0
+offset_top = 254.0
+offset_right = 1235.2799
+offset_bottom = 385.6324
+scale = Vector2(0.60775316, 0.60775316)
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 14
+theme_override_fonts/normal_font = ExtResource("3_xnln8")
+theme_override_font_sizes/normal_font_size = 56
+text = "of killing Megan camargo."
+horizontal_alignment = 1

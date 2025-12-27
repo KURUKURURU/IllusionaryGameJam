@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://d23pckgwjyxuc"]
+[gd_scene load_steps=37 format=3 uid="uid://d23pckgwjyxuc"]
 
 [ext_resource type="Script" uid="uid://bhu5stam0w45p" path="res://InterrogationRoom/Scenes/green_room.gd" id="1_dmghv"]
 [ext_resource type="Texture2D" uid="uid://d0ywlrf5ocu7l" path="res://PreCutscene/frames/box/ph/walll1.png" id="2_vmip0"]
@@ -16,7 +16,6 @@
 [ext_resource type="Texture2D" uid="uid://c7d4g5thmbwjj" path="res://images/godotwaka2.png" id="14_521xa"]
 [ext_resource type="PackedScene" uid="uid://67pbacp18qgo" path="res://StartRoom/scenes/file_book.tscn" id="15_yboq4"]
 [ext_resource type="PackedScene" uid="uid://bjp1b6hm65me1" path="res://Label/label.tscn" id="16_odqe7"]
-[ext_resource type="AudioStream" uid="uid://cpjopblvvoe6u" path="res://StartRoom/sounds/mainmusic2.wav" id="17_qq0ch"]
 [ext_resource type="AudioStream" uid="uid://b3xs4ppsu0qkw" path="res://InterrogationRoom/sounds/sillygoofymusic.wav" id="18_wq6v8"]
 [ext_resource type="AudioStream" uid="uid://4xrwfwo0ubfb" path="res://InterrogationRoom/sounds/sad soundscape.wav" id="19_ix1lm"]
 [ext_resource type="AudioStream" uid="uid://byffw1s080n6m" path="res://StartRoom/sounds/whoosh.wav" id="20_b1npc"]
@@ -25,6 +24,8 @@
 [ext_resource type="AudioStream" uid="uid://dipgr8o46y6dj" path="res://delete.wav" id="24_i8uc0"]
 [ext_resource type="PackedScene" uid="uid://dbbyt1nqytcnq" path="res://Process/green_talking_scene.tscn" id="25_dmghv"]
 [ext_resource type="PackedScene" uid="uid://ca3361nyh8rd7" path="res://points/bar/uppermenu.tscn" id="25_iq3ac"]
+[ext_resource type="AudioStream" uid="uid://568rmfmqewjf" path="res://BeepBox-Song(1).wav" id="25_vmip0"]
+[ext_resource type="AudioStream" uid="uid://3vo1fpxvj8ss" path="res://door.wav" id="26_vmip0"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_y2qu5"]
 animations = [{
@@ -220,6 +221,42 @@ _data = {
 &"up": SubResource("Animation_mcpkv")
 }
 
+[sub_resource type="Animation" id="Animation_u8or1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_71y20"]
+resource_name = "fade"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_or7gf"]
+_data = {
+&"RESET": SubResource("Animation_u8or1"),
+&"fade": SubResource("Animation_71y20")
+}
+
 [node name="InterrogationRoom" type="Node2D"]
 script = ExtResource("1_dmghv")
 
@@ -347,13 +384,6 @@ offset_top = 613.0
 offset_right = 39.0
 offset_bottom = 653.0
 
-[node name="MainMusic" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("17_qq0ch")
-volume_db = -12.404
-pitch_scale = 0.58
-autoplay = true
-bus = &"Music"
-
 [node name="CompMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("18_wq6v8")
 volume_db = -15.169
@@ -382,7 +412,7 @@ bus = &"SFX"
 [node name="Laptop" parent="." instance=ExtResource("22_i68ol")]
 visible = false
 scale = Vector2(1.0065355, 1.0065355)
-witness = "Toby"
+witness = "Green"
 
 [node name="bing" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("24_i8uc0")
@@ -390,6 +420,30 @@ stream = ExtResource("24_i8uc0")
 [node name="uppermenu" parent="." instance=ExtResource("25_iq3ac")]
 
 [node name="GreenTalkingScene" parent="." instance=ExtResource("25_dmghv")]
+
+[node name="MainMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("25_vmip0")
+volume_db = -12.404
+autoplay = true
+bus = &"Music"
+
+[node name="Black" type="ColorRect" parent="."]
+visible = false
+self_modulate = Color(1, 1, 1, 0)
+z_index = 20
+offset_left = -11.0
+offset_top = -14.0
+offset_right = 1161.0
+offset_bottom = 664.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Black"]
+libraries = {
+&"": SubResource("AnimationLibrary_or7gf")
+}
+speed_scale = 0.573
+
+[node name="door" type="AudioStreamPlayer" parent="Black"]
+stream = ExtResource("26_vmip0")
 
 [connection signal="intro" from="." to="GreenTalkingScene" method="_on_interrogation_room_intro"]
 [connection signal="questioning_1" from="." to="GreenTalkingScene" method="_on_interrogation_room_questioning_1"]

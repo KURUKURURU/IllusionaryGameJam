@@ -176,6 +176,12 @@ func _on_door_mouse_entered() -> void:
 
 func Leave() -> void:
 	if Global.green_saved:
+		
+		$Black.show()
+		$Black/AnimationPlayer.play("fade")
+		$Black/door.play()
+		await $Black/AnimationPlayer.animation_finished
+		
 		get_tree().change_scene_to_file("uid://b4rgvrr0gjroo")
 	else:
 		$bing.play()

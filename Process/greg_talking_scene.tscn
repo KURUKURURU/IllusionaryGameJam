@@ -497,5 +497,5 @@ position = Vector2(0, -13)
 [connection signal="pressed" from="advance_1/Option2" to="." method="ad1_2"]
 [connection signal="pressed" from="advance_1/Option3" to="." method="ad1_3"]
 [connection signal="pressed" from="spec/Option1" to="." method="_on_option_1_pressed"]
-[connection signal="pressed" from="spec/Option2" to="." method="_on_option_2_pressed"]
+[connection signal="pressed" from="spec/Option2" to="." method="looks"]
 [connection signal="pressed" from="spec/Option3" to="." method="ad1_3"]

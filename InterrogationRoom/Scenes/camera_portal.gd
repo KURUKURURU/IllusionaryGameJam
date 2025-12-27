@@ -18,3 +18,7 @@ func Up() -> void:
 func Down() -> void:
 	dragging = true
 	of = get_global_mouse_position() - global_position
+
+
+func _on_gallery_pressed() -> void:
+	pass # Replace with function body.

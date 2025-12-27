@@ -1,8 +1,7 @@
-[gd_scene load_steps=33 format=3 uid="uid://dil28dp02varo"]
+[gd_scene load_steps=36 format=3 uid="uid://dil28dp02varo"]
 
 [ext_resource type="Script" uid="uid://dq1dipbbr7r0q" path="res://InterrogationRoom/Scenes/panya_room.gd" id="1_71y20"]
 [ext_resource type="Texture2D" uid="uid://d0ywlrf5ocu7l" path="res://PreCutscene/frames/box/ph/walll1.png" id="2_u8or1"]
-[ext_resource type="Texture2D" uid="uid://dj0jxtnvxixxc" path="res://pan/Illustration2.png" id="3_71y20"]
 [ext_resource type="Texture2D" uid="uid://dyw2mokrayu7d" path="res://pan/chick.png" id="4_u8or1"]
 [ext_resource type="Texture2D" uid="uid://rwsc8r72no1n" path="res://pan/eerrr.png" id="5_71y20"]
 [ext_resource type="BitMap" uid="uid://cgglb2bacrvsm" path="res://pan/masdk.png" id="6_u8or1"]
@@ -16,7 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://c7d4g5thmbwjj" path="res://images/godotwaka2.png" id="14_e1kto"]
 [ext_resource type="PackedScene" uid="uid://67pbacp18qgo" path="res://StartRoom/scenes/file_book.tscn" id="15_08j8m"]
 [ext_resource type="PackedScene" uid="uid://bjp1b6hm65me1" path="res://Label/label.tscn" id="16_6ocav"]
-[ext_resource type="AudioStream" uid="uid://dp4l0rqnu4r4w" path="res://dramatic.wav" id="17_71y20"]
+[ext_resource type="AudioStream" uid="uid://568rmfmqewjf" path="res://BeepBox-Song(1).wav" id="17_71y20"]
 [ext_resource type="AudioStream" uid="uid://b3xs4ppsu0qkw" path="res://InterrogationRoom/sounds/sillygoofymusic.wav" id="18_0weg7"]
 [ext_resource type="AudioStream" uid="uid://4xrwfwo0ubfb" path="res://InterrogationRoom/sounds/sad soundscape.wav" id="19_cpier"]
 [ext_resource type="AudioStream" uid="uid://byffw1s080n6m" path="res://StartRoom/sounds/whoosh.wav" id="20_d2fot"]
@@ -25,28 +24,29 @@
 [ext_resource type="PackedScene" uid="uid://dca64hdh2xxav" path="res://Process/panya_talking_scene.tscn" id="23_or7gf"]
 [ext_resource type="AudioStream" uid="uid://dipgr8o46y6dj" path="res://delete.wav" id="24_hweig"]
 [ext_resource type="PackedScene" uid="uid://ca3361nyh8rd7" path="res://points/bar/uppermenu.tscn" id="25_tj6eu"]
+[ext_resource type="AudioStream" uid="uid://3vo1fpxvj8ss" path="res://door.wav" id="26_u8or1"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_y2qu5"]
 animations = [{
 "frames": [{
+"duration": 0.26,
+"texture": ExtResource("4_u8or1")
+}, {
+"duration": 0.36,
+"texture": ExtResource("4_u8or1")
+}, {
 "duration": 10.0,
-"texture": ExtResource("3_71y20")
+"texture": ExtResource("5_71y20")
 }, {
-"duration": 1.0,
+"duration": 0.01,
 "texture": ExtResource("4_u8or1")
 }, {
-"duration": 1.0,
-"texture": ExtResource("3_71y20")
-}, {
-"duration": 2.0,
-"texture": ExtResource("4_u8or1")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_u8or1")
+"duration": 7.75,
+"texture": ExtResource("5_71y20")
 }],
 "loop": true,
 "name": &"default",
-"speed": 3.0
+"speed": 5.0
 }]
 
 [sub_resource type="Animation" id="Animation_m2gn2"]
@@ -229,6 +229,42 @@ _data = {
 &"up": SubResource("Animation_mcpkv")
 }
 
+[sub_resource type="Animation" id="Animation_u8or1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_71y20"]
+resource_name = "fade"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_or7gf"]
+_data = {
+&"RESET": SubResource("Animation_u8or1"),
+&"fade": SubResource("Animation_71y20")
+}
+
 [node name="InterrogationRoom" type="Node2D"]
 script = ExtResource("1_71y20")
 
@@ -245,7 +281,7 @@ texture = ExtResource("2_u8or1")
 position = Vector2(575, 312)
 sprite_frames = SubResource("SpriteFrames_y2qu5")
 autoplay = "default"
-frame_progress = 0.26039198
+frame_progress = 0.4049594
 
 [node name="intro" type="TextureButton" parent="Node2D/panya"]
 visible = false
@@ -358,7 +394,6 @@ offset_bottom = 653.0
 [node name="MainMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("17_71y20")
 volume_db = -12.404
-pitch_scale = 1.51
 autoplay = true
 bus = &"Music"
 
@@ -399,6 +434,24 @@ stream = ExtResource("24_hweig")
 [node name="uppermenu" parent="." instance=ExtResource("25_tj6eu")]
 
 [node name="PanyaTalkingScene" parent="." instance=ExtResource("23_or7gf")]
+
+[node name="Black" type="ColorRect" parent="."]
+visible = false
+self_modulate = Color(1, 1, 1, 0)
+z_index = 20
+offset_left = -11.0
+offset_top = -14.0
+offset_right = 1161.0
+offset_bottom = 664.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Black"]
+libraries = {
+&"": SubResource("AnimationLibrary_or7gf")
+}
+speed_scale = 0.573
+
+[node name="door" type="AudioStreamPlayer" parent="Black"]
+stream = ExtResource("26_u8or1")
 
 [connection signal="intro" from="." to="PanyaTalkingScene" method="_on_interrogation_room_intro"]
 [connection signal="questioning_1" from="." to="PanyaTalkingScene" method="_on_interrogation_room_questioning_1"]

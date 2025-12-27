@@ -64,7 +64,7 @@ func _on_interrogation_room_questioning_1() -> void:
 	$Options.hide()
 	self.show()
 	
-	Wit_say("What would you need to know?", 100)
+	Wit_say("When do I get out of here?", 100)
 	
 	op1_text.text = "How well do you know Megan Camargo?"
 	op2_text.text = "Where were you at 7:30?"
@@ -238,5 +238,20 @@ func _on_option_2_pressed() -> void:
 	await Wit_say("I think we primarily hung around the art gallery. I don't check the time.", 2)
 	await Wit_say("It's the only thing around here that'll close at 9.", 3)
 	await Wit_say("Everything else closes at like 7:15 for this holiday or something. Like a parade.", 3)
+	
+	alldone()
+
+
+func looks() -> void:
+	$spec.hide()
+	$Main.hide()
+	
+	await say("What's your girl look like?", 1)
+	
+	await Wit_say("Uh.", 0)
+	await Wit_say("She's uh, blonde.", 3)
+	await Wit_say("She wears a bunch of black.", 3)
+	await Wit_say("...", 0)
+	
 	
 	alldone()

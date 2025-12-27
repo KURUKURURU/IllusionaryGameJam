@@ -344,6 +344,7 @@ autoplay = "jumpingicon"
 speed_scale = 0.604
 
 [node name="Camera5" type="TextureButton" parent="Node2D"]
+visible = false
 self_modulate = Color(1, 1, 1, 0.24705882)
 offset_left = 62.999985
 offset_top = -182.0
@@ -371,6 +372,7 @@ autoplay = "jumpingicon"
 speed_scale = 0.604
 
 [node name="Camera6" type="TextureButton" parent="Node2D"]
+visible = false
 self_modulate = Color(1, 1, 1, 0.24705882)
 offset_left = -113.999985
 offset_top = 90.99997
@@ -413,6 +415,7 @@ stretch_mode = 3
 script = ExtResource("11_plwhc")
 
 [node name="CameraPreview" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
@@ -558,6 +561,8 @@ script = ExtResource("19_jrmho")
 [connection signal="button_down" from="InteractMove" to="." method="Down"]
 [connection signal="button_up" from="InteractMove" to="." method="Up"]
 [connection signal="pressed" from="Hide" to="." method="_on_hide_pressed"]
+[connection signal="pressed" from="Node2D/Camera1" to="CameraPreview" method="_on_camera_1_pressed"]
+[connection signal="pressed" from="Node2D/Camera3" to="CameraPreview" method="_on_camera_3_pressed"]
 [connection signal="pressed" from="Node2D/parks" to="CameraPreview" method="_on_parks_pressed"]
 [connection signal="hidesignal" from="TutorialButton" to="InfoScreen" method="_on_tutorial_button_hidesignal"]
 [connection signal="pressed" from="TutorialButton" to="TutorialButton" method="_on_pressed"]

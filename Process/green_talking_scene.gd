@@ -203,7 +203,7 @@ func _on_interrogation_room_intro() -> void:
 	await say("I understand you found the body, and I just need you to answer a few things.", 3.0)
 	await say("Tell me if you need anything.", 4.0)
 	
-	await Wit_say("Yes sir.", 3.0)
+	await Wit_say("Yes sir.               ", 1.0)
 	
 	alldone()
 
@@ -219,7 +219,7 @@ func naem() -> void:
 
 
 func green_seen() -> void:
-	$Connection.hide()
+	$Options.hide()
 	
 	await Wit_say("I have seen her before,", 2)
 	await Wit_say("A few times before in the park, in fact.", 2)

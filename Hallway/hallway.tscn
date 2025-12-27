@@ -49,6 +49,7 @@ offset_left = 402.0
 offset_top = 72.0
 offset_right = 455.0
 offset_bottom = 514.0
+disabled = true
 texture_normal = ExtResource("7_gn7mw")
 texture_hover = ExtResource("8_4ii4t")
 
@@ -56,6 +57,7 @@ texture_hover = ExtResource("8_4ii4t")
 offset_left = 872.0
 offset_right = 1055.0
 offset_bottom = 650.0
+disabled = true
 texture_normal = ExtResource("9_dcsau")
 texture_hover = ExtResource("10_hw517")
 
@@ -64,6 +66,7 @@ offset_left = 749.0
 offset_top = 84.0
 offset_right = 802.0
 offset_bottom = 526.0
+disabled = true
 texture_normal = ExtResource("11_y32sv")
 texture_hover = ExtResource("12_7b8g2")
 

@@ -23,14 +23,22 @@ func _process(delta: float) -> void:
 		$default/Character_Option.set_item_disabled(0, false)
 		$default/Character_Option.set_item_disabled(1, true)
 		$default/Character_Option.set_item_disabled(2, true)
+		$default/Character_Option.set_item_disabled(3, true)
 	elif scene == "Toby":
-		$default/Character_Option.set_item_disabled(0, false)
+		$default/Character_Option.set_item_disabled(0, true)
 		$default/Character_Option.set_item_disabled(1, false)
 		$default/Character_Option.set_item_disabled(2, true)
+		$default/Character_Option.set_item_disabled(3, true)
 	elif scene == "Panya":
-		$default/Character_Option.set_item_disabled(0, false)
-		$default/Character_Option.set_item_disabled(1, false)
+		$default/Character_Option.set_item_disabled(0, true)
+		$default/Character_Option.set_item_disabled(1, true)
 		$default/Character_Option.set_item_disabled(2, false)
+		$default/Character_Option.set_item_disabled(3, true)
+	elif scene == "Green":
+		$default/Character_Option.set_item_disabled(0, true)
+		$default/Character_Option.set_item_disabled(1, true)
+		$default/Character_Option.set_item_disabled(2, true)
+		$default/Character_Option.set_item_disabled(3, false)
 		
 		
 	if !$Toby/emotion.selected == -1 \
@@ -63,6 +71,16 @@ func _process(delta: float) -> void:
 	else:
 		$Panya/SAVE.disabled = true
 	
+	if !$Herald/emotion.selected == -1 \
+	and !$Herald/connection.selected == -1 \
+	and !$Herald/crim.selected == -1 \
+	and !$Herald/violent.selected == -1 \
+	and !$Herald/place.text == "" \
+	and !$Herald/trust.selected == -1:
+		$Herald/SAVE.disabled = false
+	else:
+		$Herald/SAVE.disabled = true
+	
 	if dragging:
 		position = get_global_mouse_position() - of
 	
@@ -87,15 +105,23 @@ func Character_Option_Selection(index: int) -> void:
 	if index == 0:
 		$Panya.hide()
 		$Toby.hide()
+		$Herald.hide()
 		$Greg.show()
 	elif index == 1:
 		$Panya.hide()
 		$Greg.hide()
+		$Herald.hide()
 		$Toby.show()
 	elif index == 2:
 		$Panya.show()
 		$Greg.hide()
 		$Toby.hide()
+		$Herald.hide()
+	elif index == 3:
+		$Panya.hide()
+		$Greg.hide()
+		$Toby.hide()
+		$Herald.show()
 		
 
 
