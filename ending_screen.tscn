@@ -296,7 +296,8 @@ texture = ExtResource("1_vwu8u")
 visible = false
 layout_mode = 3
 anchors_preset = 0
-offset_right = 39.999992
+offset_left = 7.26
+offset_right = 47.259995
 offset_bottom = 40.0
 
 [node name="bg" type="TextureRect" parent="tab_1"]
@@ -357,7 +358,8 @@ libraries = {
 visible = false
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
+offset_left = 7.26
+offset_right = 47.260002
 offset_bottom = 40.0
 script = ExtResource("5_p0nac")
 
@@ -501,9 +503,11 @@ libraries = {
 }
 
 [node name="WHO" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
+offset_left = -16.0
+offset_right = 24.0
 offset_bottom = 39.999916
 script = ExtResource("12_jtpfn")
 
@@ -576,6 +580,7 @@ scale = Vector2(0.10248703, 0.10248703)
 texture = ExtResource("12_apyb2")
 
 [node name="riley" type="TextureRect" parent="WHO/facecard_accuse"]
+visible = false
 layout_mode = 0
 offset_left = -14.267245
 offset_top = -7.038359
@@ -658,7 +663,8 @@ script = ExtResource("14_p0nac")
 visible = false
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.00006
+offset_left = 7.26
+offset_right = 47.260063
 offset_bottom = 40.0
 
 [node name="bg" type="TextureRect" parent="finalwarning"]

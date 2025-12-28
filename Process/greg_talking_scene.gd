@@ -84,7 +84,7 @@ func advance_1():
 	
 	$advance_1/Option1/Text.text = "Do you get that a lot?" #I never said it was creepy. Do you get that a lot?
 	$advance_1/Option2/Text.text = "Alright." #How did you meet your girlfriend? I'm curious
-	$advance_1/Option3.hide()
+	$advance_1/Option3/Text.text = "What's your name?"
 	
 	$advance_1.show()
 	
@@ -188,8 +188,11 @@ func where_greg() -> void:
 		
 		told_where = true
 		
+		await Wit_say("Even with my current money troubles,", 3)
+		await Wit_say("I, of course, bought her everything she wanted.", 4)
+		
 		$spec.show()
-		await Wit_say("I, of course, bought her everything she wanted.", 100)
+		await Wit_say("Aren't I pretty likable? I think so.", 100)
 		
 		
 	alldone()
@@ -201,7 +204,7 @@ func ad1_1() -> void:
 	
 	await say("I never said it was creepy. Do you get that a lot? That you're creepy?", 0)
 	
-	await Wit_say("Yeah..", 0.5)
+	await Wit_say("..", 0)
 	await Wit_say("No. No I don't.", 3)
 	alldone()
 
@@ -228,20 +231,6 @@ func _on_option_1_pressed() -> void:
 	alldone()
 
 
-func _on_option_2_pressed() -> void:
-	$spec.hide()
-	$Main.hide()
-	
-	await say("Can you narrow it down?", 1)
-	
-	await Wit_say("Uh. Yeah.", 0)
-	await Wit_say("I think we primarily hung around the art gallery. I don't check the time.", 2)
-	await Wit_say("It's the only thing around here that'll close at 9.", 3)
-	await Wit_say("Everything else closes at like 7:15 for this holiday or something. Like a parade.", 3)
-	
-	alldone()
-
-
 func looks() -> void:
 	$spec.hide()
 	$Main.hide()
@@ -250,8 +239,13 @@ func looks() -> void:
 	
 	await Wit_say("Uh.", 0)
 	await Wit_say("She's uh, blonde.", 3)
-	await Wit_say("She wears a bunch of black.", 3)
+	await Wit_say("She wears a bunch of black. Uhh, dunno.", 3)
+	await Wit_say("...", 0)
 	await Wit_say("...", 0)
 	
 	
 	alldone()
+
+
+func ad1_3() -> void:
+	pass # Replace with function body.
