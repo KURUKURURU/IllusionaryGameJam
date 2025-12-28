@@ -275,7 +275,7 @@ position = Vector2(602.00006, 292)
 scale = Vector2(1.1758218, 1.1758218)
 sprite_frames = SubResource("SpriteFrames_y2qu5")
 autoplay = "default"
-frame_progress = 0.5454333
+frame_progress = 0.37745184
 
 [node name="intro" type="TextureButton" parent="Node2D/Steph"]
 visible = false
@@ -413,7 +413,7 @@ bus = &"SFX"
 [node name="Laptop" parent="." instance=ExtResource("21_vpalc")]
 visible = false
 scale = Vector2(1.0065355, 1.0065355)
-witness = "Riley"
+witness = "Steph"
 
 [node name="bing" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("22_wdaj1")
@@ -425,6 +425,8 @@ stream = ExtResource("25_jsw4u")
 volume_db = -12.404
 autoplay = true
 bus = &"Music"
+
+[node name="StephTalkingScene" parent="." instance=ExtResource("27_fvbsb")]
 
 [node name="Black" type="ColorRect" parent="."]
 visible = false
@@ -444,8 +446,8 @@ speed_scale = 0.573
 [node name="door" type="AudioStreamPlayer" parent="Black"]
 stream = ExtResource("26_7sfee")
 
-[node name="StephTalkingScene" parent="." instance=ExtResource("27_fvbsb")]
-
+[connection signal="intro" from="." to="StephTalkingScene" method="_on_interrogation_room_intro"]
+[connection signal="questioning_1" from="." to="StephTalkingScene" method="_on_interrogation_room_questioning_1"]
 [connection signal="pressed" from="Node2D/Steph/intro" to="." method="TobyIntro"]
 [connection signal="pressed" from="Node2D/Steph/question" to="." method="question_witness"]
 [connection signal="mouse_entered" from="Node2D/Table/FilesNotes" to="." method="files_mousetouch"]
@@ -457,3 +459,4 @@ stream = ExtResource("26_7sfee")
 [connection signal="pressed" from="Node2D/door" to="." method="Leave"]
 [connection signal="pressed" from="UP" to="." method="UP"]
 [connection signal="pressed" from="DOWN" to="." method="Down"]
+[connection signal="done" from="StephTalkingScene" to="." method="_on_Steph_talking_scene_done"]

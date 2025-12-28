@@ -167,7 +167,7 @@ func _on_door_mouse_exited() -> void:
 
 
 func _on_door_mouse_entered() -> void:
-	if Global.Riley_saved:
+	if Global.riley_saved:
 		$Label/Text.text = "Leave?"
 	else:
 		$Label/Text.text = "Complete your report!"
@@ -175,14 +175,14 @@ func _on_door_mouse_entered() -> void:
 
 
 func Leave() -> void:
-	if Global.Riley_saved:
+	if Global.riley_saved:
 		
 		$Black.show()
 		$Black/AnimationPlayer.play("fade")
 		$Black/door.play()
 		await $Black/AnimationPlayer.animation_finished
 		
-		get_tree().change_scene_to_file("uid://b4rgvrr0gjroo")
+		get_tree().change_scene_to_file("uid://b1yqg4rygulbm")
 	else:
 		$bing.play()
 

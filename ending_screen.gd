@@ -42,12 +42,12 @@ func _process(delta: float) -> void:
 	if $"2/Report_Transfer/Greg/SAVE".disabled \
 	or $"2/Report_Transfer/Toby/SAVE".disabled \
 	or $"2/Report_Transfer/Panya/SAVE".disabled \
-	or $"2/Report_Transfer/Herald/SAVE".disabled:
-	#and !$"2/Report_Transfer/Riley/SAVE".disabled \
-	#and !$"2/Report_Transfer/Steph/SAVE".disabled \
-		$"2/Report_Transfer/submit".disabled = false
+	or $"2/Report_Transfer/Herald/SAVE".disabled \
+	or $"2/Report_Transfer/Riley/SAVE".disabled \
+	or $"2/Report_Transfer/Steph/SAVE".disabled:
+		$"2/Report_Transfer/submit".disabled = true
 	else:
-		$"2/Report_Transfer/submit".disabled = false  #####change please
+		$"2/Report_Transfer/submit".disabled = false  #####changed
 
 
 func _on_report_transfer_done() -> void:

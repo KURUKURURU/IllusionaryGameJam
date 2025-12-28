@@ -237,7 +237,7 @@ offset_bottom = -140.0
 scale = Vector2(0.7125422, 0.7125422)
 theme = SubResource("Theme_kv1vy")
 theme_override_fonts/font = ExtResource("5_e151u")
-item_count = 4
+item_count = 6
 popup/item_0/text = "Greg"
 popup/item_0/id = 0
 popup/item_1/text = "Toby"
@@ -246,6 +246,10 @@ popup/item_2/text = "Panya"
 popup/item_2/id = 2
 popup/item_3/text = "Herald"
 popup/item_3/id = 3
+popup/item_4/text = "Riley"
+popup/item_4/id = 4
+popup/item_5/text = "Steph"
+popup/item_5/id = 5
 
 [node name="bg" type="ColorRect" parent="default"]
 clip_contents = true
@@ -1242,6 +1246,7 @@ offset_top = -172.0
 offset_right = 691.0
 offset_bottom = 20.0
 scale = Vector2(0.13197662, 0.13197662)
+disabled = true
 texture_normal = ExtResource("16_ixwjd")
 texture_pressed = ExtResource("16_ixwjd")
 texture_hover = ExtResource("18_a3q1a")

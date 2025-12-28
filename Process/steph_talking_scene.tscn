@@ -1,6 +1,6 @@
 [gd_scene load_steps=18 format=3 uid="uid://c65b28a1vdtik"]
 
-[ext_resource type="Script" uid="uid://ch63f2rvoknbp" path="res://Process/green_talking_scene.gd" id="1_2s6yn"]
+[ext_resource type="Script" uid="uid://rykdo8acfrt0" path="res://Process/steph_talking_scene.gd" id="1_2s6yn"]
 [ext_resource type="Texture2D" uid="uid://du55tjc1dd3s3" path="res://PreCutscene/frames/box/witnessbox/1.png" id="2_kf481"]
 [ext_resource type="Texture2D" uid="uid://bcwude2aslpqe" path="res://PreCutscene/frames/box/witnessbox/2.png" id="3_dtjnt"]
 [ext_resource type="FontFile" uid="uid://dehehyydv307r" path="res://Fonts/paaxel-font/Paaxel-xRjLO.otf" id="4_nl6ja"]

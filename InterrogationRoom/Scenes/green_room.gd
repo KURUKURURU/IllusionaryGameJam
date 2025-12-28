@@ -182,7 +182,7 @@ func Leave() -> void:
 		$Black/door.play()
 		await $Black/AnimationPlayer.animation_finished
 		
-		get_tree().change_scene_to_file("uid://b4rgvrr0gjroo")
+		get_tree().change_scene_to_file("uid://boc8hush7rmuf")
 	else:
 		$bing.play()
 

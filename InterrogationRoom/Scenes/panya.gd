@@ -26,6 +26,10 @@ func _on_save_pressed() -> void:
 		#
 	#print(add_end)
 	
+	print("VALUE:", Global.G_emotion, "TYPE:", typeof(Global.G_emotion))
+	print("ITEMS:", $Report_Transfer/Panya/emotion.item_count)
+	
+	
 	Global.P_emotion = $emotion.get_selected_id()
 	Global.P_connection = $connection.get_selected_id()
 	Global.P_crim = $crim.get_selected_id()

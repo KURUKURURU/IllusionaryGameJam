@@ -30,21 +30,43 @@ func _process(delta: float) -> void:
 		$default/Character_Option.set_item_disabled(1, true)
 		$default/Character_Option.set_item_disabled(2, true)
 		$default/Character_Option.set_item_disabled(3, true)
+		$default/Character_Option.set_item_disabled(4, true)
+		$default/Character_Option.set_item_disabled(5, true)
 	elif scene == "Toby":
 		$default/Character_Option.set_item_disabled(0, true)
 		$default/Character_Option.set_item_disabled(1, false)
 		$default/Character_Option.set_item_disabled(2, true)
 		$default/Character_Option.set_item_disabled(3, true)
+		$default/Character_Option.set_item_disabled(4, true)
+		$default/Character_Option.set_item_disabled(5, true)
 	elif scene == "Panya":
 		$default/Character_Option.set_item_disabled(0, true)
 		$default/Character_Option.set_item_disabled(1, true)
 		$default/Character_Option.set_item_disabled(2, false)
 		$default/Character_Option.set_item_disabled(3, true)
-	elif scene == "Green":
+		$default/Character_Option.set_item_disabled(4, true)
+		$default/Character_Option.set_item_disabled(5, true)
+	elif scene == "Herald":
 		$default/Character_Option.set_item_disabled(0, true)
 		$default/Character_Option.set_item_disabled(1, true)
 		$default/Character_Option.set_item_disabled(2, true)
 		$default/Character_Option.set_item_disabled(3, false)
+		$default/Character_Option.set_item_disabled(4, true)
+		$default/Character_Option.set_item_disabled(5, true)
+	elif scene == "Riley":
+		$default/Character_Option.set_item_disabled(0, true)
+		$default/Character_Option.set_item_disabled(1, true)
+		$default/Character_Option.set_item_disabled(2, true)
+		$default/Character_Option.set_item_disabled(3, true)
+		$default/Character_Option.set_item_disabled(4, false)
+		$default/Character_Option.set_item_disabled(5, true)
+	elif scene == "Steph":
+		$default/Character_Option.set_item_disabled(0, true)
+		$default/Character_Option.set_item_disabled(1, true)
+		$default/Character_Option.set_item_disabled(2, true)
+		$default/Character_Option.set_item_disabled(3, true)
+		$default/Character_Option.set_item_disabled(4, true)
+		$default/Character_Option.set_item_disabled(5, false)
 		
 		
 	if !$Toby/emotion.selected == -1 \
@@ -87,6 +109,26 @@ func _process(delta: float) -> void:
 	else:
 		$Herald/SAVE.disabled = true
 	
+	if !$Riley/emotion.selected == -1 \
+	and !$Riley/connection.selected == -1 \
+	and !$Riley/crim.selected == -1 \
+	and !$Riley/violent.selected == -1 \
+	and !$Riley/place.text == "" \
+	and !$Riley/trust.selected == -1:
+		$Riley/SAVE.disabled = false
+	else:
+		$Riley/SAVE.disabled = true
+		
+	if !$Steph/emotion.selected == -1 \
+	and !$Steph/connection.selected == -1 \
+	and !$Steph/crim.selected == -1 \
+	and !$Steph/violent.selected == -1 \
+	and !$Steph/place.text == "" \
+	and !$Steph/trust.selected == -1:
+		$Steph/SAVE.disabled = false
+	else:
+		$Steph/SAVE.disabled = true
+	
 	if dragging:
 		position = get_global_mouse_position() - of
 	
@@ -112,22 +154,46 @@ func Character_Option_Selection(index: int) -> void:
 		$Panya.hide()
 		$Toby.hide()
 		$Herald.hide()
+		$Riley.hide()
+		$Steph.hide()
 		$Greg.show()
 	elif index == 1:
 		$Panya.hide()
 		$Greg.hide()
 		$Herald.hide()
+		$Riley.hide()
+		$Steph.hide()
 		$Toby.show()
 	elif index == 2:
 		$Panya.show()
 		$Greg.hide()
 		$Toby.hide()
+		$Riley.hide()
+		$Steph.hide()
 		$Herald.hide()
 	elif index == 3:
 		$Panya.hide()
 		$Greg.hide()
+		$Riley.hide()
+		$Steph.hide()
 		$Toby.hide()
 		$Herald.show()
+		
+	elif index == 4:
+		$Panya.hide()
+		$Greg.hide()
+		$Riley.show()
+		$Steph.hide()
+		$Toby.hide()
+		$Herald.hide()
+		
+	elif index == 5:
+		$Panya.hide()
+		$Greg.hide()
+		$Riley.hide()
+		$Steph.show()
+		$Toby.hide()
+		$Herald.hide()
 		
 
 
@@ -144,11 +210,11 @@ func _on_save_pressed() -> void:
 	if scene == "Panya":
 		Global.panya_saved = true
 	if scene == "Herald":
-		Global.panya_saved = true
+		Global.green_saved = true
 	if scene == "Riley":
-		Global.panya_saved = true
+		Global.riley_saved = true
 	if scene == "Steph":
-		Global.panya_saved = true
+		Global.steph_saved = true
 	
 	$text.show()
 	await wait(2.0)

@@ -220,7 +220,7 @@ offset_top = -60.000004
 offset_right = 1016.0
 offset_bottom = 604.0
 scale = Vector2(1.3124394, 1.3508551)
-color = Color(0.9827147, 0.83411276, 0.70500004, 1)
+color = Color(0.11030965, 0.14740127, 0.16274437, 1)
 
 [node name="Clouds1" type="Parallax2D" parent="."]
 modulate = Color(1, 1, 1, 0.16470589)
@@ -327,7 +327,7 @@ texture_hover = ExtResource("15_j2m1i")
 
 [node name="SettingsPanel" parent="." instance=ExtResource("6_hlb2u")]
 visible = false
-position = Vector2(313, 183)
+position = Vector2(294, 183)
 
 [node name="oddorgan2" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("19_u328h")

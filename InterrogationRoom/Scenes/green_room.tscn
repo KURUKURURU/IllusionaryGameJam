@@ -412,7 +412,7 @@ bus = &"SFX"
 [node name="Laptop" parent="." instance=ExtResource("22_i68ol")]
 visible = false
 scale = Vector2(1.0065355, 1.0065355)
-witness = "Green"
+witness = "Herald"
 
 [node name="bing" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("24_i8uc0")

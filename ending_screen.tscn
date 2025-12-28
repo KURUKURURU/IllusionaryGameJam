@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://lk7mvn3lujw3"]
+[gd_scene load_steps=24 format=3 uid="uid://lk7mvn3lujw3"]
 
 [ext_resource type="Texture2D" uid="uid://b61ucq0h6mpxe" path="res://gardes/table.png" id="1_vwu8u"]
 [ext_resource type="Script" uid="uid://duy6pf758x5um" path="res://ending_screen.gd" id="1_ypcyh"]
@@ -10,7 +10,9 @@
 [ext_resource type="Texture2D" uid="uid://rwsc8r72no1n" path="res://pan/eerrr.png" id="7_3p6th"]
 [ext_resource type="Texture2D" uid="uid://df581qikwog66" path="res://PreCutscene/frames/box/toby/tobyserious.png" id="8_xq1wf"]
 [ext_resource type="Texture2D" uid="uid://c8rqi01ue115l" path="res://PreCutscene/frames/box/greg1/open.png" id="9_eyuyi"]
+[ext_resource type="Texture2D" uid="uid://cnbq51wk43x5h" path="res://pan/gggg.png" id="9_onvfb"]
 [ext_resource type="PackedScene" uid="uid://d32pkj2nffux0" path="res://InterrogationRoom/Scenes/reporttransfer.tscn" id="11_jtpfn"]
+[ext_resource type="Texture2D" uid="uid://d23jfhsqa2kkw" path="res://pan/_1.png" id="12_apyb2"]
 [ext_resource type="Script" uid="uid://qn78ccuptc38" path="res://who.gd" id="12_jtpfn"]
 [ext_resource type="Texture2D" uid="uid://d3vsmhb1y30o1" path="res://butt1.png" id="13_onvfb"]
 [ext_resource type="Texture2D" uid="uid://dih55l8e0onsn" path="res://butt2.png" id="14_apyb2"]
@@ -398,14 +400,13 @@ scale = Vector2(0.08344947, 0.08344947)
 texture = ExtResource("7_3p6th")
 
 [node name="riley" type="TextureRect" parent="tab_2/facecard_accuse"]
-visible = false
 layout_mode = 0
-offset_left = -23.314768
-offset_top = -21.115078
-offset_right = 1126.6852
-offset_bottom = 628.88495
-scale = Vector2(0.10248703, 0.10248703)
-texture = ExtResource("5_tqeas")
+offset_left = -15.878402
+offset_top = -8.378998
+offset_right = 1134.1216
+offset_bottom = 641.621
+scale = Vector2(0.09379009, 0.09379009)
+texture = ExtResource("9_onvfb")
 
 [node name="toby" type="TextureRect" parent="tab_2/facecard_accuse"]
 visible = false
@@ -430,12 +431,12 @@ texture = ExtResource("9_eyuyi")
 [node name="steph" type="TextureRect" parent="tab_2/facecard_accuse"]
 visible = false
 layout_mode = 0
-offset_left = -23.314768
-offset_top = -21.115078
-offset_right = 1126.6852
-offset_bottom = 628.88495
+offset_left = -19.88019
+offset_top = -16.087675
+offset_right = 1130.1198
+offset_bottom = 633.91235
 scale = Vector2(0.10248703, 0.10248703)
-texture = ExtResource("5_tqeas")
+texture = ExtResource("12_apyb2")
 
 [node name="decription" type="RichTextLabel" parent="tab_2"]
 layout_mode = 0
@@ -500,7 +501,6 @@ libraries = {
 }
 
 [node name="WHO" type="Control" parent="."]
-visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
@@ -545,16 +545,6 @@ offset_bottom = 641.4534
 scale = Vector2(0.08344947, 0.08344947)
 texture = ExtResource("7_3p6th")
 
-[node name="riley" type="TextureRect" parent="WHO/facecard_accuse"]
-visible = false
-layout_mode = 0
-offset_left = -23.314768
-offset_top = -21.115078
-offset_right = 1126.6852
-offset_bottom = 628.88495
-scale = Vector2(0.10248703, 0.10248703)
-texture = ExtResource("5_tqeas")
-
 [node name="toby" type="TextureRect" parent="WHO/facecard_accuse"]
 visible = false
 layout_mode = 0
@@ -578,12 +568,21 @@ texture = ExtResource("9_eyuyi")
 [node name="steph" type="TextureRect" parent="WHO/facecard_accuse"]
 visible = false
 layout_mode = 0
-offset_left = -23.314768
-offset_top = -21.115078
-offset_right = 1126.6852
-offset_bottom = 628.88495
+offset_left = -19.88019
+offset_top = -16.087675
+offset_right = 1130.1198
+offset_bottom = 633.91235
 scale = Vector2(0.10248703, 0.10248703)
-texture = ExtResource("5_tqeas")
+texture = ExtResource("12_apyb2")
+
+[node name="riley" type="TextureRect" parent="WHO/facecard_accuse"]
+layout_mode = 0
+offset_left = -14.267245
+offset_top = -7.038359
+offset_right = 1135.7328
+offset_bottom = 642.9617
+scale = Vector2(0.08962464, 0.08962464)
+texture = ExtResource("9_onvfb")
 
 [node name="WHO" type="OptionButton" parent="WHO"]
 layout_mode = 0
