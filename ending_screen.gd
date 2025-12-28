@@ -18,7 +18,7 @@ func  _ready() -> void:
 	
 	await wait(2.0)
 	
-	$'2'/Report_Transfer/slide.play("slide")
+	#$'2'/Report_Transfer/slide.play("slide")
 	$'2'.show()
 	
 	
@@ -29,9 +29,9 @@ func _process(delta: float) -> void:
 	
 	
 	if correct: 
-		$tab_2/ACCURATE.text = "accurately"
+		$tab_2/ACCURATE.text = "succeeded"
 	else:
-		$tab_2/ACCURATE.text = "falsely"
+		$tab_2/ACCURATE.text = "failed"
 	
 	
 	if Global.total > 60:
@@ -47,14 +47,16 @@ func _process(delta: float) -> void:
 	#and !$"2/Report_Transfer/Steph/SAVE".disabled \
 		$"2/Report_Transfer/submit".disabled = false
 	else:
-		$"2/Report_Transfer/submit".disabled = false
+		$"2/Report_Transfer/submit".disabled = false  #####change please
 
 
 func _on_report_transfer_done() -> void:
-	$"2/Report_Transfer/slide".play("slide_out")
-	await $"2/Report_Transfer/slide".animation_finished
+	#$"2/Report_Transfer/slide".play("slide_out")
+	#await $"2/Report_Transfer/slide".animation_finished
+	$'2'.hide()
+	$finalwarning.hide()
 	
-	$WHO/slide.play("slide")
+	$WHO/slide.play("slide_2")
 	$WHO.show()
 	
 	

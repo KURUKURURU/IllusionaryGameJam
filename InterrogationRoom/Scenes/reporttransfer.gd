@@ -7,6 +7,8 @@ var of = Vector2(0,0)
 
 signal DONE
 
+var add_end = 0
+
 func _ready() -> void:
 	$text.hide()
 	$Greg.hide()
@@ -20,6 +22,8 @@ func wait(seconds: float) -> void:
 	await get_tree().create_timer(seconds).timeout
 
 func _process(delta: float) -> void:
+	
+	Global.total = float(add_end)/36.0 * 100.0
 	
 	if scene == "Greg":
 		$default/Character_Option.set_item_disabled(0, false)
@@ -153,7 +157,7 @@ func _on_save_pressed() -> void:
 
 func SUBMIT() -> void:
 	
-	var add_end = 0
+	add_end = 0
 	
 	#GREG
 	
@@ -246,8 +250,11 @@ func SUBMIT() -> void:
 		add_end = add_end + 1
 		
 	print(add_end)
+	Global.total = float(add_end) / 36.0 * 100.0
+	print("ADD_END:", add_end)
+	print("TOTAL:", Global.total)
 	
-	Global.total = add_end/36
+	Global.total = add_end/36 * 100
 	
 	
 
